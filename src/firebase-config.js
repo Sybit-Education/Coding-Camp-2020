@@ -23,28 +23,6 @@ export const $auth = firebase.auth()
 // To apply the default browser preference instead of explicitly setting it.
 $auth.useDeviceLanguage()
 
-// Retrieve Firebase Messaging object.
-export const $messaging = firebase.messaging()
-
-Notification.requestPermission()
-  .then(function () {
-    console.log('Message Notification permissions granted')
-    return $messaging.getToken('BAvEL-FglHgxZ9-_P0yf9-r3RcqGZiQxoQDSzICbuP-J3t6PnwKL2Bu_mr8nVws3NYAndSQiQJx6bA0e8h1vfDE')
-  })
-  .then(function (token) {
-    console.log(token)
-  })
-  .catch(function (error) {
-    console.log(error)
-  })
-
-// $messaging.usePublicVapidKey('BAvEL-FglHgxZ9-_P0yf9-r3RcqGZiQxoQDSzICbuP-J3t6PnwKL2Bu_mr8nVws3NYAndSQiQJx6bA0e8h1vfDE')
-
-$messaging.onMessage((payload) => {
-  console.log('Message received. ', payload)
-  // ...
-})
-
 // Export types that exists in Firestore
 // This is not always necessary, but it's used in other examples
 const { Timestamp, GeoPoint } = firebase.firestore
