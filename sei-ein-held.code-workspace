@@ -4,5 +4,12 @@
 			"path": "."
 		}
 	],
-	"settings": {}
+	"settings": {
+		"workbench.colorCustomizations": {
+			"statusBar.background": "#f33d89c2",
+			"statusBarItem.hoverBackground": "#F33D88",
+			"statusBar.foreground": "#e7e7e7"
+		},
+		"deepscan.enable": true
+	}
 }
