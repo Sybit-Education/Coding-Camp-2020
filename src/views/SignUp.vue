@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div>
     <div class="d-flex flex-row justify-content-center">
       <div class="col-md-8">
         <form @submit.prevent="signUpUser(user)">
@@ -35,6 +35,16 @@
                   required
                 />
               </b-form-group>
+
+              <b-form-group>
+                <b-form-checkbox
+                  required
+                  id="checkbox-terms-of-service"
+                  v-model="user.checkboxTermsOfService"
+                  name="checkbox">
+                  Hiermit akzeptiere ich die <a href="https://www.sybit.de/datenschutz/" target="_blank">Datenschutzerklärung.</a>
+                </b-form-checkbox>
+              </b-form-group>
               <b-button type="submit" variant="primary" >Registrieren</b-button>
               <b-link id="login-anchor" to="/login" >Anmelden</b-link>
             </b-card-body>
@@ -53,13 +63,14 @@ export default {
       user: {
         email: '',
         password: '',
-        passwordConfirmation: ''
+        passwordConfirmation: '',
+        checkboxTermsOfService: false
       }
     }
   },
   methods: {
     async signUpUser (user) {
-      if (user.password === user.passwordConfirmation) {
+      if (user.password === user.passwordConfirmation && this.user.checkboxTermsOfService) {
         await this.$store.dispatch('Auth/signUpWithEmail', user)
           .then(() => {
             this.$router.replace('profile')
@@ -72,12 +83,12 @@ export default {
               text: e
             })
           })
-      } else {
+      } else if (this.user.password !== this.user.passwordConfirmation) {
         Vue.notify({
           group: 'notification',
           title: 'Error',
           type: 'error',
-          text: 'Passwort stimmt nicht überein.'
+          text: 'Die Passwörter stimmen nicht überein.'
         })
       }
     }

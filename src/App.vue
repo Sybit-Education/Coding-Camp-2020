@@ -1,15 +1,17 @@
 <template>
-  <div id="app" class="container">
+  <div id="app">
     <router-view/>
+    <bottom-navigation></bottom-navigation>
+    <notifications group="notification" class="mt-3" position="top center" />
   </div>
 </template>
 
 <script>
-
+import BottomNavigation from '@/components/navigation/BottomNavigation.vue'
 export default {
   name: 'App',
   components: {
-
+    BottomNavigation
   },
   metaInfo () {
     return {
@@ -25,6 +27,3 @@ export default {
   }
 }
 </script>
-<style scoped lang="scss">
-
-</style>

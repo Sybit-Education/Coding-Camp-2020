@@ -1,6 +1,4 @@
-# Coding-Camp-2020
-Repository für das Sybit Coding-Camp 2020
-
+# sybit-coding-camp-2020
 
 ## Project setup
 ```
@@ -24,4 +22,3 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
-

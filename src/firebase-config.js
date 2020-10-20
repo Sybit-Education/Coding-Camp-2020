@@ -4,7 +4,6 @@ import firebase from 'firebase/app'
 // Add the Firebase services that you want to use
 import 'firebase/firestore'
 import 'firebase/auth'
-import 'firebase/messaging'
 
 const firebaseConfig = {
   apiKey: process.env.VUE_APP_FIREBASE_API_KEY,

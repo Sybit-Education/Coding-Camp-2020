@@ -1,10 +1,16 @@
 <template>
   <div id="admin">
     <main-header :headerTitle="'Administration'"></main-header>
-    <b-link to="/admin/new">Neuer Impuls</b-link>
     <b-row>
-      <b-col md="6">
+      <b-col xl="6">
+        <b-row>
+          <b-col cols="12" md="6">
         <h2>Liste der Impulse ({{ this.rows }})</h2>
+          </b-col>
+          <b-col cols="12" md="6" class="d-flex align-items-center justify-content-start justify-content-md-end py-3 py-md-0">
+            <b-button to="/admin/new" variant="primary">Neuer Impuls +</b-button>
+          </b-col>
+         </b-row>
         <b-overlay :show="showOverlay" rounded="sm">
           <b-table
             id="impulseList"
@@ -30,15 +36,19 @@
             </template>
           </b-table>
         </b-overlay>
+      <b-col cols="12" md="12" class="mt-4">
         <b-pagination
+        align="fill"
           v-model="currentPage"
           :total-rows="rows"
           :per-page="perPage"
           aria-controls="impulseList"
         ></b-pagination>
+        </b-col>
       </b-col>
-      <b-col md="6">
-        <impulse-edit :impulse="selectedImpulse" />
+      <b-col xl="6" class="d-flex justify-content-center align-items-center">
+        <impulse-edit class="col-12" :impulse="selectedImpulse" v-if="isClicked"/>
+        <h4 class="text-center mb-5 mb-md-0 mt-3 mt-md-0 py-3 py-md-0" v-else>Klicke einen Impuls an, um ihn zu bearbeiten.</h4>
       </b-col>
     </b-row>
   </div>
@@ -69,16 +79,14 @@ export default {
       currentPage: 1,
       selectedImpulse: {},
       selectedRow: 0,
-      showOverlay: false
+      showOverlay: false,
+      isClicked: false
     }
   },
   created () {
     this.showOverlay = true
     this.fetchListAdmin()
     this.showOverlay = false
-  },
-  async mounted () {
-    this.$refs.impulseListTable.selectRow(this.selectedRow)
   },
   computed: {
     ...mapGetters({
@@ -91,6 +99,7 @@ export default {
   methods: {
     /** called by select row in table to update selected impulse in store */
     rowSelected (rows) {
+      this.isClicked = true
       if (rows[0] && rows[0].id) {
         this.selectedImpulse = rows[0]
       } else {

@@ -24,7 +24,10 @@ module.exports = {
       // Note: this option is named as "data" in sass-loader v7
       sass: {
         prependData: `
-          @import "@/assets/_variables.scss";
+          @import '@/assets/custom-vars.scss';
+          @import '@/assets/_variables.scss';
+          @import '~bootstrap/scss/bootstrap.scss';
+          @import '~bootstrap-vue/src/index.scss';
         `
       }
     }

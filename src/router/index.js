@@ -29,6 +29,22 @@ const routes = [
     }
   },
   {
+    path: '/imprint',
+    name: 'Imprint',
+    component: () => import('../views/Imprint.vue'),
+    meta: {
+      requiresAuth: false
+    }
+  },
+  {
+    path: '/privacy',
+    name: 'Privacy',
+    component: () => import('../views/Privacy.vue'),
+    meta: {
+      requiresAuth: false
+    }
+  },
+  {
     path: '/login',
     name: 'Login',
     component: () => import(/* webpackChunkName: "login" */ '../views/Login.vue'),

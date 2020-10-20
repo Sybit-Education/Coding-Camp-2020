@@ -2,7 +2,7 @@
   <div id="add-impulse" class="container">
     <main-header :headerTitle="'Administration'"></main-header>
     <h1>Neuer Impuls</h1>
-    <b-link to="/">Home</b-link> <b-link to="/admin">admin</b-link>
+    <b-button to="/admin" class="my-3" variant="primary">zurück</b-button>
     <impulse-add></impulse-add>
 
   </div>
