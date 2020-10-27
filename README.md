@@ -1,4 +1,4 @@
-# Sybit Coding Camp 2020 Sei ein Held - rette die Welt
+# Sybit Coding Camp 2020: Sei ein Held - rette die Welt
 
 This web app is build within the [Sybit Coding Camp](https://coding-camp.sybit.de) 2020.
 
