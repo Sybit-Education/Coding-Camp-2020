@@ -42,6 +42,6 @@ padding-right: 15px;
 }
 
 .card-text-space{
-padding-top: 30px
+padding-top: 30px;
 }
 </style>
