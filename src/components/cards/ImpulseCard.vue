@@ -1,10 +1,9 @@
 <template>
-    <div>
-        <h1>Hallo Welt</h1>
-    </div>
+   <div>
+        <img src="@/assets/cards/Card-blue.svg">
+   </div>
 </template>
 <script>
 export default {
-
 }
 </script>
