@@ -17,79 +17,62 @@
     <p>Stand: 27. Oktober 2020</p>
     <h2>Inhaltsübersicht</h2>
     <ul class="index">
-      <li><a class="index-link" href="#m14">Einleitung</a></li>
-      <li><a class="index-link" href="#m3">Verantwortlicher</a></li>
+      <li><a href="#m14">Einleitung</a></li>
+      <li><a href="#m3">Verantwortlicher</a></li>
       <li>
-        <a class="index-link" href="#mOverview">Übersicht der Verarbeitungen</a>
+        <a href="#mOverview">Übersicht der Verarbeitungen</a>
       </li>
       <li>
-        <a class="index-link" href="#m13">Maßgebliche Rechtsgrundlagen</a>
+        <a href="#m13">Maßgebliche Rechtsgrundlagen</a>
       </li>
-      <li><a class="index-link" href="#m27">Sicherheitsmaßnahmen</a></li>
+      <li><a href="#m27">Sicherheitsmaßnahmen</a></li>
       <li>
-        <a class="index-link" href="#m25"
-          >Übermittlung und Offenbarung von personenbezogenen Daten</a
-        >
-      </li>
-      <li>
-        <a class="index-link" href="#m24">Datenverarbeitung in Drittländern</a>
-      </li>
-      <li><a class="index-link" href="#m134">Einsatz von Cookies</a></li>
-      <li>
-        <a class="index-link" href="#m225"
-          >Bereitstellung des Onlineangebotes und Webhosting</a
-        >
+        <a href="#m25"
+        >Übermittlung und Offenbarung von personenbezogenen Daten</a>
       </li>
       <li>
-        <a class="index-link" href="#m469"
-          >Besondere Hinweise zu Applikationen (Apps)</a
-        >
+        <a href="#m24">Datenverarbeitung in Drittländern</a>
+      </li>
+      <li><a href="#m134">Einsatz von Cookies</a></li>
+      <li>
+        <a href="#m225">Bereitstellung des Onlineangebotes und Webhosting</a>
       </li>
       <li>
-        <a class="index-link" href="#m104">Blogs und Publikationsmedien</a>
-      </li>
-      <li><a class="index-link" href="#m182">Kontaktaufnahme</a></li>
-      <li><a class="index-link" href="#m1643">Push-Nachrichten</a></li>
-      <li>
-        <a class="index-link" href="#m17"
-          >Newsletter und elektronische Benachrichtigungen</a
-        >
+        <a href="#m469">Besondere Hinweise zu Applikationen (Apps)</a>
       </li>
       <li>
-        <a class="index-link" href="#m638"
-          >Werbliche Kommunikation via E-Mail, Post, Fax oder Telefon</a
-        >
+        <a href="#m104">Blogs und Publikationsmedien</a>
+      </li>
+      <li><a href="#m182">Kontaktaufnahme</a></li>
+      <li><a href="#m1643">Push-Nachrichten</a></li>
+      <li>
+        <a href="#m17">Newsletter und elektronische Benachrichtigungen</a>
       </li>
       <li>
-        <a class="index-link" href="#m263"
-          >Webanalyse, Monitoring und Optimierung</a
-        >
-      </li>
-      <li><a class="index-link" href="#m264">Onlinemarketing</a></li>
-      <li>
-        <a class="index-link" href="#m136"
-          >Präsenzen in sozialen Netzwerken (Social Media)</a
-        >
+        <a href="#m638">Werbliche Kommunikation via E-Mail, Post, Fax oder Telefon</a>
       </li>
       <li>
-        <a class="index-link" href="#m328"
-          >Plugins und eingebettete Funktionen sowie Inhalte</a
-        >
+        <a href="#m263">Webanalyse, Monitoring und Optimierung</a>
       </li>
-      <li><a class="index-link" href="#m12">Löschung von Daten</a></li>
+      <li><a href="#m264">Onlinemarketing</a></li>
       <li>
-        <a class="index-link" href="#m15"
-          >Änderung und Aktualisierung der Datenschutzerklärung</a
-        >
+        <a href="#m136">Präsenzen in sozialen Netzwerken (Social Media)</a>
       </li>
       <li>
-        <a class="index-link" href="#m10">Rechte der betroffenen Personen</a>
+        <a href="#m328">Plugins und eingebettete Funktionen sowie Inhalte</a>
       </li>
-      <li><a class="index-link" href="#m42">Begriffsdefinitionen</a></li>
+      <li><a href="#m12">Löschung von Daten</a></li>
+      <li>
+        <a href="#m15">Änderung und Aktualisierung der Datenschutzerklärung</a>
+      </li>
+      <li>
+        <a href="#m10">Rechte der betroffenen Personen</a>
+      </li>
+      <li><a href="#m42">Begriffsdefinitionen</a></li>
     </ul>
     <h2 id="m3">Verantwortlicher</h2>
     <p>
-      Fabienne Schwarz-Loy<br />Radolfzeller Straße 2<br />78345 Moos<br /><br />
+      Fabienne Schwarz-Loy<br/>Radolfzeller Straße 2<br/>78345 Moos<br/><br/>
     </p>
     <p>
       <strong>E-Mail-Adresse:</strong>
@@ -169,19 +152,15 @@
         mehrere bestimmte Zwecke gegeben.
       </li>
       <li>
-        <strong
-          >Vertragserfüllung und vorvertragliche Anfragen (Art. 6 Abs. 1 S. 1
-          lit. b. DSGVO)</strong
-        >
+        <strong>Vertragserfüllung und vorvertragliche Anfragen (Art. 6 Abs. 1 S. 1
+          lit. b. DSGVO)</strong>
         - Die Verarbeitung ist für die Erfüllung eines Vertrags, dessen
         Vertragspartei die betroffene Person ist, oder zur Durchführung
         vorvertraglicher Maßnahmen erforderlich, die auf Anfrage der betroffenen
         Person erfolgen.
       </li>
       <li>
-        <strong
-          >Berechtigte Interessen (Art. 6 Abs. 1 S. 1 lit. f. DSGVO)</strong
-        >
+        <strong>Berechtigte Interessen (Art. 6 Abs. 1 S. 1 lit. f. DSGVO)</strong>
         - Die Verarbeitung ist zur Wahrung der berechtigten Interessen des
         Verantwortlichen oder eines Dritten erforderlich, sofern nicht die
         Interessen oder Grundrechte und Grundfreiheiten der betroffenen Person,
@@ -260,9 +239,7 @@
       Informationsseite der EU-Kommission:
       <a
         href="https://ec.europa.eu/info/law/law-topic/data-protection/international-dimension-data-protection_de"
-        target="_blank"
-        >https://ec.europa.eu/info/law/law-topic/data-protection/international-dimension-data-protection_de</a
-      >
+        target="_blank">https://ec.europa.eu/info/law/law-topic/data-protection/international-dimension-data-protection_de</a>
       ).
     </p>
     <h2 id="m134">Einsatz von Cookies</h2>
@@ -280,15 +257,12 @@
       "Nutzer-IDs" bezeichnet)
     </p>
     <p>
-      <strong
-        >Die folgenden Cookie-Typen und Funktionen werden unterschieden:</strong
-      >
+      <strong>Die folgenden Cookie-Typen und Funktionen werden unterschieden:</strong>
     </p>
     <ul>
       <li>
-        <strong
-          >Temporäre Cookies (auch: Session- oder Sitzungs-Cookies):</strong
-        >&nbsp;Temporäre Cookies werden spätestens gelöscht, nachdem ein Nutzer
+        <strong>Temporäre Cookies (auch: Session- oder Sitzungs-Cookies):</strong>&nbsp;Temporäre Cookies werden
+        spätestens gelöscht, nachdem ein Nutzer
         ein Online-Angebot verlassen und seinen Browser geschlossen hat.
       </li>
       <li>
@@ -311,7 +285,7 @@
       </li>
       <li>
         <strong
-          >Notwendige (auch: essentielle oder unbedingt erforderliche)
+        >Notwendige (auch: essentielle oder unbedingt erforderliche)
           Cookies:</strong
         >
         Cookies können zum einen für den Betrieb einer Webseite unbedingt
@@ -351,8 +325,7 @@
       bis zu zwei Jahre betragen kann.
     </p>
     <p>
-      <strong
-        >Allgemeine Hinweise zum Widerruf und Widerspruch (Opt-Out):
+      <strong>Allgemeine Hinweise zum Widerruf und Widerspruch (Opt-Out):
       </strong>
       Abhängig davon, ob die Verarbeitung auf Grundlage einer Einwilligung oder
       gesetzlichen Erlaubnis erfolgt, haben Sie jederzeit die Möglichkeit, eine
@@ -365,20 +338,15 @@
       Einsatz von Cookies zu Zwecken des Onlinemarketings kann auch mittels
       einer Vielzahl von Diensten, vor allem im Fall des Trackings, über die
       Webseiten
-      <a href="https://optout.aboutads.info" target="_blank"
-        >https://optout.aboutads.info</a
-      >
+      <a href="https://optout.aboutads.info" target="_blank">https://optout.aboutads.info</a>
       und
-      <a href="https://www.youronlinechoices.com/" target="_blank"
-        >https://www.youronlinechoices.com/</a
-      >
+      <a href="https://www.youronlinechoices.com/" target="_blank">https://www.youronlinechoices.com/</a>
       erklärt werden. Daneben können Sie weitere Widerspruchshinweise im Rahmen
       der Angaben zu den eingesetzten Dienstleistern und Cookies erhalten.
     </p>
     <p>
-      <strong
-        >Verarbeitung von Cookie-Daten auf Grundlage einer Einwilligung</strong
-      >: Bevor wir Daten im Rahmen der Nutzung von Cookies verarbeiten oder
+      <strong>Verarbeitung von Cookie-Daten auf Grundlage einer Einwilligung</strong>: Bevor wir Daten im Rahmen der
+      Nutzung von Cookies verarbeiten oder
       verarbeiten lassen, bitten wir die Nutzer um eine jederzeit widerrufbare
       Einwilligung. Bevor die Einwilligung nicht ausgesprochen wurde, werden
       allenfalls Cookies eingesetzt, die für den Betrieb unseres Onlineangebotes
@@ -451,8 +419,7 @@
     </ul>
     <h2 id="m469">Besondere Hinweise zu Applikationen (Apps)</h2>
     <p>
-      <!--?xml version="1.0" encoding="UTF-8"?--><html_tags
-        >Wir verarbeiten die Daten der Nutzer unserer Applikation, soweit diese
+      <html_tags>Wir verarbeiten die Daten der Nutzer unserer Applikation, soweit diese
         erforderlich sind, um den Nutzern die Applikation sowie deren
         Funktionalitäten bereitstellen, deren Sicherheit überwachen und sie
         weiterentwickeln zu können. Wir können ferner Nutzer unter Beachtung der
@@ -460,15 +427,14 @@
         der Administration oder Nutzung der Applikation erforderlich ist. Im
         Übrigen verweisen wir im Hinblick auf die Verarbeitung der Daten der
         Nutzer auf die Datenschutzhinweise in dieser
-        Datenschutzerklärung.</html_tags
-      >
+        Datenschutzerklärung.
+      </html_tags>
     </p>
     <p>
       <strong>Rechtsgrundlagen: </strong>Die Verarbeitung von Daten, die für die
       Bereitstellung der Funktionalitäten der Applikation erforderlich ist,
       dient der Erfüllung von vertraglichen Pflichten.
-      <span class="dsg-license-content-blurred de"
-        >RGllcw== Z2lsdA== YXVjaCw= d2Vubg== ZGll QmVyZWl0c3RlbGx1bmc= ZGVy
+      <span class="dsg-license-content-blurred de">RGllcw== Z2lsdA== YXVjaCw= d2Vubg== ZGll QmVyZWl0c3RlbGx1bmc= ZGVy
         RnVua3Rpb25lbg== ZWluZQ== QmVyZWNodGlndW5n ZGVy TnV0emVy KHou Qi4=
         RnJlaWdhYmVu dm9u R2Vyw6R0ZWZ1bmt0aW9uZW4p dm9yYXVzc2V0enQu U29mZXJu
         ZGll VmVyYXJiZWl0dW5n dm9u RGF0ZW4= ZsO8cg== ZGll QmVyZWl0c3RlbGx1bmc=
@@ -487,14 +453,12 @@
     </p>
     <p><strong>Kommerzielle Nutzung</strong>:</p>
     <p>
-      <!--?xml version="1.0" encoding="UTF-8"?--><html_tags
-        >Wir verarbeiten die Daten der Nutzer unserer Applikation, angemeldeter
+      <html_tags>Wir verarbeiten die Daten der Nutzer unserer Applikation, angemeldeter
         und etwaiger Testnutzer (nachfolgend einheitlich als "Nutzer"
         bezeichnet), um ihnen gegenüber unsere vertraglichen Leistungen
         erbringen zu können sowie auf Grundlage berechtigter Interessen, um die
         Sicherheit unserer Applikation gewährleisten und sie weiterzuentwickeln
-        <span class="dsg-license-content-blurred de"
-          >enU= a8O2bm5lbi4= RGll ZXJmb3JkZXJsaWNoZW4= QW5nYWJlbg== c2luZA==
+        <span class="dsg-license-content-blurred de">enU= a8O2bm5lbi4= RGll ZXJmb3JkZXJsaWNoZW4= QW5nYWJlbg== c2luZA==
           YWxz c29sY2hl aW0= UmFobWVu ZGVz TnV0enVuZ3MtLA== QXVmdHJhZ3MtLA==
           QmVzdGVsbC0= Ynp3Lg== dmVyZ2xlaWNoYmFyZW4= VmVydHJhZ3NzY2hsdXNzZXM=
           Z2VrZW5uemVpY2huZXQ= dW5k a8O2bm5lbg== ZGll enVy
@@ -502,24 +466,21 @@
           YmVuw7Z0aWd0ZW4= QW5nYWJlbg== c293aWU= S29udGFrdGluZm9ybWF0aW9uZW4s
           dW0= ZXR3YWlnZQ== UsO8Y2tzcHJhY2hlbg== aGFsdGVu enU= a8O2bm5lbiw=
           dW1mYXNzZW4u
-        </span></html_tags
-      >
+        </span></html_tags>
     </p>
     <p>
       <strong
-        >Geräteberechtigungen für den Zugriff auf Funktionen und Daten</strong
+      >Geräteberechtigungen für den Zugriff auf Funktionen und Daten</strong
       >:
     </p>
     <p>
-      <!--?xml version="1.0" encoding="UTF-8"?--><html_tags
-        >Die Nutzung unserer Applikation oder ihrer Funktionalitäten kann
+      <html_tags>Die Nutzung unserer Applikation oder ihrer Funktionalitäten kann
         Berechtigungen der Nutzer für Zugriff auf bestimmten Funktionen der
         verwendeten Geräte oder auf die, auf den Geräten gespeicherten oder mit
         Hilfe der Geräte zugänglichen Daten voraussetzen. Standardmäßig müssen
         diese Berechtigungen von den Nutzern erteilt werden und können jederzeit
         in den Einstellungen der
-        <span class="dsg-license-content-blurred de"
-          >amV3ZWlsaWdlbg== R2Vyw6R0ZQ== d2lkZXJydWZlbg== d2VyZGVuLg== RGFz
+        <span class="dsg-license-content-blurred de">amV3ZWlsaWdlbg== R2Vyw6R0ZQ== d2lkZXJydWZlbg== d2VyZGVuLg== RGFz
           Z2VuYXVl VmVyZmFocmVu enVy S29udHJvbGxl ZGVy QXBwLUJlcmVjaHRpZ3VuZ2Vu
           a2Fubg== dm9t R2Vyw6R0 dW5k ZGVy U29mdHdhcmU= ZGVy TnV0emVybg==
           YWJow6RuZ2ln c2Vpbi4= QmVp RXJsw6R1dGVydW5nc2JlZGFyZg== a8O2bm5lbg==
@@ -528,8 +489,7 @@
           amV3ZWlsaWdlbg== QmVyZWNodGlndW5nZW4= ZGll
           RnVua3Rpb25zZsOkaGlna2VpdA== dW5zZXJl QXBwbGlrYXRpb24=
           YmVlaW5mbHVzc2Vu a2Fubi4=
-        </span></html_tags
-      >
+        </span></html_tags>
     </p>
     <div class="dsg-license-content-blurred">
       <ul class="m-elements">
@@ -647,8 +607,7 @@
     </ul>
     <h2 id="m1643">Push-Nachrichten</h2>
     <p>
-      <!--?xml version="1.0" encoding="UTF-8"?--><html_tags
-        >Mit der Zustimmung der Nutzer, können wir den Nutzern so genannte
+      <html_tags>Mit der Zustimmung der Nutzer, können wir den Nutzern so genannte
         "Push-Benachrichtigungen" zusenden. Dabei handelt es sich um
         Nachrichten, die auf den Bildschirmen, Endgeräten oder in Browsern der
         Nutzer angezeigt werden, auch wenn unser Onlinedienst gerade nicht aktiv
@@ -661,8 +620,7 @@
       Dieser Zustimmungsprozess wird dokumentiert und gespeichert. Die
       Speicherung ist erforderlich, um zu erkennen, ob Nutzer dem Empfang der
       Push-Nachrichten zugestimmt haben sowie
-      <span class="dsg-license-content-blurred de"
-        >dW0= ZGll WnVzdGltbXVuZw== bmFjaHdlaXNlbg== enU= a8O2bm5lbi4= WnU=
+      <span class="dsg-license-content-blurred de">dW0= ZGll WnVzdGltbXVuZw== bmFjaHdlaXNlbg== enU= a8O2bm5lbi4= WnU=
         ZGllc2Vu WndlY2tlbg== d2lyZA== ZWlu cHNldWRvbnltZXI=
         SWRlbnRpZmlrYXRvcg== ZGVz QnJvd3NlcnM= KHNvZy4= IlB1c2gtVG9rZW4iKQ==
         b2Rlcg== ZGll R2Vyw6R0ZS1JRA== ZWluZXM= RW5kZ2Vyw6R0ZXM=
@@ -1029,18 +987,10 @@
         eingeschränkt werden. Wir empfehlen daher zusätzlich die folgenden
         Opt-Out-Möglichkeiten, die zusammenfassend auf jeweilige Gebiete
         gerichtet angeboten werden: a) Europa:
-        <a href="https://www.youronlinechoices.eu" target="_blank"
-          >https://www.youronlinechoices.eu</a
-        >. b) Kanada:
-        <a href="https://www.youradchoices.ca/choices" target="_blank"
-          >https://www.youradchoices.ca/choices</a
-        >. c) USA:
-        <a href="https://www.aboutads.info/choices" target="_blank"
-          >https://www.aboutads.info/choices</a
-        >. d) Gebietsübergreifend:
-        <a href="https://optout.aboutads.info" target="_blank"
-          >https://optout.aboutads.info</a
-        >.
+        <a href="https://www.youronlinechoices.eu" target="_blank">https://www.youronlinechoices.eu</a>. b) Kanada:
+        <a href="https://www.youradchoices.ca/choices" target="_blank">https://www.youradchoices.ca/choices</a>. c) USA:
+        <a href="https://www.aboutads.info/choices" target="_blank">https://www.aboutads.info/choices</a>. d) Gebietsübergreifend:
+        <a href="https://optout.aboutads.info" target="_blank">https://optout.aboutads.info</a>.
       </li>
     </ul>
     <p><strong>Eingesetzte Dienste und Diensteanbieter:</strong></p>
@@ -1050,20 +1000,11 @@
         Dienstanbieter: Google Ireland Limited, Gordon House, Barrow Street,
         Dublin 4, Irland, Mutterunternehmen: Google LLC, 1600 Amphitheatre
         Parkway, Mountain View, CA 94043, USA; Website:
-        <a
-          href="https://marketingplatform.google.com/intl/de/about/analytics/"
-          target="_blank"
-          >https://marketingplatform.google.com/intl/de/about/analytics/</a
-        >; Datenschutzerklärung:
-        <a href="https://policies.google.com/privacy" target="_blank"
-          >https://policies.google.com/privacy</a
-        >; Widerspruchsmöglichkeit (Opt-Out): Opt-Out-Plugin:
-        <a href="https://tools.google.com/dlpage/gaoptout?hl=de" target="_blank"
-          >https://tools.google.com/dlpage/gaoptout?hl=de</a
-        >, Einstellungen für die Darstellung von Werbeeinblendungen:
-        <a href="https://adssettings.google.com/authenticated" target="_blank"
-          >https://adssettings.google.com/authenticated</a
-        >.
+        <a href="https://marketingplatform.google.com/intl/de/about/analytics/"
+          target="_blank">https://marketingplatform.google.com/intl/de/about/analytics/</a>; Datenschutzerklärung:
+        <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a>; Widerspruchsmöglichkeit (Opt-Out): Opt-Out-Plugin:
+        <a href="https://tools.google.com/dlpage/gaoptout?hl=de" target="_blank">https://tools.google.com/dlpage/gaoptout?hl=de</a>, Einstellungen für die Darstellung von Werbeeinblendungen:
+        <a href="https://adssettings.google.com/authenticated" target="_blank">https://adssettings.google.com/authenticated</a>.
       </li>
     </ul>
     <h2 id="m136">Präsenzen in sozialen Netzwerken (Social Media)</h2>
@@ -1113,37 +1054,26 @@
       ansehen oder mit denen sie interagieren, oder die von ihnen vorgenommenen
       Handlungen (siehe unter „Von dir und anderen getätigte und bereitgestellte
       Dinge“ in der Facebook-Datenrichtlinie:
-      <a href="https://www.facebook.com/policy" target="_blank"
-        >https://www.facebook.com/policy</a
-      >), sowie Informationen über die von den Nutzern genutzten Geräte (z. B.
+      <a href="https://www.facebook.com/policy" target="_blank">https://www.facebook.com/policy</a>), sowie Informationen über die von den Nutzern genutzten Geräte (z. B.
       IP-Adressen, Betriebssystem, Browsertyp, Spracheinstellungen,
       Cookie-Daten; siehe unter „Geräteinformationen“ in der
       Facebook-Datenrichtlinie-erklärung:
-      <a href="https://www.facebook.com/policy" target="_blank"
-        >https://www.facebook.com/policy</a
-      >). Wie in der Facebook-Datenrichtlinie unter „Wie verwenden wir diese
+      <a href="https://www.facebook.com/policy" target="_blank">https://www.facebook.com/policy</a>). Wie in der Facebook-Datenrichtlinie unter „Wie verwenden wir diese
       Informationen?“ erläutert, erhebt und verwendet Facebook Informationen
       auch, um Analysedienste, so genannte "Seiten-Insights", für
       Seitenbetreiber bereitzustellen, damit diese Erkenntnisse darüber
       erhalten, wie Personen mit ihren Seiten und mit den mit ihnen verbundenen
       Inhalten interagieren. Wir haben mit Facebook eine spezielle Vereinbarung
       abgeschlossen ("Informationen zu Seiten-Insights",
-      <a
-        href="https://www.facebook.com/legal/terms/page_controller_addendum"
-        target="_blank"
-        >https://www.facebook.com/legal/terms/page_controller_addendum</a
-      >), in der insbesondere geregelt wird, welche Sicherheitsmaßnahmen
+      <a href="https://www.facebook.com/legal/terms/page_controller_addendum"
+        target="_blank">https://www.facebook.com/legal/terms/page_controller_addendum</a>), in der insbesondere geregelt wird, welche Sicherheitsmaßnahmen
       Facebook beachten muss und in der Facebook sich bereit erklärt hat die
       Betroffenenrechte zu erfüllen (d. h. Nutzer können z. B. Auskünfte oder
       Löschungsanfragen direkt an Facebook richten). Die Rechte der Nutzer
       (insbesondere auf Auskunft, Löschung, Widerspruch und Beschwerde bei
       zuständiger Aufsichtsbehörde), werden durch die Vereinbarungen mit
       Facebook nicht eingeschränkt. Weitere Hinweise finden sich in den
-      "Informationen zu Seiten-Insights" (<a
-        href="https://www.facebook.com/legal/terms/information_about_page_insights_data"
-        target="_blank"
-        >https://www.facebook.com/legal/terms/information_about_page_insights_data</a
-      >).
+      "Informationen zu Seiten-Insights" (<a href="https://www.facebook.com/legal/terms/information_about_page_insights_data" target="_blank">https://www.facebook.com/legal/terms/information_about_page_insights_data</a>).
     </p>
     <ul class="m-elements">
       <li>
@@ -1174,90 +1104,54 @@
         <strong>Instagram:</strong> Soziales Netzwerk; Dienstanbieter: Instagram
         Inc., 1601 Willow Road, Menlo Park, CA, 94025, USA, Mutterunternehmen:
         Facebook, 1 Hacker Way, Menlo Park, CA 94025, USA; Website:
-        <a href="https://www.instagram.com" target="_blank"
-          >https://www.instagram.com</a
-        >; Datenschutzerklärung:
-        <a href="https://instagram.com/about/legal/privacy" target="_blank"
-          >https://instagram.com/about/legal/privacy</a
-        >.
+        <a href="https://www.instagram.com" target="_blank">https://www.instagram.com</a>; Datenschutzerklärung:
+        <a href="https://instagram.com/about/legal/privacy" target="_blank">https://instagram.com/about/legal/privacy</a>.
       </li>
       <li>
         <strong>Facebook:</strong> Soziales Netzwerk; Dienstanbieter: Facebook
         Ireland Ltd., 4 Grand Canal Square, Grand Canal Harbour, Dublin 2,
         Irland, Mutterunternehmen: Facebook, 1 Hacker Way, Menlo Park, CA 94025,
         USA; Website:
-        <a href="https://www.facebook.com" target="_blank"
-          >https://www.facebook.com</a
-        >; Datenschutzerklärung:
-        <a href="https://www.facebook.com/about/privacy" target="_blank"
-          >https://www.facebook.com/about/privacy</a
-        >; Widerspruchsmöglichkeit (Opt-Out): Einstellungen für Werbeanzeigen:
-        <a href="https://www.facebook.com/settings?tab=ads" target="_blank"
-          >https://www.facebook.com/settings?tab=ads</a
-        >.
+        <a href="https://www.facebook.com" target="_blank">https://www.facebook.com</a>; Datenschutzerklärung:
+        <a href="https://www.facebook.com/about/privacy" target="_blank">https://www.facebook.com/about/privacy</a>; Widerspruchsmöglichkeit (Opt-Out): Einstellungen für Werbeanzeigen:
+        <a href="https://www.facebook.com/settings?tab=ads" target="_blank">https://www.facebook.com/settings?tab=ads</a>.
       </li>
       <li>
         <strong>LinkedIn:</strong> Soziales Netzwerk; Dienstanbieter: LinkedIn
         Ireland Unlimited Company, Wilton Place, Dublin 2, Irland; Website:
-        <a href="https://www.linkedin.com" target="_blank"
-          >https://www.linkedin.com</a
-        >; Datenschutzerklärung:
-        <a href="https://www.linkedin.com/legal/privacy-policy" target="_blank"
-          >https://www.linkedin.com/legal/privacy-policy</a
-        >; Widerspruchsmöglichkeit (Opt-Out):
-        <a
-          href="https://www.linkedin.com/psettings/guest-controls/retargeting-opt-out"
-          target="_blank"
-          >https://www.linkedin.com/psettings/guest-controls/retargeting-opt-out</a
-        >.
+        <a href="https://www.linkedin.com" target="_blank">https://www.linkedin.com</a>; Datenschutzerklärung:
+        <a href="https://www.linkedin.com/legal/privacy-policy" target="_blank">https://www.linkedin.com/legal/privacy-policy</a>; Widerspruchsmöglichkeit (Opt-Out):
+        <a href="https://www.linkedin.com/psettings/guest-controls/retargeting-opt-out" target="_blank">https://www.linkedin.com/psettings/guest-controls/retargeting-opt-out</a>.
       </li>
       <li>
         <strong>Pinterest:</strong> Soziales Netzwerk; Dienstanbieter: Pinterest
         Inc., 635 High Street, Palo Alto, CA, 94301, USA,; Website:
-        <a href="https://www.pinterest.com" target="_blank"
-          >https://www.pinterest.com</a
-        >; Datenschutzerklärung:
-        <a href="https://about.pinterest.com/de/privacy-policy" target="_blank"
-          >https://about.pinterest.com/de/privacy-policy</a
-        >; Widerspruchsmöglichkeit (Opt-Out):
-        <a href="https://about.pinterest.com/de/privacy-policy" target="_blank"
-          >https://about.pinterest.com/de/privacy-policy</a
-        >.
+        <a href="https://www.pinterest.com" target="_blank">https://www.pinterest.com</a>; Datenschutzerklärung:
+        <a href="https://about.pinterest.com/de/privacy-policy" target="_blank">https://about.pinterest.com/de/privacy-policy</a>; Widerspruchsmöglichkeit (Opt-Out):
+        <a href="https://about.pinterest.com/de/privacy-policy" target="_blank">https://about.pinterest.com/de/privacy-policy</a>.
       </li>
       <li>
         <strong>Twitter:</strong> Soziales Netzwerk; Dienstanbieter: Twitter
         International Company, One Cumberland Place, Fenian Street, Dublin 2 D02
         AX07, Irland, Mutterunternehmen: Twitter Inc., 1355 Market Street, Suite
         900, San Francisco, CA 94103, USA; Datenschutzerklärung:
-        <a href="https://twitter.com/de/privacy" target="_blank"
-          >https://twitter.com/de/privacy</a
-        >, (Einstellungen)
-        <a href="https://twitter.com/personalization" target="_blank"
-          >https://twitter.com/personalization</a
-        >.
+        <a href="https://twitter.com/de/privacy" target="_blank">https://twitter.com/de/privacy</a>, (Einstellungen)
+        <a href="https://twitter.com/personalization" target="_blank">https://twitter.com/personalization</a>.
       </li>
       <li>
         <strong>YouTube:</strong> Soziales Netzwerk; Dienstanbieter: Google
         Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland,
         Mutterunternehmen: Google LLC, 1600 Amphitheatre Parkway, Mountain View,
         CA 94043, USA; Datenschutzerklärung:
-        <a href="https://policies.google.com/privacy" target="_blank"
-          >https://policies.google.com/privacy</a
-        >; Widerspruchsmöglichkeit (Opt-Out):
-        <a href="https://adssettings.google.com/authenticated" target="_blank"
-          >https://adssettings.google.com/authenticated</a
-        >.
+        <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a>; Widerspruchsmöglichkeit (Opt-Out):
+        <a href="https://adssettings.google.com/authenticated" target="_blank">https://adssettings.google.com/authenticated</a>.
       </li>
       <li>
         <strong>Xing:</strong> Soziales Netzwerk; Dienstanbieter: XING AG,
         Dammtorstraße 29-32, 20354 Hamburg, Deutschland; Website:
         <a href="https://www.xing.de" target="_blank">https://www.xing.de</a>;
         Datenschutzerklärung:
-        <a
-          href="https://privacy.xing.com/de/datenschutzerklaerung"
-          target="_blank"
-          >https://privacy.xing.com/de/datenschutzerklaerung</a
-        >.
+        <a href="https://privacy.xing.com/de/datenschutzerklaerung" target="_blank">https://privacy.xing.com/de/datenschutzerklaerung</a>.
       </li>
     </ul>
     <h2 id="m328">Plugins und eingebettete Funktionen sowie Inhalte</h2>
@@ -1333,12 +1227,8 @@
         Einbindung. Dienstanbieter: Google Ireland Limited, Gordon House, Barrow
         Street, Dublin 4, Irland, Mutterunternehmen: Google LLC, 1600
         Amphitheatre Parkway, Mountain View, CA 94043, USA; Website:
-        <a href="https://fonts.google.com/" target="_blank"
-          >https://fonts.google.com/</a
-        >; Datenschutzerklärung:
-        <a href="https://policies.google.com/privacy" target="_blank"
-          >https://policies.google.com/privacy</a
-        >.
+        <a href="https://fonts.google.com/" target="_blank">https://fonts.google.com/</a>; Datenschutzerklärung:
+        <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a>.
       </li>
       <li>
         <strong>MyFonts:</strong> Schriftarten; im Rahmen des Schriftartenabrufs
@@ -1352,30 +1242,18 @@
         Extraktion und Speicherung der Anzahl der Seitenaufrufe werden die
         Protokolldateien gelöscht; Dienstanbieter: Monotype Imaging Holdings
         Inc., 600 Unicorn Park Drive, Woburn, Massachusetts 01801, USA; Website:
-        <a href="https://www.myfonts.co" target="_blank"
-          >https://www.myfonts.co</a
-        >; Datenschutzerklärung:
-        <a href="https://www.myfonts.com/info/legal/#Privacy" target="_blank"
-          >https://www.myfonts.com/info/legal/#Privacy</a
-        >.
+        <a href="https://www.myfonts.co" target="_blank">https://www.myfonts.co</a>; Datenschutzerklärung:
+        <a href="https://www.myfonts.com/info/legal/#Privacy" target="_blank">https://www.myfonts.com/info/legal/#Privacy</a>.
       </li>
       <li>
         <strong>YouTube-Videos:</strong> Videoinhalte; Dienstanbieter: Google
         Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland,
         Mutterunternehmen: Google LLC, 1600 Amphitheatre Parkway, Mountain View,
         CA 94043, USA; Website:
-        <a href="https://www.youtube.com" target="_blank"
-          >https://www.youtube.com</a
-        >; Datenschutzerklärung:
-        <a href="https://policies.google.com/privacy" target="_blank"
-          >https://policies.google.com/privacy</a
-        >; Widerspruchsmöglichkeit (Opt-Out): Opt-Out-Plugin:
-        <a href="https://tools.google.com/dlpage/gaoptout?hl=de" target="_blank"
-          >https://tools.google.com/dlpage/gaoptout?hl=de</a
-        >, Einstellungen für die Darstellung von Werbeeinblendungen:
-        <a href="https://adssettings.google.com/authenticated" target="_blank"
-          >https://adssettings.google.com/authenticated</a
-        >.
+        <a href="https://www.youtube.com" target="_blank">https://www.youtube.com</a>; Datenschutzerklärung:
+        <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a>; Widerspruchsmöglichkeit (Opt-Out): Opt-Out-Plugin:
+        <a href="https://tools.google.com/dlpage/gaoptout?hl=de" target="_blank">https://tools.google.com/dlpage/gaoptout?hl=de</a>, Einstellungen für die Darstellung von Werbeeinblendungen:
+        <a href="https://adssettings.google.com/authenticated" target="_blank">https://adssettings.google.com/authenticated</a>.
       </li>
     </ul>
     <h2 id="m12">Löschung von Daten</h2>
@@ -1423,8 +1301,7 @@
     </p>
     <ul>
       <li>
-        <strong
-          >Widerspruchsrecht: Sie haben das Recht, aus Gründen, die sich aus
+        <strong>Widerspruchsrecht: Sie haben das Recht, aus Gründen, die sich aus
           Ihrer besonderen Situation ergeben, jederzeit gegen die Verarbeitung
           der Sie betreffenden personenbezogenen Daten, die aufgrund von Art. 6
           Abs. 1 lit. e oder f DSGVO erfolgt, Widerspruch einzulegen; dies gilt
@@ -1433,8 +1310,7 @@
           zu betreiben, haben Sie das Recht, jederzeit Widerspruch gegen die
           Verarbeitung der Sie betreffenden personenbezogenen Daten zum Zwecke
           derartiger Werbung einzulegen; dies gilt auch für das Profiling,
-          soweit es mit solcher Direktwerbung in Verbindung steht.</strong
-        >
+          soweit es mit solcher Direktwerbung in Verbindung steht.</strong>
       </li>
       <li>
         <strong>Widerrufsrecht bei Einwilligungen:</strong> Sie haben das Recht,
@@ -1588,10 +1464,7 @@
         href="https://datenschutz-generator.de/?l=de"
         title="Rechtstext von Dr. Schwenke - für weitere Informationen bitte anklicken."
         target="_blank"
-        rel="noopener noreferrer nofollow"
-        >Erstellt mit kostenlosem Datenschutz-Generator.de von Dr. Thomas
-        Schwenke</a
-      >
+        rel="noopener noreferrer nofollow">Erstellt mit kostenlosem Datenschutz-Generator.de von Dr. Thomas Schwenke</a>
     </p>
   </div>
 </template>
