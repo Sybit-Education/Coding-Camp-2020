@@ -2,6 +2,7 @@ name: Build and Deploy Master
 on:
   push:
     branches:
+      - '*'
       - '!master'
 
 jobs:
@@ -12,6 +13,6 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@master
       - name: Install Dependencies
-        run: npm install
+        run: npm ci
       - name: Build
         run: npm run build
