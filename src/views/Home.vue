@@ -1,6 +1,6 @@
 <template>
     <div>
- <b-link to="SignUp">Sign-Up </b-link><br>
- <b-link to="login">Login</b-link>
+ <router-link to="SignUp">Sign-Up </router-link><br>
+ <router-link to="login">Login</router-link>
     </div>
 </template>
