@@ -85,7 +85,9 @@ export default {
 
   .forgot-password{
     padding-right: 1rem;
-    margin-bottom: 16px;
+    margin-bottom: 24px;
     justify-content: flex-end;
+    margin-top: -15px;
+    font-size: 14px;
   }
 </style>
