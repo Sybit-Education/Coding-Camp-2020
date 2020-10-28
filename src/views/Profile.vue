@@ -27,10 +27,20 @@
                 <p>Platz.</p><p>8</p><p>Punkte</p><p>9999</p>
                 </b-col>
             </b-row>
+            <b-row class="mt-5">
+                <b-col class=" flex-row d-flex justify-content-center">
+                    <deleteUserModal/>
+                </b-col>
+            </b-row>
     </div>
 </template>
 <script>
-export default {}
+import DeleteUserModal from '@/components/element/DeleteUserModal.vue'
+export default {
+  components: {
+    DeleteUserModal
+  }
+}
 </script>
 <style lang="scss" scoped>
 .border{
