@@ -17,20 +17,20 @@ export default {
     return {
       impulseListSample: [
         {
-          title: 'Lukas bitte mehr Stückseife kaufen',
+          title: 'Mehr Stückseife kaufen',
           description: 'Am besten wäre es, wenn ihr keine Flüssigseife mehr kauft sondern eher Stückseife benutzt.'
         },
         {
-          title: 'Moin Meyster',
-          description: 'Moin servus moin'
+          title: 'Fahrrad statt Auto',
+          description: 'Sinnvoll wäre es, wenn ihr lieber öfters mal das Fahrrrad nehmt statt dem Auto'
         },
         {
-          title: 'Coding Camp',
-          description: 'Sei ein Held'
+          title: 'Regional einkaufen',
+          description: 'Da man Treibstoff für Logistik spart.'
         },
         {
-          title: 'Agile Bodensee',
-          description: 'Yeeehaaa'
+          title: 'Weniger Fleisch essen',
+          description: 'Um die Massentierhaltung zu vermindern, ist es von Nöten, dass wir unseren Fleischkonsum reduzieren.'
         }
       ]
     }
