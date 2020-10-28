@@ -67,6 +67,7 @@ margin-right: auto;
 width: 263px;
 position:relative;
 padding: 0;
+height: 409px;
 }
 
 .card-content{
