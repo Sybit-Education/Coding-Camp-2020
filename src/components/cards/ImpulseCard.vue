@@ -22,10 +22,13 @@ export default {
 </script>
 <style lang="scss" scoped>
 .card-background{
-width: 100%;}
+width: 100%;
+}
+
 .card-background img{
 width: 100%;
 }
+
 .card-body{
 margin-left: auto;
 margin-right: auto;
@@ -34,10 +37,12 @@ position:relative;
 padding: 0;
 height: 100%;
 }
+
 .card-content{
 position: absolute;
 height: 100%;
 }
+
 .card-text{
 height: 50%;
 text-align: center;
@@ -46,7 +51,8 @@ padding-bottom: 10px;
 padding-left: 15px;
 padding-right: 15px;
 }
+
 .card-text-space{
-padding-top: 30px
+padding-top: 30px;
 }
 </style>

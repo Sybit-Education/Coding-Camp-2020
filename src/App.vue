@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <router-view/>
+    <router-view class="router-view"/>
     <bottom-navigation></bottom-navigation>
     <notifications group="notification" class="mt-3" position="top center" />
   </div>
@@ -27,3 +27,8 @@ export default {
   }
 }
 </script>
+<style lang="scss" scoped>
+.router-view {
+  margin-bottom: 80px;
+}
+</style>
