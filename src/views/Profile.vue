@@ -24,7 +24,7 @@
         </b-container>
             <b-row class="mt-3 border" >
               <b-col class="flex-row  d-flex justify-content-between align-items-center pt-2">
-                <p>Platz.</p><p>9999</p><p>Punkte</p>
+                <p>Platz.</p><p>8</p><p>Punkte</p><p>9999</p>
                 </b-col>
             </b-row>
     </div>
