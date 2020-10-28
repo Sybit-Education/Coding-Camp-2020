@@ -125,7 +125,7 @@ export const actions = {
           group: 'notification',
           title: 'Zurücksetzen',
           type: 'bg-success',
-          text: 'Wenn diese E-Mail existiert, haben sie eine NAchricht zum Zurücksetzen des Passworts erhalten.'
+          text: 'Wenn diese E-Mail existiert, haben sie eine Nachricht zum Zurücksetzen des Passworts erhalten.'
         })
       })
       .catch(error => {
