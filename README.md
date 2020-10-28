@@ -1,4 +1,9 @@
 # Sybit Coding Camp 2020: Sei ein Held - rette die Welt
+[![vue2](https://img.shields.io/badge/vue-2.x-brightgreen.svg)](https://vuejs.org/)
+
+
+[![Build](https://github.com/Sybit-Education/Coding-Camp-2020/workflows/Build+vue/badge.svg)](https://github.com/Sybit-Education/Coding-Camp-2020/actions)
+
 
 This web app is build within the [Sybit Coding Camp](https://coding-camp.sybit.de) 2020.
 
@@ -8,7 +13,7 @@ Detais about persona definitions, screen designs etc. could be found in the [Wik
 
 The User Stories are currently defined on Post-Its, which are stored at the big wall of our team room.
 
-## Project setup
+## 🔧 Project setup
 
 ``` sh
 npm install
