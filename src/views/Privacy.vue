@@ -239,7 +239,9 @@
       Informationsseite der EU-Kommission:
       <a
         href="https://ec.europa.eu/info/law/law-topic/data-protection/international-dimension-data-protection_de"
-        target="_blank">https://ec.europa.eu/info/law/law-topic/data-protection/international-dimension-data-protection_de</a>
+        target="_blank">https://ec.europa.eu/info/law
+        /law-topic/data-protection/
+        international-dimension-data-protection_de</a>
       ).
     </p>
     <h2 id="m134">Einsatz von Cookies</h2>
@@ -1001,9 +1003,12 @@
         Dublin 4, Irland, Mutterunternehmen: Google LLC, 1600 Amphitheatre
         Parkway, Mountain View, CA 94043, USA; Website:
         <a href="https://marketingplatform.google.com/intl/de/about/analytics/"
-          target="_blank">https://marketingplatform.google.com/intl/de/about/analytics/</a>; Datenschutzerklärung:
-        <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a>; Widerspruchsmöglichkeit (Opt-Out): Opt-Out-Plugin:
-        <a href="https://tools.google.com/dlpage/gaoptout?hl=de" target="_blank">https://tools.google.com/dlpage/gaoptout?hl=de</a>, Einstellungen für die Darstellung von Werbeeinblendungen:
+          target="_blank">https://marketingplatform.google.com/
+          intl/de/about/analytics/</a>; Datenschutzerklärung:
+        <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a>;
+        Widerspruchsmöglichkeit (Opt-Out): Opt-Out-Plugin:
+        <a href="https://tools.google.com/dlpage/gaoptout?hl=de" target="_blank">https://tools.google.com/dlpage/
+          gaoptout?hl=de</a>, Einstellungen für die Darstellung von Werbeeinblendungen:
         <a href="https://adssettings.google.com/authenticated" target="_blank">https://adssettings.google.com/authenticated</a>.
       </li>
     </ul>
@@ -1054,11 +1059,13 @@
       ansehen oder mit denen sie interagieren, oder die von ihnen vorgenommenen
       Handlungen (siehe unter „Von dir und anderen getätigte und bereitgestellte
       Dinge“ in der Facebook-Datenrichtlinie:
-      <a href="https://www.facebook.com/policy" target="_blank">https://www.facebook.com/policy</a>), sowie Informationen über die von den Nutzern genutzten Geräte (z. B.
+      <a href="https://www.facebook.com/policy" target="_blank">https://www.facebook.com/policy</a>),
+      sowie Informationen über die von den Nutzern genutzten Geräte (z. B.
       IP-Adressen, Betriebssystem, Browsertyp, Spracheinstellungen,
       Cookie-Daten; siehe unter „Geräteinformationen“ in der
       Facebook-Datenrichtlinie-erklärung:
-      <a href="https://www.facebook.com/policy" target="_blank">https://www.facebook.com/policy</a>). Wie in der Facebook-Datenrichtlinie unter „Wie verwenden wir diese
+      <a href="https://www.facebook.com/policy" target="_blank">https://www.facebook.com/policy</a>).
+      Wie in der Facebook-Datenrichtlinie unter „Wie verwenden wir diese
       Informationen?“ erläutert, erhebt und verwendet Facebook Informationen
       auch, um Analysedienste, so genannte "Seiten-Insights", für
       Seitenbetreiber bereitzustellen, damit diese Erkenntnisse darüber
@@ -1066,14 +1073,18 @@
       Inhalten interagieren. Wir haben mit Facebook eine spezielle Vereinbarung
       abgeschlossen ("Informationen zu Seiten-Insights",
       <a href="https://www.facebook.com/legal/terms/page_controller_addendum"
-        target="_blank">https://www.facebook.com/legal/terms/page_controller_addendum</a>), in der insbesondere geregelt wird, welche Sicherheitsmaßnahmen
+        target="_blank">https://www.facebook.com/
+        legal/terms/
+        page_controller_addendum</a>),
+      in der insbesondere geregelt wird, welche Sicherheitsmaßnahmen
       Facebook beachten muss und in der Facebook sich bereit erklärt hat die
       Betroffenenrechte zu erfüllen (d. h. Nutzer können z. B. Auskünfte oder
       Löschungsanfragen direkt an Facebook richten). Die Rechte der Nutzer
       (insbesondere auf Auskunft, Löschung, Widerspruch und Beschwerde bei
       zuständiger Aufsichtsbehörde), werden durch die Vereinbarungen mit
       Facebook nicht eingeschränkt. Weitere Hinweise finden sich in den
-      "Informationen zu Seiten-Insights" (<a href="https://www.facebook.com/legal/terms/information_about_page_insights_data" target="_blank">https://www.facebook.com/legal/terms/information_about_page_insights_data</a>).
+      "Informationen zu Seiten-Insights" (<a href="https://www.facebook.com/legal/terms/information_about_page_insights_data" target="_blank">https://www.facebook.com/
+      legal/terms/information_about_page_insights_data</a>).
     </p>
     <ul class="m-elements">
       <li>
@@ -1104,7 +1115,8 @@
         <strong>Instagram:</strong> Soziales Netzwerk; Dienstanbieter: Instagram
         Inc., 1601 Willow Road, Menlo Park, CA, 94025, USA, Mutterunternehmen:
         Facebook, 1 Hacker Way, Menlo Park, CA 94025, USA; Website:
-        <a href="https://www.instagram.com" target="_blank">https://www.instagram.com</a>; Datenschutzerklärung:
+        <a href="https://www.instagram.com" target="_blank">https://www.instagram.com</a>;
+        Datenschutzerklärung:
         <a href="https://instagram.com/about/legal/privacy" target="_blank">https://instagram.com/about/legal/privacy</a>.
       </li>
       <li>
@@ -1112,22 +1124,30 @@
         Ireland Ltd., 4 Grand Canal Square, Grand Canal Harbour, Dublin 2,
         Irland, Mutterunternehmen: Facebook, 1 Hacker Way, Menlo Park, CA 94025,
         USA; Website:
-        <a href="https://www.facebook.com" target="_blank">https://www.facebook.com</a>; Datenschutzerklärung:
-        <a href="https://www.facebook.com/about/privacy" target="_blank">https://www.facebook.com/about/privacy</a>; Widerspruchsmöglichkeit (Opt-Out): Einstellungen für Werbeanzeigen:
+        <a href="https://www.facebook.com" target="_blank">https://www.facebook.com</a>;
+        Datenschutzerklärung:
+        <a href="https://www.facebook.com/about/privacy" target="_blank">https://www.facebook.com/about/privacy</a>;
+        Widerspruchsmöglichkeit (Opt-Out): Einstellungen für Werbeanzeigen:
         <a href="https://www.facebook.com/settings?tab=ads" target="_blank">https://www.facebook.com/settings?tab=ads</a>.
       </li>
       <li>
         <strong>LinkedIn:</strong> Soziales Netzwerk; Dienstanbieter: LinkedIn
         Ireland Unlimited Company, Wilton Place, Dublin 2, Irland; Website:
-        <a href="https://www.linkedin.com" target="_blank">https://www.linkedin.com</a>; Datenschutzerklärung:
-        <a href="https://www.linkedin.com/legal/privacy-policy" target="_blank">https://www.linkedin.com/legal/privacy-policy</a>; Widerspruchsmöglichkeit (Opt-Out):
-        <a href="https://www.linkedin.com/psettings/guest-controls/retargeting-opt-out" target="_blank">https://www.linkedin.com/psettings/guest-controls/retargeting-opt-out</a>.
+        <a href="https://www.linkedin.com" target="_blank">https://www.linkedin.com</a>;
+        Datenschutzerklärung:
+        <a href="https://www.linkedin.com/legal/privacy-policy" target="_blank">https://www.linkedin.com/legal/
+          privacy-policy</a>;
+        Widerspruchsmöglichkeit (Opt-Out):
+        <a href="https://www.linkedin.com/psettings/guest-controls/retargeting-opt-out" target="_blank">https://www.linkedin.com/
+          psettings/guest-controls/retargeting-opt-out</a>.
       </li>
       <li>
         <strong>Pinterest:</strong> Soziales Netzwerk; Dienstanbieter: Pinterest
         Inc., 635 High Street, Palo Alto, CA, 94301, USA,; Website:
-        <a href="https://www.pinterest.com" target="_blank">https://www.pinterest.com</a>; Datenschutzerklärung:
-        <a href="https://about.pinterest.com/de/privacy-policy" target="_blank">https://about.pinterest.com/de/privacy-policy</a>; Widerspruchsmöglichkeit (Opt-Out):
+        <a href="https://www.pinterest.com" target="_blank">https://www.pinterest.com</a>;
+        Datenschutzerklärung:
+        <a href="https://about.pinterest.com/de/privacy-policy" target="_blank">https://about.pinterest.com/de/privacy-policy</a>;
+        Widerspruchsmöglichkeit (Opt-Out):
         <a href="https://about.pinterest.com/de/privacy-policy" target="_blank">https://about.pinterest.com/de/privacy-policy</a>.
       </li>
       <li>
@@ -1135,7 +1155,8 @@
         International Company, One Cumberland Place, Fenian Street, Dublin 2 D02
         AX07, Irland, Mutterunternehmen: Twitter Inc., 1355 Market Street, Suite
         900, San Francisco, CA 94103, USA; Datenschutzerklärung:
-        <a href="https://twitter.com/de/privacy" target="_blank">https://twitter.com/de/privacy</a>, (Einstellungen)
+        <a href="https://twitter.com/de/privacy" target="_blank">https://twitter.com/de/privacy</a>,
+        (Einstellungen)
         <a href="https://twitter.com/personalization" target="_blank">https://twitter.com/personalization</a>.
       </li>
       <li>
@@ -1143,7 +1164,8 @@
         Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland,
         Mutterunternehmen: Google LLC, 1600 Amphitheatre Parkway, Mountain View,
         CA 94043, USA; Datenschutzerklärung:
-        <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a>; Widerspruchsmöglichkeit (Opt-Out):
+        <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a>;
+        Widerspruchsmöglichkeit (Opt-Out):
         <a href="https://adssettings.google.com/authenticated" target="_blank">https://adssettings.google.com/authenticated</a>.
       </li>
       <li>
@@ -1151,7 +1173,8 @@
         Dammtorstraße 29-32, 20354 Hamburg, Deutschland; Website:
         <a href="https://www.xing.de" target="_blank">https://www.xing.de</a>;
         Datenschutzerklärung:
-        <a href="https://privacy.xing.com/de/datenschutzerklaerung" target="_blank">https://privacy.xing.com/de/datenschutzerklaerung</a>.
+        <a href="https://privacy.xing.com/de/datenschutzerklaerung" target="_blank">https://privacy.xing.com/
+          de/datenschutzerklaerung</a>.
       </li>
     </ul>
     <h2 id="m328">Plugins und eingebettete Funktionen sowie Inhalte</h2>
@@ -1242,18 +1265,24 @@
         Extraktion und Speicherung der Anzahl der Seitenaufrufe werden die
         Protokolldateien gelöscht; Dienstanbieter: Monotype Imaging Holdings
         Inc., 600 Unicorn Park Drive, Woburn, Massachusetts 01801, USA; Website:
-        <a href="https://www.myfonts.co" target="_blank">https://www.myfonts.co</a>; Datenschutzerklärung:
-        <a href="https://www.myfonts.com/info/legal/#Privacy" target="_blank">https://www.myfonts.com/info/legal/#Privacy</a>.
+        <a href="https://www.myfonts.co" target="_blank">https://www.myfonts.co</a>;
+        Datenschutzerklärung:
+        <a href="https://www.myfonts.com/info/legal/#Privacy" target="_blank">https://www.myfonts.com/
+          info/legal/#Privacy</a>.
       </li>
       <li>
         <strong>YouTube-Videos:</strong> Videoinhalte; Dienstanbieter: Google
         Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland,
         Mutterunternehmen: Google LLC, 1600 Amphitheatre Parkway, Mountain View,
         CA 94043, USA; Website:
-        <a href="https://www.youtube.com" target="_blank">https://www.youtube.com</a>; Datenschutzerklärung:
-        <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a>; Widerspruchsmöglichkeit (Opt-Out): Opt-Out-Plugin:
-        <a href="https://tools.google.com/dlpage/gaoptout?hl=de" target="_blank">https://tools.google.com/dlpage/gaoptout?hl=de</a>, Einstellungen für die Darstellung von Werbeeinblendungen:
-        <a href="https://adssettings.google.com/authenticated" target="_blank">https://adssettings.google.com/authenticated</a>.
+        <a href="https://www.youtube.com" target="_blank">https://www.youtube.com</a>;
+        Datenschutzerklärung:
+        <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/
+          privacy</a>; Widerspruchsmöglichkeit (Opt-Out): Opt-Out-Plugin:
+        <a href="https://tools.google.com/dlpage/gaoptout?hl=de" target="_blank">https://tools.google.com/
+          dlpage/gaoptout?hl=de</a>, Einstellungen für die Darstellung von Werbeeinblendungen:
+        <a href="https://adssettings.google.com/authenticated" target="_blank">https://adssettings.google.com/
+          authenticated</a>.
       </li>
     </ul>
     <h2 id="m12">Löschung von Daten</h2>
@@ -1464,7 +1493,8 @@
         href="https://datenschutz-generator.de/?l=de"
         title="Rechtstext von Dr. Schwenke - für weitere Informationen bitte anklicken."
         target="_blank"
-        rel="noopener noreferrer nofollow">Erstellt mit kostenlosem Datenschutz-Generator.de von Dr. Thomas Schwenke</a>
+        rel="noopener noreferrer nofollow">Erstellt mit kostenlosem Datenschutz-Generator.de
+        von Dr. Thomas Schwenke</a>
     </p>
   </div>
 </template>
