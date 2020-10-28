@@ -1,30 +1,26 @@
 <template>
-    <div>
-        <b-row>
-            <b-col class="ml-2">
-              <headline title="Profile"></headline>
-            </b-col>
-        </b-row>
-        <b-container class="mt-4">
-          <b-row class="avatar-name align-self-center">
-            <b-col cols="3">
-              <avatar v-if="user" />
-            </b-col>
-            <b-col class="align-self-center">
-              <user-display-name :isEditable="true"/>
-              <small>{{user.email}}</small>
-            </b-col>
-          </b-row>
-        </b-container>
-            <b-row class="mt-3 border" >
-              <b-col class="flex-row  d-flex justify-content-between align-items-center pt-2">
-                <p class="ml-3">Platz</p><p>8</p><p>Punkte</p><p class="mr-3">9999</p>
-                </b-col>
-            </b-row>
-          <div class="d-flex justify-content-center mt-3">
-                <b-button>Abmelden</b-button>
-          </div>
-    </div>
+  <div>
+    <b-container class="mt-4">
+      <b-row>
+        <b-col class="ml-2">
+          <headline title="Profil"></headline>
+        </b-col>
+      </b-row>
+      <b-row class="avatar-name align-self mt-3">
+        <b-col cols="4">
+          <avatar v-if="user"/>
+        </b-col>
+        <b-col class="align-self-center">
+          <user-display-name :isEditable="true"/>
+          <small>{{ user.email }}</small>
+        </b-col>
+      </b-row>
+      <h4 class="mt-5 ml-2">Dein Score</h4>
+      <div class="d-flex justify-content-center mt-3">
+        <b-button class="logout-button" v-if="user" @click="signOut()">Abmelden</b-button>
+      </div>
+    </b-container>
+  </div>
 </template>
 <script>
 import { mapActions, mapGetters } from 'vuex'
@@ -57,8 +53,3 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
-.border{
-  border: 3px solid black !important;
-}
-</style>
