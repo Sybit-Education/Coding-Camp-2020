@@ -1,8 +1,8 @@
 <template>
   <div id="impulse-list" class="impulse-list">
     <loading-indicator v-if="isLoading" message="Impulse werden geladen ..." />
-    <div v-else v-for="impulse in newImpulseList" :key="impulse.id" class="impulse-card-wrapper">
-      <!-- TODO: Hier gehört die impuls Card hin -->
+    <div v-else v-for="impulse in impulseList" :key="impulse.id" class="impulse-card-wrapper">
+      <impulse-card :impulse="impulse"></impulse-card>
     </div>
   </div>
 </template>
@@ -10,7 +10,7 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 import LoadingIndicator from '@/components/_base/LoadingIndicator.vue'
-
+import ImpulseCard from '@/components/cards/ImpulseCard.vue'
 export default {
   name: 'ImpulseListNew',
   data () {
@@ -21,7 +21,8 @@ export default {
     this.fetchList()
   },
   components: {
-    LoadingIndicator
+    LoadingIndicator,
+    ImpulseCard
   },
   computed: {
     isLoading () {

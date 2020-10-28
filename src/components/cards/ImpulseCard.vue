@@ -1,8 +1,10 @@
 <template>
    <div class="card-body">
        <div class="card-content">
-           <div class="card-text"><p>Fahrrad fahren ist gut für die Umwelt.</p></div>
-           <div class="card-text card-text-space"><p>Da man kein CO<sub>2</sub> außstöst. Das ist mehr Text um zu zeigen das hier dann alles auf die SChnauze fliegen wird. lül.</p></div>
+           <div class="card-text"><p>{{ impulse.title }}</p></div>
+           <div class="card-text card-text-space">
+             <p v-if="impulse.description" v-html="impulse.description"></p>
+           </div>
        </div>
        <div class="card-background">
             <img  src="@/assets/cards/Card-blue.svg">
@@ -11,6 +13,11 @@
 </template>
 <script>
 export default {
+  props: {
+    impulse: {
+      type: Object
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>
