@@ -2,6 +2,10 @@
 [![Sybit](https://img.shields.io/badge/-Sybit-b71583.svg)](https://www.sybit.de/)
 [![Build Vue Aktion Status](https://github.com/Sybit-Education/Coding-Camp-2020/workflows/Build%20vue/badge.svg)](https://github.com/Sybit-Education/Coding-Camp-2020/actions)<space><space>
 [![vue2](https://img.shields.io/badge/vue-2.x-brightgreen.svg)](https://vuejs.org/)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/Sybit-Education/Coding-Camp-2020/blob/develop/LICENSE)
+
+  
+  
   
 This web app is build within the [Sybit Coding Camp](https://coding-camp.sybit.de) 2020.
 
