@@ -112,13 +112,15 @@ export const actions = {
       })
     })
   },
-  requestResetPassword ({ comit }, email) {
-    if (!this.email) {
+  requestResetPassword ({ commit }, email) {
+    console.log(email.email)
+    if (!email.email) {
       console.log('E-Mail required')
       return
     }
-    $auth()
-      .sendPasswordResetEmail(this.email)
+    const auth = firebase.auth()
+    auth
+      .sendPasswordResetEmail(email.email)
       .then(() => {
         router.push('/login')
         Vue.notify({
