@@ -5,6 +5,7 @@ import { $auth } from '@/firebase-config'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 import store from '../store'
+import RequestResetPassword from '../views/RequestResetPassword.vue'
 
 Vue.use(VueRouter)
 
@@ -101,6 +102,14 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/Highscore.vue')
+  },
+  {
+    path: '/reset-password',
+    name: 'ResetPassword',
+    component: RequestResetPassword,
+    meta: {
+      requiresAuth: false
+    }
   }
 ]
 
