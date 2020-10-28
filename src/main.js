@@ -11,6 +11,7 @@ import './vue-notification'
 import './vue-gravatar'
 import './registerServiceWorker'
 import './plugins/bootstrap-vue'
+import headline from './components/_base/Headline'
 
 let app = ''
 Vue.config.productionTip = false
@@ -23,4 +24,5 @@ firebase.auth().onAuthStateChanged(() => {
       render: h => h(App)
     }).$mount('#app')
   }
+  Vue.component('headline', headline)
 })
