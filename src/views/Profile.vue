@@ -2,10 +2,10 @@
     <div>
         <b-row>
             <b-col>
-                 <b-avatar size="40px" class="mt-3 mb-2 ml-2"></b-avatar>
+              <headline title="Profile"></headline>
             </b-col>
         </b-row>
-        <b-container>
+        <b-container class="mt-4">
           <b-row class="avatar-name align-self-center">
             <b-col cols="3">
               <avatar v-if="user" />
@@ -18,9 +18,12 @@
         </b-container>
             <b-row class="mt-3 border" >
               <b-col class="flex-row  d-flex justify-content-between align-items-center pt-2">
-                <p>Platz</p><p>8</p><p>Punkte</p><p>9999</p>
+                <p class="ml-3">Platz</p><p>8</p><p>Punkte</p><p class="mr-3">9999</p>
                 </b-col>
             </b-row>
+          <div class="d-flex justify-content-center mt-3">
+                <b-button>Abmelden</b-button>
+          </div>
     </div>
 </template>
 <script>
