@@ -1,7 +1,7 @@
 <template>
     <div>
         <b-row>
-            <b-col>
+            <b-col class="ml-2">
               <headline title="Profile"></headline>
             </b-col>
         </b-row>
