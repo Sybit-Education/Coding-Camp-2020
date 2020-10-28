@@ -1,4 +1,4 @@
-name: Build and Deploy Master
+name: Master - Build vue.js and Deploy
 on:
   push:
     branches:
