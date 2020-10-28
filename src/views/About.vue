@@ -49,8 +49,14 @@
         </b-row>
       <b-row class="my-3">
         <b-col>
-          <h3>Das Coding Camp 2020</h3>
-          <h5>Das Coding Camp, welches durch die Firma Sybit GmbH ins Leben gerufen wurde, hat im Jahr 2020 ein Projekt zu „Sei ein Held rette die Welt“ gestartet. Diese Initiative wurde von Fabienne Schwarz-Loy ins Leben gerufen, um die Welt ein Stück besser zu machen. Um ein Held zu sein, setzt Fabienne sogenannte Impulse ein, welche die Möglichkeit geben sich mit dem Thema „Umweltschutz“ und weiteren wichtigen Gesellschaftlichen Aspekten auseinanderzusetzen. Die Umsetzung dieser Idee erfolgte mithilfe 9 Schüler, 12 Azubis sowie einem Betreuer/Ausbilder von Sybit, welche 5 Tage lang im Coding Camp im Milchwerk in Radolfzell daran arbeiteten. Die Schüler hatten die Challenge nach 5 Tagen selbstständiger Entwicklungszeit bei einem remote Go-Live vor weiteren Sybit Mitarbeitern ihre Webapp zu präsentieren.</h5>
+          <p>Coding Camp 2020</p>
+          <p>Das <a target="_blank" href="https://coding-camp.sybit.de">Sybit Coding Camp 2020</a>, welches durch die Firma Sybit GmbH ins Leben gerufen wurde, hat im Jahr 2020 ein Projekt
+            zu „Sei ein Held rette die Welt“ gestartet. Diese Initiative wurde von Fabienne Schwarz-Loy ins Leben gerufen,
+            um die Welt ein Stück besser zu machen. Um ein Held zu sein, setzt Fabienne sogenannte Impulse ein, welche die
+            Möglichkeit geben sich mit dem Thema „Umweltschutz“ und weiteren wichtigen Gesellschaftlichen Aspekten auseinanderzusetzen.
+            Die Umsetzung dieser Idee erfolgte mithilfe 9 Schüler, 12 Azubis sowie einem Betreuer/Ausbilder von Sybit,
+            welche 5 Tage lang im Coding Camp im Milchwerk in Radolfzell daran arbeiteten. Die Schüler hatten die Challenge nach
+            5 Tagen selbstständiger Entwicklungszeit bei einem remote Go-Live vor weiteren Sybit Mitarbeitern ihre Web-App zu präsentieren.</p>
         </b-col>
       </b-row>
     </div>
