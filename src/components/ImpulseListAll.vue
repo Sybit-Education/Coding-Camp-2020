@@ -2,7 +2,6 @@
   <div id="impulse-list" class="impulse-list">
     <loading-indicator v-if="isLoading" message="Impulse werden geladen ..." />
     <div v-else v-for="impulse in impulseListSample" :key="impulse.id" class="impulse-card-wrapper">
-      <!-- TODO: Hier gehört die impuls Card hin -->
       <impulse-card :impulse="impulse"></impulse-card>
     </div>
   </div>
