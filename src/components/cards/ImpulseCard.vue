@@ -56,11 +56,12 @@ export default {
 
 .card-text{
   height: 50%;
-  text-align: center;
+  text-align: start;
   padding-top: 25px;
   padding-bottom: 10px;
   padding-left: 15px;
   padding-right: 15px;
+  word-wrap: break-word;
 }
 
 .card-text-space{
