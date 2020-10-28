@@ -18,7 +18,7 @@ export const actions = {
         router.push('/login')
         Vue.notify({
           group: 'notification',
-          title: 'Account Gelöscht !',
+          title: 'Account Gelöscht!',
           type: 'bg-success',
           text: 'Ihr Account Wurde erfolgreich Permanent gelöscht !'
         })
@@ -111,5 +111,31 @@ export const actions = {
         console.log(error)
       })
     })
+  },
+  requestResetPassword ({ comit }, email) {
+    if (!this.email) {
+      console.log('E-Mail required')
+      return
+    }
+    $auth()
+      .sendPasswordResetEmail(this.email)
+      .then(() => {
+        router.push('/login')
+        Vue.notify({
+          group: 'notification',
+          title: 'Zurücksetzen',
+          type: 'bg-success',
+          text: 'Wenn diese E-Mail existiert, haben sie eine NAchricht zum Zurücksetzen des Passworts erhalten.'
+        })
+      })
+      .catch(error => {
+        Vue.notify({
+          group: 'notification',
+          title: 'Fehler',
+          type: 'bg-danger',
+          text: 'Passwort zurücksetzen ist fehlgeschlagen'
+        })
+        console.log(error)
+      })
   }
 }
