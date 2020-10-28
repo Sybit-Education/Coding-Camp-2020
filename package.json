@@ -58,10 +58,10 @@
   },
   "lint-staged": {
     "*.js": [
-      "lint"
+      "npm run lint"
     ],
     "*.vue": [
-      "lint"
+      "npm run lint"
     ]
   }
 }
