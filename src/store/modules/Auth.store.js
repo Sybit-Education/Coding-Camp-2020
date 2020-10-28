@@ -130,14 +130,14 @@ export const actions = {
           text: 'Wenn diese E-Mail existiert, haben sie eine Nachricht zum Zurücksetzen des Passworts erhalten.'
         })
       })
+      // eslint-disable-next-line
       .catch(error => {
         Vue.notify({
           group: 'notification',
-          title: 'Fehler',
-          type: 'bg-danger',
-          text: 'Passwort zurücksetzen ist fehlgeschlagen'
+          title: 'Zurücksetzen',
+          type: 'bg-success',
+          text: 'Wenn diese E-Mail existiert, haben sie eine Nachricht zum Zurücksetzen des Passworts erhalten.'
         })
-        console.log(error)
       })
   }
 }
