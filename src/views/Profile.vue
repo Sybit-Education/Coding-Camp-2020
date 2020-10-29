@@ -29,7 +29,7 @@
             </b-row>
             <b-row class="mt-5">
                 <b-col class=" flex-row d-flex justify-content-center">
-                    <deleteUserModal/>
+                     <delete-user-modal></delete-user-modal>
                 </b-col>
             </b-row>
     </div>
