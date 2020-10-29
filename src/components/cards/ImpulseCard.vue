@@ -11,9 +11,11 @@
       </div>
       <div class="card-back">
         <div class="card-content">
+          <div class="add-impuls">
+            <AssignButton></AssignButton>
+          </div>
           <div class="card-text"><p>Gute Umwelt diese</p></div>
           <div class="card-text card-text-space"><p>Mehr Text</p></div>
-          <floatingButtons> </floatingButtons>
         </div>
         <div class="card-background">
           <img src="@/assets/cards/Card-blue.svg">
@@ -23,7 +25,7 @@
   </div>
 </template>
 <script>
-import floatingButtons from '@/components/cards/Floating-button.vue'
+import AssignButton from '@/components/cards/AssignButton.vue'
 export default {
   props: {
     impulse: {
@@ -31,7 +33,7 @@ export default {
     }
   },
   components: {
-    floatingButtons
+    AssignButton
   }
 }
 </script>
@@ -94,4 +96,9 @@ export default {
   transform: rotateY(180deg);
 }
 
+.add-impuls{
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
 </style>
