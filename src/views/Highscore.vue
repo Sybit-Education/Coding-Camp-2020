@@ -14,12 +14,10 @@
     ></b-pagination>
   </div>
 </template>
- 
 <script>
 import MainHeader from '@/components/_base/Header'
- 
 import { mapActions, mapGetters } from 'vuex'
- 
+
 export default {
   name: 'Highscore',
   components: {
@@ -55,7 +53,7 @@ export default {
       challengeStatsList: 'Challenge_Stats/getList',
       userForHighscorePage: 'Userdata/userForHighscorePage'
     }),
-    items (){
+    items () {
       return this.userForHighscorePage
     }
   }
