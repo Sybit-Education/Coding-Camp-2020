@@ -55,9 +55,9 @@
             zu „Sei ein Held rette die Welt“ gestartet. Diese Initiative wurde von Fabienne Schwarz-Loy ins Leben gerufen,
             um die Welt ein Stück besser zu machen. Um ein Held zu sein, setzt Fabienne sogenannte Impulse ein, welche die
             Möglichkeit geben sich mit dem Thema „Umweltschutz“ und weiteren wichtigen Gesellschaftlichen Aspekten auseinanderzusetzen.
-            Die Umsetzung dieser Idee erfolgte mithilfe von 10 Schüler/-innen, 12 Azubis sowie einem Betreuer/Ausbilder von Sybit,
-            welche 5 Tage lang im Coding Camp im Milchwerk in Radolfzell daran arbeiteten. Die Schüler hatten die Challenge nach
-            5 Tagen selbstständiger Entwicklungszeit bei einem remote Go-Live vor weiteren Sybit Mitarbeitern ihre Web-App zu präsentieren.</p>
+            Die Umsetzung dieser Idee erfolgte mithilfe von 10 Schüler*innen, 12 Azubis sowie einem Betreuer/Ausbilder von Sybit,
+            welche 5 Tage lang im Coding Camp im Milchwerk in Radolfzell daran arbeiteten. Die Schüler*innen hatten die Challenge nach
+            5 Tagen selbstständiger Entwicklungszeit bei einem remote Go-Live vor weiteren Sybit Mitarbeitern*innen ihre Web-App zu präsentieren.</p>
         </b-col>
       </b-row>
     </div>
