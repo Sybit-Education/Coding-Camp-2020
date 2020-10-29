@@ -2,7 +2,6 @@ import Vue from 'vue'
 import moment from 'moment'
 
 // see https://momentjs.com/docs/#/displaying/
-
 Vue.filter('timestampDate', function (date) {
   if (!date) return ''
 

@@ -18,7 +18,7 @@ export const actions = {
         router.push('/login')
         Vue.notify({
           group: 'notification',
-          title: 'Account Gelöscht !',
+          title: 'Account Gelöscht!',
           type: 'bg-success',
           text: 'Ihr Account Wurde erfolgreich Permanent gelöscht !'
         })
