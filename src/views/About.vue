@@ -26,6 +26,7 @@
                 <p>Mirko Pleli</p>
                 <p>Enrico Franke</p>
                 <p>Stephan Strittmatter</p>
+                <p>Maren Bräckow</p>
             </b-col>
             <b-col cols="12" md="4" class="d-flex justify-content-start flex-column align-items-md-center align-items-center">
                 <p>Manuel Metzger</p>
@@ -49,12 +50,12 @@
         </b-row>
       <b-row class="my-3">
         <b-col>
-          <p>Coding Camp 2020</p>
+          <h2>Coding Camp 2020</h2>
           <p>Das <a target="_blank" href="https://coding-camp.sybit.de">Sybit Coding Camp 2020</a>, welches durch die Firma Sybit GmbH ins Leben gerufen wurde, hat im Jahr 2020 ein Projekt
             zu „Sei ein Held rette die Welt“ gestartet. Diese Initiative wurde von Fabienne Schwarz-Loy ins Leben gerufen,
             um die Welt ein Stück besser zu machen. Um ein Held zu sein, setzt Fabienne sogenannte Impulse ein, welche die
             Möglichkeit geben sich mit dem Thema „Umweltschutz“ und weiteren wichtigen Gesellschaftlichen Aspekten auseinanderzusetzen.
-            Die Umsetzung dieser Idee erfolgte mithilfe 9 Schüler, 12 Azubis sowie einem Betreuer/Ausbilder von Sybit,
+            Die Umsetzung dieser Idee erfolgte mithilfe von 10 Schüler/-innen, 12 Azubis sowie einem Betreuer/Ausbilder von Sybit,
             welche 5 Tage lang im Coding Camp im Milchwerk in Radolfzell daran arbeiteten. Die Schüler hatten die Challenge nach
             5 Tagen selbstständiger Entwicklungszeit bei einem remote Go-Live vor weiteren Sybit Mitarbeitern ihre Web-App zu präsentieren.</p>
         </b-col>
