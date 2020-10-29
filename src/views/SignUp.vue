@@ -42,7 +42,7 @@
                   id="checkbox-terms-of-service"
                   v-model="user.checkboxTermsOfService"
                   name="checkbox">
-                  Hiermit akzeptiere ich die <a href="https://www.sybit.de/datenschutz/" target="_blank">Datenschutzerklärung.</a>
+                  Hiermit akzeptiere ich die <a href="/privacy" target="_blank">Datenschutzerklärung.</a>
                 </b-form-checkbox>
               </b-form-group>
               <b-button type="submit" variant="primary" >Registrieren</b-button>

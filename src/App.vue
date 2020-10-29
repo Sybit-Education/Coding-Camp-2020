@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <router-view class="router-view"/>
+    <CookieBanner/>
     <bottom-navigation></bottom-navigation>
     <notifications group="notification" class="mt-3" position="top center" />
   </div>
@@ -8,10 +9,12 @@
 
 <script>
 import BottomNavigation from '@/components/navigation/BottomNavigation.vue'
+import CookieBanner from '@/components/element/CookieBanner.vue'
 export default {
   name: 'App',
   components: {
-    BottomNavigation
+    BottomNavigation,
+    CookieBanner
   },
   metaInfo () {
     return {
