@@ -76,6 +76,7 @@ export default {
             this.$router.replace('profile')
           })
           .catch((e) => {
+            this.$router.replace('login')
             Vue.notify({
               group: 'notification',
               title: 'Error',
