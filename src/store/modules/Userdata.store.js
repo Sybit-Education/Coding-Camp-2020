@@ -194,6 +194,9 @@ export const getters = {
     const lastTimeStamp = timeStampArray[timeStampArray.length - 1]
     const today = new Date().getTime()
     const todayPlusOneDay = new Date((lastTimeStamp.date.seconds * 1000) + 86400000).getTime()
+    if (timeStampArray.length === 1) {
+      return true
+    }
     return today > todayPlusOneDay
   },
   displayName: (state) => {
