@@ -24,7 +24,6 @@ export const state = {
 export const actions = {
   fetchList: firestoreAction(({ bindFirestoreRef }) => {
     const now = new Date()
-    const nowString = now.toISOString().slice(0, 10).replace(/-/g, '-')
 
     const serialize = (snapshot) => {
       return Object.defineProperty(snapshot.data(), 'id',
@@ -33,7 +32,7 @@ export const actions = {
     bindFirestoreRef(
       'impulseList',
       $db.collection(COLLECTION_NAME)
-        .where('publishingDate', '<=', nowString)
+        .where('publishingDate', '<=', now)
         .orderBy('publishingDate', 'desc'),
       { serialize })
   }),
