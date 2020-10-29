@@ -2,7 +2,7 @@ name: Master - Build vue.js and Deploy
 on:
   push:
     branches:
-      - master
+      - develop
 
 jobs:
   build:
@@ -30,7 +30,7 @@ jobs:
           name: dist
           path: dist
   deploy:
-    name: Deploy
+    name: Deploy - Test
     needs: build
     runs-on: ubuntu-latest
     steps:
@@ -44,6 +44,6 @@ jobs:
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
         with:
-          args: deploy --only hosting:sei-ein-held --project ${{ secrets.FIREBASE_PROJECT_ID }}
+          args: deploy --only hosting:test-609f0 --project ${{ secrets.FIREBASE_PROJECT_ID }}
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
