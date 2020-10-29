@@ -1,24 +1,11 @@
 <template>
   <div class="card-body">
-    <div class="flip-card">
-      <div class="card-front">
         <div class="card-content">
           <div class="card-text"><p>{{ impulse.title }}</p></div>
           <div class="card-text card-text-space"><p v-html="impulse.description"></p></div></div>
         <div class="card-background">
           <img src="@/assets/cards/Card-blue.svg">
         </div>
-      </div>
-      <div class="card-back">
-        <div class="card-content">
-          <div class="card-text"><p v-html="impulse.forMe"></p></div>
-          <div class="card-text card-text-space"><p v-html="impulse.forWorld"></p></div>
-        </div>
-        <div class="card-background">
-          <img src="@/assets/cards/Card-blue.svg">
-        </div>
-      </div>
-    </div>
   </div>
 </template>
 <script>
@@ -66,28 +53,6 @@ export default {
 
 .card-text-space{
   padding-top: 30px;
-}
-
-.flip-card{
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-}
-
-.card-body:hover .flip-card{
-  transform: rotateY(180deg);
-}
-
-.card-front,
-.card-back{
-  position: absolute;
-  backface-visibility: hidden;
-}
-
-.card-back{
-  transform: rotateY(180deg);
 }
 
 </style>
