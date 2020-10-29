@@ -12,9 +12,9 @@
       <div class="card-back">
         <div class="card-content">
           <div class="add-impuls">
-            <AssignButton></AssignButton>
+            <AssignButton :impulse-id="impulse.id"></AssignButton>
           </div>
-          <div class="card-text"><p>Gute Umwelt diese</p></div>
+          <div class="card-text"><p>Gut für die Umwelt</p></div>
           <div class="card-text card-text-space"><p>Mehr Text</p></div>
         </div>
         <div class="card-background">

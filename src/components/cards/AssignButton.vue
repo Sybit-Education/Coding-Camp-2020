@@ -1,5 +1,59 @@
 <template>
-    <div>
-        <b-button><vue-fontawesome icon="plus-circle" color="white" size="2"></vue-fontawesome></b-button>
-    </div>
+  <div>
+    <b-button>
+      <vue-fontawesome icon="plus-circle" color="white" size="2"></vue-fontawesome>
+    </b-button>
+  </div>
 </template>
+
+<script>
+import { mapActions, mapGetters } from 'vuex'
+
+export default {
+  props: {
+    impulseId: String
+  },
+  computed: {
+    isAssigned () {
+      return this.impulseIsAssigned(this.impulseId)
+    },
+    canBeChecked () {
+      return this.impulseIsCheckable(this.impulseId)
+    },
+    ...mapGetters({
+      impulseIsAssigned: 'Userdata/impulseIsAssigned',
+      impulseIsCheckable: 'Userdata/impulseIsCheckable',
+      allPointsFromImpulse: 'Userdata/allPointsFromImpulse'
+    }),
+    methods: {
+      assign () {
+        this.assignImpulse(this.impulseId)
+        this.showAssignedNotification()
+      },
+      addPoints () {
+        this.addPointsToUser(this.impulseId)
+        this.showCheckedNotification()
+      },
+      showCheckedNotification () {
+        this.$notify({
+          group: 'notification',
+          title: 'Abgeschlossen!',
+          type: 'success',
+          text: 'Du hast die Challenge für heute Abgeschlossen'
+        })
+      },
+      showAssignedNotification () {
+        this.$notify({
+          group: 'notification',
+          title: 'Angenommen!',
+          type: 'success',
+          text: 'Die Challenge wurde angenommen!'
+        })
+      },
+      ...mapActions('Userdata', ['addPointsToUser']),
+      ...mapActions('Userdata', ['fetchById']),
+      ...mapActions('Userdata', ['assignImpulse'])
+    }
+  }
+}
+</script>
