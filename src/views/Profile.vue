@@ -18,7 +18,7 @@
       <h4 class="mt-5 ml-2">Dein Score</h4>
       <div class="d-flex justify-content-center mt-3">
         <b-button class="logout-button" v-if="user" @click="signOut()">Abmelden</b-button>
-      <delete-user-modal></delete-user-modal>
+        <delete-user-modal></delete-user-modal>
       </div>
     </b-container>
   </div>
