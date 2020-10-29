@@ -52,13 +52,31 @@ export const actions = {
         })
         .catch(
           error => {
-            Vue.notify({
-              group: 'notification',
-              title: 'Fehler',
-              type: 'bg-danger',
-              text: 'Registrierung fehlgeschlagen.'
-            })
-            reject(error.message)
+            console.log(error)
+            if (error.code === 'auth/email-already-in-use') {
+              router.push('/login')
+              Vue.notify({
+                group: 'notification',
+                title: 'Fehler',
+                type: 'bg-danger',
+                text: 'Benutzer ist bereits registriert.'
+              })
+            } else if (error.code === 'auth/weak-password') {
+              Vue.notify({
+                group: 'notification',
+                title: 'Fehler',
+                type: 'bg-danger',
+                text: 'Passwort muss mindestens 6 Zeichen beinhalten.'
+              })
+            } else {
+              Vue.notify({
+                group: 'notification',
+                title: 'Fehler',
+                type: 'bg-danger',
+                text: 'Registrierung fehlgeschlagen.'
+              })
+              reject(error.message)
+            }
           }
 
         )
