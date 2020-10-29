@@ -52,7 +52,6 @@ export const actions = {
         })
         .catch(
           error => {
-            console.log(error)
             if (error.code === 'auth/email-already-in-use') {
               router.push('/login')
               Vue.notify({
