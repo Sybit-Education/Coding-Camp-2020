@@ -1,10 +1,11 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
 import { $auth } from '@/firebase-config'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
+import Vue from 'vue'
+import VueRouter from 'vue-router'
 import store from '../store'
+import Home from '../views/Home.vue'
+import RequestResetPassword from '../views/RequestResetPassword.vue'
 
 Vue.use(VueRouter)
 
@@ -23,7 +24,7 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
+    component: () => import('../views/About.vue'),
     meta: {
       requiresAuth: false
     }
@@ -47,7 +48,7 @@ const routes = [
   {
     path: '/login',
     name: 'Login',
-    component: () => import(/* webpackChunkName: "login" */ '../views/Login.vue'),
+    component: () => import('../views/Login.vue'),
     meta: {
       requiresAuth: false
     }
@@ -55,7 +56,7 @@ const routes = [
   {
     path: '/signup',
     name: 'SignUp',
-    component: () => import(/* webpackChunkName: "login" */ '../views/SignUp.vue'),
+    component: () => import('../views/SignUp.vue'),
     meta: {
       requiresAuth: false
     }
@@ -63,7 +64,7 @@ const routes = [
   {
     path: '/mail-verify',
     name: 'MailVerify',
-    component: () => import(/* webpackChunkName: "login" */ '../views/MailNotVerified.vue'),
+    component: () => import('../views/MailNotVerified.vue'),
     meta: {
       requiresAuth: false
     }
@@ -71,7 +72,7 @@ const routes = [
   {
     path: '/profile',
     name: 'Profile',
-    component: () => import(/* webpackChunkName: "admin" */ '../views/Profile.vue'),
+    component: () => import('../views/Profile.vue'),
     meta: {
       requiresAuth: true
     }
@@ -79,7 +80,7 @@ const routes = [
   {
     path: '/admin',
     name: 'Admin',
-    component: () => import(/* webpackChunkName: "admin" */ '../views/admin/Administration.vue'),
+    component: () => import('../views/admin/Administration.vue'),
     meta: {
       requiresAuth: true
     },
@@ -88,11 +89,17 @@ const routes = [
   {
     path: '/admin/new',
     name: 'AddImpulse',
-    component: () => import(/* webpackChunkName: "admin" */ '../views/admin/AddImpulse.vue'),
+    component: () => import('../views/admin/AddImpulse.vue'),
     meta: {
       requiresAuth: true
     },
     beforeEnter: isAdmin
+  },
+  {
+    path: '/karten-details',
+    name: 'KartenDetail',
+    component: () => import('../views/CardDetailPage.vue'),
+    props: true
   },
   {
     path: '/highscore',
@@ -101,6 +108,14 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/Highscore.vue')
+  },
+  {
+    path: '/reset-password',
+    name: 'ResetPassword',
+    component: RequestResetPassword,
+    meta: {
+      requiresAuth: false
+    }
   }
 ]
 

@@ -1,28 +1,17 @@
 <template>
+<router-link :to="{ name: 'KartenDetail', params: { impulse: impulse }}">
   <div class="card-body">
-    <div class="flip-card">
-      <div class="card-front">
-        <div class="card-content">
-          <div class="card-text"><p>{{ impulse.title }}</p></div>
-          <div class="card-text card-text-space"><p>{{ impulse.description }}</p></div></div>
-        <div class="card-background">
-          <img src="@/assets/cards/Card-blue.svg">
-        </div>
-      </div>
-      <div class="card-back">
-        <div class="card-content">
-          <div class="add-impuls">
-            <AssignButton :impulse-id="impulse.id"></AssignButton>
-          </div>
-          <div class="card-text"><p>Gut für die Umwelt</p></div>
-          <div class="card-text card-text-space"><p>Mehr Text</p></div>
-        </div>
-        <div class="card-background">
-          <img src="@/assets/cards/Card-blue.svg">
-        </div>
-      </div>
+    <div class="card-content">
+      <div class="card-text"><p>{{ impulse.title }}</p></div>
+      <div class="card-text card-text-space">
+        <p v-if="impulse.description" v-html="impulseDescription"></p>
     </div>
   </div>
+  <div class="card-background">
+    <img src="@/assets/cards/Card-blue.svg">
+  </div>
+  </div>
+</router-link>
 </template>
 <script>
 import AssignButton from '@/components/cards/AssignButton.vue'
@@ -32,8 +21,10 @@ export default {
       type: Object
     }
   },
-  components: {
-    AssignButton
+  computed: {
+    impulseDescription () {
+      return `${this.impulse.description.slice(0, 110).trim()}... <span style="color:black; font-weight: bold;">mehr Infos.</s>`
+    }
   }
 }
 </script>
@@ -45,6 +36,7 @@ export default {
   position:relative;
   padding: 0;
   height: 409px;
+  color: black;
 }
 
 .card-background{
@@ -63,37 +55,15 @@ export default {
 
 .card-text{
   height: 50%;
-  text-align: center;
+  text-align: start;
   padding-top: 25px;
   padding-bottom: 10px;
-  padding-left: 15px;
+  padding-left: 20px;
   padding-right: 15px;
+  word-wrap: break-word;
 }
-
 .card-text-space{
-  padding-top: 30px;
-}
-
-.flip-card{
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-}
-
-.card-body:hover .flip-card{
-  transform: rotateY(180deg);
-}
-
-.card-front,
-.card-back{
-  position: absolute;
-  backface-visibility: hidden;
-}
-
-.card-back{
-  transform: rotateY(180deg);
+  padding-top: 35px;
 }
 
 .add-impuls{

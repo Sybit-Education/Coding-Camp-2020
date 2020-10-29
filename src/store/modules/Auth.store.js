@@ -18,7 +18,7 @@ export const actions = {
         router.push('/login')
         Vue.notify({
           group: 'notification',
-          title: 'Account Gelöscht !',
+          title: 'Account Gelöscht!',
           type: 'bg-success',
           text: 'Ihr Account Wurde erfolgreich Permanent gelöscht !'
         })
@@ -52,13 +52,30 @@ export const actions = {
         })
         .catch(
           error => {
-            Vue.notify({
-              group: 'notification',
-              title: 'Fehler',
-              type: 'bg-danger',
-              text: 'Registrierung fehlgeschlagen.'
-            })
-            reject(error.message)
+            if (error.code === 'auth/email-already-in-use') {
+              router.push('/login')
+              Vue.notify({
+                group: 'notification',
+                title: 'Fehler',
+                type: 'bg-danger',
+                text: 'Benutzer ist bereits registriert.'
+              })
+            } else if (error.code === 'auth/weak-password') {
+              Vue.notify({
+                group: 'notification',
+                title: 'Fehler',
+                type: 'bg-danger',
+                text: 'Passwort muss mindestens 6 Zeichen beinhalten.'
+              })
+            } else {
+              Vue.notify({
+                group: 'notification',
+                title: 'Fehler',
+                type: 'bg-danger',
+                text: 'Registrierung fehlgeschlagen.'
+              })
+              reject(error.message)
+            }
           }
 
         )
@@ -81,7 +98,7 @@ export const actions = {
       })
   },
   signInWithGoogle ({ commit }) {
-    const provider = new $auth.GoogleAuthProvider()
+    const provider = new firebase.auth.GoogleAuthProvider()
     $auth.signInWithPopup(provider)
       .then(user => {
         this.dispatch('Userdata/syncUser')
@@ -111,5 +128,33 @@ export const actions = {
         console.log(error)
       })
     })
+  },
+  requestResetPassword ({ commit }, email) {
+    console.log(email.email)
+    if (!email.email) {
+      console.log('E-Mail required')
+      return
+    }
+    const auth = firebase.auth()
+    auth
+      .sendPasswordResetEmail(email.email)
+      .then(() => {
+        router.push('/login')
+        Vue.notify({
+          group: 'notification',
+          title: 'Zurücksetzen',
+          type: 'bg-success',
+          text: 'Wenn diese E-Mail existiert, haben sie eine Nachricht zum Zurücksetzen des Passworts erhalten.'
+        })
+      })
+      // eslint-disable-next-line
+      .catch(error => {
+        Vue.notify({
+          group: 'notification',
+          title: 'Zurücksetzen',
+          type: 'bg-success',
+          text: 'Wenn diese E-Mail existiert, haben sie eine Nachricht zum Zurücksetzen des Passworts erhalten.'
+        })
+      })
   }
 }
