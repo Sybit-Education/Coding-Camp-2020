@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "sei-ein-held",
     "public": "dist",
     "ignore": [
       "firebase.json",
