@@ -12,7 +12,7 @@
         </b-col>
         <b-col class="align-self-center">
           <user-display-name :isEditable="true"/>
-          <small>{{ user.email }}</small> 
+          <small>{{ user.email }}</small>
         </b-col>
       </b-row>
       <h4 class="mt-5 ml-2">Dein Score</h4>
@@ -33,7 +33,8 @@ export default {
   name: 'Profile',
   components: {
     UserDisplayName,
-    Avatar
+    Avatar,
+    DeleteUserModal
   },
   async created () {
     await this.fetchById(this.user.uid)
