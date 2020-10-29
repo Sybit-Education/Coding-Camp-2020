@@ -80,19 +80,25 @@ export const actions = {
         querySnapshot.forEach((doc) => {
           firebaseList.push({
             displayName: doc.data().displayName,
-            impluses: doc.data().assignedImpulseMap
+            impulses: doc.data().assignedImpulseMap
           })
         })
       })
+    console.log('getUserDataForHighscore -> firebaseList', firebaseList)
     firebaseList.forEach(function (user) {
-      if (user.impluses !== undefined) {
-        const impulseList = user.impluses.map(impulse => impulse.points)
-        const points = impulseList.map(impulse =>
-          impulse.filter(impulse => new Date((impulse.date.seconds * 1000) + MONTH_IN_MILLISECONDS).getTime() > new Date().getTime())
-            .map(timestamp => timestamp.points)
-            .reduce((acc, cur) => acc + cur))
+      console.log('getUserDataForHighscore -> user', user)
+      if (user.impulses !== undefined) {
+        const impulseList = user.impulses.map(impulse => impulse.points)
+        console.log('getUserDataForHighscore -> impulseList', impulseList)
+        const unRedPoint = impulseList.map(impulse =>
+          impulse.filter(impulse => new Date((impulse.date.seconds * 1000) + MONTH_IN_MILLISECONDS).getTime() > new Date().getTime()))
+        console.log('getUserDataForHighscore -> unRedPoints', unRedPoint)
+        const point = unRedPoint.map(timestamp => timestamp.points)
           .reduce((acc, cur) => acc + cur)
-        list.push({ user: user.displayName, points: points })
+          .reduce((acc, cur) => acc + cur)
+        console.log('getUserDataForHighscore -> point', point)
+        console.log('bis hier')
+        list.push({ user: user.displayName, points: point })
       }
     })
     list.sort(function (a, b) {
