@@ -22,11 +22,12 @@
 export default {
   data () {
     return {
-      password: 'huso'
+      password: ''
     }
   },
   methods: {
     deleteAccount () {
+      console.log('geh rein')
       this.$store.dispatch('Auth/deleteUser', this.password)
     },
     hideModal () {
