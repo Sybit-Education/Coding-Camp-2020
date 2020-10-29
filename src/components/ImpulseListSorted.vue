@@ -35,9 +35,7 @@ export default {
       const impulseListData = this.impulseList
       const assignedListData = this.assignedList.map((impulse) => impulse.impulseId)
       const finalAssignedImpulseList = impulseListData.filter((impulse) => assignedListData.includes(impulse.id))
-      const finalImpulseList = impulseListData.filter((impulse) => !assignedListData.includes(impulse.id))
-      const wholeSortedArrayList = finalAssignedImpulseList.concat(finalImpulseList)
-      return wholeSortedArrayList
+      return finalAssignedImpulseList
     },
     ...mapGetters({
       impulseList: 'Impulse/getList',
