@@ -36,6 +36,9 @@
                   required
                 />
               </b-form-group>
+              <b-row class="forgot-password">
+              <router-link :to="{ name: 'ResetPassword' }">Passwort vergessen?</router-link>
+              </b-row>
               <b-button type="submit" variant="primary">
                 Anmelden
               </b-button>
@@ -78,5 +81,13 @@ export default {
   .SignInWithGoogleIcon{
     width: 10%;
     margin-right: 16px;
+  }
+
+  .forgot-password{
+    padding-right: 1rem;
+    margin-bottom: 24px;
+    justify-content: flex-end;
+    margin-top: -15px;
+    font-size: 14px;
   }
 </style>

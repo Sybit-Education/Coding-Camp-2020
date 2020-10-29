@@ -111,5 +111,33 @@ export const actions = {
         console.log(error)
       })
     })
+  },
+  requestResetPassword ({ commit }, email) {
+    console.log(email.email)
+    if (!email.email) {
+      console.log('E-Mail required')
+      return
+    }
+    const auth = firebase.auth()
+    auth
+      .sendPasswordResetEmail(email.email)
+      .then(() => {
+        router.push('/login')
+        Vue.notify({
+          group: 'notification',
+          title: 'Zurücksetzen',
+          type: 'bg-success',
+          text: 'Wenn diese E-Mail existiert, haben sie eine Nachricht zum Zurücksetzen des Passworts erhalten.'
+        })
+      })
+      // eslint-disable-next-line
+      .catch(error => {
+        Vue.notify({
+          group: 'notification',
+          title: 'Zurücksetzen',
+          type: 'bg-success',
+          text: 'Wenn diese E-Mail existiert, haben sie eine Nachricht zum Zurücksetzen des Passworts erhalten.'
+        })
+      })
   }
 }
