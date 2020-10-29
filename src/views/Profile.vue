@@ -15,11 +15,20 @@
           <small>{{ user.email }}</small>
         </b-col>
       </b-row>
+
       <h4 class="mt-5 ml-2">Dein Score</h4>
-      <div class="d-flex justify-content-center mt-3">
-        <b-button class="logout-button" v-if="user" @click="signOut()">Abmelden</b-button>
-        <delete-user-modal></delete-user-modal>
-      </div>
+      <b-row>
+        <b-col>Todo</b-col>
+      </b-row>
+      <hr />
+      <b-row>
+        <b-col>
+          <b-button-group vertical>
+            <b-button class="logout-button" v-if="user" @click="signOut()">Abmelden</b-button>
+            <delete-user-modal></delete-user-modal>
+          </b-button-group>
+        </b-col>
+      </b-row>
     </b-container>
   </div>
 </template>
