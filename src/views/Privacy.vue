@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Datenschutzerklärung</h2>
+    <h1>Datenschutzerklärung</h1>
     <h2>Einleitung</h2>
     <p>
       Mit der folgenden Datenschutzerklärung möchten wir Sie darüber aufklären,
