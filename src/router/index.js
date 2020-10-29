@@ -6,6 +6,7 @@ import VueRouter from 'vue-router'
 import store from '../store'
 import Home from '../views/Home.vue'
 import RequestResetPassword from '../views/RequestResetPassword.vue'
+import AssignedImpulse from '../views/AssignedImpulse.vue'
 
 Vue.use(VueRouter)
 
@@ -115,6 +116,14 @@ const routes = [
     component: RequestResetPassword,
     meta: {
       requiresAuth: false
+    }
+  },
+  {
+    path: '/assigned-impulse',
+    name: 'AssignedImpulse',
+    component: AssignedImpulse,
+    meta: {
+      requiresAuth: true
     }
   }
 ]

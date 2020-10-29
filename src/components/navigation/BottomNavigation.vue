@@ -7,6 +7,11 @@
         </router-link>
     </b-col>
     <b-col class="d-flex justify-content-center">
+      <router-link :to="{ name: 'AssignedImpulse'}">
+        <vue-fontawesome icon="heart" size="1.5" color="white"></vue-fontawesome>
+        </router-link>
+    </b-col>
+    <b-col class="d-flex justify-content-center">
         <router-link :to="{ name: 'Home'}">
 <vue-fontawesome icon="home" size="2.0" color="white"></vue-fontawesome>
         </router-link>

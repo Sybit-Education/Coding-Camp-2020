@@ -3,7 +3,7 @@
     <loading-indicator v-if="isLoading" message="Impulse werden geladen ..." />
 
     <div v-else v-for="impulse in assignedImpulseList" :key="impulse.id" class="impulse-card-wrapper">
-      <!-- TODO: Hier gehört die impuls Card hin -->
+      <impulse-card :impulse="impulse"></impulse-card>
     </div>
   </div>
 </template>
@@ -12,6 +12,7 @@
 import { mapGetters, mapActions } from 'vuex'
 import LoadingIndicator from '@/components/_base/LoadingIndicator.vue'
 import { $auth } from '@/firebase-config'
+import ImpulseCard from '@/components/cards/ImpulseCard.vue'
 
 export default {
   name: 'ImpulseListSorted',
@@ -20,7 +21,8 @@ export default {
     this.fetchList()
   },
   components: {
-    LoadingIndicator
+    LoadingIndicator,
+    ImpulseCard
   },
   computed: {
     user () {
