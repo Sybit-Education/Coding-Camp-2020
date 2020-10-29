@@ -1,10 +1,10 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
 import { $auth } from '@/firebase-config'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
+import Vue from 'vue'
+import VueRouter from 'vue-router'
 import store from '../store'
+import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
@@ -93,6 +93,12 @@ const routes = [
       requiresAuth: true
     },
     beforeEnter: isAdmin
+  },
+  {
+    path: '/karten-details',
+    name: 'KartenDetail',
+    component: () => import(/* webpackChunkName: "admin" */ '../views/CardDetailPage.vue'),
+    props: true
   },
   {
     path: '/highscore',

@@ -1,18 +1,28 @@
 <template>
+<router-link :to="{ name: 'KartenDetail', params: { impulse: impulse }}">
   <div class="card-body">
-        <div class="card-content">
-          <div class="card-text"><p>{{ impulse.title }}</p></div>
-          <div class="card-text card-text-space"><p v-html="impulse.description"></p></div></div>
-        <div class="card-background">
-          <img src="@/assets/cards/Card-blue.svg">
-        </div>
+    <div class="card-content">
+      <div class="card-text"><p>{{ impulse.title }}</p></div>
+      <div class="card-text card-text-space">
+        <p v-if="impulse.description" v-html="impulseDescription"></p>
+    </div>
   </div>
+  <div class="card-background">
+    <img src="@/assets/cards/Card-blue.svg">
+  </div>
+  </div>
+</router-link>
 </template>
 <script>
 export default {
   props: {
     impulse: {
       type: Object
+    }
+  },
+  computed: {
+    impulseDescription () {
+      return `${this.impulse.description.slice(0, 110).trim()}... <span style="color:black; font-weight: bold;">mehr Infos.</s>`
     }
   }
 }
@@ -25,6 +35,7 @@ export default {
   position:relative;
   padding: 0;
   height: 409px;
+  color: black;
 }
 
 .card-background{
@@ -46,13 +57,11 @@ export default {
   text-align: start;
   padding-top: 25px;
   padding-bottom: 10px;
-  padding-left: 15px;
+  padding-left: 20px;
   padding-right: 15px;
   word-wrap: break-word;
 }
-
 .card-text-space{
-  padding-top: 30px;
+  padding-top: 35px;
 }
-
 </style>
