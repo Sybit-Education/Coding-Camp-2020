@@ -13,6 +13,7 @@
         <div class="card-content">
           <div class="card-text"><p>Gute Umwelt diese</p></div>
           <div class="card-text card-text-space"><p>Mehr Text</p></div>
+          <floatingButtons> </floatingButtons>
         </div>
         <div class="card-background">
           <img src="@/assets/cards/Card-blue.svg">
@@ -22,11 +23,15 @@
   </div>
 </template>
 <script>
+import floatingButtons from '@/components/cards/Floating-button.vue'
 export default {
   props: {
     impulse: {
       type: Object
     }
+  },
+  components: {
+    floatingButtons
   }
 }
 </script>
