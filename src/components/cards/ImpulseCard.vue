@@ -4,7 +4,7 @@
       <div class="card-front">
         <div class="card-content">
           <div class="card-text"><p>{{ impulse.title }}</p></div>
-          <div class="card-text card-text-space"><p>{{ impulse.description }}</p></div></div>
+          <div class="card-text card-text-space"><p v-html="impulse.description"></p></div></div>
         <div class="card-background">
           <img src="@/assets/cards/Card-blue.svg">
         </div>
