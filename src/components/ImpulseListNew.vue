@@ -10,7 +10,7 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 import LoadingIndicator from '@/components/_base/LoadingIndicator.vue'
-import ImpulseCard from '@/components/cards/ImpulseCard.vue'
+import ImpulseCard from '@/components/cards/ImpulseCard'
 export default {
   name: 'ImpulseListNew',
   data () {

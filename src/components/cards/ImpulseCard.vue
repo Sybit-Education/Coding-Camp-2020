@@ -5,6 +5,9 @@
       <div class="card-text"><p>{{ impulse.title }}</p></div>
       <div class="card-text card-text-space">
         <p v-if="impulse.description" v-html="impulseDescription"></p>
+         <div>
+      <assign-button :impulseId="impulse.id" />
+    </div>
     </div>
   </div>
   <div class="card-background">
@@ -14,12 +17,15 @@
 </router-link>
 </template>
 <script>
-import AssignButton from '@/components/cards/AssignButton.vue'
+import AssignButton from '@/components/cards/AssignButton'
 export default {
   props: {
     impulse: {
       type: Object
     }
+  },
+  components: {
+    AssignButton
   },
   computed: {
     impulseDescription () {
