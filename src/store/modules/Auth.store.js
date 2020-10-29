@@ -81,7 +81,7 @@ export const actions = {
       })
   },
   signInWithGoogle ({ commit }) {
-    const provider = new $auth.GoogleAuthProvider()
+    const provider = new firebase.auth.GoogleAuthProvider()
     $auth.signInWithPopup(provider)
       .then(user => {
         this.dispatch('Userdata/syncUser')
