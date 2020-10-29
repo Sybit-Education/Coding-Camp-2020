@@ -1,31 +1,28 @@
 <template>
+<router-link :to="{ name: 'KartenDetail', params: { impulse: impulse }}">
   <div class="card-body">
-    <div class="flip-card">
-      <div class="card-front">
-        <div class="card-content">
-          <div class="card-text"><p>{{ impulse.title }}</p></div>
-          <div class="card-text card-text-space"><p>{{ impulse.description }}</p></div></div>
-        <div class="card-background">
-          <img src="@/assets/cards/Card-blue.svg">
-        </div>
-      </div>
-      <div class="card-back">
-        <div class="card-content">
-          <div class="card-text"><p>Gute Umwelt diese</p></div>
-          <div class="card-text card-text-space"><p>Mehr Text</p></div>
-        </div>
-        <div class="card-background">
-          <img src="@/assets/cards/Card-blue.svg">
-        </div>
-      </div>
+    <div class="card-content">
+      <div class="card-text"><p>{{ impulse.title }}</p></div>
+      <div class="card-text card-text-space">
+        <p v-if="impulse.description" v-html="impulseDescription"></p>
     </div>
   </div>
+  <div class="card-background">
+    <img src="@/assets/cards/Card-blue.svg">
+  </div>
+  </div>
+</router-link>
 </template>
 <script>
 export default {
   props: {
     impulse: {
       type: Object
+    }
+  },
+  computed: {
+    impulseDescription () {
+      return `${this.impulse.description.slice(0, 110).trim()}... <span style="color:black; font-weight: bold;">mehr Infos.</s>`
     }
   }
 }
@@ -38,6 +35,7 @@ export default {
   position:relative;
   padding: 0;
   height: 409px;
+  color: black;
 }
 
 .card-background{
@@ -56,37 +54,14 @@ export default {
 
 .card-text{
   height: 50%;
-  text-align: center;
+  text-align: start;
   padding-top: 25px;
   padding-bottom: 10px;
-  padding-left: 15px;
+  padding-left: 20px;
   padding-right: 15px;
+  word-wrap: break-word;
 }
-
 .card-text-space{
-  padding-top: 30px;
+  padding-top: 35px;
 }
-
-.flip-card{
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-}
-
-.card-body:hover .flip-card{
-  transform: rotateY(180deg);
-}
-
-.card-front,
-.card-back{
-  position: absolute;
-  backface-visibility: hidden;
-}
-
-.card-back{
-  transform: rotateY(180deg);
-}
-
 </style>
