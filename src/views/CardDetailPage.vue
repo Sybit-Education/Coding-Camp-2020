@@ -30,7 +30,6 @@ export default {
   },
   methods: {
     routeToHomeWhenNoImpulseIsAvailable () {
-      console.log('lelelel')
       if (this.impulse === undefined) {
         this.$router.push({ name: 'Home' })
       }
