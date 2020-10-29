@@ -20,28 +20,47 @@ const routes = [
     }
   },
   {
-    path: '/about',
+    path: '/options',
+    name: 'Options',
+    component: () => import(/* webpackChunkName: "options" */ '../views/MoreOptions.vue'),
+    meta: {
+      requiresAuth: false
+    }
+  },
+  {
+    path: '/options/about',
     name: 'About',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import('../views/About.vue'),
+    component: () => import(/* webpackChunkName: "options" */'../views/About.vue'),
     meta: {
       requiresAuth: false
     }
   },
   {
-    path: '/imprint',
+    path: '/options/team',
+    name: 'Team',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "options" */'../views/Team.vue'),
+    meta: {
+      requiresAuth: false
+    }
+  },
+  {
+    path: '/options/imprint',
     name: 'Imprint',
-    component: () => import('../views/Imprint.vue'),
+    component: () => import(/* webpackChunkName: "options" */ '../views/Imprint.vue'),
     meta: {
       requiresAuth: false
     }
   },
   {
-    path: '/privacy',
+    path: '/options/privacy',
     name: 'Privacy',
-    component: () => import('../views/Privacy.vue'),
+    component: () => import(/* webpackChunkName: "options" */ '../views/Privacy.vue'),
     meta: {
       requiresAuth: false
     }
@@ -108,7 +127,7 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Highscore.vue')
+    component: () => import(/* webpackChunkName: "highscore" */ '../views/Highscore.vue')
   },
   {
     path: '/reset-password',
