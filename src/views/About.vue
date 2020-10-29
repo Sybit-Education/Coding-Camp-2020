@@ -68,11 +68,27 @@
           <p>Oliver Schönherr</p>
       </b-col>
     </b-row>
+    <b-row class="custom-footer">
+      <b-col class="d-flex justify-content-end">
+        <router-link :to="{ name: 'Imprint'}">
+          Impressum
+        </router-link>
+      </b-col>
+      <b-col>
+        <router-link :to="{ name: 'Privacy'}">
+          Datenschutz
+        </router-link>
+      </b-col>
+    </b-row>
 </b-container>
 </template>
 
 <style scoped lang="scss">
 .names {
     padding-top: 45px;
+}
+.custom-footer{
+  margin-bottom: 150px;
+  margin-top: 25px;
 }
 </style>
