@@ -1,8 +1,30 @@
 <template>
-    <div>
-        <b-button pill v-if="!isAssigned" id="button" @click="assign" class="bg-info d-flex"><vue-fontawesome icon="plus-circle" color="white" size="2"></vue-fontawesome></b-button>
-        <b-button pill v-if="isAssigned && canBeChecked" @click="addPoints" id="button2" class="bg-success d-flex"><vue-fontawesome icon="check-circle" color="white" size="2"></vue-fontawesome></b-button>
-    </div>
+  <div class="assign-button-wrapper">
+    <b-button
+      pill
+      v-if="!isAssigned"
+      id="button"
+      @click="assign"
+      class="d-flex assign-button"
+      ><vue-fontawesome
+        icon="plus-circle"
+        color="white"
+        size="1.5"
+      ></vue-fontawesome
+    ></b-button>
+    <b-button
+      pill
+      v-if="isAssigned && canBeChecked"
+      @click="addPoints"
+      id="button2"
+      class="d-flex assign-button"
+      ><vue-fontawesome
+        icon="check-circle"
+        color="white"
+        size="1.5"
+      ></vue-fontawesome
+    ></b-button>
+  </div>
 </template>
 
 <script>
@@ -15,17 +37,16 @@ export default {
   },
   computed: {
     isAssigned () {
-      console.log('impulseId', this.impulseId)
-      const response = this.impulseIsAssigned(this.impulseId)
-      console.log('isAssigned -> response', response)
       return this.impulseIsAssigned(this.impulseId)
     },
     canBeChecked () {
       return this.impulseIsCheckable(this.impulseId)
     },
-    ...mapActions('Userdata', ['addPointsToUser']),
-    ...mapActions('Userdata', ['fetchById']),
-    ...mapActions('Userdata', ['assignImpulse'])
+    ...mapGetters({
+      impulseIsAssigned: 'Userdata/impulseIsAssigned',
+      impulseIsCheckable: 'Userdata/impulseIsCheckable',
+      allPointsFromImpulse: 'Userdata/allPointsFromImpulse'
+    })
   },
   methods: {
     assign () {
@@ -52,12 +73,30 @@ export default {
         text: 'Die Challenge wurde angenommen!'
       })
     },
-    ...mapGetters({
-      impulseIsAssigned: 'Userdata/impulseIsAssigned',
-      impulseIsCheckable: 'Userdata/impulseIsCheckable',
-      allPointsFromImpulse: 'Userdata/allPointsFromImpulse'
-    })
+    ...mapActions('Userdata', ['addPointsToUser']),
+    ...mapActions('Userdata', ['fetchById']),
+    ...mapActions('Userdata', ['assignImpulse'])
   }
 }
-
 </script>
+
+<style lang="scss" scoped>
+.assign-button-wrapper {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+}
+
+.assign-button{
+  background-color: transparent;
+  border: none;
+}
+
+.assign-button:focus,
+.assign-button:active{
+  background-color: transparent;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+</style>
