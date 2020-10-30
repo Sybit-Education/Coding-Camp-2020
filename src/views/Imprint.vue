@@ -7,7 +7,7 @@
     <p>78345 Moos</p>
     <p>Deutschland</p>
     <h2 id="m56">Kontaktmöglichkeiten</h2>
-    <p><strong>E-Mail-Adresse:</strong> <a href="mailto:seieinheld@heldsein.com">seieinheld (ät) heldsein (Punkt) com</a></p>
+    <p><strong>E-Mail-Adresse:</strong> seieinheld (ät) heldsein (Punkt) com</p>
     <h2>Haftung für Inhalte</h2>
     <p>Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen
       Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte
