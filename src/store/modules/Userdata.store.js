@@ -125,7 +125,6 @@ export const actions = {
       date: new Date(),
       points: impulsePoints || POINTS_INITIAL
     }
-    console.log(indexOfCurrentImpulse)
     commit('ADD_POINTS_TO_USER', { points, indexOfCurrentImpulse })
 
     return $db.collection(COLLECTION_NAME).doc(userId).set({
