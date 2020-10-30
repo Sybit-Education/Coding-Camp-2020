@@ -7,7 +7,12 @@
   </b-row>
   <b-row class="my-3">
     <b-col>
-      Die App ...
+      <p>Die App</p>
+      <p>Fabienne Schwarz-Loy hat durch „Sei ein Held rette die Welt“ eine Initiative gestartet mit der spielerisch leicht, jeder etwas für die Umwelt tun kann.</p>
+      <p>Wir liefern dir einmal pro Woche einen kurzen Impuls dazu, wie du in wenigen Sekunden und mit wenigen Gedanken oder Handgriffen die Welt rettest.</p>
+      <p>Der Hintergrund: Unsere Welt ist unendlich schön und unendlich wertvoll. Das sollte so bleiben, aber leider steckt sie aktuell in ziemlich großen Schwierigkeiten. Daher ist jeder Mensch, der zur Rettung beiträgt, ein Held und wir finden, das sollte belohnt werden.</p>
+      <p>Wir bieten dir Impulse zu folgenden Themen an: <br>      Umwelt- und Klimaschutz, Gerechtigkeit, Toleranz und wie alles miteinander zusammenhängt.</p>
+      <p>Das Beste daran ist, dass es nicht schwierig ist und keinem weh tut. Du sparst Geld, Zeit, Nerven und/oder gewinnst Gesundheit, wertvolle Erfahrungen, Einblicke und Gewohnheiten. Wie du das machst wird dir auf der Impulskarte genauer beschrieben.</p>
       <h1>Spielregeln</h1>
       <p>Die Spielregeln für "Sei ein Held rette die Welt", sind:</p>
       <ul>
