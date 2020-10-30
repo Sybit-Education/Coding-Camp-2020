@@ -52,19 +52,13 @@ export const actions = {
       console.log('Something went wrong with syncing displayName: ' + error)
     })
   },
-  assignImpulse ({ getters, rootGetters }, impulseId) {
+  assignImpulse ({ getters, rootGetters, commit }, impulseId) {
     const userId = $auth.currentUser.uid
     const map = getters.assignedImpulseMap
     const impulsePoints = rootGetters['Impulse/getSelectedPoints'](impulseId)
-    map.push({
-      impulseId: impulseId,
-      points: [
-        {
-          date: new Date(),
-          points: impulsePoints || POINTS_INITIAL
-        }
-      ]
-    })
+
+    commit('ADD_ENTRY_TO_IMPULSEMAP', { impulseId, impulsePoints })
+
     return $db.collection(COLLECTION_NAME).doc(userId).set({
       assignedImpulseMap: map
     }, { merge: true }).catch(error => {
@@ -194,6 +188,9 @@ export const getters = {
     const lastTimeStamp = timeStampArray[timeStampArray.length - 1]
     const today = new Date().getTime()
     const todayPlusOneDay = new Date((lastTimeStamp.date.seconds * 1000) + 86400000).getTime()
+    if (timeStampArray.length === 1) {
+      return true
+    }
     return today > todayPlusOneDay
   },
   displayName: (state) => {
@@ -210,5 +207,17 @@ export const getters = {
 export const mutations = {
   SET_USERARRAY_FOR_HIGHSCORE_PAGE (state, users) {
     state.usersForHighscorePage = users
+  },
+
+  ADD_ENTRY_TO_IMPULSEMAP (state, { impulseId, impulsePoints }) {
+    state.userdata.assignedImpulseMap.push({
+      impulseId: impulseId,
+      points: [
+        {
+          date: new Date(),
+          points: impulsePoints || POINTS_INITIAL
+        }
+      ]
+    })
   }
 }
