@@ -1,5 +1,12 @@
 <template>
   <div>
+    <b-container>
+      <b-row>
+        <b-col class="d-flex justify-content-end custom-button mb-1 mr-2 mt-3">
+          <b-button pill to="/options"><vue-fontawesome  icon="times" color="white" size="1"></vue-fontawesome></b-button>
+        </b-col>
+      </b-row>
+    </b-container>
     <h1>Datenschutzerklärung</h1>
     <h2>Einleitung</h2>
     <p>
