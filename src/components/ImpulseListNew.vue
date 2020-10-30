@@ -1,6 +1,9 @@
 <template>
   <div id="impulse-list" class="impulse-list">
     <loading-indicator v-if="isLoading" message="Impulse werden geladen ..." />
+    <div v-else-if="user && $store.state.Userdata.userdata" v-for="impulse in notAssignedImpulseList" :key="impulse.id" class="impulse-card-wrapper">
+      <impulse-card :impulse="impulse"></impulse-card>
+    </div>
     <div v-else v-for="impulse in impulseList" :key="impulse.id" class="impulse-card-wrapper">
       <impulse-card :impulse="impulse"></impulse-card>
     </div>
@@ -41,8 +44,15 @@ export default {
       const newListData = impulseListData.filter(impulse => new Date((new Date(impulse.publishingDate).getTime()) + MONTH_IN_MILLISECONDS).getTime() > new Date().getTime())
       return newListData
     },
+    notAssignedImpulseList () {
+      const impulseListData = this.impulseList
+      const assignedListData = this.assignedList.map((impulse) => impulse.impulseId)
+      const finalNotAssignedImpulseList = impulseListData.filter((impulse) => !assignedListData.includes(impulse.id))
+      return finalNotAssignedImpulseList
+    },
     ...mapGetters({
-      impulseList: 'Impulse/getList'
+      impulseList: 'Impulse/getList',
+      assignedList: 'Userdata/assignedImpulseMap'
     })
   },
   methods: {
