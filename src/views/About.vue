@@ -55,8 +55,6 @@
         <ul>
           <li>Profilbild</li>
           <li>Benutzername, E-Mail</li>
-          <li>Dein Score: mit den Punkten</li>
-          <li>"To-Do Liste: mit deine aktuellen Impulskarten"</li>
           <li>Abmeldung</li>
           <li>Account löschen</li>
         </ul>
