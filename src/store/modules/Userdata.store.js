@@ -84,22 +84,23 @@ export const actions = {
           })
         })
       })
-    console.log('getUserDataForHighscore -> firebaseList', firebaseList)
+      // Für jeden User in unserer Datenbank wird folgendes ausgeführt:
     firebaseList.forEach(function (user) {
-      console.log('getUserDataForHighscore -> user', user)
       if (user.impulses !== undefined) {
+        // Impulse mapppen
         const impulseList = user.impulses.map(impulse => impulse.points)
-        console.log('getUserDataForHighscore -> impulseList', impulseList)
+        // Punkte rausfiltern welche, älter als 30 Tage sind.
         const unRedPoint = impulseList.map(impulse =>
           impulse.filter(impulse => new Date((impulse.date.seconds * 1000) + MONTH_IN_MILLISECONDS).getTime() > new Date().getTime()))
-        if (unRedPoint.every(pointArray => pointArray.length > 0)) {
-          console.log('getUserDataForHighscore -> unRedPoints', unRedPoint)
-          const point = unRedPoint.map(impulse => impulse.map(timeStamp => timeStamp.points).reduce((acc, cur) => acc + cur))
+        // Fehler abfangen, falls jemand keine Punkte hat.
+        const unRedPoint1 = unRedPoint.filter(pointArray => pointArray.length > 0)
+        // Fehler abfangen falls jemand einen Punkt hat, der einen falschen Zeitpunkt hat.
+        if (unRedPoint1.every(pointArray => pointArray.length > 0) && unRedPoint1.length > 0) {
+        // Punkte zusammenrechnenz
+          const point = unRedPoint1.map(impulse => impulse.map(timeStamp => timeStamp.points).reduce((acc, cur) => acc + cur))
+          // Punkte weiter zusammenrechnen
           const wholeReducedPoints = point.map(reducePoint => reducePoint).reduce((acc, cur) => acc + cur)
-          console.log('getUserDataForHighscore -> point', point)
-          console.log('getUserDataForHighscore -> wholeReducedPoints', wholeReducedPoints)
-          console.log('bis hier')
-
+          // Punkte in eine Liste schieben, welche wir dann weiter verarbeiten.
           list.push({ user: user.displayName || 'Anonym', points: wholeReducedPoints })
         }
       }
