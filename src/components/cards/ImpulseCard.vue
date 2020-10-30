@@ -1,17 +1,17 @@
 <template>
   <div class="card-body">
     <div class="card-content">
-<router-link :to="{ name: 'KartenDetail', params: { impulse: impulse }}">
-      <div class="card-text card-text-headline"><p>{{ impulse.title }}</p></div>
-      <div class="card-text card-text-space">
-        <p v-if="impulse.description" v-html="impulseDescription"></p>
+      <router-link :to="{ name: 'KartenDetail', params: { impulse: impulse }}">
+        <div class="card-text card-text-headline">{{ impulse.title }}</div>
+        <div class="card-text card-text-space">
+          <p v-if="impulse.description" v-html="impulseDescription"></p>
+        </div>
+      </router-link>
     </div>
-</router-link>
-  </div>
-      <assign-button v-if="user && $store.state.Userdata.userdata" :impulseId="impulse.id" />
-  <div class="card-background">
-    <img src="@/assets/cards/Card-blue.svg">
-  </div>
+    <assign-button v-if="user && $store.state.Userdata.userdata" :impulseId="impulse.id" />
+    <div class="card-background">
+      <b-img :src="cardBackground" fluid />
+    </div>
   </div>
 </template>
 <script>
@@ -32,6 +32,9 @@ export default {
     },
     user () {
       return $auth.currentUser
+    },
+    cardBackground () {
+      return require('@/assets/cards/Card-blue.svg')
     }
   }
 }
@@ -40,10 +43,11 @@ export default {
 .card-body{
   margin-left: auto;
   margin-right: auto;
-  width: 263px;
+  min-width: 263px;
+  max-width: 620px;
   position:relative;
   padding: 0;
-  height: 409px;
+  height: auto;
   color: black;
 }
 
@@ -61,8 +65,8 @@ export default {
   width: 100%;
 }
 
-.card-text{
-  height: 50%;
+.card-text {
+  height: 60%;
   text-align: start;
   padding-top: 25px;
   padding-bottom: 10px;
