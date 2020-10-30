@@ -9,16 +9,12 @@
       hover
     >
     </b-table>
-    <b-pagination
-      aria-controls="challengeStatsList"
-    ></b-pagination>
   </div>
 </template>
-
 <script>
 import MainHeader from '@/components/_base/Header'
-
 import { mapActions, mapGetters } from 'vuex'
+
 export default {
   name: 'Highscore',
   components: {
@@ -36,7 +32,6 @@ export default {
   async mounted () {
     await this.fetchList()
     await this.getUserDataForHighscore()
-    // await this.fetchById('123456789')
   },
   methods: {
     ...mapActions('Challenge_Stats', ['fetchList']),
