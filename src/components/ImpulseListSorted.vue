@@ -11,11 +11,13 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 import LoadingIndicator from '@/components/_base/LoadingIndicator.vue'
+import { $auth } from '@/firebase-config'
 import ImpulseCard from '@/components/cards/ImpulseCard.vue'
 
 export default {
   name: 'ImpulseListSorted',
-  created () {
+  async created () {
+    await this.fetchById(this.user.uid)
     this.fetchList()
   },
   components: {
@@ -23,6 +25,9 @@ export default {
     ImpulseCard
   },
   computed: {
+    user () {
+      return $auth.currentUser
+    },
     isLoading () {
       return (this.impulseList.length === 0)
     },
@@ -30,9 +35,7 @@ export default {
       const impulseListData = this.impulseList
       const assignedListData = this.assignedList.map((impulse) => impulse.impulseId)
       const finalAssignedImpulseList = impulseListData.filter((impulse) => assignedListData.includes(impulse.id))
-      const finalImpulseList = impulseListData.filter((impulse) => !assignedListData.includes(impulse.id))
-      const wholeSortedArrayList = finalAssignedImpulseList.concat(finalImpulseList)
-      return wholeSortedArrayList
+      return finalAssignedImpulseList
     },
     ...mapGetters({
       impulseList: 'Impulse/getList',
@@ -40,7 +43,8 @@ export default {
     })
   },
   methods: {
-    ...mapActions('Impulse', ['fetchList'])
+    ...mapActions('Impulse', ['fetchList']),
+    ...mapActions('Userdata', ['fetchById'])
   }
 }
 </script>
