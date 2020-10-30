@@ -32,7 +32,7 @@
               <i data-v-1123d0ad="" data-v-a17bb30c="" aria-hidden="true" class="fa fa-heart" style="color: black; font-size: 1.25rem;"></i>
             Favoriten</li>
         <ul>
-          <li></li>
+          <li>Diene Impulskarten werden dir hier angezeit</li>
         </ul>
 
         <li>
@@ -53,7 +53,12 @@
           <i data-v-1123d0ad="" data-v-a17bb30c="" aria-hidden="true" class="fa fa-user" style="color: black; font-size: 1.25rem;"></i>
           Profil</li>
         <ul>
-          <li>Man kann seine Punkte mit Freunden und anderen Nutzer vergleichen</li>
+          <li>Profilbild</li>
+          <li>Benutzername, E-Mail</li>
+          <li>Dein Score: mit den Punkten</li>
+          <li>"To-Do Liste: mit deine aktuellen Impulskarten"</li>
+          <li>Abmeldung</li>
+          <li>Account löschen</li>
         </ul>
       </ol>
     </b-col>
