@@ -28,8 +28,7 @@
   </b-row>
   <b-row>
     <b-col class="px-0">
-      <!-- Gruppenbild !-->
-      <b-img src="https://picsum.photos/1024/400/?image=41" rounded fluid-grow alt="Responsive image"></b-img>
+      <b-img :src="team" fluid alt="Das Sybit Coding Camp 2020 Team"/>
     </b-col>
   </b-row>
   <b-row class="d-flex justify-content-between names">
@@ -65,7 +64,15 @@
   </b-row>
 </b-container>
 </template>
-
+<script>
+export default {
+  computed: {
+    team () {
+      return require('@/assets/team.jpg')
+    }
+  }
+}
+</script>
 <style scoped lang="scss">
 .names {
     padding-top: 45px;
