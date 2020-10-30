@@ -92,13 +92,16 @@ export const actions = {
         console.log('getUserDataForHighscore -> impulseList', impulseList)
         const unRedPoint = impulseList.map(impulse =>
           impulse.filter(impulse => new Date((impulse.date.seconds * 1000) + MONTH_IN_MILLISECONDS).getTime() > new Date().getTime()))
-        console.log('getUserDataForHighscore -> unRedPoints', unRedPoint)
-        const point = unRedPoint.map(timestamp => timestamp.points)
-          .reduce((acc, cur) => acc + cur)
-          .reduce((acc, cur) => acc + cur)
-        console.log('getUserDataForHighscore -> point', point)
-        console.log('bis hier')
-        list.push({ user: user.displayName, points: point })
+        if (unRedPoint.every(pointArray => pointArray.length > 0)) {
+          console.log('getUserDataForHighscore -> unRedPoints', unRedPoint)
+          const point = unRedPoint.map(impulse => impulse.map(timeStamp => timeStamp.points).reduce((acc, cur) => acc + cur))
+          const wholeReducedPoints = point.map(reducePoint => reducePoint).reduce((acc, cur) => acc + cur)
+          console.log('getUserDataForHighscore -> point', point)
+          console.log('getUserDataForHighscore -> wholeReducedPoints', wholeReducedPoints)
+          console.log('bis hier')
+
+          list.push({ user: user.displayName || 'Anonym', points: wholeReducedPoints })
+        }
       }
     })
     list.sort(function (a, b) {
