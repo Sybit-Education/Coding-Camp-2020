@@ -210,8 +210,6 @@ export const mutations = {
   },
 
   ADD_ENTRY_TO_IMPULSEMAP (state, { impulseId, impulsePoints }) {
-    console.log(impulseId)
-    console.log(impulsePoints)
     state.userdata.assignedImpulseMap.push({
       impulseId: impulseId,
       points: [
