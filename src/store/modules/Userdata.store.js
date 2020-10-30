@@ -125,17 +125,17 @@ export const actions = {
     }
     commit('SET_USERARRAY_FOR_HIGHSCORE_PAGE', list)
   },
-  addPointsToUser ({ getters, rootGetters }, impulseId) {
+  addPointsToUser ({ getters, rootGetters, commit }, impulseId) {
     const userId = $auth.currentUser.uid
     const assignedImpulseMap = getters.assignedImpulseMap
-    const impulsePoints = rootGetters['Impulse/getSelectedPoints'](impulseId)
+    const arrayWithAddedPoints = [...assignedImpulseMap]
     const indexOfCurrentImpulse = assignedImpulseMap.findIndex(impulse => impulse.impulseId === impulseId)
+    const impulsePoints = rootGetters['Impulse/getSelectedPoints'](impulseId)
     const points = {
       date: new Date(),
       points: impulsePoints || POINTS_INITIAL
     }
-    const arrayWithAddedPoints = [...assignedImpulseMap]
-    arrayWithAddedPoints[indexOfCurrentImpulse].points.push(points)
+    commit('ADD_POINTS_TO_USER', { points, indexOfCurrentImpulse })
 
     return $db.collection(COLLECTION_NAME).doc(userId).set({
       assignedImpulseMap: arrayWithAddedPoints
@@ -173,7 +173,9 @@ export const getters = {
     return (state.userdata && state.userdata.isAdmin) ? state.userdata.isAdmin : false
   },
   assignedImpulseMap: (state) => {
-    return state.userdata.assignedImpulseMap || []
+    if (state.userdata.assignedImpulseMap !== null) {
+      return state.userdata.assignedImpulseMap || []
+    }
   },
   impulseIsAssigned: (state) => (impulseId) => {
     const assignedImpulseMap = state.userdata.assignedImpulseMap
@@ -226,5 +228,10 @@ export const mutations = {
         }
       ]
     })
+  },
+  ADD_POINTS_TO_USER (state, { points, indexOfCurrentImpulse }) {
+    const array = state.userdata.assignedImpulseMap
+    const spreadArray = [...array]
+    spreadArray[indexOfCurrentImpulse].points.push(points)
   }
 }
