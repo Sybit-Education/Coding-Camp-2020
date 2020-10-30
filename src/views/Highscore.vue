@@ -9,9 +9,6 @@
       hover
     >
     </b-table>
-    <b-pagination
-      aria-controls="challengeStatsList"
-    ></b-pagination>
   </div>
 </template>
 <script>
