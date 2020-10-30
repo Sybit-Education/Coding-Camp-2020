@@ -1,6 +1,11 @@
 <template>
 <b-container>
   <b-row>
+      <b-col class="d-flex justify-content-end custom-button mb-n5 mr-2 mt-3">
+        <b-button pill to="/options"><vue-fontawesome  icon="times" color="white" size="1"></vue-fontawesome></b-button>
+      </b-col>
+    </b-row>
+  <b-row>
     <b-col>
       <headline title="Das Team"></headline>
     </b-col>
@@ -69,5 +74,8 @@
 <style scoped lang="scss">
 .names {
     padding-top: 45px;
+}
+.custom-button {
+  z-index: 99;
 }
 </style>
