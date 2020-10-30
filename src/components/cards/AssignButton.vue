@@ -42,10 +42,14 @@ export default {
     canBeChecked () {
       return this.impulseIsCheckable(this.impulseId)
     },
+    getSelectedPointsById () {
+      return this.getSelectedPoints(this.impulseId)
+    },
     ...mapGetters({
       impulseIsAssigned: 'Userdata/impulseIsAssigned',
       impulseIsCheckable: 'Userdata/impulseIsCheckable',
-      allPointsFromImpulse: 'Userdata/allPointsFromImpulse'
+      allPointsFromImpulse: 'Userdata/allPointsFromImpulse',
+      getSelectedPoints: 'Impulse/getSelectedPoints'
     })
   },
   methods: {
@@ -62,7 +66,7 @@ export default {
         group: 'notification',
         title: 'Abgeschlossen!',
         type: 'success',
-        text: 'Du hast die Challenge für heute Abgeschlossen'
+        text: 'Du hast die Challenge für heute Abgeschlossen sie haben ' + this.getSelectedPointsById + ' punkte gutgeschrieben bekommen'
       })
     },
     showAssignedNotification () {
@@ -70,7 +74,7 @@ export default {
         group: 'notification',
         title: 'Angenommen!',
         type: 'success',
-        text: 'Die Challenge wurde angenommen!'
+        text: 'Die Challenge wurde angenommen sie haben ' + this.getSelectedPointsById + ' punkte gutgeschreiben bekommen'
       })
     },
     ...mapActions('Userdata', ['addPointsToUser']),
