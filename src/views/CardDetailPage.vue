@@ -1,21 +1,19 @@
 <template>
-    <b-jumbotron class="bg-white">
-    <h3 class="mb-5 card-title">{{ impulse.title }}</h3>
+  <b-container>
+    <div id="impulse-detail-view" class="my-4 mb-6 mx-2 p-2">
+      <h3 class="mb-5 card-title">{{ impulse.title }}</h3>
 
-    <p v-if="impulse.description" v-html="impulse.description" class="card-description"><p>
+      <p v-if="impulse.description" v-html="impulse.description" class="card-description"><p>
+      <hr class="my-4">
 
-    <hr class="my-4">
+      <h5>Was bringt das mir?</h5>
+      <p v-html="impulse.forMe" class="for-me"></p>
+      <hr class="my-4">
 
-    <h5>
-     Für mich:
-    </h5>
-    <p v-html="impulse.forMe" class="for-me"></p>
-    <hr class="my-4">
-     <h5>
-     Für die Welt:
-    </h5>
-    <p v-html="impulse.forWorld" class="mb-5 for-world"></p>
-  </b-jumbotron>
+      <h5>Was bringt es der Welt?</h5>
+      <p v-html="impulse.forWorld" class="for-world"></p>
+    </div>
+  </b-container>
 </template>
 
 <script>
@@ -40,6 +38,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+#impulse-detail-view {
+  border: 5px solid $color-blue;
+  border-radius: 30px;
+}
 .card-description {
     font-weight: 400;
     font-size: 18px;

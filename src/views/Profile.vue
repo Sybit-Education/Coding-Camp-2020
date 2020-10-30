@@ -23,9 +23,9 @@
       <hr />
       <b-row>
         <b-col>
-          <b-button-group>
-            <b-button class="logout-button mx-3" v-if="user" @click="signOut()">Abmelden</b-button>
-            <delete-user-modal></delete-user-modal>
+          <b-button-group vertical>
+            <b-button v-if="user" @click="signOut()">Abmelden</b-button>
+            <delete-user-modal v-if="user"></delete-user-modal>
           </b-button-group>
         </b-col>
       </b-row>

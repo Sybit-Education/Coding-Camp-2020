@@ -6,8 +6,8 @@
       <b-row>
         <b-col>
           <p>
-            Bestätigen Sie mit der Eingabe ihres Passwortes das Löschen ihres Accounts.<br />
-            <em>Achtung:</em> Alle ihre persönlichen Daten werden unwiederbringlich gelöscht.
+            Bestätigen Sie mit der Eingabe Ihres Passwortes das Löschen Ihres Accounts.<br />
+            <em>Achtung:</em> Alle Ihre persönlichen Daten werden unwiederbringlich gelöscht.
           </p>
         </b-col>
       </b-row>
