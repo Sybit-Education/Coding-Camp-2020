@@ -38,7 +38,7 @@ export const actions = {
           group: 'notification',
           title: 'Fehler',
           type: 'bg-danger',
-          text: 'Falsches Password !'
+          text: 'Falsches Passwort !'
         })
         console.log(error)
       })
