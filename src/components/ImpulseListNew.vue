@@ -19,7 +19,9 @@ export default {
     }
   },
   async created () {
-    await this.fetchById(this.user.uid)
+    if (this.user !== null) {
+      await this.fetchById(this.user.uid)
+    }
     this.fetchList()
   },
   components: {
