@@ -18,7 +18,7 @@
         <li>Du kannst nur alle 24 Stunden deine Impulse bestätigen </li>
       </ul>
       <h1>Hilfestellung</h1>
-      <p>Die Hilfestellung für "Sei ein Held rette die Welt", sind:</p>
+      <p>Die Hilfestellungen für "Sei ein Held rette die Welt", sind:</p>
 
       <ol>
         <li>
