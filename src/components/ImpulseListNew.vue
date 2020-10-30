@@ -1,6 +1,9 @@
 <template>
   <div id="impulse-list" class="impulse-list">
     <loading-indicator v-if="isLoading" message="Impulse werden geladen ..." />
+    <div v-else-if="user && $store.state.Userdata.userdata" v-for="impulse in notAssignedImpulseList" :key="impulse.id" class="impulse-card-wrapper">
+      <impulse-card :impulse="impulse"></impulse-card>
+    </div>
     <div v-else v-for="impulse in impulseList" :key="impulse.id" class="impulse-card-wrapper">
       <impulse-card :impulse="impulse"></impulse-card>
     </div>
@@ -10,14 +13,18 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 import LoadingIndicator from '@/components/_base/LoadingIndicator.vue'
-import ImpulseCard from '@/components/cards/ImpulseCard.vue'
+import ImpulseCard from '@/components/cards/ImpulseCard'
+import { $auth } from '@/firebase-config'
 export default {
   name: 'ImpulseListNew',
   data () {
     return {
     }
   },
-  created () {
+  async created () {
+    if (this.user !== null) {
+      await this.fetchById(this.user.uid)
+    }
     this.fetchList()
   },
   components: {
@@ -25,6 +32,9 @@ export default {
     ImpulseCard
   },
   computed: {
+    user () {
+      return $auth.currentUser
+    },
     isLoading () {
       return (this.impulseList.length === 0)
     },
@@ -34,12 +44,20 @@ export default {
       const newListData = impulseListData.filter(impulse => new Date((new Date(impulse.publishingDate).getTime()) + MONTH_IN_MILLISECONDS).getTime() > new Date().getTime())
       return newListData
     },
+    notAssignedImpulseList () {
+      const impulseListData = this.impulseList
+      const assignedListData = this.assignedList.map((impulse) => impulse.impulseId)
+      const finalNotAssignedImpulseList = impulseListData.filter((impulse) => !assignedListData.includes(impulse.id))
+      return finalNotAssignedImpulseList
+    },
     ...mapGetters({
-      impulseList: 'Impulse/getList'
+      impulseList: 'Impulse/getList',
+      assignedList: 'Userdata/assignedImpulseMap'
     })
   },
   methods: {
-    ...mapActions('Impulse', ['fetchList'])
+    ...mapActions('Impulse', ['fetchList']),
+    ...mapActions('Userdata', ['fetchById'])
   }
 }
 </script>

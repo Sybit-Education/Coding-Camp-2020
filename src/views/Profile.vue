@@ -15,11 +15,6 @@
           <small>{{ user.email }}</small>
         </b-col>
       </b-row>
-
-      <h4 class="mt-5 ml-2">Dein Score</h4>
-      <b-row>
-        <b-col>Todo</b-col>
-      </b-row>
       <hr />
       <b-row>
         <b-col>

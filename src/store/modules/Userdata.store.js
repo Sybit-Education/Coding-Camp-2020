@@ -52,19 +52,13 @@ export const actions = {
       console.log('Something went wrong with syncing displayName: ' + error)
     })
   },
-  assignImpulse ({ getters, rootGetters }, impulseId) {
+  assignImpulse ({ getters, rootGetters, commit }, impulseId) {
     const userId = $auth.currentUser.uid
     const map = getters.assignedImpulseMap
     const impulsePoints = rootGetters['Impulse/getSelectedPoints'](impulseId)
-    map.push({
-      impulseId: impulseId,
-      points: [
-        {
-          date: new Date(),
-          points: impulsePoints || POINTS_INITIAL
-        }
-      ]
-    })
+
+    commit('ADD_ENTRY_TO_IMPULSEMAP', { impulseId, impulsePoints })
+
     return $db.collection(COLLECTION_NAME).doc(userId).set({
       assignedImpulseMap: map
     }, { merge: true }).catch(error => {
@@ -80,19 +74,29 @@ export const actions = {
         querySnapshot.forEach((doc) => {
           firebaseList.push({
             displayName: doc.data().displayName,
-            impluses: doc.data().assignedImpulseMap
+            impulses: doc.data().assignedImpulseMap
           })
         })
       })
+      // Für jeden User in unserer Datenbank wird folgendes ausgeführt:
     firebaseList.forEach(function (user) {
-      if (user.impluses !== undefined) {
-        const impulseList = user.impluses.map(impulse => impulse.points)
-        const points = impulseList.map(impulse =>
-          impulse.filter(impulse => new Date((impulse.date.seconds * 1000) + MONTH_IN_MILLISECONDS).getTime() > new Date().getTime())
-            .map(timestamp => timestamp.points)
-            .reduce((acc, cur) => acc + cur))
-          .reduce((acc, cur) => acc + cur)
-        list.push({ user: user.displayName, points: points })
+      if (user.impulses !== undefined) {
+        // Impulse mapppen
+        const impulseList = user.impulses.map(impulse => impulse.points)
+        // Punkte rausfiltern welche, älter als 30 Tage sind.
+        const unRedPoint = impulseList.map(impulse =>
+          impulse.filter(impulse => new Date((impulse.date.seconds * 1000) + MONTH_IN_MILLISECONDS).getTime() > new Date().getTime()))
+        // Fehler abfangen, falls jemand keine Punkte hat.
+        const unRedPoint1 = unRedPoint.filter(pointArray => pointArray.length > 0)
+        // Fehler abfangen falls jemand einen Punkt hat, der einen falschen Zeitpunkt hat.
+        if (unRedPoint1.every(pointArray => pointArray.length > 0) && unRedPoint1.length > 0) {
+        // Punkte zusammenrechnenz
+          const point = unRedPoint1.map(impulse => impulse.map(timeStamp => timeStamp.points).reduce((acc, cur) => acc + cur))
+          // Punkte weiter zusammenrechnen
+          const wholeReducedPoints = point.map(reducePoint => reducePoint).reduce((acc, cur) => acc + cur)
+          // Punkte in eine Liste schieben, welche wir dann weiter verarbeiten.
+          list.push({ user: user.displayName || 'Anonym', points: wholeReducedPoints })
+        }
       }
     })
     list.sort(function (a, b) {
@@ -194,6 +198,9 @@ export const getters = {
     const lastTimeStamp = timeStampArray[timeStampArray.length - 1]
     const today = new Date().getTime()
     const todayPlusOneDay = new Date((lastTimeStamp.date.seconds * 1000) + 86400000).getTime()
+    if (timeStampArray.length === 1) {
+      return true
+    }
     return today > todayPlusOneDay
   },
   displayName: (state) => {
@@ -207,5 +214,17 @@ export const getters = {
 export const mutations = {
   SET_USERARRAY_FOR_HIGHSCORE_PAGE (state, users) {
     state.usersForHighscorePage = users
+  },
+
+  ADD_ENTRY_TO_IMPULSEMAP (state, { impulseId, impulsePoints }) {
+    state.userdata.assignedImpulseMap.push({
+      impulseId: impulseId,
+      points: [
+        {
+          date: new Date(),
+          points: impulsePoints || POINTS_INITIAL
+        }
+      ]
+    })
   }
 }
