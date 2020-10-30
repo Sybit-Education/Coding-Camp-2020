@@ -54,11 +54,11 @@ export default {
   },
   methods: {
     assign () {
-      this.assignImpulse(this.impulseId)
+      this.$store.dispatch('Userdata/assignImpulse', this.impulseId)
       this.showAssignedNotification()
     },
     addPoints () {
-      this.addPointsToUser(this.impulseId)
+      this.$store.dispatch('Userdata/addPointsToUser', this.impulseId)
       this.showCheckedNotification()
     },
     showCheckedNotification () {
