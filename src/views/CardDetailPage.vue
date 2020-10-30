@@ -1,5 +1,10 @@
 <template>
   <b-container>
+    <b-row>
+      <b-col class="d-flex justify-content-end mb-n3 mr-2 mt-2">
+        <b-button pill to="/"><vue-fontawesome  icon="times" color="white" size="1"></vue-fontawesome></b-button>
+      </b-col>
+    </b-row>
     <div id="impulse-detail-view" class="my-4 mb-6 mx-2 p-2">
       <h3 class="mb-5 card-title">{{ impulse.title }}</h3>
 
