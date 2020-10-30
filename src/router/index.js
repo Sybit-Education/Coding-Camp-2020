@@ -107,6 +107,11 @@ const routes = [
     beforeEnter: isAdmin
   },
   {
+    path: '/test',
+    name: 'test',
+    component: () => import('../components/OwnHighscore.vue')
+  },
+  {
     path: '/admin/new',
     name: 'AddImpulse',
     component: () => import('../views/admin/AddImpulse.vue'),

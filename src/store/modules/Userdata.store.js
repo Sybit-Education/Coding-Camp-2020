@@ -201,6 +201,9 @@ export const getters = {
   },
   userForHighscorePage: (state) => {
     return state.usersForHighscorePage
+  },
+  getAllPoints: (state) => {
+    return state.userdata.points
   }
 }
 
