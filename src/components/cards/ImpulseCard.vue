@@ -28,7 +28,7 @@ export default {
   },
   computed: {
     impulseDescription () {
-      return `${this.impulse.description.slice(0, 110).trim()}... <span style="color:black; font-weight: bold;">mehr Infos.</s>`
+      return `${this.impulse.description.slice(0, 110).trim()}... <br/><span style="font-weight: bold;">[weiter]</span>`
     },
     user () {
       return $auth.currentUser
@@ -40,53 +40,54 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.card-body{
+.card-body {
   margin-left: auto;
   margin-right: auto;
   min-width: 263px;
-  max-width: 620px;
+  max-width: 780px;
   position:relative;
   padding: 0;
   height: auto;
   color: black;
 }
 
-.card-background{
+.card-background {
   width: 100%;
+  img {
+    width: 100%;
+  }
 }
 
-.card-background img{
-  width: 100%;
-}
-
-.card-content{
+.card-content {
   position: absolute;
   height: 100%;
   width: 100%;
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  .card-text {
+    height: 60%;
+    text-align: start;
+    padding-top: 25px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 15px;
+    word-wrap: break-word;
+    color: black;
+  }
+  .card-text-headline {
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  .card-text-space {
+    padding-top: 35px;
+  }
 }
 
-.card-text {
-  height: 60%;
-  text-align: start;
-  padding-top: 25px;
-  padding-bottom: 10px;
-  padding-left: 20px;
-  padding-right: 15px;
-  word-wrap: break-word;
-  text-decoration: none;
-  color: black;
-}
-
-.card-text-headline{
-  font-weight: bold;
-  font-size: 18px;
-}
-
-.card-text-space{
-  padding-top: 35px;
-}
-
-.add-impuls{
+.add-impuls {
   position: absolute;
   bottom: 10px;
   right: 10px;
