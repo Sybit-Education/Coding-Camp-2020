@@ -16,15 +16,15 @@
         </b-col>
       </b-row>
 
-      <h4 class="mt-5 ml-2">Dein Score</h4>
+     <!-- <h4 class="mt-5 ml-2">Dein Score</h4>
       <b-row>
         <b-col>Todo</b-col>
-      </b-row>
+      </b-row> -->
       <hr />
       <b-row>
         <b-col>
-          <b-button-group vertical>
-            <b-button class="logout-button" v-if="user" @click="signOut()">Abmelden</b-button>
+          <b-button-group>
+            <b-button class="logout-button mx-3" v-if="user" @click="signOut()">Abmelden</b-button>
             <delete-user-modal></delete-user-modal>
           </b-button-group>
         </b-col>
