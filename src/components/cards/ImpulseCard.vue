@@ -8,7 +8,7 @@
     </div>
 </router-link>
   </div>
-      <assign-button v-if="user && $store.state.Userdata.userdata" :impulseId="impulse.id" />
+      <assign-button :impulseId="impulse.id" />
   <div class="card-background">
     <img src="@/assets/cards/Card-blue.svg">
   </div>
