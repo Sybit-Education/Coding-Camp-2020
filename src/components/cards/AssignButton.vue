@@ -2,19 +2,7 @@
   <div class="assign-button-wrapper">
     <b-button
       pill
-      v-if="!user"
-      id="button"
-      to="login"
-      class="d-flex assign-button"
-      ><vue-fontawesome
-        icon="plus-circle"
-        color="white"
-        size="1.5"
-      ></vue-fontawesome
-    ></b-button>
-    <b-button
-      pill
-      v-if="!isAssigned && user"
+      v-if="!isAssigned"
       id="button"
       @click="assign"
       class="d-flex assign-button"
@@ -26,7 +14,7 @@
     ></b-button>
     <b-button
       pill
-      v-if="isAssigned && canBeChecked && user"
+      v-if="isAssigned && canBeChecked"
       @click="addPoints"
       id="button2"
       class="d-flex assign-button"
@@ -50,11 +38,7 @@ export default {
   },
   computed: {
     user () {
-      const response = $auth.currentUser
-      if (response === null) {
-        return false
-      }
-      return response
+      return $auth.currentUser
     },
     isAssigned () {
       return this.impulseIsAssigned(this.impulseId)
@@ -74,12 +58,20 @@ export default {
   },
   methods: {
     assign () {
-      this.$store.dispatch('Userdata/assignImpulse', this.impulseId)
-      this.showAssignedNotification()
+      if (this.user === null) {
+        this.$router.push('/login')
+      } else {
+        this.$store.dispatch('Userdata/assignImpulse', this.impulseId)
+        this.showAssignedNotification()
+      }
     },
     addPoints () {
-      this.$store.dispatch('Userdata/addPointsToUser', this.impulseId)
-      this.showCheckedNotification()
+      if (this.user === null) {
+        this.$router.push('/login')
+      } else {
+        this.$store.dispatch('Userdata/addPointsToUser', this.impulseId)
+        this.showCheckedNotification()
+      }
     },
     showCheckedNotification () {
       this.$notify({
