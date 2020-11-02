@@ -2,7 +2,19 @@
   <div class="assign-button-wrapper">
     <b-button
       pill
-      v-if="!isAssigned"
+      v-if="!user"
+      id="button"
+      to="login"
+      class="d-flex assign-button"
+      ><vue-fontawesome
+        icon="plus-circle"
+        color="white"
+        size="1.5"
+      ></vue-fontawesome
+    ></b-button>
+    <b-button
+      pill
+      v-if="!isAssigned && user"
       id="button"
       @click="assign"
       class="d-flex assign-button"
@@ -14,7 +26,7 @@
     ></b-button>
     <b-button
       pill
-      v-if="isAssigned && canBeChecked"
+      v-if="isAssigned && canBeChecked && user"
       @click="addPoints"
       id="button2"
       class="d-flex assign-button"
@@ -29,6 +41,7 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex'
+import { $auth } from '@/firebase-config'
 
 export default {
   name: 'AssignButton',
@@ -36,6 +49,13 @@ export default {
     impulseId: String
   },
   computed: {
+    user () {
+      const response = $auth.currentUser
+      if (response === null) {
+        return false
+      }
+      return response
+    },
     isAssigned () {
       return this.impulseIsAssigned(this.impulseId)
     },
