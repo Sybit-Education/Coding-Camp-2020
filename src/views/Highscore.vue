@@ -1,14 +1,16 @@
 <template>
   <div>
     <main-header :headerTitle="'Highscore'"></main-header>
-    <b-table
-      id="challengeStatsList"
-      ref="challengeStatsTaable"
-      :items="items"
-      :fields="fields" primary-key="id"
-      hover
-    >
-    </b-table>
+    <b-container>
+      <b-table
+        id="challengeStatsList"
+        ref="challengeStatsTaable"
+        :items="items"
+        :fields="fields" primary-key="id"
+        hover
+      >
+      </b-table>
+    </b-container>
   </div>
 </template>
 <script>

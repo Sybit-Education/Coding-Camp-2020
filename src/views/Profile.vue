@@ -1,11 +1,7 @@
 <template>
   <div>
+    <main-header :headerTitle="'Profil'"></main-header>
     <b-container class="mt-4">
-      <b-row>
-        <b-col class="ml-2">
-          <headline title="Profil"></headline>
-        </b-col>
-      </b-row>
       <b-row class="avatar-name align-self mt-3">
         <b-col cols="4">
           <avatar v-if="user"/>
@@ -31,6 +27,7 @@
 import { mapActions, mapGetters } from 'vuex'
 import { $auth } from '@/firebase-config'
 import Avatar from '@/components/_base/Avatar.vue'
+import MainHeader from '@/components/_base/Header'
 import UserDisplayName from '@/components/_base/UserDisplayName.vue'
 import DeleteUserModal from '@/components/element/DeleteUserModal.vue'
 export default {
@@ -38,6 +35,7 @@ export default {
   components: {
     UserDisplayName,
     Avatar,
+    MainHeader,
     DeleteUserModal
   },
   async created () {
