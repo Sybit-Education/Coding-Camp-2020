@@ -1,13 +1,13 @@
 <template>
-  <div>
+  <div id="privacy-view">
+    <main-header :headerTitle="'Datenschutzerklärung'"></main-header>
     <b-container>
       <b-row>
         <b-col class="d-flex justify-content-end custom-button mb-1 mr-2 mt-3">
           <b-button pill to="/options"><vue-fontawesome  icon="times" color="white" size="1"></vue-fontawesome></b-button>
         </b-col>
       </b-row>
-    </b-container>
-    <h1>Datenschutzerklärung</h1>
+
     <h2>Einleitung</h2>
     <p>
       Mit der folgenden Datenschutzerklärung möchten wir Sie darüber aufklären,
@@ -1503,5 +1503,15 @@
         rel="noopener noreferrer nofollow">Erstellt mit kostenlosem Datenschutz-Generator.de
         von Dr. Thomas Schwenke</a>
     </p>
+    </b-container>
   </div>
 </template>
+<script>
+import MainHeader from '@/components/_base/Header'
+
+export default {
+  components: {
+    MainHeader
+  }
+}
+</script>
