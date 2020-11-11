@@ -10,7 +10,7 @@
     </div>
     <assign-button v-if="user && $store.state.Userdata.userdata" :impulseId="impulse.id" />
     <div class="card-background">
-      <b-img :src="cardBackground" fluid />
+      <img src="@/assets/cards/Card-blue.svg">
     </div>
   </div>
 </template>
