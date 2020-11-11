@@ -1,5 +1,4 @@
 <template>
-  <footer>
  <cookie-law theme="sybit"
       buttonText="Einverstanden!"
       buttonClass="btn btn-primary"
@@ -10,7 +9,6 @@
       buttonLink="/privacy"
     >
     </cookie-law>
-  </footer>
 </template>
 
 <script>

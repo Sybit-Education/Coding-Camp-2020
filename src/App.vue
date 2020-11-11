@@ -1,9 +1,11 @@
 <template>
   <div id="app">
     <router-view class="router-view"/>
-    <CookieBanner/>
-    <bottom-navigation></bottom-navigation>
-    <notifications group="notification" class="mt-3" position="top center" />
+    <footer>
+      <CookieBanner/>
+      <bottom-navigation></bottom-navigation>
+      <notifications group="notification" class="mt-3" position="top center" />
+    </footer>
   </div>
 </template>
 
@@ -30,7 +32,7 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 .router-view {
   margin-bottom: 80px;
 }
