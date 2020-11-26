@@ -1,6 +1,6 @@
 <template>
   <div>
-    <main-header :headerTitle="'Highscore'"></main-header>
+    <main-header :headerTitle="title"></main-header>
     <b-container>
       <b-table
         id="challengeStatsList"
@@ -19,6 +19,18 @@ import { mapActions, mapGetters } from 'vuex'
 
 export default {
   name: 'Highscore',
+  metaInfo () {
+    return {
+      title: this.title + ' | Sei ein Held - rette die Welt',
+      meta: [
+        { name: 'description', content: this.title },
+        { property: 'og:title', content: this.title },
+        { property: 'og:site_name', content: this.title },
+        { property: 'og:type', content: 'website' },
+        { name: 'robots', content: 'index,follow' }
+      ]
+    }
+  },
   components: {
     MainHeader
   },
@@ -54,6 +66,9 @@ export default {
     }),
     items () {
       return this.userForHighscorePage
+    },
+    title () {
+      return 'Highscore'
     }
   }
 }
