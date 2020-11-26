@@ -99,7 +99,7 @@ export default {
     },
     publishingDate: {
       get () {
-        return this.impulse.publishingDate
+        return (this.impulse && this.impulse.publishingDate) ? this.impulse.publishingDate.toDate() : ''
       },
       set (value) {
         this.updateProperty({ impulse: this.impulse, prop: 'publishingDate', value: value })
