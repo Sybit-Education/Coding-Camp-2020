@@ -79,6 +79,11 @@ export default {
       overflow: hidden;
       text-overflow: ellipsis;
       color: $gray-900;
+
+      p {
+        max-height: calc(var(--lh) * var(--max-lines));
+        hyphens: auto;
+      }
     }
     .card-text::before {
       position: absolute;
@@ -86,14 +91,6 @@ export default {
       font-weight: 900;
       bottom: 1rem;
       left: 1rem;
-    }
-    .card-text::after {
-      content: "";
-      position: absolute;
-      right: 0; /* note: not using bottom */
-      width: 1rem;
-      height: 1rem;
-      background: white;
     }
   }
 }
