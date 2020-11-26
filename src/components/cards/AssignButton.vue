@@ -29,6 +29,7 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex'
+import { $auth } from '@/firebase-config'
 
 export default {
   name: 'AssignButton',
@@ -36,6 +37,9 @@ export default {
     impulseId: String
   },
   computed: {
+    user () {
+      return $auth.currentUser
+    },
     isAssigned () {
       return this.impulseIsAssigned(this.impulseId)
     },
@@ -54,12 +58,20 @@ export default {
   },
   methods: {
     assign () {
-      this.$store.dispatch('Userdata/assignImpulse', this.impulseId)
-      this.showAssignedNotification()
+      if (this.user === null) {
+        this.$router.push('/login')
+      } else {
+        this.$store.dispatch('Userdata/assignImpulse', this.impulseId)
+        this.showAssignedNotification()
+      }
     },
     addPoints () {
-      this.$store.dispatch('Userdata/addPointsToUser', this.impulseId)
-      this.showCheckedNotification()
+      if (this.user === null) {
+        this.$router.push('/login')
+      } else {
+        this.$store.dispatch('Userdata/addPointsToUser', this.impulseId)
+        this.showCheckedNotification()
+      }
     },
     showCheckedNotification () {
       this.$notify({
