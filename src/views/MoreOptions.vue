@@ -1,6 +1,6 @@
 <template>
 <div id="more-options-view">
-  <main-header :headerTitle="'Optionen'"></main-header>
+  <main-header :headerTitle="title"></main-header>
 <b-container>
   <b-row class="my-3">
     <b-col>
@@ -29,7 +29,22 @@ export default {
   async created () {
     await this.fetchById(this.user.uid)
   },
+  metaInfo () {
+    return {
+      title: this.title + ' | Sei ein Held - rette die Welt',
+      meta: [
+        { name: 'description', content: this.title },
+        { property: 'og:title', content: this.title },
+        { property: 'og:site_name', content: this.title },
+        { property: 'og:type', content: 'website' },
+        { name: 'robots', content: 'index,follow' }
+      ]
+    }
+  },
   computed: {
+    title () {
+      return 'Optionen'
+    },
     user () {
       return $auth.currentUser
     },

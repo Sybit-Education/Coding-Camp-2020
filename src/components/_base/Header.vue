@@ -3,7 +3,9 @@
     <b-container>
       <b-navbar-brand>
         <h1>
-          <b-img :src="logo" class="logo" alt="Sei ein Held" />
+          <router-link to="/">
+            <b-img :src="logo" class="logo" alt="Sei ein Held" />
+          </router-link>
           {{ headerTitle }}
         </h1>
       </b-navbar-brand>
@@ -49,15 +51,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-h1 {
-  font-size: 1.5rem;
-}
+
 #navigationBar {
   background-color: $color-yellow;
+  width: 100%;
 
+  h1 {
+    font-size: 1.25rem;
+  }
   .logo {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 2rem;
+    height: 2rem;
   }
 }
 </style>

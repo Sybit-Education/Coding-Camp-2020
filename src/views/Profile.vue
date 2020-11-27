@@ -1,6 +1,6 @@
 <template>
   <div>
-    <main-header :headerTitle="'Profil'"></main-header>
+    <main-header :headerTitle="title"></main-header>
     <b-container class="mt-4">
       <b-row class="avatar-name align-self mt-3">
         <b-col cols="4">
@@ -41,7 +41,22 @@ export default {
   async created () {
     await this.fetchById(this.user.uid)
   },
+  metaInfo () {
+    return {
+      title: this.title + ' | Sei ein Held - rette die Welt',
+      meta: [
+        { name: 'description', content: this.title },
+        { property: 'og:title', content: this.title },
+        { property: 'og:site_name', content: this.title },
+        { property: 'og:type', content: 'website' },
+        { name: 'robots', content: 'index,follow' }
+      ]
+    }
+  },
   computed: {
+    title () {
+      return 'Profil'
+    },
     user () {
       return $auth.currentUser
     },

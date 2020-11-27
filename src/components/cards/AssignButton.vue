@@ -78,7 +78,7 @@ export default {
         group: 'notification',
         title: 'Abgeschlossen!',
         type: 'success',
-        text: 'Du hast die Challenge für heute Abgeschlossen sie haben ' + this.getSelectedPointsById + ' punkte gutgeschrieben bekommen'
+        text: 'Du hast die Challenge für heute abgeschlossen und ' + this.getSelectedPointsById + ' Punkte gutgeschrieben bekommen'
       })
     },
     showAssignedNotification () {
@@ -86,7 +86,7 @@ export default {
         group: 'notification',
         title: 'Angenommen!',
         type: 'success',
-        text: 'Die Challenge wurde angenommen sie haben ' + this.getSelectedPointsById + ' punkte gutgeschreiben bekommen'
+        text: 'Die Challenge wurde angenommen. Es wurden ' + this.getSelectedPointsById + ' Punkte gutgeschreiben.'
       })
     },
     ...mapActions('Userdata', ['addPointsToUser']),

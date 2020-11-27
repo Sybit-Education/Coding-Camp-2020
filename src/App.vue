@@ -2,8 +2,8 @@
   <div id="app">
     <router-view class="router-view"/>
     <footer>
-      <CookieBanner/>
       <bottom-navigation></bottom-navigation>
+      <cookie-banner/>
       <notifications group="notification" class="mt-3" position="top center" />
     </footer>
   </div>
@@ -33,7 +33,9 @@ export default {
 }
 </script>
 <style lang="scss">
+
 .router-view {
-  margin-bottom: 80px;
+  background-color: $gray-300;
+  min-height: calc(100vh - 1.75rem);
 }
 </style>
