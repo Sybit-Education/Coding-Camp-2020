@@ -1,17 +1,17 @@
 <template>
   <div class="card-body">
     <div class="card-content">
-<router-link :to="{ name: 'KartenDetail', params: { impulse: impulse }}">
-      <div class="card-text card-text-headline"><p>{{ impulse.title }}</p></div>
-      <div class="card-text card-text-space">
-        <p v-if="impulse.description" v-html="impulseDescription"></p>
+      <router-link :to="{ name: 'KartenDetail', params: { impulse: impulse }}">
+        <h3 class="card-text-headline">{{ impulse.title }}</h3>
+        <div class="card-text">
+          <p v-if="impulse.description" v-html="impulse.description"></p>
+        </div>
+      </router-link>
     </div>
-</router-link>
-  </div>
-      <assign-button :impulseId="impulse.id" />
-  <div class="card-background">
-    <img src="@/assets/cards/Card-blue.svg">
-  </div>
+    <assign-button v-if="user && $store.state.Userdata.userdata" :impulseId="impulse.id" />
+    <div class="card-background">
+      <img src="@/assets/cards/Card-blue.svg">
+    </div>
   </div>
 </template>
 <script>
@@ -27,62 +27,104 @@ export default {
     AssignButton
   },
   computed: {
-    impulseDescription () {
-      return `${this.impulse.description.slice(0, 110).trim()}... <span style="color:black; font-weight: bold;">mehr Infos.</s>`
-    },
     user () {
       return $auth.currentUser
+    },
+    cardBackground () {
+      return require('@/assets/cards/Card-blue.svg')
     }
   }
 }
 </script>
 <style lang="scss" scoped>
-.card-body{
+.card-body {
   margin-left: auto;
   margin-right: auto;
-  width: 263px;
+  min-width: 263px;
+  max-width: 780px;
   position:relative;
   padding: 0;
-  height: 409px;
-  color: black;
+  height: auto;
+  color: $gray-900;
+
+  .card-background {
+    width: 100%;
+    img {
+      width: 100%;
+    }
+  }
+
+  .card-content {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    a:hover {
+      text-decoration: none;
+    }
+    .card-text-headline {
+      height: 60%;
+      padding-top: 25px;
+      padding-bottom: 10px;
+      color: $gray-900;
+    }
+    .card-text {
+      height: 30%;
+      line-height: var(--lh);
+      max-height: calc(var(--lh) * var(--max-lines));
+      width: 100%;
+      padding-bottom: 1rem;
+      word-wrap: break-word;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: $gray-900;
+
+      p {
+        max-height: calc(var(--lh) * var(--max-lines));
+        hyphens: auto;
+      }
+    }
+    .card-text::before {
+      position: absolute;
+      content: "[mehr ...]";
+      font-weight: 900;
+      bottom: 1rem;
+      left: 1rem;
+    }
+  }
 }
 
-.card-background{
-  width: 100%;
+@media only screen and (max-width: 991px) {
+
+  .card-content {
+    --max-lines: 5;
+    --lh: 1.5em;
+
+    .card-text-headline {
+      font-size: calc(24px + (38 - 24) * (100vw - 350px) / (750 - 350));
+    }
+    .card-text {
+      font-size: calc(16px + (30 - 16) * (100vw - 350px) / (750 - 350));
+    }
+  }
 }
 
-.card-background img{
-  width: 100%;
-}
+@media only screen and (min-width: 992px) {
 
-.card-content{
-  position: absolute;
-  height: 100%;
-  width: 100%;
-}
+  .card-content {
+    --max-lines: 8;
+    --lh: 1.5em;
 
-.card-text{
-  height: 50%;
-  text-align: start;
-  padding-top: 25px;
-  padding-bottom: 10px;
-  padding-left: 20px;
-  padding-right: 15px;
-  word-wrap: break-word;
-  text-decoration: none;
-  color: black;
+    .card-text-headline {
+      font-size: 36px;
+    }
+    .card-text {
+      font-size: 18px;
+    }
+  }
 }
-
-.card-text-headline{
-  font-weight: bold;
-  font-size: 18px;
-}
-
-.card-text-space{
-  padding-top: 35px;
-}
-
-.add-impuls{
+.add-impuls {
   position: absolute;
   bottom: 10px;
   right: 10px;
