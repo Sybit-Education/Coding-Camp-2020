@@ -1,7 +1,7 @@
 <template>
   <div id="assigned-impulse-view">
     <main-header :headerTitle="title"></main-header>
-    <div class="d-flex justify-content-center pt-5">
+    <div class="d-flex justify-content-center pt-2">
       <impulse-list-sorted></impulse-list-sorted>
     </div>
   </div>
