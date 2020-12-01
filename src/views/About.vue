@@ -1,100 +1,97 @@
 <template>
-<div id="about-view">
-  <main-header :headerTitle="title"></main-header>
-  <b-row>
-    <b-col class="d-flex justify-content-end custom-button mb-n5 mr-2 mt-3">
-      <b-button pill to="/options"><vue-fontawesome  icon="times" color="white" size="1"></vue-fontawesome></b-button>
-    </b-col>
-  </b-row>
-  <b-container>
-    <b-row class="my-3">
-      <b-col>
-        <b-img :src="logo" fluid-grow alt="Logo" />
+  <div id="about-view">
+    <main-header :headerTitle="title"></main-header>
 
-        <h3>Die App</h3>
-        <p>
-          Fabienne Schwarz-Loy hat durch <em>"Sei ein Held rette die Welt"</em> eine
-          Initiative gestartet mit der spielerisch leicht, jeder etwas für die Umwelt tun kann.
+    <b-container>
+      <b-row>
+        <b-col class="d-flex justify-content-end custom-button mb-n5 mr-2 mt-3">
+          <b-button pill to="/options"><vue-fontawesome  icon="times" color="white" size="1"></vue-fontawesome></b-button>
+        </b-col>
+      </b-row>
+
+      <b-img :src="logo" fluid-grow alt="Logo" class="my-3"/>
+      <h3>Die App</h3>
+      <p>
+        Fabienne Schwarz-Loy hat durch <em>"Sei ein Held rette die Welt"</em> eine
+        Initiative gestartet mit der spielerisch leicht, jeder etwas für die Umwelt tun kann.
+      </p>
+      <p>
+        Wir liefern dir einmal pro Woche einen kurzen Impuls dazu, wie du in wenigen
+        Sekunden und mit wenigen Gedanken oder Handgriffen die Welt rettest.
+      </p>
+      <p>
+        <b>Der Hintergrund:</b> Unsere Welt ist unendlich schön und unendlich wertvoll.
+        Das sollte so bleiben, aber leider steckt sie aktuell in ziemlich großen
+        Schwierigkeiten. Daher ist jeder Mensch, der zur Rettung beiträgt, ein Held
+        und wir finden, das sollte belohnt werden.
         </p>
-        <p>
-          Wir liefern dir einmal pro Woche einen kurzen Impuls dazu, wie du in wenigen
-          Sekunden und mit wenigen Gedanken oder Handgriffen die Welt rettest.
-        </p>
-        <p>
-          <b>Der Hintergrund:</b> Unsere Welt ist unendlich schön und unendlich wertvoll.
-          Das sollte so bleiben, aber leider steckt sie aktuell in ziemlich großen
-          Schwierigkeiten. Daher ist jeder Mensch, der zur Rettung beiträgt, ein Held
-          und wir finden, das sollte belohnt werden.
-          </p>
-        <p>
-          Wir bieten dir Impulse zu folgenden Themen an: <br>
-          Umwelt- und Klimaschutz, Gerechtigkeit, Toleranz und wie alles miteinander zusammenhängt.
-        </p>
-        <p>
+      <p>
+        Wir bieten dir Impulse zu folgenden Themen an: <br>
+        Umwelt- und Klimaschutz, Gerechtigkeit, Toleranz und wie alles miteinander zusammenhängt.
+      </p>
+      <p>
 
-          Das Beste daran ist, dass es nicht schwierig ist und keinem weh tut. Du sparst Geld,
-          Zeit, Nerven und/oder gewinnst Gesundheit, wertvolle Erfahrungen, Einblicke und
-          Gewohnheiten. Wie du das machst wird dir auf der Impulskarte genauer beschrieben.
-        </p>
+        Das Beste daran ist, dass es nicht schwierig ist und keinem weh tut. Du sparst Geld,
+        Zeit, Nerven und/oder gewinnst Gesundheit, wertvolle Erfahrungen, Einblicke und
+        Gewohnheiten. Wie du das machst wird dir auf der Impulskarte genauer beschrieben.
+      </p>
 
-        <h3>Spielregeln</h3>
-        <p>Die Spielregeln für "Sei ein Held rette die Welt", sind:</p>
-        <ul>
-          <li>Alltags Challenges bekommen weniger Punkte</li>
-          <li>Aufwendigere Impulse bekommen dagegen eine höhere Punktwertung</li>
-          <li>Du verlierst deine Punkte, wenn du nicht aktiv genug teilnimmst</li>
-          <li>Nach Erledigung des Impulses kanst du dieses Bestätigen und erhältst dafür Punkte</li>
-          <li>Du kannst nur alle 24 Stunden deine Impulse bestätigen </li>
-        </ul>
+      <h3>Spielregeln</h3>
+      <p>Die Spielregeln für "Sei ein Held rette die Welt", sind:</p>
+      <ul>
+        <li>Alltags Challenges bekommen weniger Punkte</li>
+        <li>Aufwendigere Impulse bekommen dagegen eine höhere Punktwertung</li>
+        <li>Du verlierst deine Punkte, wenn du nicht aktiv genug teilnimmst</li>
+        <li>Nach Erledigung des Impulses kanst du dieses Bestätigen und erhältst dafür Punkte</li>
+        <li>Du kannst nur alle 24 Stunden deine Impulse bestätigen </li>
+      </ul>
 
-        <h3>Hilfestellung</h3>
-        <p>Die Hilfestellungen für "Sei ein Held rette die Welt", sind:</p>
+      <h3>Hilfestellung</h3>
+      <p>Die Hilfestellungen für "Sei ein Held rette die Welt", sind:</p>
 
-        <ol>
-          <li>
-              <i aria-hidden="true" class="fa fa-users" style="color: black; font-size: 1rem;"></i>
-            Optionen
+      <ol>
+        <li>
+            <i aria-hidden="true" class="fa fa-users" style="color: black; font-size: 1rem;"></i>
+          Optionen
 
+          <ul>
+            <li>Man wird weitergeleitet auf: Über uns, Datenschutz, Impressum, das Team</li>
+          </ul>
+        </li>
+        <li>
+            <i aria-hidden="true" class="fa fa-heart" style="color: black; font-size: 1.25rem;"></i>
+            Favoriten
             <ul>
-              <li>Man wird weitergeleitet auf: Über uns, Datenschutz, Impressum, das Team</li>
+              <li>Deine Impulskarten werden dir hier angezeit</li>
             </ul>
-          </li>
-          <li>
-              <i aria-hidden="true" class="fa fa-heart" style="color: black; font-size: 1.25rem;"></i>
-              Favoriten
-              <ul>
-                <li>Deine Impulskarten werden dir hier angezeit</li>
-              </ul>
-          </li>
-          <li>
-            <i aria-hidden="true" class="fa fa-home" style="color: black; font-size: 1.5rem;"></i>
-            Home Botton / Startseite
-            <ul>
-              <li>Hier findest du neue Impulse</li>
-            </ul>
-          </li>
-          <li>
-            <i aria-hidden="true" class="fa fa-list-ol" style="color: black; font-size: 1.25rem;"></i>
-            Rangliste
-            <ul>
-              <li>Man kann seine Punkte mit Freunden und anderen Nutzer vergleichen</li>
-            </ul>
-          </li>
-          <li>
-            <i aria-hidden="true" class="fa fa-user" style="color: black; font-size: 1.25rem;"></i>
-            Profil
-            <ul>
-              <li>Profilbild</li>
-              <li>Benutzername, E-Mail</li>
-              <li>Abmeldung</li>
-              <li>Account löschen</li>
-            </ul>
-          </li>
-        </ol>
-      </b-col>
-    </b-row>
-  </b-container>
-</div>
+        </li>
+        <li>
+          <i aria-hidden="true" class="fa fa-home" style="color: black; font-size: 1.5rem;"></i>
+          Home Botton / Startseite
+          <ul>
+            <li>Hier findest du neue Impulse</li>
+          </ul>
+        </li>
+        <li>
+          <i aria-hidden="true" class="fa fa-list-ol" style="color: black; font-size: 1.25rem;"></i>
+          Rangliste
+          <ul>
+            <li>Man kann seine Punkte mit Freunden und anderen Nutzer vergleichen</li>
+          </ul>
+        </li>
+        <li>
+          <i aria-hidden="true" class="fa fa-user" style="color: black; font-size: 1.25rem;"></i>
+          Profil
+          <ul>
+            <li>Profilbild</li>
+            <li>Benutzername, E-Mail</li>
+            <li>Abmeldung</li>
+            <li>Account löschen</li>
+          </ul>
+        </li>
+      </ol>
+    </b-container>
+  </div>
 </template>
 
 <script>
