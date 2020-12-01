@@ -12,14 +12,11 @@
         </b-col>
       </b-row>
       <hr />
-      <b-row>
-        <b-col>
-          <b-button-group vertical>
-            <b-button v-if="user" @click="signOut()">Abmelden</b-button>
-            <delete-user-modal v-if="user"></delete-user-modal>
-          </b-button-group>
-        </b-col>
-      </b-row>
+      <hr>
+      <b-list-group>
+        <b-button v-if="user" @click="signOut()">Abmelden</b-button>
+        <delete-user-modal v-if="user"></delete-user-modal>
+      </b-list-group>
     </b-container>
   </div>
 </template>
