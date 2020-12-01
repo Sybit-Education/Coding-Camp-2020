@@ -35,7 +35,7 @@ export default {
 <style lang="scss">
 
 .router-view {
-  background-color: $gray-300;
+  background-color: var(--background);
   min-height: calc(100vh - 1.75rem);
 }
 </style>
