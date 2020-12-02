@@ -12,8 +12,8 @@
         </b-col>
       </b-row>
       <hr />
-      <hr>
-      <b-list-group>
+
+      <b-list-group class="mt-5">
         <b-button v-if="user" @click="signOut()">Abmelden</b-button>
         <delete-user-modal v-if="user"></delete-user-modal>
       </b-list-group>

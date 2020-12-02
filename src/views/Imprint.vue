@@ -59,6 +59,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+.container {
+  margin-bottom: 6rem;
+}
 </style>

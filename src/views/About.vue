@@ -124,7 +124,11 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+.container {
+  margin-bottom: 6rem;
+}
+
 .custom-button {
   z-index: 99;
 }
