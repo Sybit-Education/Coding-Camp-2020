@@ -2,12 +2,12 @@
   <b-navbar id="navigationBar">
     <b-container>
       <b-navbar-brand>
-        <h1>
-          <router-link to="/">
-            <b-img :src="logo" class="logo" alt="Sei ein Held" />
-          </router-link>
-          {{ headerTitle }}
-        </h1>
+
+        <router-link to="/">
+          <b-img :src="logo" class="logo d-inline-block align-top" alt="Sei ein Held" />
+        </router-link>
+
+        {{ headerTitle }}
       </b-navbar-brand>
     </b-container>
   </b-navbar>
@@ -32,7 +32,7 @@ export default {
 
 #navigationBar {
   background-color: $color-yellow;
-  width: 100%;
+  width: 100vw;
 
   h1 {
     font-size: 1.25rem;

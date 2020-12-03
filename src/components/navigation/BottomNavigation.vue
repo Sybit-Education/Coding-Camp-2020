@@ -1,5 +1,5 @@
 <template>
-  <b-navbar class="navbar" type="dark" variant="dark" fixed="bottom">
+  <b-navbar  type="dark" variant="dark" fixed="bottom">
     <b-container>
       <b-navbar-nav justified align="start">
         <b-nav-item :to="{ name: 'AssignedImpulse'}" class="mr-3">
@@ -25,3 +25,7 @@
     </b-container>
   </b-navbar>
 </template>
+
+<style lang="scss" scoped>
+
+</style>
