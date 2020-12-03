@@ -1,11 +1,9 @@
 <template>
   <div id="app">
     <router-view class="router-view"/>
-    <footer>
-      <bottom-navigation></bottom-navigation>
-      <cookie-banner/>
-      <notifications group="notification" class="mt-3" position="top center" />
-    </footer>
+    <bottom-navigation></bottom-navigation>
+    <cookie-banner/>
+    <notifications group="notification" class="mt-3" position="top center" />
   </div>
 </template>
 
