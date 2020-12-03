@@ -1,56 +1,59 @@
 <template>
-  <div id="admin">
-    <main-header :headerTitle="'Administration'"></main-header>
-    <b-row>
-      <b-col xl="6">
-        <b-row>
-          <b-col cols="12" md="6">
-        <h2>Liste der Impulse ({{ this.rows }})</h2>
-          </b-col>
-          <b-col cols="12" md="6" class="d-flex align-items-center justify-content-start justify-content-md-end py-3 py-md-0">
-            <b-button to="/admin/new" variant="primary">Neuer Impuls +</b-button>
-          </b-col>
-         </b-row>
-        <b-overlay :show="showOverlay" rounded="sm">
-          <b-table
-            id="impulseList"
-            ref="impulseListTable"
-            :items="impulseList"
-            :fields="fields" primary-key="id"
-            :per-page="perPage"
-            :current-page="currentPage"
-            :sort-by.sync="sortBy"
-            :sort-desc.sync="sortDesc"
-            :selectable="true"
-            select-mode="single"
-            @row-selected="rowSelected"
-            @row-clicked="rowClicked"
-            hover small
-            >
-            <template v-slot:cell(title)="data">
-              <div><b>{{ data.value }}</b></div>
-              <category-label :categoryId="data.item.category" />
-            </template>
-            <template v-slot:cell(publishingDate)="data">
-              <p>{{ data.value | Date }}</p>
-            </template>
-          </b-table>
-        </b-overlay>
-      <b-col cols="12" md="12" class="mt-4">
-        <b-pagination
-        align="fill"
-          v-model="currentPage"
-          :total-rows="rows"
-          :per-page="perPage"
-          aria-controls="impulseList"
-        ></b-pagination>
+  <div id="admin-view">
+    <main-header :headerTitle="'Administration'" />
+    <b-container>
+      <b-row>
+        <b-col md="6">
+          <h3>
+            Liste der Impulse ({{ this.rows }})
+            <b-button to="/admin/new" class="float-right" variant="primary" size="sm">+ Neuer Impuls</b-button>
+          </h3>
+          <b-overlay :show="showOverlay" rounded="sm">
+            <b-table
+              id="impulseList"
+              ref="impulseListTable"
+              :items="impulseList"
+              :fields="fields" primary-key="id"
+              :per-page="perPage"
+              :current-page="currentPage"
+              :sort-by.sync="sortBy"
+              :sort-desc.sync="sortDesc"
+              :selectable="true"
+              select-mode="single"
+              @row-selected="rowSelected"
+              @row-clicked="rowClicked"
+              hover small
+              >
+              <template v-slot:cell(title)="data">
+                <div><b>{{ data.value }}</b></div>
+                <category-label :categoryId="data.item.category" />
+              </template>
+              <template v-slot:cell(publishingDate)="data">
+                <p>{{ data.value | timestampDate }}</p>
+              </template>
+            </b-table>
+            <b-pagination
+            align="fill"
+              v-model="currentPage"
+              :total-rows="rows"
+              :per-page="perPage"
+              aria-controls="impulseList"
+            />
+          </b-overlay>
         </b-col>
-      </b-col>
-      <b-col xl="6" class="d-flex justify-content-center align-items-center">
-        <impulse-edit class="col-12" :impulse="selectedImpulse" v-if="isClicked"/>
-        <h4 class="text-center mb-5 mb-md-0 mt-3 mt-md-0 py-3 py-md-0" v-else>Klicke einen Impuls an, um ihn zu bearbeiten.</h4>
-      </b-col>
-    </b-row>
+        <b-col md="6" >
+          <template v-if="isClicked">
+            <h3 class="col-12">Impuls bearbeiten</h3>
+            <impulse-edit class="col-12" :impulse="selectedImpulse" />
+          </template>
+          <div v-else class="d-flex justify-content-center align-items-center">
+            <h4 class="text-center my-5 py-3">
+            Klicke einen Impuls an, um ihn zu bearbeiten.
+            </h4>
+          </div>
+        </b-col>
+      </b-row>
+    </b-container>
   </div>
 </template>
 
@@ -75,7 +78,7 @@ export default {
       ],
       sortBy: 'publishingDate',
       sortDesc: true,
-      perPage: 10,
+      perPage: 15,
       currentPage: 1,
       selectedImpulse: {},
       selectedRow: 0,
@@ -115,5 +118,9 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+.container {
+  margin-top: 0.5rem;
+  margin-bottom: 6rem;
+}
 </style>

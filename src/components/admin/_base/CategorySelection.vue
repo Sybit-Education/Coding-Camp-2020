@@ -2,6 +2,7 @@
   <b-form-select
     v-model="selectionId"
     :options="getList"
+    size="sm"
     value-field="value" text-field="name" >
     <template v-slot:first>
       <b-form-select-option :value="null" disabled>-- Bitte Kategorie auswählen --</b-form-select-option>
@@ -22,8 +23,8 @@ export default {
       selectionId: ''
     }
   },
-  created () {
-    this.fetchList()
+  async mounted () {
+    await this.fetchList()
   },
   computed: {
     ...mapGetters({
