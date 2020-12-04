@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import 'firebase/firestore'
+import firebase from 'firebase/app'
 import { firestoreAction } from 'vuexfire'
 import { $db } from '@/firebase-config'
 
@@ -23,7 +24,7 @@ export const state = {
 
 export const actions = {
   fetchList: firestoreAction(({ bindFirestoreRef }) => {
-    const now = new Date()
+    const now = firebase.firestore.Timestamp.fromDate(new Date())
 
     const serialize = (snapshot) => {
       return Object.defineProperty(snapshot.data(), 'id',

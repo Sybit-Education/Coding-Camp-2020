@@ -1,5 +1,7 @@
 <template>
-  <b-badge class="category">{{ text }}</b-badge>
+  <b-badge
+    v-bind:style="color"
+    v-text="name" />
 </template>
 
 <script>
@@ -10,25 +12,21 @@ export default {
   props: {
     categoryId: {
       type: String,
-      required: false,
-      default: ''
+      required: true
     }
   },
-  created () {
+  mounted () {
     this.fetchList()
   },
   computed: {
-    text () {
-      const category = this.getSelected(this.categoryId)
-      let text = ''
-      if (category) {
-        text = category.name
-      }
-      return text
+    name () {
+      return this.getSelected(this.categoryId).name
+    },
+    color () {
+      return 'background-color: ' + this.getSelected(this.categoryId).color + ';'
     },
     ...mapGetters({
-      getSelected: 'Category/getSelected',
-      getList: 'Category/getList'
+      getSelected: 'Category/getSelected'
     })
   },
   methods: {
@@ -36,7 +34,3 @@ export default {
   }
 }
 </script>
-
-<style>
-
-</style>
