@@ -8,8 +8,16 @@
 
         <b-form-group label="Veröffentlichungsdatum" label-for="publishingDate"
           description="Wann soll dieser Impuls öffentlich werden?">
-          <b-datepicker id="publishingDate" size="sm" v-model="publishingDate" name="publishingDate"
-            locale="de" calendarLocale="de" start-weekday="1" placeholder="Datum auswählen"></b-datepicker>
+          <b-datepicker
+            id="publishingDate"
+            name="publishingDate"
+            size="sm"
+            v-model="publishingDate"
+            :value-as-date="true"
+            locale="de"
+            calendarLocale="de"
+            start-weekday="1"
+            placeholder="Datum auswählen"></b-datepicker>
         </b-form-group>
 
         <b-form-group label="Kategorie" label-for="category"
@@ -58,6 +66,7 @@
 </template>
 
 <script>
+import firebase from 'firebase/app'
 import { mapActions } from 'vuex'
 import Editor from '@/components/_base/Editor.vue'
 import CategorySelection from '@/components/admin/_base/CategorySelection.vue'
@@ -101,10 +110,15 @@ export default {
     },
     publishingDate: {
       get () {
-        return this.impulse.publishingDate
+        let val = null
+        if (this.impulse.publishingDate) {
+          val = this.impulse.publishingDate.toDate()
+        }
+        return val
       },
       set (value) {
-        this.updateProperty({ impulse: this.impulse, prop: 'publishingDate', value: value })
+        const timestamp = firebase.firestore.Timestamp.fromDate(value)
+        this.updateProperty({ impulse: this.impulse, prop: 'publishingDate', value: timestamp })
       }
     },
     forMe: {
