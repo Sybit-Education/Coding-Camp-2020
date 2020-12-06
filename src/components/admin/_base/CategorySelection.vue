@@ -1,11 +1,14 @@
 <template>
   <b-form-select
-    v-model="selectionId"
+    :value="selectionId"
     :options="getList"
     size="sm"
-    value-field="value" text-field="name" >
+    value-field="value"
+    text-field="name" >
     <template v-slot:first>
-      <b-form-select-option :value="null" disabled>-- Bitte Kategorie auswählen --</b-form-select-option>
+      <b-form-select-option :value="null" disabled>
+        -- Kategorie auswählen --
+      </b-form-select-option>
     </template>
   </b-form-select>
 </template>
@@ -16,15 +19,21 @@ import { mapGetters, mapActions } from 'vuex'
 export default {
   name: 'CategorySelection',
   props: {
-    impulseCategoryId: String
+    impulseCategoryId: {
+      type: String,
+      required: true
+    }
   },
   data () {
     return {
       selectionId: ''
     }
   },
-  async mounted () {
-    await this.fetchList()
+  mounted () {
+    this.fetchList()
+      .then(() => {
+        this.selectionId = this.impulseCategoryId
+      })
   },
   computed: {
     ...mapGetters({
