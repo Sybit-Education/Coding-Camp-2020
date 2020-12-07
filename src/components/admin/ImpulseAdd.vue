@@ -6,9 +6,14 @@
         <b-input id="title" v-model="impulse.title" placeholder="Titel" required/>
       </b-form-group>
 
+      <b-form-group label="Veröffentlichungsstatus" label-for="publishingState"
+        description="Status der Veröffentlichung des Impuls">
+        <publishing-state-selection v-model="impulse.publishingState" />
+      </b-form-group>
+
       <b-form-group label="Kategorie" label-for="category"
         description="Kategorie des Impuls">
-        <category-selection v-model="impulse.category" v-on:categoryChange="updateCategory"></category-selection>
+        <category-selection v-model="impulse.category" v-on:categoryChange="updateCategory" />
       </b-form-group>
 
       <b-form-group label="Erklärung" label-for="description"
@@ -46,17 +51,20 @@
 import { mapActions } from 'vuex'
 import Editor from '@/components/_base/Editor.vue'
 import CategorySelection from '@/components/admin/_base/CategorySelection.vue'
+import PublishingStateSelection from '@/components/admin/_base/PublishingStateSelection.vue'
 
 export default {
   name: 'ImpulseEdit',
   components: {
     Editor,
-    CategorySelection
+    CategorySelection,
+    PublishingStateSelection
   },
   data () {
     return {
       impulse: {
         title: '',
+        publishingState: 'draft',
         category: null,
         description: '',
         forMe: '',

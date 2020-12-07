@@ -5,7 +5,10 @@
           description="Titel des Impuls">
           <b-input id="title" v-model="title" placeholder="Titel" required/>
         </b-form-group>
-
+        <b-form-group label="Veröffentlichungsstatus" label-for="publishingState"
+          description="Status der Veröffentlichung des Impuls">
+          <publishing-state-selection v-model="impulse.publishingState" />
+        </b-form-group>
         <b-form-group label="Kategorie" label-for="category"
           description="Kategorie des Impuls">
           <category-selection :impulseCategoryId="category" v-on:categoryChange="updateCategory"></category-selection>
@@ -59,6 +62,7 @@
 import { mapActions } from 'vuex'
 import Editor from '@/components/_base/Editor.vue'
 import CategorySelection from '@/components/admin/_base/CategorySelection.vue'
+import PublishingStateSelection from '@/components/admin/_base/PublishingStateSelection.vue'
 
 export default {
   name: 'ImpulseEdit',
@@ -70,7 +74,8 @@ export default {
   },
   components: {
     Editor,
-    CategorySelection
+    CategorySelection,
+    PublishingStateSelection
   },
   computed: {
     title: {
@@ -119,6 +124,14 @@ export default {
       },
       set (value) {
         this.updateProperty({ impulse: this.impulse, prop: 'forWorld', value: value })
+      }
+    },
+    publishingState: {
+      get () {
+        return this.impulse.publishingState
+      },
+      set (value) {
+        this.updateProperty({ impulse: this.impulse, prop: 'publishingState', value: value })
       }
     }
   },
