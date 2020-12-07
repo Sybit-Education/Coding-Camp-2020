@@ -1,35 +1,42 @@
 <template>
   <div id="admin-view">
     <main-header :headerTitle="'Administration'" />
-    <b-container>
+    <b-container fluid>
       <b-row>
         <b-col md="6">
           <h3>
             Liste der Impulse ({{ this.rows }})
             <b-button to="/admin/new" class="float-right" variant="primary" size="sm">+ Neuer Impuls</b-button>
           </h3>
-          <b-overlay :show="showOverlay" rounded="sm">
             <b-table
               id="impulseList"
               ref="impulseListTable"
               :items="impulseList"
+              :busy="isBusy"
               :fields="fields" primary-key="id"
               :per-page="perPage"
               :current-page="currentPage"
-              :sort-by.sync="sortBy"
-              :sort-desc.sync="sortDesc"
+              :sort-by="sortBy"
+              :sort-desc="sortDesc"
               :selectable="true"
               select-mode="single"
               @row-selected="rowSelected"
               @row-clicked="rowClicked"
-              hover small
+              sticky-header="740px"
+              hover small show-empty
               >
+              <template #table-busy>
+                <div class="text-center text-danger my-2">
+                  <b-spinner class="align-middle"></b-spinner>
+                  <strong>Loading...</strong>
+                </div>
+              </template>
               <template v-slot:cell(title)="data">
                 <div><b>{{ data.value }}</b></div>
                 <category-label :categoryId="data.item.category" />
               </template>
               <template v-slot:cell(publishingDate)="data">
-                <p>{{ data.value | timestampDate }}</p>
+                <p>{{ data.value.toDate() | Date }}</p>
               </template>
             </b-table>
             <b-pagination
@@ -39,7 +46,6 @@
               :per-page="perPage"
               aria-controls="impulseList"
             />
-          </b-overlay>
         </b-col>
         <b-col md="6" >
           <template v-if="isClicked">
@@ -48,7 +54,7 @@
           </template>
           <div v-else class="d-flex justify-content-center align-items-center">
             <h4 class="text-center my-5 py-3">
-            Klicke einen Impuls an, um ihn zu bearbeiten.
+            Wähle einen Impuls aus, um diesen zu bearbeiten.
             </h4>
           </div>
         </b-col>
@@ -78,18 +84,18 @@ export default {
       ],
       sortBy: 'publishingDate',
       sortDesc: true,
-      perPage: 15,
+      perPage: 10,
       currentPage: 1,
       selectedImpulse: {},
       selectedRow: 0,
-      showOverlay: false,
+      isBusy: true,
       isClicked: false
     }
   },
-  created () {
-    this.showOverlay = true
-    this.fetchListAdmin()
-    this.showOverlay = false
+  async mounted () {
+    this.isBusy = true
+    await this.fetchListAdmin()
+    this.isBusy = false
   },
   computed: {
     ...mapGetters({
