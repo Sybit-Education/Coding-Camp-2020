@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <router-view class="router-view"/>
-    <CookieBanner/>
     <bottom-navigation></bottom-navigation>
+    <cookie-banner/>
     <notifications group="notification" class="mt-3" position="top center" />
   </div>
 </template>
@@ -30,8 +30,10 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
+
 .router-view {
-  margin-bottom: 80px;
+  background-color: var(--background);
+  min-height: calc(100vh - 1.75rem);
 }
 </style>

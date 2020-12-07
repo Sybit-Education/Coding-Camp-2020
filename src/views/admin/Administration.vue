@@ -1,16 +1,18 @@
 <template>
   <div id="admin">
     <main-header :headerTitle="'Administration'"></main-header>
+    <b-container>
     <b-row>
-      <b-col xl="6">
-        <b-row>
-          <b-col cols="12" md="6">
-        <h2>Liste der Impulse ({{ this.rows }})</h2>
-          </b-col>
-          <b-col cols="12" md="6" class="d-flex align-items-center justify-content-start justify-content-md-end py-3 py-md-0">
-            <b-button to="/admin/new" variant="primary">Neuer Impuls +</b-button>
-          </b-col>
-         </b-row>
+      <b-col cols="12" md="8">
+        <h3>Liste der Impulse ({{ this.rows }})</h3>
+      </b-col>
+      <b-col cols="12" md="4" class="d-flex align-items-center justify-content-start justify-content-md-end py-3 py-md-0">
+        <b-button to="/admin/new" variant="primary">Neuer Impuls +</b-button>
+      </b-col>
+    </b-row>
+    <b-row>
+      <b-col md="6">
+
         <b-overlay :show="showOverlay" rounded="sm">
           <b-table
             id="impulseList"
@@ -32,7 +34,7 @@
               <category-label :categoryId="data.item.category" />
             </template>
             <template v-slot:cell(publishingDate)="data">
-              <p>{{ data.value | Date }}</p>
+              <p>{{ data.value | timestampDate }}</p>
             </template>
           </b-table>
         </b-overlay>
@@ -46,11 +48,12 @@
         ></b-pagination>
         </b-col>
       </b-col>
-      <b-col xl="6" class="d-flex justify-content-center align-items-center">
+      <b-col md="6" class="d-flex justify-content-center align-items-center">
         <impulse-edit class="col-12" :impulse="selectedImpulse" v-if="isClicked"/>
         <h4 class="text-center mb-5 mb-md-0 mt-3 mt-md-0 py-3 py-md-0" v-else>Klicke einen Impuls an, um ihn zu bearbeiten.</h4>
       </b-col>
     </b-row>
+    </b-container>
   </div>
 </template>
 
