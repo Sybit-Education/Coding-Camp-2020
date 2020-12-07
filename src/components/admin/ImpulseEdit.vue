@@ -110,11 +110,7 @@ export default {
     },
     publishingDate: {
       get () {
-        let val = null
-        if (this.impulse.publishingDate) {
-          val = this.impulse.publishingDate.toDate()
-        }
-        return val
+        return (this.impulse && this.impulse.publishingDate) ? this.impulse.publishingDate.toDate() : null
       },
       set (value) {
         const timestamp = firebase.firestore.Timestamp.fromDate(value)
@@ -156,7 +152,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-
-</style>

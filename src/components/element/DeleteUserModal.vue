@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <b-button  v-b-modal.modal-delete-account variant="outline-danger">Account Löschen</b-button>
+  <b-button  v-b-modal.modal-delete-account variant="outline-danger">
+    Account Löschen
 
     <b-modal id="modal-delete-account" title="Account Löschen" hide-footer>
       <b-row>
@@ -34,7 +34,7 @@
           </b-col>
         </b-row>
     </b-modal>
-  </div>
+  </b-button>
 </template>
 
 <script>

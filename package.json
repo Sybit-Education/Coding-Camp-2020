@@ -15,7 +15,7 @@
     "core-js": "^3.8.1",
     "firebase": "^7.24.0",
     "font-awesome": "^4.7.0",
-    "husky": "^4.3.0",
+    "husky": "^4.3.5",
     "moment": "^2.29.1",
     "nprogress": "^0.2.0",
     "register-service-worker": "^1.7.1",
@@ -29,7 +29,7 @@
     "vue-quill-editor": "^3.0.6",
     "vue-router": "^3.4.9",
     "vuex": "^3.6.0",
-    "vuexfire": "^3.2.4"
+    "vuexfire": "^3.2.5"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.5.9",
