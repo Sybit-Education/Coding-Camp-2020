@@ -3,7 +3,21 @@
     <b-form @submit.prevent="addItem">
       <b-form-group label="Titel" label-for="title"
         description="Titel des Impuls">
-        <b-input id="title" v-model="impulse.title" placeholder="Titel" required/>
+        <b-input id="title" size="sm" v-model="impulse.title" placeholder="Titel" required/>
+      </b-form-group>
+
+      <b-form-group label="Veröffentlichungsdatum" label-for="publishingDate"
+        description="Wann soll dieser Impuls öffentlich werden?">
+        <b-datepicker
+          id="publishingDate"
+          name="publishingDate"
+          size="sm"
+          v-model="publishingDate"
+          :value-as-date="true"
+          locale="de"
+          calendarLocale="de"
+          start-weekday="1"
+          placeholder="Datum auswählen"></b-datepicker>
       </b-form-group>
 
       <b-form-group label="Veröffentlichungsstatus" label-for="publishingState"
@@ -16,14 +30,9 @@
         <category-selection v-model="impulse.category" v-on:categoryChange="updateCategory" />
       </b-form-group>
 
-      <b-form-group label="Erklärung" label-for="description"
-        description="Erklärung zum Impuls">
-        <editor id="description" v-model="impulse.description" name="description" />
-      </b-form-group>
-
       <b-form-group label="Was bringt es mir?" label-for="forMe"
         description="Welche Vorteile habe ich, wenn ich diesen Impuls umsetze?">
-        <editor id="forMe" v-model="impulse.forMe" name="forMe" />
+        <editor id="forMe" size="sm" v-model="impulse.forMe" name="forMe" />
       </b-form-group>
 
       <b-form-group
@@ -33,10 +42,9 @@
         <editor id="forWorld" v-model="impulse.forWorld" name="forWorld" />
       </b-form-group>
 
-      <b-form-group label="Veröffentlichungsdatum" label-for="publishingDate"
-        description="Wann soll dieser Impuls öffentlich werden?">
-        <b-datepicker id="publishingDate" v-model="impulse.publishingDate" name="publishingDate"
-          locale="de" calendarLocale="de" start-weekday="1" placeholder="Datum auswählen"></b-datepicker>
+      <b-form-group label="Erklärung" label-for="description"
+        description="Erklärung zum Impuls">
+        <editor id="description" v-model="impulse.description" name="description" />
       </b-form-group>
 
       <b-form-group>
@@ -48,6 +56,7 @@
 </template>
 
 <script>
+import firebase from 'firebase/app'
 import { mapActions } from 'vuex'
 import Editor from '@/components/_base/Editor.vue'
 import CategorySelection from '@/components/admin/_base/CategorySelection.vue'
@@ -75,6 +84,9 @@ export default {
   },
   methods: {
     async addItem () {
+      const value = this.impulse.publishingDate
+      this.impulse.publishingDate = firebase.firestore.Timestamp.fromDate(value)
+
       await this.add(this.impulse)
       this.$router.push('/admin')
     },
