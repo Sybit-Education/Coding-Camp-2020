@@ -12,10 +12,10 @@
     "axios": "^0.19.2",
     "bootstrap": "^4.5.3",
     "bootstrap-vue": "^2.20.1",
-    "core-js": "^3.8.0",
-    "firebase": "^7.20.0",
+    "core-js": "^3.8.1",
+    "firebase": "^7.24.0",
     "font-awesome": "^4.7.0",
-    "husky": "^4.3.0",
+    "husky": "^4.3.5",
     "moment": "^2.29.1",
     "nprogress": "^0.2.0",
     "register-service-worker": "^1.7.1",
@@ -29,7 +29,7 @@
     "vue-quill-editor": "^3.0.6",
     "vue-router": "^3.4.9",
     "vuex": "^3.6.0",
-    "vuexfire": "^3.2.4"
+    "vuexfire": "^3.2.5"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.5.9",
@@ -47,7 +47,7 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.1.0",
     "eslint-plugin-vue": "^6.2.2",
-    "lint-staged": "^10.5.2",
+    "lint-staged": "^10.5.3",
     "node-sass": "^4.14.1",
     "sass-loader": "^8.0.2",
     "vue-template-compiler": "^2.6.12"

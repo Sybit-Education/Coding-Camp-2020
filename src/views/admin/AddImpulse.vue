@@ -1,10 +1,11 @@
 <template>
-  <div id="add-impulse" class="container">
+  <div id="add-impulse">
     <main-header :headerTitle="'Administration'"></main-header>
-    <h1>Neuer Impuls</h1>
-    <b-button to="/admin" class="my-3" variant="primary">zurück</b-button>
-    <impulse-add></impulse-add>
-
+    <b-container>
+      <h1>Neuer Impuls</h1>
+      <b-button to="/admin" class="my-3" variant="primary">zurück</b-button>
+      <impulse-add></impulse-add>
+    </b-container>
   </div>
 </template>
 
@@ -21,6 +22,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+.container {
+  margin-bottom: 6rem;
+}
 </style>
