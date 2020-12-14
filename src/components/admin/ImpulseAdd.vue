@@ -1,5 +1,5 @@
 <template>
-  <div id="impulse-edit" >
+  <c-container id="impulse-edit" >
     <b-form @submit.prevent="addItem">
       <b-form-group label="Titel" label-for="title"
         description="Titel des Impuls">
@@ -62,7 +62,7 @@
       </b-form-group>
     </b-form>
 
-  </div>
+  </c-container>
 </template>
 
 <script>
@@ -108,6 +108,9 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style lang="scss" scoped>
+.container-fluid {
+  margin-top: 1.5rem;
+  margin-bottom: 6rem;
+}
 </style>

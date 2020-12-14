@@ -125,8 +125,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container {
-  margin-top: 0.5rem;
+.container-fluid {
+  margin-top: 1.5rem;
   margin-bottom: 6rem;
 }
 </style>

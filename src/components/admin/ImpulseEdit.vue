@@ -204,10 +204,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-#impulse-edit {
-  margin-top: 0.5rem;
-  margin-bottom: 6rem;
-}
-</style>
