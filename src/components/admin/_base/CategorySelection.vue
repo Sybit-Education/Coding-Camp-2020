@@ -1,7 +1,7 @@
 <template>
   <b-form-select
-    :value="selectionId"
-    :options="getList"
+    :value="selectedValue"
+    :options="list"
     value-field="value"
     text-field="name" >
     <template v-slot:first>
@@ -25,29 +25,29 @@ export default {
   },
   data () {
     return {
-      selectionId: ''
+      selectedValue: ''
     }
   },
   mounted () {
     this.fetchList()
       .then(() => {
-        this.selectionId = this.impulseCategoryId
+        this.selectedValue = this.impulseCategoryId
       })
   },
   computed: {
     ...mapGetters({
-      getList: 'Category/getList'
+      list: 'Category/getList'
     })
   },
   watch: {
     impulseCategoryId (newValue, oldValue) {
       if (newValue !== oldValue) {
-        this.selectionId = this.impulseCategoryId
+        this.selectedValue = this.impulseCategoryId
       }
     },
-    selectionId (newValue, oldValue) {
+    selectedValue (newValue, oldValue) {
       if (newValue !== oldValue) {
-        this.$emit('categoryChange', this.selectionId)
+        this.$emit('categoryChange', this.selectedValue)
       }
     }
   },

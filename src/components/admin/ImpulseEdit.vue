@@ -13,8 +13,8 @@
             class="col"
             description="Status der Veröffentlichung des Impuls">
             <publishing-state-selection
-              id="publishingDate"
-              v-model="publishingState"
+              id="publishingState"
+              :publishingState="publishingState"
               v-on:publishingStateChange="updatePublishingState"/>
           </b-form-group>
 

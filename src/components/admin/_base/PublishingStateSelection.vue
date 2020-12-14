@@ -1,6 +1,6 @@
 <template>
   <b-form-select
-    v-model="selectedState"
+    :value="selectedValue"
     :options="list"
     value-field="value" text-field="name" />
 </template>
@@ -11,13 +11,12 @@ export default {
   props: {
     publishingState: {
       type: String,
-      required: false,
-      default: 'draft'
+      required: true
     }
   },
   data () {
     return {
-      selectedState: '',
+      selectedValue: null,
       list: [
         { value: null, name: '-- Status auswählen --', disabled: true },
         { value: 'draft', name: 'Entwurf' },
@@ -29,12 +28,14 @@ export default {
   watch: {
     publishingState (newValue, oldValue) {
       if (newValue !== oldValue) {
-        this.selectedState = newValue
+        console.log(newValue)
+        this.selectedValue = this.publishingState
       }
     },
-    selectedState (newValue, oldValue) {
+    selectedValue (newValue, oldValue) {
       if (newValue !== oldValue) {
-        this.$emit('publishingStateChange', newValue)
+        console.log(newValue)
+        this.$emit('publishingStateChange', this.selectedValue)
       }
     }
   }
