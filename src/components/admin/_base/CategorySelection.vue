@@ -2,7 +2,6 @@
   <b-form-select
     :value="selectionId"
     :options="getList"
-    size="sm"
     value-field="value"
     text-field="name" >
     <template v-slot:first>

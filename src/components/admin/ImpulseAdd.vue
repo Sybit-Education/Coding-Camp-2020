@@ -4,8 +4,12 @@
       <b-form-group label="Titel" label-for="title"
         description="Titel des Impuls">
         <b-input id="title" size="sm" v-model="impulse.title" placeholder="Titel" required/>
-      </b-form-group>
 
+      </b-form-group>
+      <b-form-group label="Status" label-for="title"
+        description="Status der Veröffentlichung">
+        <publishing-state-selection  :publishingState="publishingState" />
+      </b-form-group>
       <b-form-group label="Veröffentlichungsdatum" label-for="publishingDate"
         description="Wann soll dieser Impuls öffentlich werden?">
         <b-datepicker
@@ -14,6 +18,7 @@
           size="sm"
           v-model="publishingDate"
           :value-as-date="true"
+          :date-format-options="{ year: 'numeric', month: 'numeric', day: 'numeric' }"
           locale="de"
           calendarLocale="de"
           start-weekday="1"
@@ -28,6 +33,11 @@
       <b-form-group label="Kategorie" label-for="category"
         description="Kategorie des Impuls">
         <category-selection v-model="impulse.category" v-on:categoryChange="updateCategory" />
+      </b-form-group>
+
+      <b-form-group label="Punkte" label-for="points"
+        description="Punkte, die man für den Impuls bekommen kann">
+        <b-input id="points" v-model="impulse.points" type="number" placeholder="Punkte" required/>
       </b-form-group>
 
       <b-form-group label="Was bringt es mir?" label-for="forMe"
