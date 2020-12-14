@@ -1,48 +1,43 @@
 <template>
-  <c-container id="impulse-edit" >
+  <b-container id="impulse-edit" >
     <b-form @submit.prevent="addItem">
       <b-form-group label="Titel" label-for="title"
         description="Titel des Impuls">
-        <b-input id="title" size="sm" v-model="impulse.title" placeholder="Titel" required/>
+        <b-input id="title"  v-model="impulse.title" placeholder="Titel" required/>
+      </b-form-group>
+      <b-row>
+        <b-form-group label="Status" class="col"
+          description="Status der Veröffentlichung">
+          <publishing-state-selection  :publishingState="impulse.publishingState" />
+        </b-form-group>
+        <b-form-group label="Veröffentlichungsdatum" class="col" label-for="publishingDate"
+          description="Wann soll dieser Impuls öffentlich werden?">
+          <b-datepicker
+            id="publishingDate"
+            name="publishingDate"
 
-      </b-form-group>
-      <b-form-group label="Status" label-for="title"
-        description="Status der Veröffentlichung">
-        <publishing-state-selection  :publishingState="publishingState" />
-      </b-form-group>
-      <b-form-group label="Veröffentlichungsdatum" label-for="publishingDate"
-        description="Wann soll dieser Impuls öffentlich werden?">
-        <b-datepicker
-          id="publishingDate"
-          name="publishingDate"
-          size="sm"
-          v-model="publishingDate"
-          :value-as-date="true"
-          :date-format-options="{ year: 'numeric', month: 'numeric', day: 'numeric' }"
-          locale="de"
-          calendarLocale="de"
-          start-weekday="1"
-          placeholder="Datum auswählen"></b-datepicker>
-      </b-form-group>
-
-      <b-form-group label="Veröffentlichungsstatus" label-for="publishingState"
-        description="Status der Veröffentlichung des Impuls">
-        <publishing-state-selection v-model="impulse.publishingState" />
-      </b-form-group>
-
-      <b-form-group label="Kategorie" label-for="category"
-        description="Kategorie des Impuls">
-        <category-selection v-model="impulse.category" v-on:categoryChange="updateCategory" />
-      </b-form-group>
-
-      <b-form-group label="Punkte" label-for="points"
-        description="Punkte, die man für den Impuls bekommen kann">
-        <b-input id="points" v-model="impulse.points" type="number" placeholder="Punkte" required/>
-      </b-form-group>
-
+            v-model="impulse.publishingDate"
+            :value-as-date="true"
+            :date-format-options="{ year: 'numeric', month: 'numeric', day: 'numeric' }"
+            locale="de"
+            calendarLocale="de"
+            start-weekday="1"
+            placeholder="Datum auswählen"></b-datepicker>
+        </b-form-group>
+      </b-row>
+      <b-row>
+        <b-form-group label="Kategorie" class="col"
+          description="Kategorie des Impuls">
+          <category-selection :impulseCategoryId="impulse.category" v-on:categoryChange="updateCategory" />
+        </b-form-group>
+        <b-form-group label="Punkte" class="col"
+          description="Punkte, die man für den Impuls bekommen kann">
+          <b-input v-model="impulse.points" type="number" placeholder="Punkte" required/>
+        </b-form-group>
+      </b-row>
       <b-form-group label="Was bringt es mir?" label-for="forMe"
         description="Welche Vorteile habe ich, wenn ich diesen Impuls umsetze?">
-        <editor id="forMe" size="sm" v-model="impulse.forMe" name="forMe" />
+        <editor id="forMe" v-model="impulse.forMe" name="forMe" />
       </b-form-group>
 
       <b-form-group
@@ -62,7 +57,7 @@
       </b-form-group>
     </b-form>
 
-  </c-container>
+  </b-container>
 </template>
 
 <script>
@@ -107,10 +102,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-.container-fluid {
-  margin-top: 1.5rem;
-  margin-bottom: 6rem;
-}
-</style>

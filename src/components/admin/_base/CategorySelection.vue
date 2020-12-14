@@ -20,7 +20,7 @@ export default {
   props: {
     impulseCategoryId: {
       type: String,
-      required: true
+      required: false
     }
   },
   data () {
