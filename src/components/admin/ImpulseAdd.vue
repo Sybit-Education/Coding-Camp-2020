@@ -102,3 +102,12 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+#forMe, #forWorld {
+  min-height:100px;
+}
+#description {
+  min-height:200px;
+}
+</style>
