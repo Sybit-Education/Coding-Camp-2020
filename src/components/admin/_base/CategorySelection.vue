@@ -3,7 +3,8 @@
     :value="selectedValue"
     :options="list"
     value-field="value"
-    text-field="name" >
+    text-field="name"
+    required>
     <template v-slot:first>
       <b-form-select-option :value="null" disabled>
         -- Kategorie auswählen --
@@ -18,7 +19,7 @@ import { mapGetters, mapActions } from 'vuex'
 export default {
   name: 'CategorySelection',
   props: {
-    impulseCategoryId: {
+    categoryId: {
       type: String,
       required: false
     }
@@ -31,7 +32,7 @@ export default {
   mounted () {
     this.fetchList()
       .then(() => {
-        this.selectedValue = this.impulseCategoryId
+        this.selectedValue = this.categoryId
       })
   },
   computed: {
@@ -40,9 +41,9 @@ export default {
     })
   },
   watch: {
-    impulseCategoryId (newValue, oldValue) {
+    categoryId (newValue, oldValue) {
       if (newValue !== oldValue) {
-        this.selectedValue = this.impulseCategoryId
+        this.selectedValue = this.categoryId
       }
     },
     selectedValue (newValue, oldValue) {

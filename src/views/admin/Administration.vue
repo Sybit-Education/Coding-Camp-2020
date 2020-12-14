@@ -6,7 +6,11 @@
         <b-col md="6">
           <h3>
             Liste der Impulse ({{ this.rows }})
-            <b-button to="/admin/new" class="float-right" variant="primary" size="sm">+ Neuer Impuls</b-button>
+            <b-button class="float-right" variant="primary" size="sm"
+              v-b-modal="'modal-impulse-create'">
+              + Neuer Impuls
+            </b-button>
+            <impulse-add-modal />
           </h3>
             <b-table
               id="impulseList"
@@ -68,13 +72,15 @@ import { mapActions, mapGetters } from 'vuex'
 import MainHeader from '@/components/_base/Header'
 import CategoryLabel from '@/components/_base/CategoryLabel.vue'
 import ImpulseEdit from '@/components/admin/ImpulseEdit.vue'
+import ImpulseAddModal from '@/components/admin/ImpulseAddModal.vue'
 
 export default {
   name: 'Administration',
   components: {
     MainHeader,
     ImpulseEdit,
-    CategoryLabel
+    CategoryLabel,
+    ImpulseAddModal
   },
   data () {
     return {

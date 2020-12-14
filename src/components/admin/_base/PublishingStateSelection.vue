@@ -2,7 +2,9 @@
   <b-form-select
     :value="selectedValue"
     :options="list"
-    value-field="value" text-field="name" />
+    value-field="value"
+    text-field="name"
+    required />
 </template>
 
 <script>

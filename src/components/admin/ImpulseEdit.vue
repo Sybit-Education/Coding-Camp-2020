@@ -39,7 +39,7 @@
           <b-form-group label="Kategorie" label-for="category" class="col"
             description="Kategorie des Impuls">
             <category-selection id="category"
-              :impulseCategoryId="category"
+              :categoryId="category"
               v-on:categoryChange="updateCategory"></category-selection>
           </b-form-group>
 
