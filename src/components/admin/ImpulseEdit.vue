@@ -27,19 +27,19 @@
 
         <b-form-group label="Was bringt es mir?" label-for="forMe"
           description="Welche Vorteile habe ich, wenn ich diesen Impuls umsetze?">
-          <editor id="forMe" style="min-height:100px;" v-model="forMe" name="forMe" />
+          <editor id="forMe" v-model="forMe" name="forMe" />
         </b-form-group>
 
         <b-form-group
           label="Was bringt es der Welt?"
           label-for="forWorld"
           description="Was hat die ganze Welt davon?">
-          <editor id="forWorld" style="min-height:100px;" v-model="forWorld" name="forWorld" />
+          <editor id="forWorld" v-model="forWorld" name="forWorld" />
         </b-form-group>
 
         <b-form-group label="Erklärung" label-for="description"
           description="Erklärung zum Impuls">
-          <editor id="description" style="min-height:200px;" v-model="description" name="description" />
+          <editor id="description" v-model="description" name="description" />
         </b-form-group>
 
         <b-form-group>
@@ -152,3 +152,12 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+#forMe, #forWorld {
+  min-height:100px;
+}
+#description {
+  min-height:200px;
+}
+</style>
