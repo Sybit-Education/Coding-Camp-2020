@@ -22,8 +22,6 @@ export const actions = {
         snapshot.docs.forEach(doc => {
           list.push({ value: doc.id, ...doc.data() })
         })
-        var source = snapshot.metadata.fromCache ? 'local cache' : 'server'
-        console.log('Data came from ' + source)
         commit('SET_LIST', list)
         commit('SET_LOADED', true)
       })
