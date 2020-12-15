@@ -30,7 +30,6 @@ export default {
   watch: {
     publishingState (newValue, oldValue) {
       if (newValue !== oldValue) {
-        console.log(newValue)
         this.selectedValue = this.publishingState
       }
     },
