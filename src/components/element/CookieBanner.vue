@@ -1,6 +1,6 @@
 <template>
  <cookie-law theme="sybit"
-      buttonText="Einverstanden!"
+      buttonText="Einverstanden"
       buttonClass="btn btn-primary"
       position="bottom"
       message="Um unsere Website zu optimieren und für Sie individueller zu gestalten, setzen wir Cookies für verschiedene Zwecke ein. Umfassende Informationen zu diesen Cookies finden Sie in unserer Datenschutzerklärung."
@@ -20,9 +20,9 @@ export default {
 <style lang="scss" scoped>
 .Cookie--sybit {
   background: white;
-  padding: 10px 0;
+  padding: 5px 5px;
   position: fixed;
-  bottom: 0;
+  bottom: 2.5rem;
   width: 100%;
   z-index: 999;
 
