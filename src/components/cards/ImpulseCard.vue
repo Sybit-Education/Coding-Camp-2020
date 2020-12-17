@@ -4,7 +4,14 @@
       <router-link :to="{ name: 'KartenDetail', params: { impulse: impulse }}">
         <h3 class="card-text-headline">{{ impulse.title }}</h3>
         <div class="card-text">
-          <p v-if="impulse.description" v-html="impulse.description"></p>
+          <div v-if="impulse.forMe">
+            <h4>Was bringt das mir?</h4>
+            <p v-html="impulse.forMe" />
+          </div>
+          <div v-if="impulse.forWorld">
+            <h4>Was bringt es der Welt?</h4>
+            <p v-html="impulse.forWorld" />
+          </div>
         </div>
       </router-link>
     </div>
