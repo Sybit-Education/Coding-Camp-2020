@@ -27,7 +27,9 @@ export default {
   },
 
   async created () {
-    await this.fetchById(this.user.uid)
+    if (this.user) {
+      await this.fetchById(this.user.uid)
+    }
   },
   metaInfo () {
     return {
