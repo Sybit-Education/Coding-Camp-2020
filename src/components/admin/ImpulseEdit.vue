@@ -32,7 +32,7 @@
               locale="de"
               calendarLocale="de"
               start-weekday="1"
-              placeholder="Datum auswählen"></b-datepicker>
+              placeholder="Datum auswählen" />
           </b-form-group>
         </b-row>
         <b-row>
@@ -40,7 +40,7 @@
             description="Kategorie des Impuls">
             <category-selection id="category"
               :categoryId="category"
-              v-on:categoryChange="updateCategory"></category-selection>
+              v-on:categoryChange="updateCategory" />
           </b-form-group>
 
           <b-form-group label="Punkte" label-for="points" class="col"
@@ -200,7 +200,7 @@ export default {
         value: state
       })
     },
-    ...mapActions('Impulse', ['fetchList', 'fetchById', 'update', 'updateProperty', 'delete'])
+    ...mapActions('Impulse', ['update', 'updateProperty', 'delete'])
   }
 }
 </script>
