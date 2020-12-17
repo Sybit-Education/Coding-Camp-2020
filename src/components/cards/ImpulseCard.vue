@@ -3,8 +3,8 @@
     <div class="card-content">
       <router-link :to="{ name: 'KartenDetail', params: { impulse: impulse }}">
         <div class="card-text-headline">
-        <h3>{{ impulse.title }}</h3>
-        <category-label :categoryId="impulse.category" />
+          <category-label :categoryId="impulse.category" />
+          <h3>{{ impulse.title }}</h3>
         </div>
         <div class="card-text">
           <div v-if="impulse.forMe">
@@ -49,11 +49,12 @@ export default {
 </script>
 <style lang="scss" scoped>
 .card-body {
+  --header-height: 40%;
   margin-left: auto;
   margin-right: auto;
   min-width: 263px;
   max-width: 780px;
-  position:relative;
+  position: relative;
   padding: 0;
   height: auto;
   color: $gray-900;
@@ -75,8 +76,9 @@ export default {
       text-decoration: none;
     }
     .card-text-headline {
-      height: 60%;
-      padding-top: 25px;
+      height: var(--header-height);
+      min-height: var(--header-height);
+      padding-top: 12px;
       padding-bottom: 10px;
       color: $gray-900;
       line-height: 1;
@@ -90,11 +92,11 @@ export default {
       }
     }
     .card-text {
-      height: 30%;
+      height: var(100 - --header-height);
       line-height: var(--lh);
       max-height: calc(var(--lh) * var(--max-lines));
       width: 100%;
-      padding-bottom: 1rem;
+      padding-bottom: 0;
       word-wrap: break-word;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -118,14 +120,19 @@ export default {
 @media only screen and (max-width: 991px) {
 
   .card-content {
-    --max-lines: 5;
+    --max-lines: 16;
     --lh: 1.5em;
 
     .card-text-headline {
-      font-size: calc(20px + (38 - 20) * (100vw - 350px) / (750 - 350));
+      h3 {
+        font-size: calc(24px + (36 - 24) * (100vw - 350px) / (750 - 350));
+      }
     }
     .card-text {
-      font-size: calc(16px + (30 - 16) * (100vw - 350px) / (750 - 350));
+      font-size: calc(14px + (24 - 14) * (100vw - 350px) / (750 - 350));
+      h4 {
+        font-size: calc(20px + (30 - 20) * (100vw - 350px) / (750 - 350));
+      }
     }
   }
 }
@@ -133,11 +140,13 @@ export default {
 @media only screen and (min-width: 992px) {
 
   .card-content {
-    --max-lines: 8;
+    --max-lines: 20;
     --lh: 1.5em;
 
     .card-text-headline {
-      font-size: 36px;
+      h3 {
+        font-size: 36px;
+      }
     }
     .card-text {
       font-size: 18px;
