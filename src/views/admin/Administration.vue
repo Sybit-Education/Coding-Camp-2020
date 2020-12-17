@@ -3,11 +3,11 @@
     <main-header :headerTitle="'Administration'" />
     <b-container fluid>
       <b-row>
-        <b-col md="6">
+        <b-col>
           <h3>
             Liste der Impulse ({{ this.rows }})
             <b-button class="float-right" variant="primary" size="sm"
-              v-b-modal="'modal-impulse-create'">
+              v-b-modal="modal-impulse-create">
               + Neuer Impuls
             </b-button>
             <impulse-add-modal />
@@ -17,12 +17,13 @@
               ref="impulseListTable"
               :items="impulseList"
               :busy="isBusy"
-              :fields="fields" primary-key="id"
+              :fields="fields"
               :per-page="perPage"
               :current-page="currentPage"
               :sort-by="sortBy"
               :sort-desc="sortDesc"
               :selectable="true"
+              primary-key="id"
               select-mode="single"
               @row-selected="rowSelected"
               @row-clicked="rowClicked"
@@ -36,7 +37,7 @@
                 </div>
               </template>
               <template v-slot:cell(title)="data">
-                <div><b>{{ data.value }}</b></div>
+                <div>{{ data.value }}</div>
                 <category-label :categoryId="data.item.category" />
               </template>
               <template v-slot:cell(publishingDate)="data">
@@ -51,7 +52,7 @@
               aria-controls="impulseList"
             />
         </b-col>
-        <b-col md="6" >
+        <b-col cols="4" md="6" sm="12">
           <template v-if="isClicked">
             <h3 class="col-12">Impuls bearbeiten</h3>
             <impulse-edit class="col-12" :impulse="selectedImpulse" />
@@ -98,10 +99,12 @@ export default {
       isClicked: false
     }
   },
-  async mounted () {
+  mounted () {
     this.isBusy = true
-    await this.fetchListAdmin()
-    this.isBusy = false
+    this.fetchListAdmin()
+      .finally(() => {
+        this.isBusy = false
+      })
   },
   computed: {
     ...mapGetters({
