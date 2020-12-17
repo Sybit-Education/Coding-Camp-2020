@@ -18,9 +18,9 @@ export default {
   },
   data () {
     return {
-      selectedValue: null,
+      selectedValue: '',
       list: [
-        { value: null, name: '-- Status auswählen --', disabled: true },
+        { value: '', name: '-- Status auswählen --', disabled: true },
         { value: 'draft', name: 'Entwurf' },
         { value: 'review', name: 'in Review' },
         { value: 'online', name: 'Veröffentlicht' }
@@ -30,13 +30,12 @@ export default {
   watch: {
     publishingState (newValue, oldValue) {
       if (newValue !== oldValue) {
-        this.selectedValue = this.publishingState
+        this.selectedValue = newValue
       }
     },
     selectedValue (newValue, oldValue) {
       if (newValue !== oldValue) {
-        console.log(newValue)
-        this.$emit('publishingStateChange', this.selectedValue)
+        this.$emit('publishingStateChange', newValue)
       }
     }
   }
