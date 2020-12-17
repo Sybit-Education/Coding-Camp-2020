@@ -2,7 +2,10 @@
   <div class="card-body">
     <div class="card-content">
       <router-link :to="{ name: 'KartenDetail', params: { impulse: impulse }}">
-        <h3 class="card-text-headline">{{ impulse.title }}</h3>
+        <div class="card-text-headline">
+        <h3>{{ impulse.title }}</h3>
+        <category-label :categoryId="impulse.category" />
+        </div>
         <div class="card-text">
           <div v-if="impulse.forMe">
             <h4>Was bringt das mir?</h4>
@@ -23,6 +26,7 @@
 </template>
 <script>
 import AssignButton from '@/components/cards/AssignButton'
+import CategoryLabel from '@/components/_base/CategoryLabel.vue'
 import { $auth } from '@/firebase-config'
 export default {
   props: {
@@ -31,7 +35,7 @@ export default {
     }
   },
   components: {
-    AssignButton
+    AssignButton, CategoryLabel
   },
   computed: {
     user () {
@@ -75,6 +79,15 @@ export default {
       padding-top: 25px;
       padding-bottom: 10px;
       color: $gray-900;
+      line-height: 1;
+
+      h3 {
+        margin-bottom: 0;
+      }
+
+      .category {
+        font-size: 0.75rem;
+      }
     }
     .card-text {
       height: 30%;
@@ -109,7 +122,7 @@ export default {
     --lh: 1.5em;
 
     .card-text-headline {
-      font-size: calc(24px + (38 - 24) * (100vw - 350px) / (750 - 350));
+      font-size: calc(20px + (38 - 20) * (100vw - 350px) / (750 - 350));
     }
     .card-text {
       font-size: calc(16px + (30 - 16) * (100vw - 350px) / (750 - 350));

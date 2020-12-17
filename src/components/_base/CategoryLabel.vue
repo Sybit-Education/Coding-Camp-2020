@@ -1,5 +1,6 @@
 <template>
   <b-badge
+    class="category"
     v-if="category"
     v-bind:style="color"
     v-text="name" />
