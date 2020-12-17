@@ -49,7 +49,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .card-body {
-  --header-height: 40%;
+  --header-height: 45%;
   margin-left: auto;
   margin-right: auto;
   min-width: 263px;
@@ -125,7 +125,7 @@ export default {
 
     .card-text-headline {
       h3 {
-        font-size: calc(24px + (36 - 24) * (100vw - 350px) / (750 - 350));
+        font-size: calc(24px + (32 - 24) * (100vw - 350px) / (750 - 350));
       }
     }
     .card-text {
@@ -145,7 +145,7 @@ export default {
 
     .card-text-headline {
       h3 {
-        font-size: 36px;
+        font-size: 32px;
       }
     }
     .card-text {
