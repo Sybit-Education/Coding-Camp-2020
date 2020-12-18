@@ -1,6 +1,6 @@
 <template>
   <b-form-select
-    :value="selectedValue"
+    v-model="selectedValue"
     :options="list"
     value-field="value"
     text-field="name"
@@ -26,6 +26,9 @@ export default {
         { value: 'online', name: 'Veröffentlicht' }
       ]
     }
+  },
+  mounted () {
+    this.selectedValue = this.$props.publishingState
   },
   watch: {
     publishingState (newValue, oldValue) {

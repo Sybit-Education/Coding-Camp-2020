@@ -1,6 +1,6 @@
 <template>
   <b-form-select
-    :value="selectedValue"
+    v-model="selectedValue"
     :options="list"
     value-field="value"
     text-field="name"
@@ -30,6 +30,7 @@ export default {
     }
   },
   mounted () {
+    this.selectedValue = this.$props.publishingState
     this.fetchList()
       .then(() => {
         this.selectedValue = this.categoryId
