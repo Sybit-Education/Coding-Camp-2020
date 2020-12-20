@@ -10,16 +10,7 @@ export const namespaced = true
 
 export const state = {
   impulseList: [],
-  impulseListAdmin: [],
-  impulse: {
-    id: '',
-    title: '',
-    category: '',
-    description: '',
-    forMe: '',
-    forWorld: '',
-    publishingDate: ''
-  }
+  impulseListAdmin: []
 }
 
 export const actions = {
@@ -42,7 +33,11 @@ export const actions = {
       return Object.defineProperty(snapshot.data(), 'id',
         { value: snapshot.id, enumerable: true })
     }
-    bindFirestoreRef('impulseListAdmin', $db.collection(COLLECTION_NAME).orderBy('publishingDate', 'desc'), { serialize })
+    bindFirestoreRef(
+      'impulseListAdmin',
+      $db.collection(COLLECTION_NAME)
+        .orderBy('publishingDate', 'desc'),
+      { serialize })
   }),
   fetchById: firestoreAction(async ({ bindFirestoreRef }, id) => {
     if (!id) return
