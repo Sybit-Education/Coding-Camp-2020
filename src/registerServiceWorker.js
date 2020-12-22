@@ -1,8 +1,27 @@
-import Vue from 'vue'
+import { Workbox } from 'workbox-window'
+// import Vue from 'vue'
+// import { register } from 'register-service-worker'
 
-import { register } from 'register-service-worker'
+let wb
+
+if ('serviceWorker' in navigator) {
+  wb = new Workbox(`${process.env.BASE_URL}service-worker.js`)
+
+  wb.addEventListener('controlling', () => {
+    window.location.reload()
+  })
+
+  wb.register().then((x) => {
+    console.log(x)
+  })
+} else {
+  wb = null
+}
+
+export default wb
 
 /* eslint-disable no-console */
+/*
 if (process.env.NODE_ENV === 'production') {
   register(`${process.env.BASE_URL}service-worker.js`, {
     ready () {
@@ -43,3 +62,4 @@ if (process.env.NODE_ENV === 'production') {
     }
   })
 }
+*/

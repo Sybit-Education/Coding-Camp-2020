@@ -9,11 +9,12 @@ import './vue-meta'
 import './vue-fontawesome'
 import './vue-notification'
 import './vue-gravatar'
-import './registerServiceWorker'
 import './plugins/bootstrap-vue'
+import wb from './registerServiceWorker'
 
 let app = ''
 Vue.config.productionTip = false
+Vue.prototype.$workbox = wb
 
 firebase.auth().onAuthStateChanged(() => {
   if (!app) {
