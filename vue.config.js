@@ -1,6 +1,4 @@
 module.exports = {
-  runtimeCompiler: true,
-  filenameHashing: false,
   devServer: {
     host: 'localhost',
     port: '3000',
@@ -30,6 +28,17 @@ module.exports = {
           @import '~bootstrap-vue/src/index.scss';
         `
       }
+    }
+  },
+  pwa: {
+    name: 'Sei ein Held - rette die Welt',
+    shortName: 'Sei ein Held',
+    themeColor: '#FBFF00',
+    msTileColor: '#FBFF00',
+    appleMobileWebAppCache: 'yes',
+    appleMobileWebAppCapable: 'yes',
+    manifestOptions: {
+      background_color: '#42b983'
     }
   }
 }

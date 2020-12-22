@@ -1,6 +1,8 @@
 <template>
   <div id="app">
     <router-view class="router-view"/>
+    <update-dialog />
+    <A2HS />
     <bottom-navigation></bottom-navigation>
     <cookie-banner/>
     <notifications group="notification" class="mt-3" position="top center" />
@@ -10,11 +12,15 @@
 <script>
 import BottomNavigation from '@/components/navigation/BottomNavigation.vue'
 import CookieBanner from '@/components/element/CookieBanner.vue'
+import UpdateDialog from '@/components/_base/UpdateDialog.vue'
+import A2HS from '@/components/a2hs/A2HS.vue'
 export default {
   name: 'App',
   components: {
     BottomNavigation,
-    CookieBanner
+    CookieBanner,
+    UpdateDialog,
+    A2HS
   },
   metaInfo () {
     return {
