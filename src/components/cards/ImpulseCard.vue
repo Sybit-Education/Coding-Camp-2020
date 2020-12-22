@@ -47,6 +47,11 @@ export default {
 <style lang="scss" scoped>
 .card-body {
   --header-height: 45%;
+  --max-lines: 10;
+  --lh: 1.25em;
+  --headline-size: 22px;
+  --text-size: 14px;
+
   margin-left: auto;
   margin-right: auto;
   min-width: 263px;
@@ -81,6 +86,7 @@ export default {
       line-height: 1;
 
       h3 {
+        font-size: var(--headline-size);
         margin-bottom: 0;
       }
 
@@ -100,7 +106,11 @@ export default {
       text-overflow: ellipsis;
       color: $gray-900;
 
+      h4 {
+        font-size: var(--text-size);
+      }
       p {
+        font-size: var(--text-size);
         max-height: calc(var(--lh) * var(--max-lines));
         hyphens: auto;
       }
@@ -112,48 +122,39 @@ export default {
       bottom: 1rem;
       left: 1rem;
     }
+
+    .add-impuls {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+    }
   }
 }
-
-@media only screen and (max-width: 991px) {
+@media only screen and (max-width: 321px) {
 
   .card-content {
     --max-lines: 10;
-    --lh: 1.5em;
+    --lh: 1.25em;
+    --headline-size: 22px;
+    --text-size: 14px;
+  }
+}
 
-    .card-text-headline {
-      h3 {
-        font-size: calc(24px + (32 - 24) * (100vw - 350px) / (750 - 350));
-      }
-    }
-    .card-text {
-      font-size: calc(14px + (20 - 14) * (100vw - 350px) / (750 - 350));
-      h4 {
-        font-size: calc(20px + (30 - 20) * (100vw - 350px) / (750 - 350));
-      }
-    }
+@media only screen and (max-width: 991px) and (min-width: 322px) {
+  .card-content {
+    --max-lines: 10;
+    --lh: 1.25em;
+    --text-size: calc(14px + (20 - 14) * (100vw - 350px) / (750 - 350));
+    --headline-size: calc(24px + (32 - 24) * (100vw - 350px) / (750 - 350));
   }
 }
 
 @media only screen and (min-width: 992px) {
-
   .card-content {
     --max-lines: 20;
     --lh: 1.5em;
-
-    .card-text-headline {
-      h3 {
-        font-size: 32px;
-      }
-    }
-    .card-text {
-      font-size: 18px;
-    }
+    --headline-size: 32px;
+    --text-size: 18
   }
-}
-.add-impuls {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
 }
 </style>
