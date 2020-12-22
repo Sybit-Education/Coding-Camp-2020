@@ -7,7 +7,7 @@
           <h3>
             Liste der Impulse ({{ this.rows }})
             <b-button class="float-right" variant="primary" size="sm"
-              v-b-modal="modal-impulse-create">
+              v-b-modal="'modal-impulse-create'">
               + Neuer Impuls
             </b-button>
             <impulse-add-modal />
