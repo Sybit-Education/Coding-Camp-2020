@@ -8,7 +8,7 @@
         </div>
         <div class="card-text">
           <div v-if="impulse.forMe">
-            <h4>Was bringt das mir?</h4>
+            <h4>Was bringt es mir?</h4>
             <p v-html="impulse.forMe" />
           </div>
           <div v-if="impulse.forWorld">
