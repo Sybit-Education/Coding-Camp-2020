@@ -40,9 +40,6 @@ export default {
   computed: {
     user () {
       return $auth.currentUser
-    },
-    cardBackground () {
-      return require('@/assets/cards/Card-blue.svg')
     }
   }
 }
@@ -89,6 +86,7 @@ export default {
 
       .category {
         font-size: 0.75rem;
+        margin-bottom: 0.5rem;
       }
     }
     .card-text {
@@ -120,7 +118,7 @@ export default {
 @media only screen and (max-width: 991px) {
 
   .card-content {
-    --max-lines: 16;
+    --max-lines: 10;
     --lh: 1.5em;
 
     .card-text-headline {
@@ -129,7 +127,7 @@ export default {
       }
     }
     .card-text {
-      font-size: calc(14px + (24 - 14) * (100vw - 350px) / (750 - 350));
+      font-size: calc(14px + (20 - 14) * (100vw - 350px) / (750 - 350));
       h4 {
         font-size: calc(20px + (30 - 20) * (100vw - 350px) / (750 - 350));
       }
