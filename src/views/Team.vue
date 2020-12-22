@@ -82,9 +82,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container {
-  margin-bottom: 6rem;
-}
 .names {
     padding-top: 45px;
 }

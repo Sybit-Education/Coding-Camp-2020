@@ -2,9 +2,19 @@
   <div class="card-body">
     <div class="card-content">
       <router-link :to="{ name: 'KartenDetail', params: { impulse: impulse }}">
-        <h3 class="card-text-headline">{{ impulse.title }}</h3>
+        <div class="card-text-headline">
+          <category-label :categoryId="impulse.category" />
+          <h3>{{ impulse.title }}</h3>
+        </div>
         <div class="card-text">
-          <p v-if="impulse.description" v-html="impulse.description"></p>
+          <div v-if="impulse.forMe">
+            <h4>Was bringt es mir?</h4>
+            <p v-html="impulse.forMe" />
+          </div>
+          <div v-if="impulse.forWorld">
+            <h4>Was bringt es der Welt?</h4>
+            <p v-html="impulse.forWorld" />
+          </div>
         </div>
       </router-link>
     </div>
@@ -16,6 +26,7 @@
 </template>
 <script>
 import AssignButton from '@/components/cards/AssignButton'
+import CategoryLabel from '@/components/_base/CategoryLabel.vue'
 import { $auth } from '@/firebase-config'
 export default {
   props: {
@@ -24,25 +35,28 @@ export default {
     }
   },
   components: {
-    AssignButton
+    AssignButton, CategoryLabel
   },
   computed: {
     user () {
       return $auth.currentUser
-    },
-    cardBackground () {
-      return require('@/assets/cards/Card-blue.svg')
     }
   }
 }
 </script>
 <style lang="scss" scoped>
 .card-body {
+  --header-height: 45%;
+  --max-lines: 10;
+  --lh: 1.25em;
+  --headline-size: 22px;
+  --text-size: 14px;
+
   margin-left: auto;
   margin-right: auto;
   min-width: 263px;
   max-width: 780px;
-  position:relative;
+  position: relative;
   padding: 0;
   height: auto;
   color: $gray-900;
@@ -64,23 +78,39 @@ export default {
       text-decoration: none;
     }
     .card-text-headline {
-      height: 60%;
-      padding-top: 25px;
+      height: var(--header-height);
+      min-height: var(--header-height);
+      padding-top: 12px;
       padding-bottom: 10px;
       color: $gray-900;
+      line-height: 1;
+
+      h3 {
+        font-size: var(--headline-size);
+        margin-bottom: 0;
+      }
+
+      .category {
+        font-size: 0.75rem;
+        margin-bottom: 0.5rem;
+      }
     }
     .card-text {
-      height: 30%;
+      height: var(100 - --header-height);
       line-height: var(--lh);
       max-height: calc(var(--lh) * var(--max-lines));
       width: 100%;
-      padding-bottom: 1rem;
+      padding-bottom: 0;
       word-wrap: break-word;
       overflow: hidden;
       text-overflow: ellipsis;
       color: $gray-900;
 
+      h4 {
+        font-size: var(--text-size);
+      }
       p {
+        font-size: var(--text-size);
         max-height: calc(var(--lh) * var(--max-lines));
         hyphens: auto;
       }
@@ -92,41 +122,39 @@ export default {
       bottom: 1rem;
       left: 1rem;
     }
+
+    .add-impuls {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+    }
+  }
+}
+@media only screen and (max-width: 321px) {
+
+  .card-content {
+    --max-lines: 10;
+    --lh: 1.25em;
+    --headline-size: 22px;
+    --text-size: 14px;
   }
 }
 
-@media only screen and (max-width: 991px) {
-
+@media only screen and (max-width: 991px) and (min-width: 322px) {
   .card-content {
-    --max-lines: 5;
-    --lh: 1.5em;
-
-    .card-text-headline {
-      font-size: calc(24px + (38 - 24) * (100vw - 350px) / (750 - 350));
-    }
-    .card-text {
-      font-size: calc(16px + (30 - 16) * (100vw - 350px) / (750 - 350));
-    }
+    --max-lines: 10;
+    --lh: 1.25em;
+    --text-size: calc(14px + (20 - 14) * (100vw - 350px) / (750 - 350));
+    --headline-size: calc(24px + (32 - 24) * (100vw - 350px) / (750 - 350));
   }
 }
 
 @media only screen and (min-width: 992px) {
-
   .card-content {
-    --max-lines: 8;
+    --max-lines: 20;
     --lh: 1.5em;
-
-    .card-text-headline {
-      font-size: 36px;
-    }
-    .card-text {
-      font-size: 18px;
-    }
+    --headline-size: 32px;
+    --text-size: 18
   }
-}
-.add-impuls {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
 }
 </style>
