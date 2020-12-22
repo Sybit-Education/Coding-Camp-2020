@@ -24,6 +24,7 @@ export default {
 
 <style lang="scss" scoped>
 .container {
+  margin-top: 1.5rem;
   margin-bottom: 6rem;
 }
 </style>

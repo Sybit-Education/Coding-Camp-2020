@@ -1,8 +1,8 @@
-import Vue from 'vue'
-import 'firebase/firestore'
-import firebase from 'firebase/app'
-import { firestoreAction } from 'vuexfire'
 import { $db } from '@/firebase-config'
+import firebase from 'firebase/app'
+import 'firebase/firestore'
+import Vue from 'vue'
+import { firestoreAction } from 'vuexfire'
 
 const COLLECTION_NAME = 'impulse'
 
@@ -74,6 +74,7 @@ export const actions = {
   }),
   /** update on property of the selected impulse by given value */
   updateProperty: firestoreAction(({ commit }, { impulse, prop, value }) => {
+    $db.collection(COLLECTION_NAME).doc(impulse.id).update({ [prop]: value })
     commit('PROPERTY_UPDATED', { selected: impulse, prop: prop, value: value })
   }),
   /** add new impulse */

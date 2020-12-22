@@ -3,22 +3,27 @@
     <main-header :headerTitle="'Administration'" />
     <b-container fluid>
       <b-row>
-        <b-col md="6">
+        <b-col>
           <h3>
             Liste der Impulse ({{ this.rows }})
-            <b-button to="/admin/new" class="float-right" variant="primary" size="sm">+ Neuer Impuls</b-button>
+            <b-button class="float-right" variant="primary" size="sm"
+              v-b-modal="'modal-impulse-create'">
+              + Neuer Impuls
+            </b-button>
+            <impulse-add-modal />
           </h3>
             <b-table
               id="impulseList"
               ref="impulseListTable"
               :items="impulseList"
               :busy="isBusy"
-              :fields="fields" primary-key="id"
+              :fields="fields"
               :per-page="perPage"
               :current-page="currentPage"
               :sort-by="sortBy"
               :sort-desc="sortDesc"
               :selectable="true"
+              primary-key="id"
               select-mode="single"
               @row-selected="rowSelected"
               @row-clicked="rowClicked"
@@ -32,7 +37,7 @@
                 </div>
               </template>
               <template v-slot:cell(title)="data">
-                <div><b>{{ data.value }}</b></div>
+                <div>{{ data.value }}</div>
                 <category-label :categoryId="data.item.category" />
               </template>
               <template v-slot:cell(publishingDate)="data">
@@ -47,7 +52,7 @@
               aria-controls="impulseList"
             />
         </b-col>
-        <b-col md="6" >
+        <b-col cols="4" md="6" sm="12">
           <template v-if="isClicked">
             <h3 class="col-12">Impuls bearbeiten</h3>
             <impulse-edit class="col-12" :impulse="selectedImpulse" />
@@ -68,13 +73,15 @@ import { mapActions, mapGetters } from 'vuex'
 import MainHeader from '@/components/_base/Header'
 import CategoryLabel from '@/components/_base/CategoryLabel.vue'
 import ImpulseEdit from '@/components/admin/ImpulseEdit.vue'
+import ImpulseAddModal from '@/components/admin/ImpulseAddModal.vue'
 
 export default {
   name: 'Administration',
   components: {
     MainHeader,
     ImpulseEdit,
-    CategoryLabel
+    CategoryLabel,
+    ImpulseAddModal
   },
   data () {
     return {
@@ -92,10 +99,12 @@ export default {
       isClicked: false
     }
   },
-  async mounted () {
+  mounted () {
     this.isBusy = true
-    await this.fetchListAdmin()
-    this.isBusy = false
+    this.fetchListAdmin()
+      .finally(() => {
+        this.isBusy = false
+      })
   },
   computed: {
     ...mapGetters({
@@ -125,8 +134,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container {
-  margin-top: 0.5rem;
+.container-fluid {
+  margin-top: 1.5rem;
   margin-bottom: 6rem;
 }
 </style>

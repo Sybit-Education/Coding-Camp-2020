@@ -13,7 +13,7 @@ export default {
   props: {
     categoryId: {
       type: String,
-      required: true
+      required: false
     }
   },
   data () {
@@ -22,10 +22,12 @@ export default {
     }
   },
   mounted () {
-    this.fetchList()
-      .then(() => {
-        this.category = this.getSelected(this.categoryId)
-      })
+    if (this.categoryId) {
+      this.fetchList()
+        .then(() => {
+          this.category = this.getSelected(this.categoryId)
+        })
+    }
   },
   computed: {
     name () {
