@@ -6,6 +6,10 @@ import { firestoreAction } from 'vuexfire'
 
 const COLLECTION_NAME = 'impulse'
 
+export const PUBLISHING_STATUS_ONLINE = 'online'
+export const PUBLISHING_STATUS_REVIEW = 'review'
+export const PUBLISHING_STATUS_DRAFT = 'draft'
+
 export const namespaced = true
 
 export const state = {
@@ -34,6 +38,7 @@ export const actions = {
       'impulseList',
       $db.collection(COLLECTION_NAME)
         .where('publishingDate', '<=', now)
+        .where('publishingState', '==', PUBLISHING_STATUS_ONLINE)
         .orderBy('publishingDate', 'desc'),
       { serialize })
   }),
@@ -42,12 +47,19 @@ export const actions = {
       return Object.defineProperty(snapshot.data(), 'id',
         { value: snapshot.id, enumerable: true })
     }
-    bindFirestoreRef('impulseListAdmin', $db.collection(COLLECTION_NAME).orderBy('publishingDate', 'desc'), { serialize })
+    bindFirestoreRef(
+      'impulseListAdmin',
+      $db.collection(COLLECTION_NAME)
+        .orderBy('publishingDate', 'desc'),
+      { serialize })
   }),
   fetchById: firestoreAction(async ({ bindFirestoreRef }, id) => {
     if (!id) return
 
-    bindFirestoreRef('impulse', await $db.collection(COLLECTION_NAME).doc(id))
+    bindFirestoreRef(
+      'impulse',
+      await $db.collection(COLLECTION_NAME).doc(id)
+    )
   }),
   update: firestoreAction(({ state }, impulse) => {
     // we first create a copy that excludes `id`
