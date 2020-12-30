@@ -1,8 +1,7 @@
 <template>
   <div id="impulse-edit">
       <b-form @submit.prevent="save">
-        <b-form-group label="Titel" label-for="title"
-          description="Titel des Impuls">
+        <b-form-group label="Titel" label-for="title">
           <b-input id="title" v-model="title" placeholder="Titel" required/>
         </b-form-group>
 
@@ -22,7 +21,7 @@
             label="Veröffentlichungsdatum"
             label-for="publishingDate"
             class="col"
-            description="Wann soll dieser Impuls öffentlich werden?">
+            description="Ab wann soll dieser Impuls öffentlich werden?">
             <b-datepicker
               id="publishingDate"
               name="publishingDate"
