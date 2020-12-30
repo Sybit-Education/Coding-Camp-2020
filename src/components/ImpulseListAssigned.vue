@@ -12,7 +12,7 @@
         </p>
     </div>
     <div v-else v-for="impulse in assignedImpulseList" :key="impulse.id" class="impulse-card-wrapper">
-      <impulse-card :impulse="impulse"></impulse-card>
+      <impulse-card :impulse="impulse" to="assigned"></impulse-card>
     </div>
   </div>
 </template>

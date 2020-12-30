@@ -1,7 +1,7 @@
 <template>
   <div class="card-body">
     <div class="card-content">
-      <router-link :to="{ name: 'KartenDetail', params: { impulse: impulse }}">
+      <router-link :to="detailLink">
         <div class="card-text-headline">
           <category-label :categoryId="impulse.category" />
           <h3>{{ impulse.title }}</h3>
@@ -32,6 +32,10 @@ export default {
   props: {
     impulse: {
       type: Object
+    },
+    to: {
+      type: String,
+      default: 'impulse'
     }
   },
   components: {
@@ -40,6 +44,9 @@ export default {
   computed: {
     user () {
       return $auth.currentUser
+    },
+    detailLink () {
+      return '/' + this.to + '/' + this.impulse.id
     }
   }
 }

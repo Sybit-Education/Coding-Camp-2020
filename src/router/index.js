@@ -107,10 +107,20 @@ const routes = [
     beforeEnter: isAdmin
   },
   {
-    path: '/karten-details',
-    name: 'KartenDetail',
+    path: '/impulse/:id',
+    name: 'CardDetail',
     component: () => import('../views/CardDetailPage.vue'),
-    props: true
+    props: {
+      back: '/'
+    }
+  },
+  {
+    path: '/assigned/:id',
+    name: 'CardDetailAssigned',
+    component: () => import('../views/CardDetailPage.vue'),
+    props: {
+      back: '/assigned'
+    }
   },
   {
     path: '/highscore',
@@ -129,7 +139,7 @@ const routes = [
     }
   },
   {
-    path: '/assigned-impulse',
+    path: '/assigned',
     name: 'AssignedImpulse',
     component: AssignedImpulse,
     meta: {

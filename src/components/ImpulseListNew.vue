@@ -18,7 +18,7 @@
       </div>
     </template>
     <div v-else v-for="impulse in impulseList" :key="impulse.id" class="impulse-card-wrapper">
-      <impulse-card :impulse="impulse"></impulse-card>
+      <impulse-card :impulse="impulse" to="/impulse"></impulse-card>
     </div>
   </div>
 </template>
