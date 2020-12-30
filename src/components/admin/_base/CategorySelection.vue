@@ -48,8 +48,12 @@ export default {
       }
     },
     selectedValue (newValue, oldValue) {
-      if (newValue !== oldValue) {
-        this.$emit('categoryChange', this.selectedValue)
+      if (this.selectedValue) {
+        if (newValue !== oldValue) {
+          this.$emit('categoryChange', this.selectedValue)
+        }
+      } else {
+        this.$emit('categoryChange', null)
       }
     }
   },

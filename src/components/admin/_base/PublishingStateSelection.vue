@@ -1,19 +1,24 @@
 <template>
   <b-form-select
     v-model="selectedValue"
-    :options="list"
+    :options="getList"
     value-field="value"
     text-field="name"
-    required />
+    required>
+    <b-form-select-option :value="null" disabled >-- Status auswählen --</b-form-select-option>
+  </b-form-select>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   name: 'PublishingStateSelection',
   props: {
     publishingState: {
       type: String,
-      required: true
+      required: false,
+      default: null
     }
   },
   data () {
@@ -41,6 +46,11 @@ export default {
         this.$emit('publishingStateChange', newValue)
       }
     }
+  },
+  computed: {
+    ...mapGetters({
+      getList: 'PublishingState/getList'
+    })
   }
 }
 </script>
