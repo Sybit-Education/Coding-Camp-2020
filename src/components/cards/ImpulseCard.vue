@@ -72,8 +72,8 @@ export default {
     position: absolute;
     height: 100%;
     width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
     a:hover {
       text-decoration: none;
     }
@@ -96,9 +96,9 @@ export default {
       }
     }
     .card-text {
-      height: var(100 - --header-height);
+      height: calc(100% - var(--header-height) - 2.75em);
+      max-height: calc(100% - var(--header-height) - 2.75em);
       line-height: var(--lh);
-      max-height: calc(var(--lh) * var(--max-lines));
       width: 100%;
       padding-bottom: 0;
       word-wrap: break-word;
@@ -107,33 +107,33 @@ export default {
       color: $gray-900;
 
       h4 {
+        font-weight: 800;
         font-size: var(--text-size);
       }
       p {
         font-size: var(--text-size);
-        max-height: calc(var(--lh) * var(--max-lines));
         hyphens: auto;
       }
     }
     .card-text::before {
       position: absolute;
       content: "[mehr ...]";
-      font-weight: 900;
-      bottom: 1rem;
-      left: 1rem;
+      font-size: var(--text-size);
+      font-weight: 800;
+      bottom: 20px;
+      left: 10px;
     }
 
     .add-impuls {
       position: absolute;
-      bottom: 10px;
-      right: 10px;
+      bottom: 0;
+      right: 0;
     }
   }
 }
 @media only screen and (max-width: 321px) {
 
   .card-content {
-    --max-lines: 10;
     --lh: 1.25em;
     --headline-size: 22px;
     --text-size: 14px;
@@ -142,7 +142,6 @@ export default {
 
 @media only screen and (max-width: 991px) and (min-width: 322px) {
   .card-content {
-    --max-lines: 10;
     --lh: 1.25em;
     --text-size: calc(14px + (20 - 14) * (100vw - 350px) / (750 - 350));
     --headline-size: calc(24px + (32 - 24) * (100vw - 350px) / (750 - 350));
@@ -151,7 +150,6 @@ export default {
 
 @media only screen and (min-width: 992px) {
   .card-content {
-    --max-lines: 20;
     --lh: 1.5em;
     --headline-size: 32px;
     --text-size: 18

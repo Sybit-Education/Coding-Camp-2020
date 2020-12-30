@@ -9,7 +9,7 @@
       ><vue-fontawesome
         icon="plus-circle"
         color="white"
-        size="1.5"
+        size="1.75"
       ></vue-fontawesome
     ></b-button>
     <b-button
@@ -21,7 +21,7 @@
       ><vue-fontawesome
         icon="check-circle"
         color="white"
-        size="1.5"
+        size="1.75"
       ></vue-fontawesome
     ></b-button>
   </div>
