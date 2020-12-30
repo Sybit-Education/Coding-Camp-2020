@@ -43,6 +43,17 @@ export default {
   },
   methods: {
     ...mapActions('Category', ['fetchList'])
+  },
+  watch: {
+    categoryId (newValue, oldValue) {
+      if (this.categoryId) {
+        if (newValue !== oldValue) {
+          this.category = this.getSelected(this.categoryId)
+        }
+      } else {
+        this.category = null
+      }
+    }
   }
 }
 </script>

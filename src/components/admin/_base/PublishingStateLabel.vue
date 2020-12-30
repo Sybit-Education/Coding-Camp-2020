@@ -33,6 +33,17 @@ export default {
     ...mapGetters({
       getSelected: 'PublishingState/getSelected'
     })
+  },
+  watch: {
+    publishingStateId (newValue, oldValue) {
+      if (this.publishingStateId) {
+        if (newValue !== oldValue) {
+          this.publishingState = this.getSelected(this.publishingStateId)
+        }
+      } else {
+        this.publishingState = null
+      }
+    }
   }
 }
 </script>
