@@ -37,12 +37,12 @@ export const actions = {
       console.log('Something went wrong by creation user: ' + error)
     })
   },
-  fetchById: firestoreAction(async ({ bindFirestoreRef }, id) => {
+  fetchById: firestoreAction(({ bindFirestoreRef }, id) => {
     if (!id) {
       return
     }
 
-    bindFirestoreRef('userdata', await $db.collection(COLLECTION_NAME).doc(id))
+    bindFirestoreRef('userdata', $db.collection(COLLECTION_NAME).doc(id))
   }),
   saveDisplayName ({ commit }, displayName) {
     const userId = $auth.currentUser.uid

@@ -2,18 +2,18 @@
   <div id="assigned-impulse-view">
     <main-header :headerTitle="title"></main-header>
     <div class="d-flex justify-content-center pt-2">
-      <impulse-list-sorted></impulse-list-sorted>
+      <impulse-list-assigned />
     </div>
   </div>
 </template>
 <script>
 import MainHeader from '@/components/_base/Header'
-import ImpulseListSorted from '@/components/ImpulseListSorted.vue'
+import ImpulseListAssigned from '@/components/ImpulseListAssigned.vue'
 
 export default {
   components: {
     MainHeader,
-    ImpulseListSorted
+    ImpulseListAssigned
   },
   metaInfo () {
     return {

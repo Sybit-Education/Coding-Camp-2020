@@ -16,9 +16,11 @@ import ImpulseCard from '@/components/cards/ImpulseCard.vue'
 
 export default {
   name: 'ImpulseListSorted',
-  async created () {
-    await this.fetchById(this.user.uid)
-    this.fetchList()
+  mounted () {
+    this.fetchById($auth.currentUser.uid)
+      .then(() => {
+        this.fetchList()
+      })
   },
   components: {
     LoadingIndicator,
