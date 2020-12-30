@@ -44,12 +44,13 @@ export default {
     }
   },
   async mounted () {
+    await this.fetchUserData()
     await this.fetchList()
     await this.getUserDataForHighscore()
   },
   methods: {
     ...mapActions('Challenge_Stats', ['fetchList']),
-    ...mapActions('Userdata', ['fetchById']),
+    ...mapActions('Userdata', ['fetchUserData']),
     ...mapActions('Userdata', ['getUserDataForHighscore'])
   },
   computed: {

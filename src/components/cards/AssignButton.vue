@@ -90,7 +90,7 @@ export default {
       })
     },
     ...mapActions('Userdata', ['addPointsToUser']),
-    ...mapActions('Userdata', ['fetchById']),
+    ...mapActions('Userdata', ['fetchUserData']),
     ...mapActions('Userdata', ['assignImpulse'])
   }
 }

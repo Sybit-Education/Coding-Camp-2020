@@ -1,7 +1,16 @@
 <template>
   <div id="impulse-list" class="impulse-list">
     <loading-indicator v-if="isLoading" message="Impulse werden geladen ..." />
-
+    <div v-else-if="!hasAssignedImpulse">
+        <p>
+          Du hast noch keine Impulse angenommen.
+        </p>
+        <p>
+          Du kannst in der
+          <router-link to="/">Übersicht</router-link>
+          Impulse favorisieren.
+        </p>
+    </div>
     <div v-else v-for="impulse in assignedImpulseList" :key="impulse.id" class="impulse-card-wrapper">
       <impulse-card :impulse="impulse"></impulse-card>
     </div>
@@ -11,23 +20,21 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 import LoadingIndicator from '@/components/_base/LoadingIndicator.vue'
-import { $auth } from '@/firebase-config'
 import ImpulseCard from '@/components/cards/ImpulseCard.vue'
 
 export default {
-  name: 'ImpulseListSorted',
-  async created () {
-    await this.fetchById(this.user.uid)
-    this.fetchList()
+  name: 'ImpulseListAssigned',
+  mounted () {
+    this.fetchUserData()
+      .then(() => {
+        this.fetchList()
+      })
   },
   components: {
     LoadingIndicator,
     ImpulseCard
   },
   computed: {
-    user () {
-      return $auth.currentUser
-    },
     isLoading () {
       return (this.impulseList.length === 0)
     },
@@ -37,6 +44,9 @@ export default {
       const finalAssignedImpulseList = impulseListData.filter((impulse) => assignedListData.includes(impulse.id))
       return finalAssignedImpulseList
     },
+    hasAssignedImpulse () {
+      return this.assignedImpulseList.length > 0
+    },
     ...mapGetters({
       impulseList: 'Impulse/getList',
       assignedList: 'Userdata/assignedImpulseMap'
@@ -44,7 +54,7 @@ export default {
   },
   methods: {
     ...mapActions('Impulse', ['fetchList']),
-    ...mapActions('Userdata', ['fetchById'])
+    ...mapActions('Userdata', ['fetchUserData'])
   }
 }
 </script>
