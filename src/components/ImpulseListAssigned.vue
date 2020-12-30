@@ -15,7 +15,7 @@ import { $auth } from '@/firebase-config'
 import ImpulseCard from '@/components/cards/ImpulseCard.vue'
 
 export default {
-  name: 'ImpulseListSorted',
+  name: 'ImpulseListAssigned',
   mounted () {
     this.fetchById($auth.currentUser.uid)
       .then(() => {
