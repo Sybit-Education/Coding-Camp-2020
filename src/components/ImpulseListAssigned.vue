@@ -1,7 +1,16 @@
 <template>
   <div id="impulse-list" class="impulse-list">
     <loading-indicator v-if="isLoading" message="Impulse werden geladen ..." />
-
+    <div v-else-if="!hasAssignedImpulse">
+        <p>
+          Du hast noch keine Impulse angenommen.
+        </p>
+        <p>
+          Du kannst in der
+          <router-link to="/">Übersicht</router-link>
+          Impulse favorisieren.
+        </p>
+    </div>
     <div v-else v-for="impulse in assignedImpulseList" :key="impulse.id" class="impulse-card-wrapper">
       <impulse-card :impulse="impulse"></impulse-card>
     </div>
@@ -34,6 +43,9 @@ export default {
       const assignedListData = this.assignedList.map((impulse) => impulse.impulseId)
       const finalAssignedImpulseList = impulseListData.filter((impulse) => assignedListData.includes(impulse.id))
       return finalAssignedImpulseList
+    },
+    hasAssignedImpulse () {
+      return this.assignedImpulseList.length > 0
     },
     ...mapGetters({
       impulseList: 'Impulse/getList',
