@@ -173,8 +173,10 @@ export const getters = {
     return (state.userdata && state.userdata.isAdmin) ? state.userdata.isAdmin : false
   },
   assignedImpulseMap: (state) => {
-    if (state.userdata.assignedImpulseMap !== null) {
+    if (state.userdata !== null) {
       return state.userdata.assignedImpulseMap || []
+    } else {
+      return []
     }
   },
   impulseIsAssigned: (state) => (impulseId) => {
