@@ -54,7 +54,7 @@ export default {
       return this.impulse ? this.impulse.title : 'Impuls'
     },
     backlink () {
-      return this.$route.params.back || '/'
+      return this.$attrs.back || '/'
     },
     ...mapGetters({
       impulse: 'Impulse/getImpulse'
