@@ -11,13 +11,12 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 import LoadingIndicator from '@/components/_base/LoadingIndicator.vue'
-import { $auth } from '@/firebase-config'
 import ImpulseCard from '@/components/cards/ImpulseCard.vue'
 
 export default {
   name: 'ImpulseListAssigned',
   mounted () {
-    this.fetchById($auth.currentUser.uid)
+    this.fetchUserData()
       .then(() => {
         this.fetchList()
       })
@@ -27,9 +26,6 @@ export default {
     ImpulseCard
   },
   computed: {
-    user () {
-      return $auth.currentUser
-    },
     isLoading () {
       return (this.impulseList.length === 0)
     },
@@ -46,7 +42,7 @@ export default {
   },
   methods: {
     ...mapActions('Impulse', ['fetchList']),
-    ...mapActions('Userdata', ['fetchById'])
+    ...mapActions('Userdata', ['fetchUserData'])
   }
 }
 </script>

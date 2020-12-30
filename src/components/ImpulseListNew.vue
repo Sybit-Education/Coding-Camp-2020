@@ -21,11 +21,10 @@ export default {
     return {
     }
   },
-  async created () {
-    if (this.user !== null) {
-      await this.fetchById(this.user.uid)
-    }
-    this.fetchList()
+  created () {
+    this.fetchUserData().then(() => {
+      this.fetchList()
+    })
   },
   components: {
     LoadingIndicator,
@@ -57,7 +56,7 @@ export default {
   },
   methods: {
     ...mapActions('Impulse', ['fetchList']),
-    ...mapActions('Userdata', ['fetchById'])
+    ...mapActions('Userdata', ['fetchUserData'])
   }
 }
 </script>

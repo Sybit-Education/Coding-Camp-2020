@@ -8,7 +8,7 @@
         </b-col>
         <b-col class="align-self-center">
           <user-display-name :isEditable="true"/>
-          <small>{{ user.email }}</small>
+          <small v-if="user">{{ user.email }}</small>
         </b-col>
       </b-row>
       <hr />
@@ -22,7 +22,6 @@
 </template>
 <script>
 import { mapActions, mapGetters } from 'vuex'
-import { $auth } from '@/firebase-config'
 import Avatar from '@/components/_base/Avatar.vue'
 import MainHeader from '@/components/_base/Header'
 import UserDisplayName from '@/components/_base/UserDisplayName.vue'
@@ -35,8 +34,8 @@ export default {
     MainHeader,
     DeleteUserModal
   },
-  async created () {
-    await this.fetchById(this.user.uid)
+  mounted () {
+    this.fetchUserData()
   },
   metaInfo () {
     return {
@@ -54,17 +53,15 @@ export default {
     title () {
       return 'Profil'
     },
-    user () {
-      return $auth.currentUser
-    },
     ...mapGetters({
-      isAdmin: 'Userdata/isAdmin'
+
+      user: 'Userdata/userData'
     })
   },
   methods: {
     ...mapActions({
       signOut: 'Auth/signOut',
-      fetchById: 'Userdata/fetchById'
+      fetchUserData: 'Userdata/fetchUserData'
     })
   }
 }

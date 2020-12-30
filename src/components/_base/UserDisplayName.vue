@@ -23,7 +23,7 @@ export default {
     }
   },
   async created () {
-    await this.fetchById(this.user.uid)
+    await this.fetchUserData()
   },
   props: {
     isEditable: {
@@ -49,7 +49,7 @@ export default {
     })
   },
   methods: {
-    ...mapActions('Userdata', ['fetchById', 'saveDisplayName']),
+    ...mapActions('Userdata', ['fetchUserData', 'saveDisplayName']),
     editOrSaveDisplayName () {
       const icon = document.getElementById('profile-display-icon')
       if (icon.classList.contains('fa-edit')) {

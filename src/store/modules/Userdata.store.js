@@ -37,12 +37,17 @@ export const actions = {
       console.log('Something went wrong by creation user: ' + error)
     })
   },
-  fetchById: firestoreAction(({ bindFirestoreRef }, id) => {
-    if (!id) {
-      return
+  fetchUserData: firestoreAction(({ bindFirestoreRef }) => {
+    const userId = $auth.currentUser.uid
+    const serialize = (snapshot) => {
+      return Object.defineProperty(snapshot.data(), 'id',
+        { value: snapshot.id, enumerable: true })
     }
-
-    bindFirestoreRef('userdata', $db.collection(COLLECTION_NAME).doc(id))
+    bindFirestoreRef(
+      'userdata',
+      $db.collection(COLLECTION_NAME).doc(userId),
+      { serialize }
+    )
   }),
   saveDisplayName ({ commit }, displayName) {
     const userId = $auth.currentUser.uid
