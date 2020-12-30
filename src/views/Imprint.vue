@@ -2,18 +2,13 @@
   <div id="imprint-view">
     <main-header :headerTitle="'Impressum'"></main-header>
     <b-container>
-      <b-row>
-        <b-col class="d-flex justify-content-end custom-button mb-n5 mr-2 mt-3">
-          <b-button pill to="/options"><vue-fontawesome  icon="times" color="white" size="1"></vue-fontawesome></b-button>
-        </b-col>
-      </b-row>
 
-    <h2 id="m46">Diensteanbieter</h2>
+    <h2>Diensteanbieter</h2>
     <p>Fabienne Schwarz-Loy</p>
     <p>Radolfzeller Straße 2</p>
     <p>78345 Moos</p>
     <p>Deutschland</p>
-    <h2 id="m56">Kontaktmöglichkeiten</h2>
+    <h2>Kontaktmöglichkeiten</h2>
     <p><strong>E-Mail-Adresse:</strong> seieinheld (ät) heldsein (Punkt) com</p>
     <h2>Haftung für Inhalte</h2>
     <p>Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen

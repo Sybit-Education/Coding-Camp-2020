@@ -1,11 +1,7 @@
 <template>
 <div id="team-view">
   <main-header :headerTitle="'Das Team'"></main-header>
-  <b-row>
-      <b-col class="d-flex justify-content-end custom-button mb-n5 mr-2 mt-3">
-        <b-button pill to="/options"><vue-fontawesome  icon="times" color="white" size="1"></vue-fontawesome></b-button>
-      </b-col>
-    </b-row>
+
   <b-container>
     <b-row class="my-3">
       <b-col>

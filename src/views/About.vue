@@ -3,12 +3,6 @@
     <main-header :headerTitle="title"></main-header>
 
     <b-container>
-      <b-row>
-        <b-col class="d-flex justify-content-end custom-button mb-n5 mr-2 mt-3">
-          <b-button pill to="/options"><vue-fontawesome  icon="times" color="white" size="1"></vue-fontawesome></b-button>
-        </b-col>
-      </b-row>
-
       <b-img :src="logo" fluid-grow alt="Logo" class="my-3"/>
       <h3>Die App</h3>
       <p>
@@ -51,14 +45,6 @@
 
       <ol>
         <li>
-            <i aria-hidden="true" class="fa fa-users" style="color: black; font-size: 1rem;"></i>
-          Optionen
-
-          <ul>
-            <li>Man wird weitergeleitet auf: Über uns, Datenschutz, Impressum, das Team</li>
-          </ul>
-        </li>
-        <li>
             <i aria-hidden="true" class="fa fa-heart" style="color: black; font-size: 1.25rem;"></i>
             Favoriten
             <ul>
@@ -87,6 +73,14 @@
             <li>Benutzername, E-Mail</li>
             <li>Abmeldung</li>
             <li>Account löschen</li>
+          </ul>
+        </li>
+        <li>
+            <i aria-hidden="true" class="fa fa-ellipsis-v" style="color: black; font-size: 1rem;"></i>
+          Optionen
+
+          <ul>
+            <li>Man wird weitergeleitet auf: Über uns, Datenschutz, Impressum, das Team</li>
           </ul>
         </li>
       </ol>

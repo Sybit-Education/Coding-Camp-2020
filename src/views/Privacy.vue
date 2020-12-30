@@ -2,23 +2,18 @@
   <div id="privacy-view">
     <main-header :headerTitle="'Datenschutzerklärung'"></main-header>
     <b-container>
-      <b-row>
-        <b-col class="d-flex justify-content-end custom-button mb-1 mr-2 mt-3">
-          <b-button pill to="/options"><vue-fontawesome  icon="times" color="white" size="1"></vue-fontawesome></b-button>
-        </b-col>
-      </b-row>
 
     <h2>Einleitung</h2>
     <p>
       Mit der folgenden Datenschutzerklärung möchten wir Sie darüber aufklären,
       welche Arten Ihrer personenbezogenen Daten (nachfolgend auch kurz als
-      "Daten“ bezeichnet) wir zu welchen Zwecken und in welchem Umfang
+      "Daten" bezeichnet) wir zu welchen Zwecken und in welchem Umfang
       verarbeiten. Die Datenschutzerklärung gilt für alle von uns durchgeführten
       Verarbeitungen personenbezogener Daten, sowohl im Rahmen der Erbringung
       unserer Leistungen als auch insbesondere auf unseren Webseiten, in mobilen
       Applikationen sowie innerhalb externer Onlinepräsenzen, wie z.B. unserer
       Social-Media-Profile (nachfolgend zusammenfassend bezeichnet als
-      "Onlineangebot“).
+      "Onlineangebot").
     </p>
     <p>Die verwendeten Begriffe sind nicht geschlechtsspezifisch.</p>
     <p>Stand: 27. Oktober 2020</p>
@@ -607,7 +602,7 @@
     <h2 id="m17">Newsletter und elektronische Benachrichtigungen</h2>
     <p>
       Wir versenden Newsletter, E-Mails und weitere elektronische
-      Benachrichtigungen (nachfolgend "Newsletter“) nur mit der Einwilligung der
+      Benachrichtigungen (nachfolgend "Newsletter") nur mit der Einwilligung der
       Empfänger oder einer gesetzlichen Erlaubnis. Sofern im Rahmen einer
       Anmeldung zum Newsletter dessen Inhalte konkret umschrieben werden, sind
       sie für die Einwilligung der Nutzer maßgeblich. Im Übrigen enthalten
@@ -669,7 +664,7 @@
     </p>
     <p>
       <strong>Analyse und Erfolgsmessung</strong>: Die Newsletter enthalten
-      einen sogenannte "web-beacon“, d.h., eine pixelgroße Datei, die beim
+      einen sogenannte "web-beacon", d.h., eine pixelgroße Datei, die beim
       Öffnen des Newsletters von unserem Server, bzw., sofern wir einen
       Versanddienstleister einsetzen, von dessen Server abgerufen wird. Im
       Rahmen dieses Abrufs werden zunächst technische Informationen, wie
