@@ -2,8 +2,10 @@
   <b-navbar id="navigationBar">
     <b-container>
       <b-navbar-brand>
-        <span v-if="backlink" class="back-link mr-2">
-          <router-link :to="backlink">&lt;Zurück</router-link>
+        <span v-if="backlink" class="mr-2">
+          <router-link
+            class="back-link btn btn-sm btn-outline-primary"
+            :to="backlink">&lt;Zurück</router-link>
         </span>
         <router-link v-else to="/">
           <b-img :src="logo" class="logo d-inline-block align-top" alt="Sei ein Held" />
