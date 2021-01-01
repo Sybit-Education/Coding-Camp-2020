@@ -107,15 +107,6 @@ const routes = [
     beforeEnter: isAdmin
   },
   {
-    path: '/admin/new',
-    name: 'AddImpulse',
-    component: () => import('../views/admin/AddImpulse.vue'),
-    meta: {
-      requiresAuth: true
-    },
-    beforeEnter: isAdmin
-  },
-  {
     path: '/karten-details',
     name: 'KartenDetail',
     component: () => import('../views/CardDetailPage.vue'),

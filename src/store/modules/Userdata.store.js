@@ -1,4 +1,5 @@
 import 'firebase/firestore'
+import firebase from 'firebase/app'
 import Vue from 'vue'
 import { firestoreAction } from 'vuexfire'
 import { $db, $auth } from '@/firebase-config'
@@ -22,7 +23,8 @@ export const actions = {
     // with the appropriate details.
     return $db.collection(COLLECTION_NAME).doc(currentUser.uid).set({
       email: currentUser.email,
-      lastLogin: new Date()
+      assignedImpulseMap: [],
+      lastLogin: firebase.firestore.Timestamp.now()
     }, { merge: true }).catch(error => {
       console.log('Something went wrong with syncing user: ' + error)
     })
@@ -31,23 +33,29 @@ export const actions = {
     const currentUser = $auth.currentUser
     return $db.collection(COLLECTION_NAME).doc(currentUser.uid).set({
       email: currentUser.email,
-      lastLogin: new Date(),
-      createdAt: new Date()
+      lastAccess: firebase.firestore.Timestamp.now(),
+      createdAt: firebase.firestore.Timestamp.now()
     }, { merge: true }).catch(error => {
       console.log('Something went wrong by creation user: ' + error)
     })
   },
-  fetchById: firestoreAction(async ({ bindFirestoreRef }, id) => {
-    if (!id) {
-      return
+  fetchUserData: firestoreAction(({ bindFirestoreRef }) => {
+    const userId = $auth.currentUser.uid
+    const serialize = (snapshot) => {
+      return Object.defineProperty(snapshot.data(), 'id',
+        { value: snapshot.id, enumerable: true })
     }
-
-    bindFirestoreRef('userdata', await $db.collection(COLLECTION_NAME).doc(id))
+    bindFirestoreRef(
+      'userdata',
+      $db.collection(COLLECTION_NAME).doc(userId),
+      { serialize }
+    )
   }),
   saveDisplayName ({ commit }, displayName) {
     const userId = $auth.currentUser.uid
     return $db.collection(COLLECTION_NAME).doc(userId).set({
-      displayName: displayName
+      displayName: displayName,
+      lastAccess: firebase.firestore.Timestamp.now()
     }, { merge: true }).catch(error => {
       console.log('Something went wrong with syncing displayName: ' + error)
     })
@@ -60,7 +68,8 @@ export const actions = {
     commit('ADD_ENTRY_TO_IMPULSEMAP', { impulseId, impulsePoints })
 
     return $db.collection(COLLECTION_NAME).doc(userId).set({
-      assignedImpulseMap: map
+      assignedImpulseMap: map,
+      lastAccess: firebase.firestore.Timestamp.now()
     }, { merge: true }).catch(error => {
       console.log('Something went wrong with syncing displayName: ' + error)
     })
@@ -131,15 +140,18 @@ export const actions = {
     const arrayWithAddedPoints = [...assignedImpulseMap]
     const indexOfCurrentImpulse = assignedImpulseMap.findIndex(impulse => impulse.impulseId === impulseId)
     const impulsePoints = rootGetters['Impulse/getSelectedPoints'](impulseId)
+    const todayDate = new Date()
+    todayDate.setHours(0, 0, 0, 0)
     const points = {
-      date: new Date(),
+      date: firebase.firestore.Timestamp.fromDate(todayDate),
       points: impulsePoints || POINTS_INITIAL
     }
     commit('ADD_POINTS_TO_USER', { points, indexOfCurrentImpulse })
 
     return $db.collection(COLLECTION_NAME).doc(userId).set({
-      assignedImpulseMap: arrayWithAddedPoints
-    }).catch(error => {
+      assignedImpulseMap: arrayWithAddedPoints,
+      lastAccess: firebase.firestore.Timestamp.now()
+    }, { merge: true }).catch(error => {
       console.log('Something went wrong with syncing displayName: ' + error)
     })
   },
@@ -173,8 +185,10 @@ export const getters = {
     return (state.userdata && state.userdata.isAdmin) ? state.userdata.isAdmin : false
   },
   assignedImpulseMap: (state) => {
-    if (state.userdata.assignedImpulseMap !== null) {
+    if (state.userdata !== null) {
       return state.userdata.assignedImpulseMap || []
+    } else {
+      return []
     }
   },
   impulseIsAssigned: (state) => (impulseId) => {
@@ -198,8 +212,11 @@ export const getters = {
     const currentImpulse = assignedImpulseMap.find(impulse => impulse.impulseId === impulseId)
     const timeStampArray = currentImpulse.points
     const lastTimeStamp = timeStampArray[timeStampArray.length - 1]
-    const today = new Date().getTime()
-    const todayPlusOneDay = new Date((lastTimeStamp.date.seconds * 1000) + 86400000).getTime()
+    const todayDate = new Date()
+    todayDate.setHours(0, 0, 0, 0)
+    const today = firebase.firestore.Timestamp.fromDate(todayDate)
+    const todayPlusOneDay = firebase.firestore.Timestamp.fromDate(
+      new Date((lastTimeStamp.date.seconds * 1000) + 86400000))
     if (timeStampArray.length === 1) {
       return true
     }
@@ -219,6 +236,9 @@ export const mutations = {
   },
 
   ADD_ENTRY_TO_IMPULSEMAP (state, { impulseId, impulsePoints }) {
+    if (!state.userdata.assignedImpulseMap) {
+      state.userdata.assignedImpulseMap = []
+    }
     state.userdata.assignedImpulseMap.push({
       impulseId: impulseId,
       points: [

@@ -1,24 +1,19 @@
 <template>
-  <div>
+  <div id="privacy-view">
+    <main-header :headerTitle="'Datenschutzerklärung'"></main-header>
     <b-container>
-      <b-row>
-        <b-col class="d-flex justify-content-end custom-button mb-1 mr-2 mt-3">
-          <b-button pill to="/options"><vue-fontawesome  icon="times" color="white" size="1"></vue-fontawesome></b-button>
-        </b-col>
-      </b-row>
-    </b-container>
-    <h1>Datenschutzerklärung</h1>
+
     <h2>Einleitung</h2>
     <p>
       Mit der folgenden Datenschutzerklärung möchten wir Sie darüber aufklären,
       welche Arten Ihrer personenbezogenen Daten (nachfolgend auch kurz als
-      "Daten“ bezeichnet) wir zu welchen Zwecken und in welchem Umfang
+      "Daten" bezeichnet) wir zu welchen Zwecken und in welchem Umfang
       verarbeiten. Die Datenschutzerklärung gilt für alle von uns durchgeführten
       Verarbeitungen personenbezogener Daten, sowohl im Rahmen der Erbringung
       unserer Leistungen als auch insbesondere auf unseren Webseiten, in mobilen
       Applikationen sowie innerhalb externer Onlinepräsenzen, wie z.B. unserer
       Social-Media-Profile (nachfolgend zusammenfassend bezeichnet als
-      "Onlineangebot“).
+      "Onlineangebot").
     </p>
     <p>Die verwendeten Begriffe sind nicht geschlechtsspezifisch.</p>
     <p>Stand: 27. Oktober 2020</p>
@@ -214,7 +209,7 @@
       Datenschutzes, durch Technikgestaltung und durch datenschutzfreundliche
       Voreinstellungen.
     </p>
-    <h2 id="m25">Übermittlung und Offenbarung von personenbezogenen Daten</h2>
+    <h2>Übermittlung und Offenbarung von personenbezogenen Daten</h2>
     <p>
       Im Rahmen unserer Verarbeitung von personenbezogenen Daten kommt es vor,
       dass die Daten an andere Stellen, Unternehmen, rechtlich selbstständige
@@ -227,7 +222,7 @@
       Verträge bzw. Vereinbarungen, die dem Schutz Ihrer Daten dienen, mit den
       Empfängern Ihrer Daten ab.
     </p>
-    <h2 id="m24">Datenverarbeitung in Drittländern</h2>
+    <h2>Datenverarbeitung in Drittländern</h2>
     <p>
       Sofern wir Daten in einem Drittland (d.h., außerhalb der Europäischen
       Union (EU), des Europäischen Wirtschaftsraums (EWR)) verarbeiten oder die
@@ -251,7 +246,7 @@
         international-dimension-data-protection_de</a>
       ).
     </p>
-    <h2 id="m134">Einsatz von Cookies</h2>
+    <h2>Einsatz von Cookies</h2>
     <p>
       Cookies sind Textdateien, die Daten von besuchten Websites oder Domains
       enthalten und von einem Browser auf dem Computer des Benutzers gespeichert
@@ -361,7 +356,7 @@
       allenfalls Cookies eingesetzt, die für den Betrieb unseres Onlineangebotes
       unbedingt erforderlich sind.
     </p>
-    <ul class="m-elements">
+    <ul>
       <li>
         <strong>Verarbeitete Datenarten:</strong> Nutzungsdaten (z.B. besuchte
         Webseiten, Interesse an Inhalten, Zugriffszeiten),
@@ -410,7 +405,7 @@
       Fall von missbräuchlichen Angriffen, sogenannten DDoS-Attacken) und zum
       anderen, um die Auslastung der Server und ihre Stabilität sicherzustellen.
     </p>
-    <ul class="m-elements">
+    <ul>
       <li>
         <strong>Verarbeitete Datenarten:</strong> Inhaltsdaten (z.B. Eingaben in
         Onlineformularen), Nutzungsdaten (z.B. besuchte Webseiten, Interesse an
@@ -428,7 +423,7 @@
     </ul>
     <h2 id="m469">Besondere Hinweise zu Applikationen (Apps)</h2>
     <p>
-      <html_tags>Wir verarbeiten die Daten der Nutzer unserer Applikation, soweit diese
+        Wir verarbeiten die Daten der Nutzer unserer Applikation, soweit diese
         erforderlich sind, um den Nutzern die Applikation sowie deren
         Funktionalitäten bereitstellen, deren Sicherheit überwachen und sie
         weiterentwickeln zu können. Wir können ferner Nutzer unter Beachtung der
@@ -437,71 +432,33 @@
         Übrigen verweisen wir im Hinblick auf die Verarbeitung der Daten der
         Nutzer auf die Datenschutzhinweise in dieser
         Datenschutzerklärung.
-      </html_tags>
     </p>
     <p>
       <strong>Rechtsgrundlagen: </strong>Die Verarbeitung von Daten, die für die
       Bereitstellung der Funktionalitäten der Applikation erforderlich ist,
       dient der Erfüllung von vertraglichen Pflichten.
-      <span class="dsg-license-content-blurred de">RGllcw== Z2lsdA== YXVjaCw= d2Vubg== ZGll QmVyZWl0c3RlbGx1bmc= ZGVy
-        RnVua3Rpb25lbg== ZWluZQ== QmVyZWNodGlndW5n ZGVy TnV0emVy KHou Qi4=
-        RnJlaWdhYmVu dm9u R2Vyw6R0ZWZ1bmt0aW9uZW4p dm9yYXVzc2V0enQu U29mZXJu
-        ZGll VmVyYXJiZWl0dW5n dm9u RGF0ZW4= ZsO8cg== ZGll QmVyZWl0c3RlbGx1bmc=
-        ZGVy RnVua3Rpb25hbGl0w6R0ZW4= ZGVy QXBwbGlrYXRpb24= bmljaHQ=
-        ZXJmb3JkZXJsaWNo aXN0LA== YWJlcg== ZGVy U2ljaGVyaGVpdA== ZGVy
-        QXBwbGlrYXRpb24= b2Rlcg== dW5zZXJlbg== YmV0cmllYnN3aXJ0c2NoYWZ0bGljaGVu
-        SW50ZXJlc3Nlbg== ZGllbnQ= KHou Qi4= RXJoZWJ1bmc= dm9u RGF0ZW4= enU=
-        WndlY2tlbg== ZGVy T3B0aW1pZXJ1bmc= ZGVy QXBwbGlrYXRpb24= b2Rlcg==
-        U2ljaGVyaGVpdHN6d2Vja2VuKSw= ZXJmb2xndA== c2ll YXVm R3J1bmRsYWdl
-        dW5zZXJlcg== YmVyZWNodGlndGVu SW50ZXJlc3Nlbi4= U29mZXJu TnV0emVy
-        YXVzZHLDvGNrbGljaA== ZGVyZW4= RWlud2lsbGlndW5n aW4= ZGll
-        VmVyYXJiZWl0dW5n aWhyZXI= RGF0ZW4= Z2ViZXRlbg== d2VyZGVuLA==
-        ZXJmb2xndA== ZGll VmVyYXJiZWl0dW5n ZGVy dm9u ZGVy RWlud2lsbGlndW5n
-        dW1mYXNzdGVu RGF0ZW4= YXVm R3J1bmRsYWdl ZGVy RWlud2lsbGlndW5nLg==
-      </span>
     </p>
     <p><strong>Kommerzielle Nutzung</strong>:</p>
     <p>
-      <html_tags>Wir verarbeiten die Daten der Nutzer unserer Applikation, angemeldeter
+      Wir verarbeiten die Daten der Nutzer unserer Applikation, angemeldeter
         und etwaiger Testnutzer (nachfolgend einheitlich als "Nutzer"
         bezeichnet), um ihnen gegenüber unsere vertraglichen Leistungen
         erbringen zu können sowie auf Grundlage berechtigter Interessen, um die
-        Sicherheit unserer Applikation gewährleisten und sie weiterzuentwickeln
-        <span class="dsg-license-content-blurred de">enU= a8O2bm5lbi4= RGll ZXJmb3JkZXJsaWNoZW4= QW5nYWJlbg== c2luZA==
-          YWxz c29sY2hl aW0= UmFobWVu ZGVz TnV0enVuZ3MtLA== QXVmdHJhZ3MtLA==
-          QmVzdGVsbC0= Ynp3Lg== dmVyZ2xlaWNoYmFyZW4= VmVydHJhZ3NzY2hsdXNzZXM=
-          Z2VrZW5uemVpY2huZXQ= dW5k a8O2bm5lbg== ZGll enVy
-          TGVpc3R1bmdzZXJicmluZ3VuZw== dW5k enVy ZXR3YWlnZW4= QWJyZWNobnVuZw==
-          YmVuw7Z0aWd0ZW4= QW5nYWJlbg== c293aWU= S29udGFrdGluZm9ybWF0aW9uZW4s
-          dW0= ZXR3YWlnZQ== UsO8Y2tzcHJhY2hlbg== aGFsdGVu enU= a8O2bm5lbiw=
-          dW1mYXNzZW4u
-        </span></html_tags>
+        Sicherheit unserer Applikation gewährleisten und sie weiterzuentwickeln.
     </p>
     <p>
-      <strong
-      >Geräteberechtigungen für den Zugriff auf Funktionen und Daten</strong
-      >:
+      <strong>Geräteberechtigungen für den Zugriff auf Funktionen und Daten</strong>:
     </p>
     <p>
-      <html_tags>Die Nutzung unserer Applikation oder ihrer Funktionalitäten kann
+        Die Nutzung unserer Applikation oder ihrer Funktionalitäten kann
         Berechtigungen der Nutzer für Zugriff auf bestimmten Funktionen der
         verwendeten Geräte oder auf die, auf den Geräten gespeicherten oder mit
         Hilfe der Geräte zugänglichen Daten voraussetzen. Standardmäßig müssen
         diese Berechtigungen von den Nutzern erteilt werden und können jederzeit
         in den Einstellungen der
-        <span class="dsg-license-content-blurred de">amV3ZWlsaWdlbg== R2Vyw6R0ZQ== d2lkZXJydWZlbg== d2VyZGVuLg== RGFz
-          Z2VuYXVl VmVyZmFocmVu enVy S29udHJvbGxl ZGVy QXBwLUJlcmVjaHRpZ3VuZ2Vu
-          a2Fubg== dm9t R2Vyw6R0 dW5k ZGVy U29mdHdhcmU= ZGVy TnV0emVybg==
-          YWJow6RuZ2ln c2Vpbi4= QmVp RXJsw6R1dGVydW5nc2JlZGFyZg== a8O2bm5lbg==
-          c2ljaA== TnV0emVy YW4= dW5z d2VuZGVuLg== V2ly d2Vpc2Vu ZGFyYXVm
-          aGluLA== ZGFzcw== ZGll VmVyc2FndW5n b2Rlcg== V2lkZXJydWY= ZGVy
-          amV3ZWlsaWdlbg== QmVyZWNodGlndW5nZW4= ZGll
-          RnVua3Rpb25zZsOkaGlna2VpdA== dW5zZXJl QXBwbGlrYXRpb24=
-          YmVlaW5mbHVzc2Vu a2Fubi4=
-        </span></html_tags>
     </p>
-    <div class="dsg-license-content-blurred">
-      <ul class="m-elements">
+    <div >
+      <ul>
         <li>
           <strong>Verarbeitete Datenarten:</strong> Bestandsdaten (z.B. Namen,
           Adressen), Meta-/Kommunikationsdaten (z.B. Geräte-Informationen,
@@ -559,7 +516,7 @@
       inhaltlichen Angaben werden von uns bis zum Widerspruch der Nutzer
       dauerhaft gespeichert.
     </p>
-    <ul class="m-elements">
+    <ul>
       <li>
         <strong>Verarbeitete Datenarten:</strong> Bestandsdaten (z.B. Namen,
         Adressen), Kontaktdaten (z.B. E-Mail, Telefonnummern), Inhaltsdaten
@@ -597,7 +554,7 @@
       Übrigen auf Grundlage der berechtigten Interessen an der Beantwortung der
       Anfragen.
     </p>
-    <ul class="m-elements">
+    <ul>
       <li>
         <strong>Verarbeitete Datenarten:</strong> Bestandsdaten (z.B. Namen,
         Adressen), Kontaktdaten (z.B. E-Mail, Telefonnummern), Inhaltsdaten
@@ -616,12 +573,11 @@
     </ul>
     <h2 id="m1643">Push-Nachrichten</h2>
     <p>
-      <html_tags>Mit der Zustimmung der Nutzer, können wir den Nutzern so genannte
+      Mit der Zustimmung der Nutzer, können wir den Nutzern so genannte
         "Push-Benachrichtigungen" zusenden. Dabei handelt es sich um
         Nachrichten, die auf den Bildschirmen, Endgeräten oder in Browsern der
         Nutzer angezeigt werden, auch wenn unser Onlinedienst gerade nicht aktiv
         genutzt wird.
-      </html_tags>
     </p>
     <p>
       Um sich für die Push-Nachrichten anzumelden, müssen Nutzer die Abfrage
@@ -629,25 +585,9 @@
       Dieser Zustimmungsprozess wird dokumentiert und gespeichert. Die
       Speicherung ist erforderlich, um zu erkennen, ob Nutzer dem Empfang der
       Push-Nachrichten zugestimmt haben sowie
-      <span class="dsg-license-content-blurred de">dW0= ZGll WnVzdGltbXVuZw== bmFjaHdlaXNlbg== enU= a8O2bm5lbi4= WnU=
-        ZGllc2Vu WndlY2tlbg== d2lyZA== ZWlu cHNldWRvbnltZXI=
-        SWRlbnRpZmlrYXRvcg== ZGVz QnJvd3NlcnM= KHNvZy4= IlB1c2gtVG9rZW4iKQ==
-        b2Rlcg== ZGll R2Vyw6R0ZS1JRA== ZWluZXM= RW5kZ2Vyw6R0ZXM=
-        Z2VzcGVpY2hlcnQuCgpEaWU= UHVzaC1OYWNocmljaHRlbg== a8O2bm5lbg== enVt
-        ZWluZW4= ZsO8cg== ZGll RXJmw7xsbHVuZw== dm9u dmVydHJhZ2xpY2hlbg==
-        UGZsaWNodGVu ZXJmb3JkZXJsaWNo c2Vpbg== KHou Qi4= ZsO8cg== ZGll
-        TnV0enVuZw== dW5zZXJlcw== T25saW5lYW5nZWJvdGVz cmVsZXZhbnRl
-        dGVjaG5pc2NoZQ== dW5k b3JnYW5pc2F0b3Jpc2NoZQ== SW5mb3JtYXRpb25lbik= dW5k
-        d2VyZGVu YW5zb25zdGVuLA== c29mZXJu bmljaHQ= bmFjaGZvbGdlbmQ=
-        c3BlemllbGw= Z2VuYW5udCw= YXVm R3J1bmRsYWdl ZWluZXI= RWlud2lsbGlndW5n
-        ZGVy TnV0emVy dmVyc2VuZGV0Lg== TnV0emVy a8O2bm5lbg== ZGVu RW1wZmFuZw==
-        ZGVy UHVzaC1OYWNocmljaHRlbg== amVkZXJ6ZWl0 bWl0 SGlsZmU= ZGVy
-        QmVuYWNocmljaHRpZ3VuZ3NlaW5zdGVsbHVuZ2Vu aWhyZXI= amV3ZWlsaWdlbg==
-        QnJvd3Nlciw= Ynp3Lg== RW5kZ2Vyw6R0ZQ== w6RuZGVybi4K
-      </span>
     </p>
-    <div class="dsg-license-content-blurred">
-      <ul class="m-elements">
+    <div >
+      <ul>
         <li>
           <strong>Zwecke der Verarbeitung:</strong> Erbringung vertragliche
           Leistungen und Kundenservice.
@@ -662,7 +602,7 @@
     <h2 id="m17">Newsletter und elektronische Benachrichtigungen</h2>
     <p>
       Wir versenden Newsletter, E-Mails und weitere elektronische
-      Benachrichtigungen (nachfolgend "Newsletter“) nur mit der Einwilligung der
+      Benachrichtigungen (nachfolgend "Newsletter") nur mit der Einwilligung der
       Empfänger oder einer gesetzlichen Erlaubnis. Sofern im Rahmen einer
       Anmeldung zum Newsletter dessen Inhalte konkret umschrieben werden, sind
       sie für die Einwilligung der Nutzer maßgeblich. Im Übrigen enthalten
@@ -724,7 +664,7 @@
     </p>
     <p>
       <strong>Analyse und Erfolgsmessung</strong>: Die Newsletter enthalten
-      einen sogenannte "web-beacon“, d.h., eine pixelgroße Datei, die beim
+      einen sogenannte "web-beacon", d.h., eine pixelgroße Datei, die beim
       Öffnen des Newsletters von unserem Server, bzw., sofern wir einen
       Versanddienstleister einsetzen, von dessen Server abgerufen wird. Im
       Rahmen dieses Abrufs werden zunächst technische Informationen, wie
@@ -765,7 +705,7 @@
       ausschließlich via SMS versendet, falls die Versandberechtigung, z. B.
       eine Einwilligung, nur den Versand via SMS umfasst).
     </p>
-    <ul class="m-elements">
+    <ul>
       <li>
         <strong>Verarbeitete Datenarten:</strong> Bestandsdaten (z.B. Namen,
         Adressen), Kontaktdaten (z.B. E-Mail, Telefonnummern),
@@ -811,7 +751,7 @@
       beschränkt. Ein individueller Löschungsantrag ist jederzeit möglich,
       sofern zugleich das ehemalige Bestehen einer Einwilligung bestätigt wird.
     </p>
-    <ul class="m-elements">
+    <ul>
       <li>
         <strong>Verarbeitete Datenarten:</strong> Bestandsdaten (z.B. Namen,
         Adressen), Kontaktdaten (z.B. E-Mail, Telefonnummern).
@@ -872,7 +812,7 @@
       die Informationen zur Verwendung von Cookies in dieser
       Datenschutzerklärung hinweisen.
     </p>
-    <ul class="m-elements">
+    <ul>
       <li>
         <strong>Betroffene Personen:</strong> Nutzer (z.B. Webseitenbesucher,
         Nutzer von Onlinediensten).
@@ -960,7 +900,7 @@
       die Informationen zur Verwendung von Cookies in dieser
       Datenschutzerklärung hinweisen.
     </p>
-    <ul class="m-elements">
+    <ul>
       <li>
         <strong>Verarbeitete Datenarten:</strong> Nutzungsdaten (z.B. besuchte
         Webseiten, Interesse an Inhalten, Zugriffszeiten),
@@ -1003,7 +943,7 @@
       </li>
     </ul>
     <p><strong>Eingesetzte Dienste und Diensteanbieter:</strong></p>
-    <ul class="m-elements">
+    <ul>
       <li>
         <strong>Google Analytics:</strong> Onlinemarketing und Webanalyse;
         Dienstanbieter: Google Ireland Limited, Gordon House, Barrow Street,
@@ -1093,7 +1033,7 @@
       "Informationen zu Seiten-Insights" (<a href="https://www.facebook.com/legal/terms/information_about_page_insights_data" target="_blank">https://www.facebook.com/
       legal/terms/information_about_page_insights_data</a>).
     </p>
-    <ul class="m-elements">
+    <ul>
       <li>
         <strong>Verarbeitete Datenarten:</strong> Bestandsdaten (z.B. Namen,
         Adressen), Kontaktdaten (z.B. E-Mail, Telefonnummern), Inhaltsdaten
@@ -1117,7 +1057,7 @@
       </li>
     </ul>
     <p><strong>Eingesetzte Dienste und Diensteanbieter:</strong></p>
-    <ul class="m-elements">
+    <ul>
       <li>
         <strong>Instagram:</strong> Soziales Netzwerk; Dienstanbieter: Instagram
         Inc., 1601 Willow Road, Menlo Park, CA, 94025, USA, Mutterunternehmen:
@@ -1219,7 +1159,7 @@
       die Informationen zur Verwendung von Cookies in dieser
       Datenschutzerklärung hinweisen.
     </p>
-    <ul class="m-elements">
+    <ul>
       <li>
         <strong>Verarbeitete Datenarten:</strong> Nutzungsdaten (z.B. besuchte
         Webseiten, Interesse an Inhalten, Zugriffszeiten),
@@ -1245,7 +1185,7 @@
       </li>
     </ul>
     <p><strong>Eingesetzte Dienste und Diensteanbieter:</strong></p>
-    <ul class="m-elements">
+    <ul>
       <li>
         <strong>Google Fonts:</strong> Wir binden die Schriftarten ("Google
         Fonts") des Anbieters Google ein, wobei die Daten der Nutzer allein zu
@@ -1503,5 +1443,15 @@
         rel="noopener noreferrer nofollow">Erstellt mit kostenlosem Datenschutz-Generator.de
         von Dr. Thomas Schwenke</a>
     </p>
+    </b-container>
   </div>
 </template>
+<script>
+import MainHeader from '@/components/_base/Header'
+
+export default {
+  components: {
+    MainHeader
+  }
+}
+</script>

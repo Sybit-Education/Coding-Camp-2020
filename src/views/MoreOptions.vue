@@ -1,10 +1,7 @@
 <template>
+<div id="more-options-view">
+  <main-header :headerTitle="title"></main-header>
 <b-container>
-  <b-row>
-    <b-col>
-      <headline title="Optionen"></headline>
-    </b-col>
-  </b-row>
   <b-row class="my-3">
     <b-col>
       <b-list-group>
@@ -17,18 +14,35 @@
     </b-col>
   </b-row>
 </b-container>
+</div>
 </template>
 <script>
 import { mapActions, mapGetters } from 'vuex'
-import { $auth } from '@/firebase-config'
+import MainHeader from '@/components/_base/Header'
 
 export default {
-  async created () {
-    await this.fetchById(this.user.uid)
+  components: {
+    MainHeader
+  },
+
+  created () {
+    this.fetchUserData()
+  },
+  metaInfo () {
+    return {
+      title: this.title + ' | Sei ein Held - rette die Welt',
+      meta: [
+        { name: 'description', content: this.title },
+        { property: 'og:title', content: this.title },
+        { property: 'og:site_name', content: this.title },
+        { property: 'og:type', content: 'website' },
+        { name: 'robots', content: 'index,follow' }
+      ]
+    }
   },
   computed: {
-    user () {
-      return $auth.currentUser
+    title () {
+      return 'Optionen'
     },
     ...mapGetters({
       isAdmin: 'Userdata/isAdmin'
@@ -36,7 +50,7 @@ export default {
   },
   methods: {
     ...mapActions({
-      fetchById: 'Userdata/fetchById'
+      fetchUserData: 'Userdata/fetchUserData'
     })
   }
 }

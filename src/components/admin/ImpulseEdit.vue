@@ -1,19 +1,52 @@
 <template>
   <div id="impulse-edit">
       <b-form @submit.prevent="save">
-        <b-form-group label="Titel" label-for="title"
-          description="Titel des Impuls">
+        <b-form-group label="Titel" label-for="title">
           <b-input id="title" v-model="title" placeholder="Titel" required/>
         </b-form-group>
 
-        <b-form-group label="Kategorie" label-for="category"
-          description="Kategorie des Impuls">
-          <category-selection :impulseCategoryId="category" v-on:categoryChange="updateCategory"></category-selection>
-        </b-form-group>
-        <b-form-group label="Erklärung" label-for="description"
-          description="Erklärung zum Impuls">
-          <editor id="description" v-model="description" name="description" />
-        </b-form-group>
+        <b-row>
+          <b-form-group
+            label="Veröffentlichungsstatus"
+            label-for="publishingState"
+            class="col"
+            description="Status der Veröffentlichung des Impuls">
+            <publishing-state-selection
+              id="publishingState"
+              :publishingState="publishingState"
+              v-on:publishingStateChange="updatePublishingState"/>
+          </b-form-group>
+
+          <b-form-group
+            label="Veröffentlichungsdatum"
+            label-for="publishingDate"
+            class="col"
+            description="Ab wann soll dieser Impuls öffentlich werden?">
+            <b-datepicker
+              id="publishingDate"
+              name="publishingDate"
+              v-model="publishingDate"
+              :value-as-date="true"
+              :date-format-options="{ year: 'numeric', month: 'numeric', day: 'numeric' }"
+              locale="de"
+              calendarLocale="de"
+              start-weekday="1"
+              placeholder="Datum auswählen" />
+          </b-form-group>
+        </b-row>
+        <b-row>
+          <b-form-group label="Kategorie" label-for="category" class="col"
+            description="Kategorie des Impuls">
+            <category-selection id="category"
+              :categoryId="category"
+              v-on:categoryChange="updateCategory" />
+          </b-form-group>
+
+          <b-form-group label="Punkte" label-for="points" class="col"
+            description="Punkte, die man für den Impuls bekommen kann">
+            <b-input id="points" v-model="points" placeholder="Punkte" required/>
+          </b-form-group>
+        </b-row>
         <b-form-group label="Was bringt es mir?" label-for="forMe"
           description="Welche Vorteile habe ich, wenn ich diesen Impuls umsetze?">
           <editor id="forMe" v-model="forMe" name="forMe" />
@@ -26,15 +59,14 @@
           <editor id="forWorld" v-model="forWorld" name="forWorld" />
         </b-form-group>
 
-        <b-form-group label="Veröffentlichungsdatum" label-for="publishingDate"
-          description="Wann soll dieser Impuls öffentlich werden?">
-          <b-datepicker id="publishingDate" v-model="publishingDate" name="publishingDate"
-            locale="de" calendarLocale="de" start-weekday="1" placeholder="Datum auswählen"></b-datepicker>
+        <b-form-group label="Erklärung" label-for="description"
+          description="Erklärung zum Impuls">
+          <editor id="description" v-model="description" name="description" />
         </b-form-group>
 
         <b-form-group>
           <b-button type="submit" class="mt-3 mr-3" variant="primary">Speichern</b-button>
-          <b-button type="button" class="mt-3 mr-3 float-right" variant="secondary" @click="$bvModal.show('modal-delete')">Löschen</b-button>
+          <b-button type="button" class="mt-3 mr-3 float-right" variant="danger" @click="$bvModal.show('modal-delete')">Löschen</b-button>
         </b-form-group>
       </b-form>
 
@@ -56,9 +88,11 @@
 </template>
 
 <script>
+import firebase from 'firebase/app'
 import { mapActions } from 'vuex'
 import Editor from '@/components/_base/Editor.vue'
 import CategorySelection from '@/components/admin/_base/CategorySelection.vue'
+import PublishingStateSelection from '@/components/admin/_base/PublishingStateSelection.vue'
 
 export default {
   name: 'ImpulseEdit',
@@ -70,7 +104,8 @@ export default {
   },
   components: {
     Editor,
-    CategorySelection
+    CategorySelection,
+    PublishingStateSelection
   },
   computed: {
     title: {
@@ -99,10 +134,11 @@ export default {
     },
     publishingDate: {
       get () {
-        return this.impulse.publishingDate
+        return (this.impulse && this.impulse.publishingDate) ? this.impulse.publishingDate.toDate() : null
       },
       set (value) {
-        this.updateProperty({ impulse: this.impulse, prop: 'publishingDate', value: value })
+        const timestamp = firebase.firestore.Timestamp.fromDate(value)
+        this.updateProperty({ impulse: this.impulse, prop: 'publishingDate', value: timestamp })
       }
     },
     forMe: {
@@ -120,6 +156,22 @@ export default {
       set (value) {
         this.updateProperty({ impulse: this.impulse, prop: 'forWorld', value: value })
       }
+    },
+    points: {
+      get () {
+        return this.impulse.points
+      },
+      set (value) {
+        this.updateProperty({ impulse: this.impulse, prop: 'points', value: value })
+      }
+    },
+    publishingState: {
+      get () {
+        return this.impulse.publishingState
+      },
+      set (value) {
+        this.updateProperty({ impulse: this.impulse, prop: 'publishingState', value: value })
+      }
     }
   },
   methods: {
@@ -134,13 +186,29 @@ export default {
       this.$bvModal.hide('modal-delete')
     },
     updateCategory (categoryId) {
-      this.updateProperty({ impulse: this.impulse, prop: 'category', value: categoryId })
+      this.updateProperty({
+        impulse: this.impulse,
+        prop: 'category',
+        value: categoryId
+      })
     },
-    ...mapActions('Impulse', ['fetchList', 'fetchById', 'update', 'updateProperty', 'delete'])
+    updatePublishingState (state) {
+      this.updateProperty({
+        impulse: this.impulse,
+        prop: 'publishingState',
+        value: state
+      })
+    },
+    ...mapActions('Impulse', ['update', 'updateProperty', 'delete'])
   }
 }
 </script>
 
 <style scoped>
-
+#forMe, #forWorld {
+  min-height:100px;
+}
+#description {
+  min-height:200px;
+}
 </style>

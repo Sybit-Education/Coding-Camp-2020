@@ -1,19 +1,14 @@
 <template>
-  <div>
+  <div id="imprint-view">
+    <main-header :headerTitle="'Impressum'"></main-header>
     <b-container>
-      <b-row>
-        <b-col class="d-flex justify-content-end custom-button mb-n5 mr-2 mt-3">
-          <b-button pill to="/options"><vue-fontawesome  icon="times" color="white" size="1"></vue-fontawesome></b-button>
-        </b-col>
-      </b-row>
-    </b-container>
-    <h1>Impressum</h1>
-    <h2 id="m46">Diensteanbieter</h2>
+
+    <h2>Diensteanbieter</h2>
     <p>Fabienne Schwarz-Loy</p>
     <p>Radolfzeller Straße 2</p>
     <p>78345 Moos</p>
     <p>Deutschland</p>
-    <h2 id="m56">Kontaktmöglichkeiten</h2>
+    <h2>Kontaktmöglichkeiten</h2>
     <p><strong>E-Mail-Adresse:</strong> seieinheld (ät) heldsein (Punkt) com</p>
     <h2>Haftung für Inhalte</h2>
     <p>Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen
@@ -42,15 +37,25 @@
       beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine
       Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von
       Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.
+    </p>
+    <p>
       Quelle: <a href="https://www.e-recht24.de/impressum-generator.html">Impressum Generator</a>
     </p>
+    </b-container>
   </div>
 </template>
 
 <script>
-export default {}
+import MainHeader from '@/components/_base/Header'
+export default {
+  components: {
+    MainHeader
+  }
+}
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+.container {
+  margin-bottom: 6rem;
+}
 </style>

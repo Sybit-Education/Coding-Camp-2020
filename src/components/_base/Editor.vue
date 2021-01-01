@@ -72,5 +72,6 @@ export default {
 .ql-container {
   font-family: var(--font-family-sans-serif);
   font-size: 1rem;
+  min-height: inherit;
 }
 </style>

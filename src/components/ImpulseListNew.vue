@@ -1,9 +1,22 @@
 <template>
   <div id="impulse-list" class="impulse-list">
     <loading-indicator v-if="isLoading" message="Impulse werden geladen ..." />
-    <div v-else-if="user && $store.state.Userdata.userdata" v-for="impulse in notAssignedImpulseList" :key="impulse.id" class="impulse-card-wrapper">
-      <impulse-card :impulse="impulse"></impulse-card>
-    </div>
+    <template v-else-if="user && $store.state.Userdata.userdata">
+      <div v-if="hasUnassignedImpulse">
+        <div v-for="impulse in notAssignedImpulseList" :key="impulse.id" class="impulse-card-wrapper">
+          <impulse-card :impulse="impulse"></impulse-card>
+        </div>
+      </div>
+      <div v-else>
+        <p>
+          Aktuell gibt es keine weiteren Impulse zum Annehmen.
+        </p>
+        <p>
+          Sicher hast du schon welche
+          <router-link to="/assigned-impulse">favorisiert</router-link>.
+        </p>
+      </div>
+    </template>
     <div v-else v-for="impulse in impulseList" :key="impulse.id" class="impulse-card-wrapper">
       <impulse-card :impulse="impulse"></impulse-card>
     </div>
@@ -21,11 +34,10 @@ export default {
     return {
     }
   },
-  async created () {
-    if (this.user !== null) {
-      await this.fetchById(this.user.uid)
-    }
-    this.fetchList()
+  created () {
+    this.fetchUserData().then(() => {
+      this.fetchList()
+    })
   },
   components: {
     LoadingIndicator,
@@ -50,6 +62,9 @@ export default {
       const finalNotAssignedImpulseList = impulseListData.filter((impulse) => !assignedListData.includes(impulse.id))
       return finalNotAssignedImpulseList
     },
+    hasUnassignedImpulse () {
+      return this.notAssignedImpulseList.length > 0
+    },
     ...mapGetters({
       impulseList: 'Impulse/getList',
       assignedList: 'Userdata/assignedImpulseMap'
@@ -57,7 +72,7 @@ export default {
   },
   methods: {
     ...mapActions('Impulse', ['fetchList']),
-    ...mapActions('Userdata', ['fetchById'])
+    ...mapActions('Userdata', ['fetchUserData'])
   }
 }
 </script>

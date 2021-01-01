@@ -1,10 +1,14 @@
 <template>
   <b-form-select
-    v-model="selectionId"
-    :options="getList"
-    value-field="value" text-field="name" >
+    v-model="selectedValue"
+    :options="list"
+    value-field="value"
+    text-field="name"
+    required>
     <template v-slot:first>
-      <b-form-select-option :value="null" disabled>-- Bitte Kategorie auswählen --</b-form-select-option>
+      <b-form-select-option :value="null" disabled>
+        -- Kategorie auswählen --
+      </b-form-select-option>
     </template>
   </b-form-select>
 </template>
@@ -15,30 +19,41 @@ import { mapGetters, mapActions } from 'vuex'
 export default {
   name: 'CategorySelection',
   props: {
-    impulseCategoryId: String
+    categoryId: {
+      type: String,
+      required: false
+    }
   },
   data () {
     return {
-      selectionId: ''
+      selectedValue: ''
     }
   },
-  created () {
+  mounted () {
+    this.selectedValue = this.$props.publishingState
     this.fetchList()
+      .then(() => {
+        this.selectedValue = this.categoryId
+      })
   },
   computed: {
     ...mapGetters({
-      getList: 'Category/getList'
+      list: 'Category/getList'
     })
   },
   watch: {
-    impulseCategoryId (newValue, oldValue) {
+    categoryId (newValue, oldValue) {
       if (newValue !== oldValue) {
-        this.selectionId = this.impulseCategoryId
+        this.selectedValue = this.categoryId
       }
     },
-    selectionId (newValue, oldValue) {
-      if (newValue !== oldValue) {
-        this.$emit('categoryChange', this.selectionId)
+    selectedValue (newValue, oldValue) {
+      if (this.selectedValue) {
+        if (newValue !== oldValue) {
+          this.$emit('categoryChange', this.selectedValue)
+        }
+      } else {
+        this.$emit('categoryChange', null)
       }
     }
   },

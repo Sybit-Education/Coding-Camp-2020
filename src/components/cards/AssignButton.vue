@@ -9,7 +9,7 @@
       ><vue-fontawesome
         icon="plus-circle"
         color="white"
-        size="1.5"
+        size="1.75"
       ></vue-fontawesome
     ></b-button>
     <b-button
@@ -21,7 +21,7 @@
       ><vue-fontawesome
         icon="check-circle"
         color="white"
-        size="1.5"
+        size="1.75"
       ></vue-fontawesome
     ></b-button>
   </div>
@@ -29,6 +29,7 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex'
+import { $auth } from '@/firebase-config'
 
 export default {
   name: 'AssignButton',
@@ -36,6 +37,9 @@ export default {
     impulseId: String
   },
   computed: {
+    user () {
+      return $auth.currentUser
+    },
     isAssigned () {
       return this.impulseIsAssigned(this.impulseId)
     },
@@ -54,19 +58,27 @@ export default {
   },
   methods: {
     assign () {
-      this.$store.dispatch('Userdata/assignImpulse', this.impulseId)
-      this.showAssignedNotification()
+      if (this.user === null) {
+        this.$router.push('/login')
+      } else {
+        this.$store.dispatch('Userdata/assignImpulse', this.impulseId)
+        this.showAssignedNotification()
+      }
     },
     addPoints () {
-      this.$store.dispatch('Userdata/addPointsToUser', this.impulseId)
-      this.showCheckedNotification()
+      if (this.user === null) {
+        this.$router.push('/login')
+      } else {
+        this.$store.dispatch('Userdata/addPointsToUser', this.impulseId)
+        this.showCheckedNotification()
+      }
     },
     showCheckedNotification () {
       this.$notify({
         group: 'notification',
         title: 'Abgeschlossen!',
         type: 'success',
-        text: 'Du hast die Challenge für heute Abgeschlossen sie haben ' + this.getSelectedPointsById + ' punkte gutgeschrieben bekommen'
+        text: 'Du hast die Challenge für heute abgeschlossen und ' + this.getSelectedPointsById + ' Punkte gutgeschrieben bekommen'
       })
     },
     showAssignedNotification () {
@@ -74,11 +86,11 @@ export default {
         group: 'notification',
         title: 'Angenommen!',
         type: 'success',
-        text: 'Die Challenge wurde angenommen sie haben ' + this.getSelectedPointsById + ' punkte gutgeschreiben bekommen'
+        text: 'Die Challenge wurde angenommen. Es wurden ' + this.getSelectedPointsById + ' Punkte gutgeschreiben.'
       })
     },
     ...mapActions('Userdata', ['addPointsToUser']),
-    ...mapActions('Userdata', ['fetchById']),
+    ...mapActions('Userdata', ['fetchUserData']),
     ...mapActions('Userdata', ['assignImpulse'])
   }
 }
