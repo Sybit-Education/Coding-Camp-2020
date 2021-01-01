@@ -1,24 +1,7 @@
 {
   "hosting": [
     {
-      "target": "production",
       "site": "sei-ein-held",
-      "public": "dist",
-      "ignore": [
-        "firebase.json",
-        "**/.*",
-        "**/node_modules/**"
-      ],
-      "rewrites": [
-        {
-          "source": "**",
-          "destination": "/index.html"
-        }
-      ]
-    },
-    {
-      "target": "test",
-      "site": "test-609f0",
       "public": "dist",
       "ignore": [
         "firebase.json",
