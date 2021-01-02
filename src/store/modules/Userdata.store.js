@@ -40,25 +40,31 @@ export const actions = {
     })
   },
   fetchUserData: firestoreAction(({ bindFirestoreRef }) => {
-    const userId = $auth.currentUser.uid
-    const serialize = (snapshot) => {
-      return Object.defineProperty(snapshot.data(), 'id',
-        { value: snapshot.id, enumerable: true })
+    if ($auth.currentUser) {
+      const userId = $auth.currentUser.uid
+      const serialize = (snapshot) => {
+        return Object.defineProperty(snapshot.data(), 'id',
+          { value: snapshot.id, enumerable: true })
+      }
+      bindFirestoreRef(
+        'userdata',
+        $db.collection(COLLECTION_NAME).doc(userId),
+        { serialize }
+      )
     }
-    bindFirestoreRef(
-      'userdata',
-      $db.collection(COLLECTION_NAME).doc(userId),
-      { serialize }
-    )
   }),
   saveDisplayName ({ commit }, displayName) {
-    const userId = $auth.currentUser.uid
-    return $db.collection(COLLECTION_NAME).doc(userId).set({
-      displayName: displayName,
-      lastAccess: firebase.firestore.Timestamp.now()
-    }, { merge: true }).catch(error => {
-      console.log('Something went wrong with syncing displayName: ' + error)
-    })
+    if ($auth.currentUser) {
+      const userId = $auth.currentUser.uid
+      return $db.collection(COLLECTION_NAME).doc(userId).set({
+        displayName: displayName,
+        lastAccess: firebase.firestore.Timestamp.now()
+      }, { merge: true }).catch(error => {
+        console.log('Something went wrong with syncing displayName: ' + error)
+      })
+    } else {
+      console.log('Error storing displayName: no current user')
+    }
   },
   assignImpulse ({ getters, rootGetters, commit }, impulseId) {
     const userId = $auth.currentUser.uid
