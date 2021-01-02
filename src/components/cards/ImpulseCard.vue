@@ -1,5 +1,5 @@
 <template>
-  <div class="card-body">
+  <div :ref="impulse.id" class="card-body">
     <div class="card-content">
       <router-link :to="detailLink">
         <div class="card-text-headline">
@@ -40,6 +40,11 @@ export default {
   },
   components: {
     AssignButton, CategoryLabel
+  },
+  mounted () {
+    this.$nextTick(() => {
+      this.$emit('ready')
+    })
   },
   computed: {
     user () {

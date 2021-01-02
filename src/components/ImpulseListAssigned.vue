@@ -11,8 +11,12 @@
           Impulse favorisieren.
         </p>
     </div>
-    <div v-else v-for="impulse in assignedImpulseList" :key="impulse.id" class="impulse-card-wrapper">
-      <impulse-card :impulse="impulse" to="assigned"></impulse-card>
+    <div
+      v-for="impulse in assignedImpulseList"
+      :key="impulse.id"
+      v-on:ready="scrollToCard"
+      class="impulse-card-wrapper">
+      <impulse-card :impulse="impulse" to="assigned" />
     </div>
   </div>
 </template>
@@ -24,11 +28,14 @@ import ImpulseCard from '@/components/cards/ImpulseCard.vue'
 
 export default {
   name: 'ImpulseListAssigned',
-  mounted () {
-    this.fetchUserData()
+  async mounted () {
+    await this.fetchUserData()
       .then(() => {
         this.fetchList()
       })
+  },
+  updated () {
+    this.scrollToCard()
   },
   components: {
     LoadingIndicator,
@@ -53,6 +60,19 @@ export default {
     })
   },
   methods: {
+    async scrollToCard () {
+      this.$nextTick()
+        .then(() => {
+          const section = this.$router.currentRoute.hash.replace('#', '')
+          if (section) {
+            console.log('*scrollToCard', section, this.$refs)
+            console.log('element: ', this.$refs[section])
+            if (this.$refs[section]) {
+              this.$refs[section].scrollIntoView()
+            }
+          }
+        })
+    },
     ...mapActions('Impulse', ['fetchList']),
     ...mapActions('Userdata', ['fetchUserData'])
   }
