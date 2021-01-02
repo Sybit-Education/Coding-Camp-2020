@@ -1,5 +1,6 @@
 <template>
   <b-badge
+    class="category"
     v-if="category"
     v-bind:style="color"
     v-text="name" />
@@ -13,7 +14,7 @@ export default {
   props: {
     categoryId: {
       type: String,
-      required: true
+      required: false
     }
   },
   data () {
@@ -22,10 +23,12 @@ export default {
     }
   },
   mounted () {
-    this.fetchList()
-      .then(() => {
-        this.category = this.getSelected(this.categoryId)
-      })
+    if (this.categoryId) {
+      this.fetchList()
+        .then(() => {
+          this.category = this.getSelected(this.categoryId)
+        })
+    }
   },
   computed: {
     name () {
@@ -40,6 +43,17 @@ export default {
   },
   methods: {
     ...mapActions('Category', ['fetchList'])
+  },
+  watch: {
+    categoryId (newValue, oldValue) {
+      if (this.categoryId) {
+        if (newValue !== oldValue) {
+          this.category = this.getSelected(this.categoryId)
+        }
+      } else {
+        this.category = null
+      }
+    }
   }
 }
 </script>

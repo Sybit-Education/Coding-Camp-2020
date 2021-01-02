@@ -1,6 +1,6 @@
 <template>
   <b-button  v-b-modal.modal-delete-account variant="outline-danger">
-    Account Löschen
+    Account löschen ...
 
     <b-modal id="modal-delete-account" title="Account Löschen" hide-footer>
       <b-row>

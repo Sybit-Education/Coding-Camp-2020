@@ -7,8 +7,7 @@
       transitionName="fade"
       buttonLinkText="Datenschutzerklärung"
       buttonLink="/privacy"
-    >
-    </cookie-law>
+    />
 </template>
 
 <script>
@@ -19,10 +18,11 @@ export default {
 </script>
 <style lang="scss" scoped>
 .Cookie--sybit {
-  background: white;
-  padding: 5px 5px;
+  background: rgb(99, 99, 99);
+  color: rgb(240, 238, 238);
+  padding: 10px 10px;
   position: fixed;
-  bottom: 2.5rem;
+  bottom: 5rem;
   width: 100%;
   z-index: 999;
 

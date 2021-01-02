@@ -18,7 +18,6 @@
 </template>
 <script>
 import { mapActions, mapGetters } from 'vuex'
-import { $auth } from '@/firebase-config'
 import MainHeader from '@/components/_base/Header'
 
 export default {
@@ -26,10 +25,8 @@ export default {
     MainHeader
   },
 
-  async created () {
-    if (this.user) {
-      await this.fetchById(this.user.uid)
-    }
+  created () {
+    this.fetchUserData()
   },
   metaInfo () {
     return {
@@ -47,16 +44,13 @@ export default {
     title () {
       return 'Optionen'
     },
-    user () {
-      return $auth.currentUser
-    },
     ...mapGetters({
       isAdmin: 'Userdata/isAdmin'
     })
   },
   methods: {
     ...mapActions({
-      fetchById: 'Userdata/fetchById'
+      fetchUserData: 'Userdata/fetchUserData'
     })
   }
 }
