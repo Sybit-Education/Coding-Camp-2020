@@ -19,7 +19,8 @@
           class="card-description" />
       </div>
       <div v-else>
-        Impuls leider nicht gefunden.
+        Impuls leider nicht gefunden.<br>
+        <router-link :to="backlink"> Zurück zur Übersicht.</router-link>
       </div>
     </b-container>
   </div>
@@ -54,18 +55,22 @@ export default {
       return this.impulse ? this.impulse.title : 'Impuls'
     },
     backlink () {
-      return this.$attrs.back || '/'
+      let link
+      if (this.$attrs.back) {
+        link = this.$attrs.back
+        if (this.$route.params.id) {
+          link += '#' + this.$route.params.id
+        }
+      } else {
+        link = '/'
+      }
+      return link
     },
     ...mapGetters({
       impulse: 'Impulse/getImpulse'
     })
   },
   methods: {
-    routeToHomeWhenNoImpulseIsAvailable () {
-      if (this.impulse === undefined) {
-        this.$router.push({ name: 'Home' })
-      }
-    },
     ...mapActions('Impulse', ['fetchById'])
   }
 
