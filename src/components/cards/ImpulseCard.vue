@@ -1,24 +1,25 @@
 <template>
   <div :ref="impulse.id" class="card-body">
-    <div class="card-content">
-      <router-link :to="detailLink">
+    <router-link :to="detailLink">
+      <div class="card-content">
         <div class="card-text-headline">
           <category-label :categoryId="impulse.category" />
+          <a :name="impulse.id" />
           <h3>{{ impulse.title }}</h3>
         </div>
         <div class="card-text">
           <div v-if="impulse.forMe">
             <h4>Was bringt es mir?</h4>
-            <p v-html="impulse.forMe" />
+            <div v-html="impulse.forMe" />
           </div>
           <div v-if="impulse.forWorld">
             <h4>Was bringt es der Welt?</h4>
-            <p v-html="impulse.forWorld" />
+            <div v-html="impulse.forWorld" />
           </div>
         </div>
-      </router-link>
-    </div>
-    <assign-button v-if="user && $store.state.Userdata.userdata" :impulseId="impulse.id" />
+      </div>
+    </router-link>
+    <assign-button :impulseId="impulse.id" />
     <div class="card-background">
       <img src="@/assets/cards/Card-blue.svg">
     </div>
@@ -47,8 +48,8 @@ export default {
     })
   },
   computed: {
-    user () {
-      return $auth.currentUser
+    userLoggedIn () {
+      return $auth.currentUser && this.$store.state.Userdata.userdata
     },
     detailLink () {
       return '/' + this.to + '/' + this.impulse.id
