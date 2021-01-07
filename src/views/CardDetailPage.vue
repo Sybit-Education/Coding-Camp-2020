@@ -3,24 +3,34 @@
     <main-header headerTitle="Impuls" :backlink="backlink"></main-header>
     <b-container>
       <div v-if="impulse" id="impulse-detail-view" class="my-4 mb-6 mx-2 p-2">
-        <h3 class="mb-5 card-title">{{ impulse.title }}</h3>
+        <h1 class="mb-5 card-title">{{ impulse.title }}</h1>
 
-        <h5>Was bringt das mir?</h5>
-        <p v-html="impulse.forMe" class="for-me"></p>
-        <hr class="my-4">
-
-        <h5>Was bringt es der Welt?</h5>
-        <p v-html="impulse.forWorld" class="for-world"></p>
-        <hr class="my-4">
-
-        <p
+        <div v-if="impulse.forMe">
+          <h2>Was bringt das mir?</h2>
+          <div
+            v-html="impulse.forMe"
+            class="for-me"
+          />
+          <hr class="my-4">
+        </div>
+        <div v-if="impulse.forWorld">
+          <h2>Was bringt es der Welt?</h2>
+          <div
+            v-html="impulse.forWorld"
+            class="for-world"
+          />
+          <hr class="my-4">
+        </div>
+        <div
           v-if="impulse.description"
           v-html="impulse.description"
           class="card-description" />
       </div>
       <div v-else>
         Impuls leider nicht gefunden.<br>
-        <router-link :to="backlink"> Zurück zur Übersicht.</router-link>
+        <router-link :to="backlink">
+          Zurück zur Übersicht.
+        </router-link>
       </div>
     </b-container>
   </div>
@@ -46,7 +56,7 @@ export default {
   components: {
     MainHeader
   },
-  mounted () {
+  created () {
     const impulseId = this.$route.params.id
     this.fetchById(impulseId)
   },
@@ -81,25 +91,6 @@ export default {
 #impulse-detail-view {
   border: 5px solid $color-blue;
   border-radius: 30px;
-}
-.card-description {
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 32px;
-    color:#444;
-    word-wrap: break-word;
-}
-.card-title {
-    line-height: 36px;
-}
-.for-me {
-    word-wrap: break-word;
-     line-height: 32px;
-    font-size: 17px;
-}
-.for-world {
-    word-wrap: break-word;
-    line-height: 32px;
-    font-size: 17px;
+  max-width: 770px;
 }
 </style>
