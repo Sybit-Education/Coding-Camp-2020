@@ -1,5 +1,5 @@
 <template>
-  <b-navbar id="navigationBar">
+  <b-navbar id="navigationBar"  fixed="top">
     <b-container>
       <b-navbar-brand>
         <span v-if="backlink" class="mr-2">
