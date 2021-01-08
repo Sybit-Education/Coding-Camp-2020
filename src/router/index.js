@@ -66,6 +66,69 @@ const routes = [
     }
   },
   {
+    path: '/profile',
+    name: 'Profile',
+    component: () => import('../views/Profile.vue'),
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/admin',
+    name: 'Admin',
+    component: () => import('../views/admin/Administration.vue'),
+    meta: {
+      requiresAuth: true
+    },
+    beforeEnter: isAdmin
+  },
+  {
+    path: '/impulse/:id',
+    name: 'CardDetail',
+    component: () => import('../views/CardDetailPage.vue'),
+    props: {
+      back: '/'
+    },
+    meta: {
+      requiresAuth: false
+    }
+  },
+  {
+    path: '/impulse',
+    name: 'ImpulseList',
+    component: Home,
+    meta: {
+      requiresAuth: false
+    }
+  },
+  {
+    path: '/assigned/:id',
+    name: 'CardDetailAssigned',
+    component: () => import('../views/CardDetailPage.vue'),
+    props: {
+      back: '/assigned'
+    },
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/assigned',
+    name: 'AssignedImpulseList',
+    component: AssignedImpulse,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/highscore',
+    name: 'Highscore',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "highscore" */ '../views/Highscore.vue')
+  },
+  {
     path: '/login',
     name: 'Login',
     component: () => import('../views/Login.vue'),
@@ -90,47 +153,6 @@ const routes = [
     }
   },
   {
-    path: '/profile',
-    name: 'Profile',
-    component: () => import('../views/Profile.vue'),
-    meta: {
-      requiresAuth: true
-    }
-  },
-  {
-    path: '/admin',
-    name: 'Admin',
-    component: () => import('../views/admin/Administration.vue'),
-    meta: {
-      requiresAuth: true
-    },
-    beforeEnter: isAdmin
-  },
-  {
-    path: '/impulse/:id',
-    name: 'CardDetail',
-    component: () => import('../views/CardDetailPage.vue'),
-    props: {
-      back: '/'
-    }
-  },
-  {
-    path: '/assigned/:id',
-    name: 'CardDetailAssigned',
-    component: () => import('../views/CardDetailPage.vue'),
-    props: {
-      back: '/assigned'
-    }
-  },
-  {
-    path: '/highscore',
-    name: 'Highscore',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "highscore" */ '../views/Highscore.vue')
-  },
-  {
     path: '/reset-password',
     name: 'ResetPassword',
     component: RequestResetPassword,
@@ -139,19 +161,31 @@ const routes = [
     }
   },
   {
-    path: '/assigned',
-    name: 'AssignedImpulse',
-    component: AssignedImpulse,
-    meta: {
-      requiresAuth: true
-    }
+    // not found -> redirect to home.
+    path: '*',
+    redirect: '/'
   }
 ]
 
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes
+  routes,
+  scrollBehavior (to, from, savedPosition) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (to.hash) {
+          return {
+            selector: to.hash
+          }
+        } else if (savedPosition) {
+          return savedPosition
+        } else {
+          return { x: 0, y: 0 }
+        }
+      }, 1000)
+    })
+  }
 })
 
 // Getting a router.beforeEach functino which handles the case if the user is logged in or not

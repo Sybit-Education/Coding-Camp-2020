@@ -1,5 +1,5 @@
 <template>
-  <div :ref="impulse.id" class="card-body">
+  <div class="card-body"  v-on:scrollToCard="scrollToCard">
     <router-link :to="detailLink">
       <div class="card-content">
         <div class="card-text-headline">
@@ -43,8 +43,10 @@ export default {
     AssignButton, CategoryLabel
   },
   mounted () {
-    this.$nextTick(() => {
-      this.$emit('ready')
+    this.$root.$on('scrollToCard', (impulseId) => {
+      this.$nextTick(() => {
+        this.scrollToCard(impulseId)
+      })
     })
   },
   computed: {
@@ -52,7 +54,15 @@ export default {
       return $auth.currentUser && this.$store.state.Userdata.userdata
     },
     detailLink () {
-      return '/' + this.to + '/' + this.impulse.id
+      return this.to + '/' + this.impulse.id
+    }
+  },
+  methods: {
+    scrollToCard (impulseId) {
+      if (impulseId && impulseId === this.impulse.id) {
+        console.log('scrollToCard', this.impulse)
+        this.$el.scrollIntoView()
+      }
     }
   }
 }
@@ -85,8 +95,8 @@ export default {
     position: absolute;
     height: 100%;
     width: 100%;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 1rem;
+    padding-right: 1rem;
     a:hover {
       text-decoration: none;
     }

@@ -2,6 +2,7 @@
   <div id="impulse-list" class="impulse-list">
     <loading-indicator v-if="isLoading" message="Impulse werden geladen ..." />
     <div v-else-if="!hasAssignedImpulse">
+      <b-container>
         <p>
           Du hast noch keine Impulse angenommen.
         </p>
@@ -10,13 +11,15 @@
           <router-link to="/">Übersicht</router-link>
           Impulse favorisieren.
         </p>
+      </b-container>
     </div>
     <div
       v-for="impulse in assignedImpulseList"
       :key="impulse.id"
-      v-on:ready="scrollToCard"
       class="impulse-card-wrapper">
-      <impulse-card :impulse="impulse" to="assigned" />
+      <impulse-card
+        :impulse="impulse"
+        to="/assigned"/>
     </div>
   </div>
 </template>
@@ -28,14 +31,11 @@ import ImpulseCard from '@/components/cards/ImpulseCard.vue'
 
 export default {
   name: 'ImpulseListAssigned',
-  async mounted () {
-    await this.fetchUserData()
+  created () {
+    this.fetchUserData()
       .then(() => {
         this.fetchList()
       })
-  },
-  updated () {
-    this.scrollToCard()
   },
   components: {
     LoadingIndicator,
@@ -60,21 +60,26 @@ export default {
     })
   },
   methods: {
-    async scrollToCard () {
-      this.$nextTick()
-        .then(() => {
-          const section = this.$router.currentRoute.hash.replace('#', '')
-          if (section) {
-            console.log('*scrollToCard', section, this.$refs)
-            console.log('element: ', this.$refs[section])
-            if (this.$refs[section]) {
-              this.$refs[section].scrollIntoView()
-            }
-          }
+    impulseListLoaded () {
+      const impulseId = this.$router.currentRoute.hash.replace('#', '')
+      console.log('*impulseListLoaded', impulseId)
+      if (impulseId) {
+        this.$nextTick(() => {
+          this.$root.$emit('scrollToCard', impulseId)
         })
+      } else {
+        console.log('no impulseId')
+      }
     },
     ...mapActions('Impulse', ['fetchList']),
     ...mapActions('Userdata', ['fetchUserData'])
+  },
+  watch: {
+    hasAssignedImpulse (newValue, oldValue) {
+      if (newValue) {
+        this.impulseListLoaded()
+      }
+    }
   }
 }
 </script>

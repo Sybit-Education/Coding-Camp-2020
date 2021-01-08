@@ -92,5 +92,14 @@ export default {
   border: 5px solid $color-blue;
   border-radius: 30px;
   max-width: 770px;
+
+  @media only screen and (max-width: 991px) {
+    .card-title {
+      font-size: 1.75rem;
+    }
+    h2 {
+      font-size: 1.5rem;
+    }
+  }
 }
 </style>
