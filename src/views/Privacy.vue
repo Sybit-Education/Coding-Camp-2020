@@ -1,6 +1,6 @@
 <template>
   <div id="privacy-view">
-    <main-header :headerTitle="'Datenschutzerklärung'"></main-header>
+    <main-header :headerTitle="'Datenschutzerklärung'" />
     <b-container>
 
     <h2>Einleitung</h2>
@@ -78,10 +78,10 @@
     </p>
     <p>
       <strong>E-Mail-Adresse:</strong>
-      <a href="mailto:seieinheld@heldsein.com">seieinheld@heldsein.com</a>
+      seieinheld@heldsein.com
     </p>
-    <p><strong>Impressum:</strong> HIER URL EINTRAGEN</p>
-    <h2 id="mOverview">Übersicht der Verarbeitungen</h2>
+
+    <h2>Übersicht der Verarbeitungen</h2>
     <p>
       Die nachfolgende Übersicht fasst die Arten der verarbeiteten Daten und die
       Zwecke ihrer Verarbeitung zusammen und verweist auf die betroffenen
@@ -1078,26 +1078,6 @@
         <a href="https://www.facebook.com/settings?tab=ads" target="_blank">https://www.facebook.com/settings?tab=ads</a>.
       </li>
       <li>
-        <strong>LinkedIn:</strong> Soziales Netzwerk; Dienstanbieter: LinkedIn
-        Ireland Unlimited Company, Wilton Place, Dublin 2, Irland; Website:
-        <a href="https://www.linkedin.com" target="_blank">https://www.linkedin.com</a>;
-        Datenschutzerklärung:
-        <a href="https://www.linkedin.com/legal/privacy-policy" target="_blank">https://www.linkedin.com/legal/
-          privacy-policy</a>;
-        Widerspruchsmöglichkeit (Opt-Out):
-        <a href="https://www.linkedin.com/psettings/guest-controls/retargeting-opt-out" target="_blank">https://www.linkedin.com/
-          psettings/guest-controls/retargeting-opt-out</a>.
-      </li>
-      <li>
-        <strong>Pinterest:</strong> Soziales Netzwerk; Dienstanbieter: Pinterest
-        Inc., 635 High Street, Palo Alto, CA, 94301, USA,; Website:
-        <a href="https://www.pinterest.com" target="_blank">https://www.pinterest.com</a>;
-        Datenschutzerklärung:
-        <a href="https://about.pinterest.com/de/privacy-policy" target="_blank">https://about.pinterest.com/de/privacy-policy</a>;
-        Widerspruchsmöglichkeit (Opt-Out):
-        <a href="https://about.pinterest.com/de/privacy-policy" target="_blank">https://about.pinterest.com/de/privacy-policy</a>.
-      </li>
-      <li>
         <strong>Twitter:</strong> Soziales Netzwerk; Dienstanbieter: Twitter
         International Company, One Cumberland Place, Fenian Street, Dublin 2 D02
         AX07, Irland, Mutterunternehmen: Twitter Inc., 1355 Market Street, Suite
@@ -1115,16 +1095,8 @@
         Widerspruchsmöglichkeit (Opt-Out):
         <a href="https://adssettings.google.com/authenticated" target="_blank">https://adssettings.google.com/authenticated</a>.
       </li>
-      <li>
-        <strong>Xing:</strong> Soziales Netzwerk; Dienstanbieter: XING AG,
-        Dammtorstraße 29-32, 20354 Hamburg, Deutschland; Website:
-        <a href="https://www.xing.de" target="_blank">https://www.xing.de</a>;
-        Datenschutzerklärung:
-        <a href="https://privacy.xing.com/de/datenschutzerklaerung" target="_blank">https://privacy.xing.com/
-          de/datenschutzerklaerung</a>.
-      </li>
     </ul>
-    <h2 id="m328">Plugins und eingebettete Funktionen sowie Inhalte</h2>
+    <h2>Plugins und eingebettete Funktionen sowie Inhalte</h2>
     <p>
       Wir binden in unser Onlineangebot Funktions- und Inhaltselemente ein, die
       von den Servern ihrer jeweiligen Anbieter (nachfolgend bezeichnet als
@@ -1232,7 +1204,7 @@
           authenticated</a>.
       </li>
     </ul>
-    <h2 id="m12">Löschung von Daten</h2>
+    <h2>Löschung von Daten</h2>
     <p>
       Die von uns verarbeiteten Daten werden nach Maßgabe der gesetzlichen
       Vorgaben gelöscht, sobald deren zur Verarbeitung erlaubten Einwilligungen
@@ -1255,7 +1227,7 @@
       im Rahmen der einzelnen Datenschutzhinweise dieser Datenschutzerklärung
       erfolgen.
     </p>
-    <h2 id="m15">Änderung und Aktualisierung der Datenschutzerklärung</h2>
+    <h2>Änderung und Aktualisierung der Datenschutzerklärung</h2>
     <p>
       Wir bitten Sie, sich regelmäßig über den Inhalt unserer
       Datenschutzerklärung zu informieren. Wir passen die Datenschutzerklärung
@@ -1270,14 +1242,14 @@
       wir zu beachten, dass die Adressen sich über die Zeit ändern können und
       bitten die Angaben vor Kontaktaufnahme zu prüfen.
     </p>
-    <h2 id="m10">Rechte der betroffenen Personen</h2>
+    <h2>Rechte der betroffenen Personen</h2>
     <p>
       Ihnen stehen als Betroffene nach der DSGVO verschiedene Rechte zu, die
       sich insbesondere aus Art. 15 bis 21 DSGVO ergeben:
     </p>
     <ul>
       <li>
-        <strong>Widerspruchsrecht: Sie haben das Recht, aus Gründen, die sich aus
+        <strong>Widerspruchsrecht:</strong> Sie haben das Recht, aus Gründen, die sich aus
           Ihrer besonderen Situation ergeben, jederzeit gegen die Verarbeitung
           der Sie betreffenden personenbezogenen Daten, die aufgrund von Art. 6
           Abs. 1 lit. e oder f DSGVO erfolgt, Widerspruch einzulegen; dies gilt
@@ -1286,7 +1258,7 @@
           zu betreiben, haben Sie das Recht, jederzeit Widerspruch gegen die
           Verarbeitung der Sie betreffenden personenbezogenen Daten zum Zwecke
           derartiger Werbung einzulegen; dies gilt auch für das Profiling,
-          soweit es mit solcher Direktwerbung in Verbindung steht.</strong>
+          soweit es mit solcher Direktwerbung in Verbindung steht.
       </li>
       <li>
         <strong>Widerrufsrecht bei Einwilligungen:</strong> Sie haben das Recht,
@@ -1327,7 +1299,7 @@
         betreffenden personenbezogenen Daten gegen die DSGVO verstößt.
       </li>
     </ul>
-    <h2 id="m42">Begriffsdefinitionen</h2>
+    <h2>Begriffsdefinitionen</h2>
     <p>
       In diesem Abschnitt erhalten Sie eine Übersicht über die in dieser
       Datenschutzerklärung verwendeten Begrifflichkeiten. Viele der Begriffe
@@ -1336,7 +1308,7 @@
       Erläuterungen sollen dagegen vor allem dem Verständnis dienen. Die
       Begriffe sind alphabetisch sortiert.
     </p>
-    <ul class="glossary">
+    <ul>
       <li>
         <strong>IP-Masking:</strong> Als "IP-Masking” wird eine Methode
         bezeichnet, bei der das letzte Oktett, d.h., die letzten beiden Zahlen
@@ -1435,7 +1407,7 @@
         Erheben, das Auswerten, das Speichern, das Übermitteln oder das Löschen.
       </li>
     </ul>
-    <p class="seal">
+    <p>
       <a
         href="https://datenschutz-generator.de/?l=de"
         title="Rechtstext von Dr. Schwenke - für weitere Informationen bitte anklicken."
@@ -1455,3 +1427,15 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+h1 {
+  font-size: 1.5rem;
+}
+h2 {
+  font-size: 1.25rem;
+}
+p, li {
+  font-size: 0.75rem;
+}
+</style>

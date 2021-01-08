@@ -2,6 +2,7 @@
   <div id="impulse-list" class="impulse-list">
     <loading-indicator v-if="isLoading" message="Impulse werden geladen ..." />
     <div v-else-if="!hasAssignedImpulse">
+      <b-container>
         <p>
           Du hast noch keine Impulse angenommen.
         </p>
@@ -10,9 +11,15 @@
           <router-link to="/">Übersicht</router-link>
           Impulse favorisieren.
         </p>
+      </b-container>
     </div>
-    <div v-else v-for="impulse in assignedImpulseList" :key="impulse.id" class="impulse-card-wrapper">
-      <impulse-card :impulse="impulse"></impulse-card>
+    <div
+      v-for="impulse in assignedImpulseList"
+      :key="impulse.id"
+      class="impulse-card-wrapper">
+      <impulse-card
+        :impulse="impulse"
+        to="/assigned"/>
     </div>
   </div>
 </template>
@@ -24,7 +31,7 @@ import ImpulseCard from '@/components/cards/ImpulseCard.vue'
 
 export default {
   name: 'ImpulseListAssigned',
-  mounted () {
+  created () {
     this.fetchUserData()
       .then(() => {
         this.fetchList()
@@ -53,8 +60,26 @@ export default {
     })
   },
   methods: {
+    impulseListLoaded () {
+      const impulseId = this.$router.currentRoute.hash.replace('#', '')
+      console.log('*impulseListLoaded', impulseId)
+      if (impulseId) {
+        this.$nextTick(() => {
+          this.$root.$emit('scrollToCard', impulseId)
+        })
+      } else {
+        console.log('no impulseId')
+      }
+    },
     ...mapActions('Impulse', ['fetchList']),
     ...mapActions('Userdata', ['fetchUserData'])
+  },
+  watch: {
+    hasAssignedImpulse (newValue, oldValue) {
+      if (newValue) {
+        this.impulseListLoaded()
+      }
+    }
   }
 }
 </script>

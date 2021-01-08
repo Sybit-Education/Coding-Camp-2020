@@ -4,12 +4,11 @@
     <b-container>
       <b-table
         id="challengeStatsList"
-        ref="challengeStatsTaable"
+        ref="challengeStatsTable"
         :items="items"
         :fields="fields" primary-key="id"
         hover
-      >
-      </b-table>
+      />
     </b-container>
   </div>
 </template>
