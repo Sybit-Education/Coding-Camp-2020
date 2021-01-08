@@ -1,24 +1,25 @@
 <template>
-  <div class="card-body">
-    <div class="card-content">
-      <router-link :to="{ name: 'KartenDetail', params: { impulse: impulse }}">
+  <div class="card-body"  v-on:scrollToCard="scrollToCard">
+    <router-link :to="detailLink">
+      <div class="card-content">
         <div class="card-text-headline">
           <category-label :categoryId="impulse.category" />
+          <a :name="impulse.id" />
           <h3>{{ impulse.title }}</h3>
         </div>
         <div class="card-text">
           <div v-if="impulse.forMe">
             <h4>Was bringt es mir?</h4>
-            <p v-html="impulse.forMe" />
+            <div v-html="impulse.forMe" />
           </div>
           <div v-if="impulse.forWorld">
             <h4>Was bringt es der Welt?</h4>
-            <p v-html="impulse.forWorld" />
+            <div v-html="impulse.forWorld" />
           </div>
         </div>
-      </router-link>
-    </div>
-    <assign-button v-if="user && $store.state.Userdata.userdata" :impulseId="impulse.id" />
+      </div>
+    </router-link>
+    <assign-button :impulseId="impulse.id" />
     <div class="card-background">
       <img src="@/assets/cards/Card-blue.svg">
     </div>
@@ -32,14 +33,36 @@ export default {
   props: {
     impulse: {
       type: Object
+    },
+    to: {
+      type: String,
+      default: 'impulse'
     }
   },
   components: {
     AssignButton, CategoryLabel
   },
+  mounted () {
+    this.$root.$on('scrollToCard', (impulseId) => {
+      this.$nextTick(() => {
+        this.scrollToCard(impulseId)
+      })
+    })
+  },
   computed: {
-    user () {
-      return $auth.currentUser
+    userLoggedIn () {
+      return $auth.currentUser && this.$store.state.Userdata.userdata
+    },
+    detailLink () {
+      return this.to + '/' + this.impulse.id
+    }
+  },
+  methods: {
+    scrollToCard (impulseId) {
+      if (impulseId && impulseId === this.impulse.id) {
+        console.log('scrollToCard', this.impulse)
+        this.$el.scrollIntoView()
+      }
     }
   }
 }
@@ -72,8 +95,8 @@ export default {
     position: absolute;
     height: 100%;
     width: 100%;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 1rem;
+    padding-right: 1rem;
     a:hover {
       text-decoration: none;
     }

@@ -8,17 +8,24 @@
         </div>
       </div>
       <div v-else>
-        <p>
-          Aktuell gibt es keine weiteren Impulse zum Annehmen.
-        </p>
-        <p>
-          Sicher hast du schon welche
-          <router-link to="/assigned-impulse">favorisiert</router-link>.
-        </p>
+        <b-container>
+          <p>
+            Aktuell gibt es keine weiteren Impulse zum Annehmen.
+          </p>
+          <p>
+            Sicher hast du schon Impulse
+            <router-link to="/assigned">favorisiert</router-link>.
+          </p>
+        </b-container>
       </div>
     </template>
-    <div v-else v-for="impulse in impulseList" :key="impulse.id" class="impulse-card-wrapper">
-      <impulse-card :impulse="impulse"></impulse-card>
+    <div v-else
+      v-for="impulse in impulseList"
+      :key="impulse.id"
+      class="impulse-card-wrapper">
+      <impulse-card
+        :impulse="impulse"
+        to="/impulse" />
     </div>
   </div>
 </template>
@@ -35,9 +42,10 @@ export default {
     }
   },
   created () {
-    this.fetchUserData().then(() => {
-      this.fetchList()
-    })
+    this.fetchUserData()
+      .then(() => {
+        this.fetchList()
+      })
   },
   components: {
     LoadingIndicator,
@@ -71,8 +79,26 @@ export default {
     })
   },
   methods: {
+    impulseListLoaded () {
+      const impulseId = this.$router.currentRoute.hash.replace('#', '')
+      console.log('*impulseListLoaded', impulseId)
+      if (impulseId) {
+        this.$nextTick(() => {
+          this.$root.$emit('scrollToCard', impulseId)
+        })
+      } else {
+        console.log('no impulseId')
+      }
+    },
     ...mapActions('Impulse', ['fetchList']),
     ...mapActions('Userdata', ['fetchUserData'])
+  },
+  watch: {
+    hasUnassignedImpulse (newValue, oldValue) {
+      if (newValue) {
+        this.impulseListLoaded()
+      }
+    }
   }
 }
 </script>
