@@ -1,13 +1,16 @@
 <template>
-  <b-navbar id="navigationBar">
+  <b-navbar id="navigationBar"  fixed="top">
     <b-container>
       <b-navbar-brand>
-
-        <router-link to="/">
+        <span v-if="backlink" class="mr-2">
+          <router-link
+            class="back-link btn btn-sm btn-outline-primary"
+            :to="backlink">&lt;Zurück</router-link>
+        </span>
+        <router-link v-else to="/">
           <b-img :src="logo" class="logo d-inline-block align-top" alt="Sei ein Held" />
         </router-link>
-
-        {{ headerTitle }}
+        <span class="header-title">{{ headerTitle }}</span>
       </b-navbar-brand>
     </b-container>
   </b-navbar>
@@ -18,6 +21,10 @@ export default {
   props: {
     headerTitle: {
       type: String
+    },
+    backlink: {
+      type: String,
+      required: false
     }
   },
   computed: {
@@ -29,17 +36,24 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 #navigationBar {
   background-color: $color-yellow;
   width: 100vw;
 
-  h1 {
-    font-size: 1.25rem;
+  header-title {
+    font-weight: 500;
   }
   .logo {
     width: 2rem;
     height: 2rem;
+  }
+  .back-link {
+    font-weight: 500;
+  }
+  .back-link {
+    a:hover {
+      text-decoration: none;
+    }
   }
 }
 </style>

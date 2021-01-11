@@ -40,7 +40,8 @@ export default {
 
 .router-view {
   background-color: var(--background);
-  min-height: calc(100vh - 6.75rem);
-  margin-bottom: 6rem;
+  min-height: calc(100vh - 10rem);
+  margin-top: 4rem;
+  margin-bottom: 4rem;
 }
 </style>

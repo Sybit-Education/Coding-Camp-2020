@@ -55,7 +55,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container {
-  margin-bottom: 6rem;
+h1 {
+  font-size: 1.5rem;
+}
+h2 {
+  font-size: 1.25rem;
+}
+p {
+  font-size: 0.75rem;
 }
 </style>
