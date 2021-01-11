@@ -190,7 +190,7 @@ const router = new VueRouter({
 
 router.beforeResolve((to, from, next) => {
   if (from.name === 'CardDetail' && to.hash === '') {
-    console.log('from: ', from.params.id)
+    // navigate to the specific card also on history back:
     router.replace({ path: to.path, hash: from.params.id })
   } else {
     next()
