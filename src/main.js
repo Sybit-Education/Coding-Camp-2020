@@ -12,7 +12,7 @@ import './vue-gravatar'
 import './plugins/bootstrap-vue'
 import wb from './registerServiceWorker'
 
-let app = ''
+let app
 Vue.config.productionTip = false
 Vue.prototype.$workbox = wb
 
