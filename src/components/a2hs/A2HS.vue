@@ -21,6 +21,7 @@ export default {
     a2hsService.checkUserAgent()
     a2hsService.trackStandalone()
     window.addEventListener('beforeinstallprompt', (e) => {
+      console.log('beforeinstallprompt')
       // show the add button
       a2hsService.promptIntercepted = true
       // Prevent Chrome 67 and earlier from automatically showing the prompt
@@ -31,6 +32,7 @@ export default {
       a2hsService.promptSaved = true
     })
     window.addEventListener('appinstalled', (evt) => {
+      console.log('appinstalled')
       a2hsService.trackInstalled()
       // hide the add button
       a2hsService.promptIntercepted = false
