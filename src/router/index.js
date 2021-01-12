@@ -188,7 +188,22 @@ const router = new VueRouter({
   }
 })
 
-// Getting a router.beforeEach functino which handles the case if the user is logged in or not
+router.beforeResolve((to, from, next) => {
+  if (from.name === 'CardDetail' && to.hash === '') {
+    // navigate to the specific card also on history back:
+    router.replace({ path: to.path, hash: from.params.id })
+  } else {
+    next()
+  }
+})
+
+router.beforeResolve((to, from, next) => {
+  if (to.name) {
+    NProgress.start()
+  }
+  next()
+})
+
 router.beforeEach((to, from, next) => {
   const currentUser = $auth.currentUser
   const requiresAuth = to.matched.some(record => record.meta.requiresAuth)
@@ -201,13 +216,6 @@ router.beforeEach((to, from, next) => {
   } else {
     next()
   }
-})
-
-router.beforeResolve((to, from, next) => {
-  if (to.name) {
-    NProgress.start()
-  }
-  next()
 })
 
 router.afterEach((to, from) => {
