@@ -1,5 +1,5 @@
 {
-    "name": "Sei ein Held",
+    "name": "Sei ein Held - rette die Welt",
     "short_name": "Sei ein Held",
     "icons": [
         {
@@ -13,7 +13,7 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#ffffff",
-    "background_color": "#ffffff",
+    "theme_color": "#FBFF00",
+    "background_color": "#FBFF00",
     "display": "standalone"
 }

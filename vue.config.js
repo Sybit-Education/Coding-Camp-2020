@@ -11,7 +11,7 @@ module.exports = {
   },
   productionSourceMap: false,
   pluginOptions: {
-    lintStyleOnBuild: false,
+    lintStyleOnBuild: true,
     stylelint: {}
   },
   css: {
@@ -31,14 +31,20 @@ module.exports = {
     }
   },
   pwa: {
-    name: 'Sei ein Held - rette die Welt',
     shortName: 'Sei ein Held',
+    name: 'Sei ein Held - rette die Welt',
+
     themeColor: '#FBFF00',
     msTileColor: '#FBFF00',
     appleMobileWebAppCache: 'yes',
     appleMobileWebAppCapable: 'yes',
+    appleMobileWebAppStatusBarStyle: 'black',
     manifestOptions: {
-      background_color: '#42b983'
+      short_name: 'Sei ein Held',
+      name: 'Sei ein Held - rette die Welt',
+      background_color: '#FBFF00',
+      orientation: 'portrait',
+      scope: '/'
     },
     workboxOptions: {
       // https://github.com/yyx990803/register-service-worker/issues/14
