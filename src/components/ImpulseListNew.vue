@@ -81,13 +81,10 @@ export default {
   methods: {
     impulseListLoaded () {
       const impulseId = this.$router.currentRoute.hash.replace('#', '')
-      console.log('*impulseListLoaded', impulseId)
       if (impulseId) {
         this.$nextTick(() => {
           this.$root.$emit('scrollToCard', impulseId)
         })
-      } else {
-        console.log('no impulseId')
       }
     },
     ...mapActions('Impulse', ['fetchList']),
