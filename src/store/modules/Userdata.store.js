@@ -197,7 +197,7 @@ export const getters = {
     }
   },
   impulseIsAssigned: (state) => (impulseId) => {
-    const assignedImpulseMap = state.userdata.assignedImpulseMap
+    const assignedImpulseMap = state.userdata.assignedImpulseMap || []
     if (Array.isArray(assignedImpulseMap)) {
       const found = assignedImpulseMap.some(impulse => impulse.impulseId === impulseId)
       return !!found

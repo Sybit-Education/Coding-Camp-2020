@@ -60,7 +60,6 @@ export default {
   methods: {
     scrollToCard (impulseId) {
       if (impulseId && impulseId === this.impulse.id) {
-        console.log('scrollToCard', this.impulse)
         this.$el.scrollIntoView()
       }
     }
