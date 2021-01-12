@@ -23,7 +23,6 @@ export const actions = {
     // with the appropriate details.
     return $db.collection(COLLECTION_NAME).doc(currentUser.uid).set({
       email: currentUser.email,
-      assignedImpulseMap: [],
       lastLogin: firebase.firestore.Timestamp.now()
     }, { merge: true }).catch(error => {
       console.log('Something went wrong with syncing user: ' + error)
