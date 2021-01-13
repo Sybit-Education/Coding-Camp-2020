@@ -85,8 +85,8 @@ export const actions = {
     $auth.signInWithEmailAndPassword(user.email, user.password)
       .then(result => {
         this.dispatch('Userdata/syncUser')
-        if (user.from) {
-          router.push(user.from)
+        if (user.redirect) {
+          router.push(user.redirect)
         } else {
           router.push('/profile')
         }
@@ -101,13 +101,13 @@ export const actions = {
         console.log(error)
       })
   },
-  signInWithGoogle ({ commit }, from) {
+  signInWithGoogle ({ commit }, redirect) {
     const provider = new firebase.auth.GoogleAuthProvider()
     $auth.signInWithPopup(provider)
       .then(user => {
         this.dispatch('Userdata/syncUser')
-        if (from) {
-          router.push(from)
+        if (redirect) {
+          router.push(redirect)
         } else {
           router.push('/profile')
         }
