@@ -196,13 +196,15 @@ export const getters = {
       return []
     }
   },
-  impulseIsAssigned: (state) => (impulseId) => {
-    const assignedImpulseMap = state.userdata.assignedImpulseMap || []
-    if (Array.isArray(assignedImpulseMap)) {
-      const found = assignedImpulseMap.some(impulse => impulse.impulseId === impulseId)
-      return !!found
-    } else {
-      return false
+  isAssignedImpulse: (state) => (impulseId) => {
+    if (state.userdata) {
+      const assignedImpulseMap = state.userdata.assignedImpulseMap || []
+      if (Array.isArray(assignedImpulseMap)) {
+        const found = assignedImpulseMap.some(impulse => impulse.impulseId === impulseId)
+        return !!found
+      } else {
+        return false
+      }
     }
   },
   allPointsFromImpulse: (state) => (impulseId) => {
@@ -212,20 +214,22 @@ export const getters = {
     const allPoints = timeStampArray.map(timeStamp => timeStamp.points).reduce((accumulator, currentValue) => accumulator + currentValue)
     return allPoints
   },
-  impulseIsCheckable: (state) => (impulseId) => {
-    const assignedImpulseMap = state.userdata.assignedImpulseMap
-    const currentImpulse = assignedImpulseMap.find(impulse => impulse.impulseId === impulseId)
-    const timeStampArray = currentImpulse.points
-    const lastTimeStamp = timeStampArray[timeStampArray.length - 1]
-    const todayDate = new Date()
-    todayDate.setHours(0, 0, 0, 0)
-    const today = firebase.firestore.Timestamp.fromDate(todayDate)
-    const todayPlusOneDay = firebase.firestore.Timestamp.fromDate(
-      new Date((lastTimeStamp.date.seconds * 1000) + 86400000))
-    if (timeStampArray.length === 1) {
-      return true
+  isCheckableImpulse: (state) => (impulseId) => {
+    if (state.userdata) {
+      const assignedImpulseMap = state.userdata.assignedImpulseMap
+      const currentImpulse = assignedImpulseMap.find(impulse => impulse.impulseId === impulseId)
+      const timeStampArray = currentImpulse.points
+      const lastTimeStamp = timeStampArray[timeStampArray.length - 1]
+      const todayDate = new Date()
+      todayDate.setHours(0, 0, 0, 0)
+      const today = firebase.firestore.Timestamp.fromDate(todayDate)
+      const todayPlusOneDay = firebase.firestore.Timestamp.fromDate(
+        new Date((lastTimeStamp.date.seconds * 1000) + 86400000))
+      if (timeStampArray.length === 1) {
+        return true
+      }
+      return today > todayPlusOneDay
     }
-    return today > todayPlusOneDay
   },
   displayName: (state) => {
     return state.userdata ? state.userdata.displayName : null
