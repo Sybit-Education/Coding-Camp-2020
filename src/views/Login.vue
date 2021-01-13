@@ -55,8 +55,14 @@ export default {
   data () {
     return {
       email: '',
-      password: ''
+      password: '',
+      fromRoute: null
     }
+  },
+  beforeRouteEnter (to, from, next) {
+    next(vm => {
+      vm.fromRoute = from
+    })
   },
   methods: {
     signInWithGoogle () {
@@ -65,9 +71,9 @@ export default {
     signInWithEmailAndPassword () {
       this.$store.dispatch('Auth/signInWithEmail', {
         email: this.email,
-        password: this.password
-      }
-      )
+        password: this.password,
+        redirect: this.from
+      })
     }
   }
 }
