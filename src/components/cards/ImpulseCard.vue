@@ -18,11 +18,11 @@
           </div>
         </div>
       </div>
+      <assign-button :impulseId="impulse.id" />
+      <div class="card-background">
+        <img src="@/assets/cards/Card-blue.svg">
+      </div>
     </router-link>
-    <assign-button :impulseId="impulse.id" />
-    <div class="card-background">
-      <img src="@/assets/cards/Card-blue.svg">
-    </div>
   </div>
 </template>
 <script>
