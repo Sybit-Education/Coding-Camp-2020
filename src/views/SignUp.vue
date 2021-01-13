@@ -3,10 +3,8 @@
     <div class="d-flex flex-row justify-content-center">
       <div class="col-md-8">
         <form @submit.prevent="signUpUser(user)">
-          <b-card>
-            <b-card-header>
-              <h1>Registrieren</h1>
-            </b-card-header>
+          <b-card title="Registrieren">
+
             <b-card-body>
               <b-form-group label="E-Mail">
                 <b-input

@@ -85,7 +85,11 @@ export const actions = {
     $auth.signInWithEmailAndPassword(user.email, user.password)
       .then(result => {
         this.dispatch('Userdata/syncUser')
-        router.push('/profile')
+        if (user.redirect) {
+          router.push(user.redirect)
+        } else {
+          router.push('/profile')
+        }
       })
       .catch(error => {
         Vue.notify({
@@ -97,12 +101,16 @@ export const actions = {
         console.log(error)
       })
   },
-  signInWithGoogle ({ commit }) {
+  signInWithGoogle ({ commit }, redirect) {
     const provider = new firebase.auth.GoogleAuthProvider()
     $auth.signInWithPopup(provider)
       .then(user => {
         this.dispatch('Userdata/syncUser')
-        router.push('/profile')
+        if (redirect) {
+          router.push(redirect)
+        } else {
+          router.push('/profile')
+        }
       }).catch(error => {
         Vue.notify({
           group: 'notification',
