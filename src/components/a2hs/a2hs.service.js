@@ -30,8 +30,34 @@ class A2HSService {
     // Detects if device is in standalone mode
     isInStandaloneMode = () => ('standalone' in window.navigator)
 
+    init () {
+      this.checkUserAgent()
+      this.trackStandalone()
+
+      window.addEventListener('beforeinstallprompt', (e) => {
+        console.log('beforeinstallprompt')
+        // show the add button
+        a2hsService.promptIntercepted = true
+        // Prevent Chrome 67 and earlier from automatically showing the prompt
+        // no matter what, the snack-bar shows in 68 (06/16/2018 11:05 AM)
+        e.preventDefault()
+        // Stash the event so it can be displayed when the user wants.
+        a2hsService.deferredPrompt = e
+        a2hsService.promptSaved = true
+      })
+      window.addEventListener('appinstalled', (evt) => {
+        console.log('appinstalled')
+        a2hsService.trackInstalled()
+        // hide the add button
+        a2hsService.promptIntercepted = false
+      })
+    }
+
+    showAddToHomeScreen () {
+      return (localStorage.getItem(this.token) != null)
+    }
+
     checkUserAgent () {
-      console.log('checkUserAgent')
       this.userAgent = navigator.userAgent.toLowerCase()
       const uaString = this.userAgent
 
@@ -67,17 +93,15 @@ class A2HSService {
       if (/ipad/.test(uaString)) {
         this.whereIsShare = 'oben'
       }
+      console.log('checkUserAgent', this)
     }
 
     trackStandalone () {
       // called once from app.component
-      if (this.checkStandalone()) {
+      if (window.matchMedia('(display-mode: standalone)').matches) {
         this.isStandalone = true
       }
-    }
-
-    checkStandalone () {
-      return (window.matchMedia('(display-mode: standalone)').matches)
+      console.log('trackStandalone', this.isStandalone)
     }
 
     trackInstalled () {
