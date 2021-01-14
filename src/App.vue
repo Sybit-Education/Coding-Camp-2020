@@ -44,4 +44,28 @@ export default {
   margin-top: 4rem;
   margin-bottom: 4rem;
 }
+
+@media (display-mode: standalone) {
+  /* All installed PWAs */
+  body {
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+  }
+}
+
+@media (max-width: 576px) and (display-mode: standalone) {
+  /* Installed PWAs on mobile devices */
+
+  @supports (-webkit-overflow-scrolling: touch) {
+    /* Installed PWAs on mobile Apple devices */
+    .navbar-nav {
+      padding-bottom: 20px;
+    }
+  }
+
+  @supports not (-webkit-overflow-scrolling: touch) {
+    /* Installed PWAs on mobile non-Apple devices */
+  }
+}
 </style>
