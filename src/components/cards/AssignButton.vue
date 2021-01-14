@@ -14,7 +14,7 @@
     ></b-button>
     <b-button
       pill
-      v-if="isAssigned && canBeChecked"
+      v-if="isAssigned && isCheckable"
       @click="addPoints"
       id="button2"
       class="d-flex assign-button"
@@ -29,30 +29,28 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex'
-import { $auth } from '@/firebase-config'
 
 export default {
   name: 'AssignButton',
   props: {
-    impulseId: String
+    impulseId: {
+      type: String,
+      required: true
+    }
   },
   computed: {
-    user () {
-      return $auth.currentUser
-    },
     isAssigned () {
-      return this.impulseIsAssigned(this.impulseId)
+      return this.isAssignedImpulse(this.impulseId)
     },
-    canBeChecked () {
-      return this.impulseIsCheckable(this.impulseId)
+    isCheckable () {
+      return this.isCheckableImpulse(this.impulseId)
     },
     getSelectedPointsById () {
       return this.getSelectedPoints(this.impulseId)
     },
     ...mapGetters({
-      impulseIsAssigned: 'Userdata/impulseIsAssigned',
-      impulseIsCheckable: 'Userdata/impulseIsCheckable',
-      allPointsFromImpulse: 'Userdata/allPointsFromImpulse',
+      isAssignedImpulse: 'Userdata/isAssignedImpulse',
+      isCheckableImpulse: 'Userdata/isCheckableImpulse',
       getSelectedPoints: 'Impulse/getSelectedPoints'
     })
   },

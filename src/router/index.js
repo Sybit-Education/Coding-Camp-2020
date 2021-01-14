@@ -5,7 +5,6 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import store from '../store'
 import Home from '../views/Home.vue'
-import RequestResetPassword from '../views/RequestResetPassword.vue'
 import AssignedImpulse from '../views/AssignedImpulse.vue'
 
 Vue.use(VueRouter)
@@ -123,15 +122,12 @@ const routes = [
   {
     path: '/highscore',
     name: 'Highscore',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "highscore" */ '../views/Highscore.vue')
   },
   {
     path: '/login',
     name: 'Login',
-    component: () => import('../views/Login.vue'),
+    component: () => import(/* webpackChunkName: "auth" */ '../views/Login.vue'),
     meta: {
       requiresAuth: false
     }
@@ -139,7 +135,7 @@ const routes = [
   {
     path: '/signup',
     name: 'SignUp',
-    component: () => import('../views/SignUp.vue'),
+    component: () => import(/* webpackChunkName: "auth" */ '../views/SignUp.vue'),
     meta: {
       requiresAuth: false
     }
@@ -147,7 +143,7 @@ const routes = [
   {
     path: '/mail-verify',
     name: 'MailVerify',
-    component: () => import('../views/MailNotVerified.vue'),
+    component: () => import(/* webpackChunkName: "auth" */ '../views/MailNotVerified.vue'),
     meta: {
       requiresAuth: false
     }
@@ -155,7 +151,7 @@ const routes = [
   {
     path: '/reset-password',
     name: 'ResetPassword',
-    component: RequestResetPassword,
+    component: () => import(/* webpackChunkName: "auth" */ '../views/RequestResetPassword.vue'),
     meta: {
       requiresAuth: false
     }
@@ -211,7 +207,9 @@ router.beforeEach((to, from, next) => {
   if (requiresAuth && !currentUser && to !== '/login') {
     next({
       path: '/login',
-      params: { nextUrl: to.fullPath }
+      query: {
+        nextUrl: to
+      }
     })
   } else {
     next()
