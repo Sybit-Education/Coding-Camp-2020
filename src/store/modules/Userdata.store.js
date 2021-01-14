@@ -1,12 +1,14 @@
-import 'firebase/firestore'
+import { $auth, $db } from '@/firebase-config'
 import firebase from 'firebase/app'
+import 'firebase/firestore'
 import Vue from 'vue'
 import { firestoreAction } from 'vuexfire'
-import { $db, $auth } from '@/firebase-config'
 
 const COLLECTION_NAME = 'userdata'
 
 const POINTS_INITIAL = 0
+const FIREBASE_MILLISECONDS_CONVERT_COEFFICIENT = 1000
+const DAY_IN_MILLISECONDS = 86400000
 const MONTH_IN_MILLISECONDS = 2592000000
 
 export const namespaced = true
@@ -220,14 +222,8 @@ export const getters = {
       const currentImpulse = assignedImpulseMap.find(impulse => impulse.impulseId === impulseId)
       const timeStampArray = currentImpulse.points
       const lastTimeStamp = timeStampArray[timeStampArray.length - 1]
-      const todayDate = new Date()
-      todayDate.setHours(0, 0, 0, 0)
-      const today = firebase.firestore.Timestamp.fromDate(todayDate)
-      const todayPlusOneDay = firebase.firestore.Timestamp.fromDate(
-        new Date((lastTimeStamp.date.seconds * 1000) + 86400000))
-      if (timeStampArray.length === 1) {
-        return true
-      }
+      const today = new Date().getTime()
+      const todayPlusOneDay = (lastTimeStamp.date.seconds * FIREBASE_MILLISECONDS_CONVERT_COEFFICIENT) + DAY_IN_MILLISECONDS
       return today > todayPlusOneDay
     }
   },
