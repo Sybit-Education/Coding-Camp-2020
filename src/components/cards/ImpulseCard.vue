@@ -1,28 +1,25 @@
 <template>
   <div class="card-body"  v-on:scrollToCard="scrollToCard">
-    <router-link :to="detailLink">
-      <div class="card-content">
+      <div class="card-content" @click="flipCard">
         <div class="card-text-headline">
           <category-label :categoryId="impulse.category" />
           <a :name="impulse.id" />
           <h3>{{ impulse.title }}</h3>
         </div>
         <div class="card-text">
-          <div v-if="impulse.forMe">
+          <template v-if="impulse.forMe">
             <h4>Was bringt es mir?</h4>
             <div v-html="impulse.forMe" />
-          </div>
-          <div v-if="impulse.forWorld">
+          </template>
+          <template v-if="impulse.forWorld">
             <h4>Was bringt es der Welt?</h4>
             <div v-html="impulse.forWorld" />
-          </div>
+          </template>
         </div>
       </div>
       <assign-button :impulseId="impulse.id" />
-      <div class="card-background">
-        <img src="@/assets/cards/Card-blue.svg">
-      </div>
-    </router-link>
+      <img class="card-background"
+        src="@/assets/cards/Card-blue.svg">
   </div>
 </template>
 <script>
@@ -62,6 +59,9 @@ export default {
       if (impulseId && impulseId === this.impulse.id) {
         this.$el.scrollIntoView()
       }
+    },
+    flipCard () {
+      this.$router.push(this.detailLink)
     }
   }
 }
@@ -85,9 +85,6 @@ export default {
 
   .card-background {
     width: 100%;
-    img {
-      width: 100%;
-    }
   }
 
   .card-content {

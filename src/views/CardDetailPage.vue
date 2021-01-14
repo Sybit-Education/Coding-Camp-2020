@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div id="impulse-detail-view">
     <main-header headerTitle="Impuls" :backlink="backlink" />
     <b-container>
-      <div v-if="impulse" id="impulse-detail-view" class="my-4 mb-6 mx-2 p-2">
+      <div v-if="impulse" class="impulse-card my-4 mb-6 mx-2 p-2">
         <div class="header">
           <category-label :categoryId="impulse.category" />
           <h1 class="mb-3 card-title">{{ impulse.title }}</h1>
@@ -91,7 +91,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#impulse-detail-view {
+.impulse-card {
   --border-radius: 30px;
 
   overflow: hidden;
@@ -103,6 +103,7 @@ export default {
     margin-top: -0.5rem;
     margin-left: -0.5rem;
     margin-right: -0.5rem;
+    margin-bottom: 0.5rem;
     border-top-left-radius: calc( var(--border-radius) - 2.5px);
     border-top-right-radius: var(--border-radius);
     padding: .5rem;
