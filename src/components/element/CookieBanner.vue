@@ -6,7 +6,7 @@
       message="Um unsere Website zu optimieren und für Sie individueller zu gestalten, setzen wir Cookies für verschiedene Zwecke ein. Umfassende Informationen zu diesen Cookies finden Sie in unserer Datenschutzerklärung."
       transitionName="fade"
       buttonLinkText="Datenschutzerklärung"
-      buttonLink="/privacy"
+      buttonLink="/options/privacy"
     />
 </template>
 
