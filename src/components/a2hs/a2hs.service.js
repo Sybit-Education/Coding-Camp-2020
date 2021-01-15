@@ -34,15 +34,15 @@ class A2HSService {
       this.checkUserAgent()
       this.trackStandalone()
 
-      window.addEventListener('beforeinstallprompt', (e) => {
+      window.addEventListener('beforeinstallprompt', (evt) => {
         console.log('beforeinstallprompt')
         // show the add button
         a2hsService.promptIntercepted = true
         // Prevent Chrome 67 and earlier from automatically showing the prompt
         // no matter what, the snack-bar shows in 68 (06/16/2018 11:05 AM)
-        e.preventDefault()
+        evt.preventDefault()
         // Stash the event so it can be displayed when the user wants.
-        a2hsService.deferredPrompt = e
+        a2hsService.deferredPrompt = evt
         a2hsService.promptSaved = true
       })
       window.addEventListener('appinstalled', (evt) => {
@@ -50,6 +50,17 @@ class A2HSService {
         a2hsService.trackInstalled()
         // hide the add button
         a2hsService.promptIntercepted = false
+      })
+      window.addEventListener('DOMContentLoaded', (evt) => {
+        let displayMode = 'browser tab'
+        if (navigator.standalone) {
+          displayMode = 'standalone-ios'
+        }
+        if (window.matchMedia('(display-mode: standalone)').matches) {
+          displayMode = 'standalone'
+        }
+        // Log launch display mode to analytics
+        console.log('DISPLAY_MODE_LAUNCH:', displayMode)
       })
     }
 
