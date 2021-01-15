@@ -1,7 +1,7 @@
 <template>
   <b-navbar type="dark" variant="dark" fixed="bottom">
     <b-container>
-      <b-navbar-nav justified align="start" style="width:100%">
+      <b-navbar-nav justified align="start" class="w-100">
         <b-nav-item to="/assigned" class="mr-2 mr-md-4">
           <vue-fontawesome icon="heart" size="1.75" color="white"></vue-fontawesome>
         </b-nav-item>
