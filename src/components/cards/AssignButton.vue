@@ -6,16 +6,14 @@
       @click="assign"
       class="assign-button m-2"
       >
-      <template>
-        <vue-fontawesome
-          icon="plus-circle"
-          color="white"
-          size="1.75"
-        />
-        <span v-if="showLabel" class="m-2">
-          Annehmen
-        </span>
-      </template>
+      <vue-fontawesome
+        icon="plus-circle"
+        color="white"
+        size="1.75"
+      />
+      <span v-if="showLabel" class="m-2">
+        Annehmen
+      </span>
     </b-button>
     <b-button
       pill
@@ -23,22 +21,21 @@
       @click="addPoints"
       class="assign-button mx-2"
       >
-      <template>
-        <vue-fontawesome
-          icon="check-circle"
-          color="white"
-          size="1.75"
-        />
-        <span v-if="showLabel" class="m-2">
-          Heute gemacht!
-        </span>
-      </template>
+      <vue-fontawesome
+        icon="check-circle"
+        color="white"
+        size="1.75"
+      />
+      <span v-if="showLabel" class="m-2">
+        Heute gemacht!
+      </span>
     </b-button>
   </span>
 </template>
 
 <script>
 import { mapActions, mapGetters } from 'vuex'
+import { $auth } from '@/firebase-config'
 
 export default {
   name: 'AssignButton',
@@ -53,6 +50,9 @@ export default {
     }
   },
   computed: {
+    user () {
+      return $auth.currentUser
+    },
     isAssigned () {
       return this.isAssignedImpulse(this.impulseId)
     },
