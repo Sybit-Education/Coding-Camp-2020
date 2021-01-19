@@ -41,7 +41,7 @@ export default {
     shareIt () {
       const data = {
         title: 'Mach mit und sei auch ein Held',
-        text: `Einer der Impulse in der kostenlosen App ist: ${this.impulse.title} /impulse/:id`,
+        text: `Mach auch mit - einer der Impulse in der kostenlosen App "Sei ein Held" ist: ${this.impulse.title}`,
         url: `${window.location.origin}/impulse/${this.impulse.id}`
       }
       navigator.share(data)
