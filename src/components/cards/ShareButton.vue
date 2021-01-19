@@ -42,9 +42,14 @@ export default {
       const data = {
         title: 'Mach mit und sei auch ein Held',
         text: `Mach auch mit!
-          Einer der Impulse in der kostenlosen App
-          "Sei ein Held - rette die Welt"
-          ist: "${this.impulse.title}" 👉 `,
+Einer der Impulse in der kostenlosen App
+    "Sei ein Held - rette die Welt"
+ist:
+
+"${this.impulse.title}"
+
+Mehr Infos zu diesem Impuls 👉
+`,
         url: `${window.location.origin}/impulse/${this.impulse.id}`
       }
       navigator.share(data)
