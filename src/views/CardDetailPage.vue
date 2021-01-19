@@ -67,8 +67,8 @@ export default {
     MainHeader, CategoryLabel, AssignButton, ShareButton
   },
   created () {
-    const impulseId = this.$route.params.id
-    this.fetchById(impulseId)
+    this.fetchList()
+    this.fetchUserData() // required for reload of page to be shure user data is loaded
   },
   computed: {
     title () {
@@ -86,14 +86,17 @@ export default {
       }
       return link
     },
+    impulse () {
+      return this.getSelected(this.$route.params.id)
+    },
     ...mapGetters({
-      impulse: 'Impulse/getImpulse'
+      getSelected: 'Impulse/getSelected'
     })
   },
   methods: {
-    ...mapActions('Impulse', ['fetchById'])
+    ...mapActions('Impulse', ['fetchList']),
+    ...mapActions('Userdata', ['fetchUserData'])
   }
-
 }
 </script>
 
