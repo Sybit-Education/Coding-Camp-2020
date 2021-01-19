@@ -30,10 +30,7 @@ export default {
   },
   computed: {
     isShareable () {
-      if ('share' in navigator) {
-        return true
-      }
-      return false
+      return 'share' in navigator
     }
   },
 
