@@ -1,30 +1,40 @@
 <template>
-  <div class="assign-button-wrapper">
+  <span>
     <b-button
       pill
       v-if="!isAssigned"
-      id="button"
       @click="assign"
-      class="d-flex assign-button"
-      ><vue-fontawesome
-        icon="plus-circle"
-        color="white"
-        size="1.75"
-      ></vue-fontawesome
-    ></b-button>
+      class="assign-button m-2"
+      >
+      <template>
+        <vue-fontawesome
+          icon="plus-circle"
+          color="white"
+          size="1.75"
+        />
+        <span v-if="showLabel" class="m-2">
+          Annehmen
+        </span>
+      </template>
+    </b-button>
     <b-button
       pill
       v-if="isAssigned && isCheckable"
       @click="addPoints"
-      id="button2"
-      class="d-flex assign-button"
-      ><vue-fontawesome
-        icon="check-circle"
-        color="white"
-        size="1.75"
-      ></vue-fontawesome
-    ></b-button>
-  </div>
+      class="assign-button mx-2"
+      >
+      <template>
+        <vue-fontawesome
+          icon="check-circle"
+          color="white"
+          size="1.75"
+        />
+        <span v-if="showLabel" class="m-2">
+          Heute gemacht!
+        </span>
+      </template>
+    </b-button>
+  </span>
 </template>
 
 <script>
@@ -33,6 +43,10 @@ import { mapActions, mapGetters } from 'vuex'
 export default {
   name: 'AssignButton',
   props: {
+    showLabel: {
+      type: Boolean,
+      default: false
+    },
     impulseId: {
       type: String,
       required: true
@@ -56,19 +70,19 @@ export default {
   },
   methods: {
     assign () {
-      if (this.user === null) {
-        this.$router.push('/login')
-      } else {
+      if (this.user) {
         this.$store.dispatch('Userdata/assignImpulse', this.impulseId)
         this.showAssignedNotification()
+      } else {
+        this.$router.push('/login')
       }
     },
     addPoints () {
-      if (this.user === null) {
-        this.$router.push('/login')
-      } else {
+      if (this.user) {
         this.$store.dispatch('Userdata/addPointsToUser', this.impulseId)
         this.showCheckedNotification()
+      } else {
+        this.$router.push('/login')
       }
     },
     showCheckedNotification () {
@@ -95,22 +109,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.assign-button-wrapper {
-  position: absolute;
-  bottom: 15px;
-  right: 15px;
-}
 
-.assign-button{
-  background-color: transparent;
-  border: none;
-}
-
-.assign-button:focus,
-.assign-button:active{
-  background-color: transparent;
-  border: none;
-  outline: none;
-  box-shadow: none;
-}
 </style>

@@ -26,7 +26,12 @@
         <div
           v-if="impulse.description"
           v-html="impulse.description"
-          class="card-description" />
+          class="card-description"
+        />
+        <div class="button-wrapper">
+          <assign-button :impulseId="impulse.id" showLabel/>
+          <share-button :impulse="impulse" showLabel/>
+        </div>
       </div>
       <div v-else>
         Impuls leider nicht gefunden.<br>
@@ -42,6 +47,8 @@
 import { mapActions, mapGetters } from 'vuex'
 import MainHeader from '@/components/_base/Header'
 import CategoryLabel from '@/components/_base/CategoryLabel.vue'
+import AssignButton from '@/components/cards/AssignButton'
+import ShareButton from '@/components/cards/ShareButton'
 
 export default {
   metaInfo () {
@@ -57,7 +64,7 @@ export default {
     }
   },
   components: {
-    MainHeader, CategoryLabel
+    MainHeader, CategoryLabel, AssignButton, ShareButton
   },
   created () {
     const impulseId = this.$route.params.id
@@ -108,6 +115,10 @@ export default {
     border-top-right-radius: var(--border-radius);
     padding: .5rem;
     background-color: $gray-200
+  }
+
+  .button-wrapper {
+    right: 0;
   }
 
   @media only screen and (max-width: 991px) {
