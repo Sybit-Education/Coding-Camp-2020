@@ -48,7 +48,9 @@ ist:
 
 "${this.impulse.title}"
 
-Mehr Infos zu diesem Impuls 👉
+Was bringt das mir?
+
+Mehr Infos dazu 👉
 `,
         url: `${window.location.origin}/impulse/${this.impulse.id}`
       }
