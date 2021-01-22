@@ -17,13 +17,17 @@
           </template>
         </div>
       </div>
-      <assign-button :impulseId="impulse.id" />
+      <div class="button-wrapper">
+        <assign-button :impulseId="impulse.id" />
+        <share-button :impulse="impulse" />
+      </div>
       <img class="card-background"
         src="@/assets/cards/Card-blue.svg">
   </div>
 </template>
 <script>
 import AssignButton from '@/components/cards/AssignButton'
+import ShareButton from '@/components/cards/ShareButton'
 import CategoryLabel from '@/components/_base/CategoryLabel.vue'
 import { $auth } from '@/firebase-config'
 export default {
@@ -37,7 +41,7 @@ export default {
     }
   },
   components: {
-    AssignButton, CategoryLabel
+    CategoryLabel, AssignButton, ShareButton
   },
   mounted () {
     this.$root.$on('scrollToCard', (impulseId) => {
@@ -141,13 +145,13 @@ export default {
       font-weight: 800;
       bottom: 20px;
       left: 10px;
+      cursor: pointer;
     }
-
-    .add-impuls {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-    }
+  }
+  .button-wrapper {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
   }
 }
 @media only screen and (max-width: 321px) {

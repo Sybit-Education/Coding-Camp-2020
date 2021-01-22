@@ -13,7 +13,6 @@ export const PUBLISHING_STATUS_DRAFT = 'draft'
 export const namespaced = true
 
 export const state = {
-  impulse: null,
   impulseList: [],
   impulseListAdmin: []
 }
@@ -44,14 +43,6 @@ export const actions = {
       $db.collection(COLLECTION_NAME)
         .orderBy('publishingDate', 'desc'),
       { serialize })
-  }),
-  fetchById: firestoreAction(({ bindFirestoreRef }, id) => {
-    if (!id) return
-
-    bindFirestoreRef(
-      'impulse',
-      $db.collection(COLLECTION_NAME).doc(id)
-    )
   }),
   update: firestoreAction(({ state }, impulse) => {
     // we first create a copy that excludes `id`
@@ -124,9 +115,6 @@ export const actions = {
 }
 
 export const getters = {
-  getImpulse: (state) => {
-    return state.impulse
-  },
   getList: (state) => {
     return state.impulseList
   },
