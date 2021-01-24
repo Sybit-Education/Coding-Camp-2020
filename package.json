@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
-    "bootstrap": "^4.5.3",
+    "bootstrap": "^4.6.0",
     "bootstrap-vue": "^2.21.2",
     "core-js": "^3.8.1",
     "firebase": "^7.24.0",
@@ -32,6 +32,8 @@
     "vuexfire": "^3.2.5"
   },
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^3.0.0",
+    "@fullhuman/vue-cli-plugin-purgecss": "~4.0.0",
     "@vue/cli-plugin-babel": "^4.5.10",
     "@vue/cli-plugin-eslint": "^4.5.10",
     "@vue/cli-plugin-pwa": "^4.5.10",
