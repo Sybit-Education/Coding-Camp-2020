@@ -1,10 +1,11 @@
 {
   "name": "sybit-coding-camp-2020",
-  "version": "0.1.0",
+  "version": "0.1.20210124",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "build-report": "vue-cli-service build --report",
     "lint": "vue-cli-service lint",
     "deploy": "npm run build && firebase deploy"
   },
