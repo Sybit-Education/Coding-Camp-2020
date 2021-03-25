@@ -2,7 +2,7 @@
   <div id="impulse-list" class="impulse-list">
     <loading-indicator v-if="isLoading" message="Impulse werden geladen ..." />
     <template v-else-if="user && $store.state.Userdata.userdata">
-      <div v-if="hasUnassignedImpulse">
+      <div v-if="hasUnassignedImpulse" class="impulse-list__impulse">
         <div v-for="impulse in notAssignedImpulseList" :key="impulse.id" class="impulse-card-wrapper">
           <impulse-card :impulse="impulse"></impulse-card>
         </div>
@@ -119,6 +119,10 @@ export default {
   width: 85%;
   scroll-snap-align: center;
   margin-left: 16px;
+}
+
+.impulse-list__impulse {
+  display: contents;
 }
 
 @media only screen and (min-width: 768px) {
