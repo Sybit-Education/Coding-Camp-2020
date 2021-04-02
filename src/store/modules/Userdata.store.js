@@ -94,23 +94,18 @@ export const actions = {
           })
         })
       })
-      // Für jeden User in unserer Datenbank wird folgendes ausgeführt:
     firebaseList.forEach(function (user) {
       if (user.impulses !== undefined) {
-        // Impulse mapppen
         const impulseList = user.impulses.map(impulse => impulse.points)
-        // Punkte rausfiltern welche, älter als 30 Tage sind.
-        const unRedPoint = impulseList.map(impulse =>
+        // Filer points which are older than 30 days.
+        const allPoints = impulseList.map(impulse =>
           impulse.filter(impulse => new Date((impulse.date.seconds * 1000) + MONTH_IN_MILLISECONDS).getTime() > new Date().getTime()))
-        // Fehler abfangen, falls jemand keine Punkte hat.
-        const unRedPoint1 = unRedPoint.filter(pointArray => pointArray.length > 0)
-        // Fehler abfangen falls jemand einen Punkt hat, der einen falschen Zeitpunkt hat.
-        if (unRedPoint1.every(pointArray => pointArray.length > 0) && unRedPoint1.length > 0) {
-        // Punkte zusammenrechnenz
-          const point = unRedPoint1.map(impulse => impulse.map(timeStamp => timeStamp.points).reduce((acc, cur) => acc + cur))
-          // Punkte weiter zusammenrechnen
+        const points = allPoints.filter(pointArray => pointArray.length > 0)
+        // Obvious timestamp on point
+        if (points.every(array => array.length > 0) && points.length > 0) {
+          // Calculate points
+          const point = points.map(impulse => impulse.map(timeStamp => timeStamp.points).reduce((acc, cur) => acc + cur))
           const wholeReducedPoints = point.map(reducePoint => reducePoint).reduce((acc, cur) => acc + cur)
-          // Punkte in eine Liste schieben, welche wir dann weiter verarbeiten.
           list.push({ user: user.displayName || 'Anonym', points: wholeReducedPoints })
         }
       }
