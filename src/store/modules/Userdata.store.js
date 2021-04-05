@@ -7,7 +7,7 @@ import { firestoreAction } from 'vuexfire'
 const COLLECTION_NAME = 'userdata'
 
 const POINTS_INITIAL = 0
-const FIREBASE_MILLISECONDS_CONVERT_COEFFICIENT = 1000
+const MILLISECONDS = 1000
 const DAY_IN_MILLISECONDS = 86400000
 const MONTH_IN_MILLISECONDS = 2592000000
 
@@ -97,16 +97,14 @@ export const actions = {
     firebaseList.forEach(function (user) {
       if (user.impulses !== undefined) {
         const impulseList = user.impulses.map(impulse => impulse.points)
-        // Filer points which are older than 30 days.
+        // Filter points which are older than 30 days.
         const allPoints = impulseList.map(impulse =>
-          impulse.filter(impulse => new Date((impulse.date.seconds * 1000) + MONTH_IN_MILLISECONDS).getTime() > new Date().getTime()))
-        const points = allPoints.filter(pointArray => pointArray.length > 0)
-        // Obvious timestamp on point
-        if (points.every(array => array.length > 0) && points.length > 0) {
-          // Calculate points
-          const point = points.map(impulse => impulse.map(timeStamp => timeStamp.points).reduce((acc, cur) => acc + cur))
-          const wholeReducedPoints = point.map(reducePoint => reducePoint).reduce((acc, cur) => acc + cur)
-          list.push({ user: user.displayName || 'Anonym', points: wholeReducedPoints })
+          impulse.filter(impulse => new Date((impulse.date.seconds * MILLISECONDS) + MONTH_IN_MILLISECONDS).getTime() > new Date().getTime()))
+        const filteredPoints = allPoints.filter(pointArray => pointArray.length > 0)
+        if (filteredPoints.every(array => array.length > 0) && filteredPoints.length > 0) {
+          const points = filteredPoints.map(impulse => impulse.map(timeStamp => timeStamp.points).reduce((acc, cur) => acc + cur))
+          const reducedPoints = points.map(reducePoint => reducePoint).reduce((acc, cur) => acc + cur)
+          list.push({ user: user.displayName || 'Anonym', points: reducedPoints })
         }
       }
     })
@@ -218,7 +216,7 @@ export const getters = {
       const timeStampArray = currentImpulse.points
       const lastTimeStamp = timeStampArray[timeStampArray.length - 1]
       const today = new Date().getTime()
-      const todayPlusOneDay = (lastTimeStamp.date.seconds * FIREBASE_MILLISECONDS_CONVERT_COEFFICIENT) + DAY_IN_MILLISECONDS
+      const todayPlusOneDay = (lastTimeStamp.date.seconds * MILLISECONDS) + DAY_IN_MILLISECONDS
       return today > todayPlusOneDay
     }
   },
