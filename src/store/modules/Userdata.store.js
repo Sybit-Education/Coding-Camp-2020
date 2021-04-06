@@ -7,7 +7,7 @@ import { firestoreAction } from 'vuexfire'
 const COLLECTION_NAME = 'userdata'
 
 const POINTS_INITIAL = 0
-const FIREBASE_MILLISECONDS_CONVERT_COEFFICIENT = 1000
+const MILLISECONDS = 1000
 const DAY_IN_MILLISECONDS = 86400000
 const MONTH_IN_MILLISECONDS = 2592000000
 
@@ -94,24 +94,17 @@ export const actions = {
           })
         })
       })
-      // Für jeden User in unserer Datenbank wird folgendes ausgeführt:
     firebaseList.forEach(function (user) {
       if (user.impulses !== undefined) {
-        // Impulse mapppen
         const impulseList = user.impulses.map(impulse => impulse.points)
-        // Punkte rausfiltern welche, älter als 30 Tage sind.
-        const unRedPoint = impulseList.map(impulse =>
-          impulse.filter(impulse => new Date((impulse.date.seconds * 1000) + MONTH_IN_MILLISECONDS).getTime() > new Date().getTime()))
-        // Fehler abfangen, falls jemand keine Punkte hat.
-        const unRedPoint1 = unRedPoint.filter(pointArray => pointArray.length > 0)
-        // Fehler abfangen falls jemand einen Punkt hat, der einen falschen Zeitpunkt hat.
-        if (unRedPoint1.every(pointArray => pointArray.length > 0) && unRedPoint1.length > 0) {
-        // Punkte zusammenrechnenz
-          const point = unRedPoint1.map(impulse => impulse.map(timeStamp => timeStamp.points).reduce((acc, cur) => acc + cur))
-          // Punkte weiter zusammenrechnen
-          const wholeReducedPoints = point.map(reducePoint => reducePoint).reduce((acc, cur) => acc + cur)
-          // Punkte in eine Liste schieben, welche wir dann weiter verarbeiten.
-          list.push({ user: user.displayName || 'Anonym', points: wholeReducedPoints })
+        // Filter points which are older than 30 days.
+        const allPoints = impulseList.map(impulse =>
+          impulse.filter(impulse => new Date((impulse.date.seconds * MILLISECONDS) + MONTH_IN_MILLISECONDS).getTime() > new Date().getTime()))
+        const filteredPoints = allPoints.filter(pointArray => pointArray.length > 0)
+        if (filteredPoints.every(array => array.length > 0) && filteredPoints.length > 0) {
+          const points = filteredPoints.map(impulse => impulse.map(timeStamp => timeStamp.points).reduce((acc, cur) => acc + cur))
+          const reducedPoints = points.map(reducePoint => reducePoint).reduce((acc, cur) => acc + cur)
+          list.push({ user: user.displayName || 'Anonym', points: reducedPoints })
         }
       }
     })
@@ -223,7 +216,7 @@ export const getters = {
       const timeStampArray = currentImpulse.points
       const lastTimeStamp = timeStampArray[timeStampArray.length - 1]
       const today = new Date().getTime()
-      const todayPlusOneDay = (lastTimeStamp.date.seconds * FIREBASE_MILLISECONDS_CONVERT_COEFFICIENT) + DAY_IN_MILLISECONDS
+      const todayPlusOneDay = (lastTimeStamp.date.seconds * MILLISECONDS) + DAY_IN_MILLISECONDS
       return today > todayPlusOneDay
     }
   },

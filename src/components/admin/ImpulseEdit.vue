@@ -162,7 +162,8 @@ export default {
         return this.impulse.points
       },
       set (value) {
-        this.updateProperty({ impulse: this.impulse, prop: 'points', value: value })
+        const points = Number(value)
+        this.updateProperty({ impulse: this.impulse, prop: 'points', value: points })
       }
     },
     publishingState: {
