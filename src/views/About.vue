@@ -26,7 +26,7 @@
         Macht mit und tragt eure Schritte dazu bei!
       </p>
       <p>
-        Mehr Infos gibt es unter <a href="http://www.heldsein.com/>www.heldsein.com</a>
+        Mehr Infos gibt es unter <a href="http://www.heldsein.com/">www.heldsein.com</a>
       </p>
       <p>
 
