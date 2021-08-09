@@ -6,22 +6,27 @@
       <b-img :src="logo" fluid-grow alt="Logo" class="my-3"/>
       <h3>Die App</h3>
       <p>
-        Fabienne Schwarz-Loy hat durch <em>"Sei ein Held rette die Welt"</em> eine
-        Initiative gestartet mit der spielerisch leicht, jeder etwas für die Umwelt tun kann.
+        <em>"Sei ein Held rette die Welt"</em> bietet dir spielerisch leicht Impulse, wie du in 
+        wenigen Sekunden, mit wenigen Handgriffen oder mit kleinen Entscheidungen die Welt 
+        verbessern kannst und dabei sogar selbst Vorteile hast. Denn es ist nicht schwer und tut 
+        nicht weh, im Gegenteil: du sparst dabei auch noch Geld, Zeit, Nerven und/oder gewinnst 
+        Gesundheit, wertvolle Erfahrungen, Einblicke und Gewohnheiten. Eine absolute 
+        Win-Win-Situation also.
       </p>
       <p>
-        Wir liefern dir einmal pro Woche einen kurzen Impuls dazu, wie du in wenigen
-        Sekunden und mit wenigen Gedanken oder Handgriffen die Welt rettest.
+        Denn unsere Welt ist unendlich schön und unendlich wertvoll - aber leider steckt sie aktuell 
+        in ziemlich großen Schwierigkeiten. Naturkatastrophen, Pandemie, Hass, Betrug und vieles mehr 
+        - es braucht viele Helden, die mit vielen kleinen Entscheidungen zur Rettung beitragen. Denn 
+        die großen politischen Entscheidungen (die es selbstverständlich auch braucht) folgen oftmals 
+        erst, wenn viele Menschen diese Themen vorleben und einfordern. Daher bieten wir Impulse zu 
+        den Themen Klimaschutz, Toleranz, Gerechtigkeit, bewusster Konsum und wie alles miteinander 
+        zusammenhängt. Es sind die vielen kleinen Schritte, aus denen die großen Ziele gebaut sind.
       </p>
       <p>
-        <b>Der Hintergrund:</b> Unsere Welt ist unendlich schön und unendlich wertvoll.
-        Das sollte so bleiben, aber leider steckt sie aktuell in ziemlich großen
-        Schwierigkeiten. Daher ist jeder Mensch, der zur Rettung beiträgt, ein Held
-        und wir finden, das sollte belohnt werden.
-        </p>
+        Macht mit und tragt eure Schritte dazu bei!
+      </p>
       <p>
-        Wir bieten dir Impulse zu folgenden Themen an: <br>
-        Umwelt- und Klimaschutz, Gerechtigkeit, Toleranz und wie alles miteinander zusammenhängt.
+        Mehr Infos gibt es unter <a href="http://www.heldsein.com/>www.heldsein.com</a>
       </p>
       <p>
 
@@ -40,6 +45,15 @@
         <li>Du kannst nur alle 24 Stunden deine Impulse bestätigen </li>
       </ul>
 
+      <p>
+        Übrigens: Die App muss nicht heruntergeladen werden, sondern funktioniert als Webapp. Wenn du 
+        sie mit einem Klick auf deinem Handy öffnen willst, dann klicke (bei Android) in deinem 
+        mobilen Browser einfach im Einstellungen-Menü (in der Regel 3 Punkte oder Striche) auf 
+        "Zum Startbildschirm hinzufügen" und schon hast du ein schönes App-Symbol auf deinem Bildschirm. 
+        Als Apple-Nutzer klickst du im Brower Safari auf das "Teilen"-Icon und anschließen auf 
+        "Zum Home-Bildschirm".      
+      </p>
+      
       <h3>Hilfestellung</h3>
       <p>Die Hilfestellungen für "Sei ein Held rette die Welt", sind:</p>
 
@@ -73,14 +87,6 @@
             <li>Benutzername, E-Mail</li>
             <li>Abmeldung</li>
             <li>Account löschen</li>
-          </ul>
-        </li>
-        <li>
-            <i aria-hidden="true" class="fa fa-ellipsis-v" style="color: black; font-size: 1rem;"></i>
-          Optionen
-
-          <ul>
-            <li>Man wird weitergeleitet auf: Über uns, Datenschutz, Impressum, das Team</li>
           </ul>
         </li>
       </ol>
