@@ -37,7 +37,7 @@
           <p>Stephan Strittmatter</p>
           <p>Maren Bräckow</p>
       </b-col>
-      <b-col cols="12" md="4" class="d-flex justify-content-start flex-column align-items-md-center align-items-center">
+      <b-col cols="12" md="4" class="d-flex justify-content-start flex-column align-items-md-start align-items-center">
           <p>Manuel Metzger</p>
           <p>Paul Huber</p>
           <p>Aaliyah Dere</p>
@@ -47,7 +47,7 @@
           <p>Elias Frank</p>
           <p>Emely Langer</p>
       </b-col>
-      <b-col cols="12" md="4" class="d-flex justify-content-start flex-column align-items-md-end align-items-center">
+      <b-col cols="12" md="4" class="d-flex justify-content-start flex-column align-items-md-start align-items-center">
           <p>Lukas Moßbrugger</p>
           <p>Lasse Schneider</p>
           <p>Christian Wolter</p>
