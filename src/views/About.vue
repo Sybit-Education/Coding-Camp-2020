@@ -6,84 +6,64 @@
       <b-img :src="logo" fluid-grow alt="Logo" class="my-3"/>
       <h3>Die App</h3>
       <p>
-        Fabienne Schwarz-Loy hat durch <em>"Sei ein Held rette die Welt"</em> eine
-        Initiative gestartet mit der spielerisch leicht, jeder etwas für die Umwelt tun kann.
+        <em>"Sei ein Held rette die Welt"</em> bietet dir spielerisch leicht Impulse, wie du in
+        wenigen Sekunden, mit wenigen Handgriffen oder mit kleinen Entscheidungen die Welt
+        verbessern kannst und dabei sogar selbst Vorteile hast. Denn es ist nicht schwer und tut
+        nicht weh, im Gegenteil: du sparst dabei auch noch Geld, Zeit, Nerven und/oder gewinnst
+        Gesundheit, wertvolle Erfahrungen, Einblicke und Gewohnheiten. Eine absolute
+        Win-Win-Situation also.
       </p>
       <p>
-        Wir liefern dir einmal pro Woche einen kurzen Impuls dazu, wie du in wenigen
-        Sekunden und mit wenigen Gedanken oder Handgriffen die Welt rettest.
+        Denn unsere Welt ist unendlich schön und unendlich wertvoll - aber leider steckt sie aktuell
+        in ziemlich großen Schwierigkeiten. Naturkatastrophen, Pandemie, Hass, Betrug und vieles mehr
+        - es braucht viele Helden, die mit vielen kleinen Entscheidungen zur Rettung beitragen. Denn
+        die großen politischen Entscheidungen (die es selbstverständlich auch braucht) folgen oftmals
+        erst, wenn viele Menschen diese Themen vorleben und einfordern. Daher bieten wir Impulse zu
+        den Themen Klimaschutz, Toleranz, Gerechtigkeit, bewusster Konsum und wie alles miteinander
+        zusammenhängt. Es sind die vielen kleinen Schritte, aus denen die großen Ziele gebaut sind.
       </p>
       <p>
-        <b>Der Hintergrund:</b> Unsere Welt ist unendlich schön und unendlich wertvoll.
-        Das sollte so bleiben, aber leider steckt sie aktuell in ziemlich großen
-        Schwierigkeiten. Daher ist jeder Mensch, der zur Rettung beiträgt, ein Held
-        und wir finden, das sollte belohnt werden.
-        </p>
-      <p>
-        Wir bieten dir Impulse zu folgenden Themen an: <br>
-        Umwelt- und Klimaschutz, Gerechtigkeit, Toleranz und wie alles miteinander zusammenhängt.
+        Macht mit und tragt eure Schritte dazu bei!
       </p>
       <p>
-
-        Das Beste daran ist, dass es nicht schwierig ist und keinem weh tut. Du sparst Geld,
-        Zeit, Nerven und/oder gewinnst Gesundheit, wertvolle Erfahrungen, Einblicke und
-        Gewohnheiten. Wie du das machst wird dir auf der Impulskarte genauer beschrieben.
+        Mehr Infos gibt es unter <a href="http://www.heldsein.com/">www.heldsein.com</a>
       </p>
 
       <h3>Spielregeln</h3>
-      <p>Die Spielregeln für "Sei ein Held rette die Welt", sind:</p>
       <ul>
-        <li>Alltags Challenges bekommen weniger Punkte</li>
-        <li>Aufwendigere Impulse bekommen dagegen eine höhere Punktwertung</li>
-        <li>Du verlierst deine Punkte, wenn du nicht aktiv genug teilnimmst</li>
-        <li>Nach Erledigung des Impulses kanst du dieses Bestätigen und erhältst dafür Punkte</li>
-        <li>Du kannst nur alle 24 Stunden deine Impulse bestätigen </li>
+        <li>
+          In regelmäßigen Abständen werden neue Impulse veröffentlicht.
+        </li>
+        <li>
+          Du kannst einen Impuls mit dem +Button als Challenge annehmen und ihn mit dem
+          Haken bestätigen, sobald du diesen Impuls angewendet / erfüllt hast. Für die
+          aktive Anwendung bekommst du Punkte gutgeschrieben. Je mehr Impulse du anwendest,
+          umso mehr Punkte kannst du sammeln. Impulse, die mehrfach/regelmäßig angewendet
+          werden können, dürfen auch mehrfach angenommen und bestätigt werden (maximal
+          einmal alle 24 Stunden).
+        </li>
+        <li>
+          Die Höhe der Punkte für einen Impuls hängt davon ab, wie aufwändig dessen Anwendung ist.
+        </li>
+        <li>
+          In der Highscore-Liste sind dann alle Helden aufgeführt und du siehst, wie du im Vergleich
+          zu den anderen Nutzern stehst und vor allem, wie viel gemeinsam schon geschafft wurde.
+        </li>
+        <li>
+          Über den Teilen-Button können Impulse auch (über beliebige Messenger / Programme) mit
+          anderen Menschen geteilt werden - du kannst also gerne auch dafür sorgen, dass weitere
+          Helden hinzukommen.
+        </li>
       </ul>
 
-      <h3>Hilfestellung</h3>
-      <p>Die Hilfestellungen für "Sei ein Held rette die Welt", sind:</p>
-
-      <ol>
-        <li>
-            <i aria-hidden="true" class="fa fa-heart" style="color: black; font-size: 1.25rem;"></i>
-            Favoriten
-            <ul>
-              <li>Deine Impulskarten werden dir hier angezeit</li>
-            </ul>
-        </li>
-        <li>
-          <i aria-hidden="true" class="fa fa-home" style="color: black; font-size: 1.5rem;"></i>
-          Home Botton / Startseite
-          <ul>
-            <li>Hier findest du neue Impulse</li>
-          </ul>
-        </li>
-        <li>
-          <i aria-hidden="true" class="fa fa-list-ol" style="color: black; font-size: 1.25rem;"></i>
-          Rangliste
-          <ul>
-            <li>Man kann seine Punkte mit Freunden und anderen Nutzer vergleichen</li>
-          </ul>
-        </li>
-        <li>
-          <i aria-hidden="true" class="fa fa-user" style="color: black; font-size: 1.25rem;"></i>
-          Profil
-          <ul>
-            <li>Profilbild</li>
-            <li>Benutzername, E-Mail</li>
-            <li>Abmeldung</li>
-            <li>Account löschen</li>
-          </ul>
-        </li>
-        <li>
-            <i aria-hidden="true" class="fa fa-ellipsis-v" style="color: black; font-size: 1rem;"></i>
-          Optionen
-
-          <ul>
-            <li>Man wird weitergeleitet auf: Über uns, Datenschutz, Impressum, das Team</li>
-          </ul>
-        </li>
-      </ol>
+      <p>
+        <b>Übrigens:</b> Die App muss nicht heruntergeladen werden, sondern funktioniert als Webapp.
+        Wenn du sie mit einem Klick auf deinem Handy öffnen willst, dann klicke (bei Android) in
+        deinem mobilen Browser einfach im Einstellungen-Menü (in der Regel 3 Punkte oder Striche)
+        auf "Zum Startbildschirm hinzufügen" und schon hast du ein schönes App-Symbol auf deinem
+        Bildschirm. Als Apple-Nutzer klickst du im Brower Safari auf das "Teilen"-Icon und
+        anschließen auf "Zum Home-Bildschirm".
+      </p>
     </b-container>
   </div>
 </template>

@@ -36,6 +36,8 @@ module.exports = {
     name: 'Sei ein Held',
     themeColor: '#FBFF00',
     msTileColor: '#FBFF00',
+    appleMobileWebAppCapable: 'yes',
+    appleMobileWebAppStatusBarStyle: 'black-translucent',
 
     manifestOptions: {
       name: 'Sei ein Held - rette die Welt',
